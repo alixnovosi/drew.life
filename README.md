@@ -1,3 +1,3 @@
-This is the source code for www.andrewmichaud.com. It is licensed under the MIT license.
+This is the source code for https://andrewmichaud.com. Feel free to use the code, just credit me if you use substantial portions. Same goes for blog posts/prose in this repo. If for some reason you'd like to use something I've said here, just credit me and it'll be A-OK.
 
-This website is built upon [html5-boilerplate](https://github.com/h5bp/html5-boilerplate), whose code was much appreciated in getting this website off the ground.
+Cheers.
