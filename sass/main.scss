@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for andrewmichaud.com                                                      //
-// UPDATED: 2016-03-08                                                                           //
+// UPDATED: 2016-04-27                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 @import "_normalize";
@@ -23,11 +23,11 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     -#{$vendor}-animation-iteration-count: infinite;
     -#{$vendor}-animation-timing-function: linear;
   }
-}
 
-.beer::before {
-  content: "🍺";
-  font-size: 10em;
+  &::before {
+    content: "🍺";
+    font-size: 10em;
+  }
 }
 
 %flex {
@@ -121,8 +121,8 @@ html {
 
         .blogpost {
           background-color: #DDDDEE;
-          margin-bottom: 5px;
-          margin-top: 5px;
+          margin-bottom: 35px;
+          margin-left: 15px;
           padding: 20px;
           max-width: 80%;
 
@@ -147,11 +147,11 @@ html {
               color: #444444;
               display: inline-block;
               margin-right: 5px;
-              width: 150px
-            }
+              width: 150px;
 
-            a:hover {
-              background-color: #BBBBCC;
+              &:hover {
+                background-color: #BBBBCC;
+              }
             }
 
             p {
@@ -175,21 +175,23 @@ html {
         max-width: 20%;
         padding-top: 20px;
 
-        .social ul {
-          @extend .vertical-flex;
-          justify-content: center;
-          padding-top: 20px;
+        .social {
+          height: 60%;
 
-          li {
-            padding: 0;
+          ul {
+            @extend .vertical-flex;
+            justify-content: space-between;
+            height: inherit;
+            padding-top: 20px;
 
-            a {
+            li a {
               border: 1px solid #444455;
               color: #444455;
-            }
+              padding: 25px;
 
-            a:hover {
-              background-color: #DDDDEE;
+              &:hover {
+                background-color: #DDDDEE;
+              }
             }
           }
         }
