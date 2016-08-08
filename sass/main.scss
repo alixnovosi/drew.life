@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for andrewmichaud.com                                                      //
-// UPDATED: 2016-04-27                                                                           //
+// UPDATED: 2016-08-07                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 @import "_normalize";
@@ -28,6 +28,12 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     content: "🍺";
     font-size: 10em;
   }
+}
+
+img.rot {
+    margin: 0;
+    transform: rotate(270deg);
+    width: 500px
 }
 
 %flex {
