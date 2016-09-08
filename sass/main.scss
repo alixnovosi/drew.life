@@ -2,209 +2,165 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for andrewmichaud.com                                                      //
-// UPDATED: 2016-08-07                                                                           //
+// UPDATED: 2016-09-08                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
-@import "_normalize";
 
-$vendor-prefixes: "webkit", "moz", "ms";
-$active_nav_colors: (name: #EEEEFF, blog: #AA7777, code: #77AA77, skills: #7777AA, about: #CC9966);
+// SASS variables.
+$background: #EEEEFF;
+$code_icon_color: #000000;
+$nav_blue: #333355;
+$project_bg: #444444;
+$project_border: #BBBBCC;
+$social_hover_background: #DDDDEE;
+$social_color: #444455;
+
+$active_nav_colors: (name: $background, code: #77AA77, skills: #7777AA, about: #CC9966);
 $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB, about: #DDAA77);
 
-@keyframes spin {
-  from {transform:rotate(0deg);}
-  to {transform:rotate(360deg);}
-}
-
-.beer {
-  @each $vendor in $vendor-prefixes {
-    -#{$vendor}-animation-name: spin;
-    -#{$vendor}-animation-duration: 4000ms;
-    -#{$vendor}-animation-iteration-count: infinite;
-    -#{$vendor}-animation-timing-function: linear;
-  }
-
-  &::before {
-    content: "🍺";
-    font-size: 10em;
-  }
-}
-
-img.zeldo {
-  margin: 0;
-  width: 500px;
-}
-
+// SASS classes extended by other things.
 %flex {
-  display: -webkit-flex;
-  display: flex;
+    display: flex;
 }
 
-.horizontal-flex {
-  @extend %flex;
-  flex-direction: row;
+%horizontal-flex {
+    @extend %flex;
+    flex-direction: row;
 }
 
-.vertical-flex {
-  @extend %flex;
-  flex-direction: column;
+%vertical-flex {
+    @extend %flex;
+    flex-direction: column;
 }
 
-ul {
-  @extend .horizontal-flex;
-  list-style-type: none;
-  justify-content: space-between;
-  margin: 0;
+// CSS styles for classes.
+.code-stuff, .language-section, .media-list, .social-list {
+    @extend %vertical-flex;
+}
 
-  li {
-    flex-grow: 1;
+.languages, .site-nav ul {
+    @extend %horizontal-flex;
+}
+
+.code-stuff li {
+    border-bottom: 1px solid $project_border;
+    display: flex;
+    height: 50px;
+    margin-bottom: 15px;
 
     a {
-      color: #EEEEFF;
-      display: block;
-      text-align: center;
-      padding: 16px 16px;
-      text-decoration: none;
-    }
-  }
+        background-color: $social_hover_background;
+        border: 1px solid $project_border;
+        border-bottom: 0;
+        color: $project_bg;
+        display: inline-block;
+        margin-right: 5px;
+        min-width: 200px;
 
-  h3 {
-    text-align: center;
-  }
+        &:hover {
+            background-color: $project_border;
+        }
+    }
 }
 
 .icon {
-  width: 40px;
-  color: black;
+    color: $code_icon_color;
+    width: 40px;
 }
 
-html {
-  background-color: #EEEEFF;
-  height: 100%;
-  min-width: 1024px;
-  width: 100%;
+.site-nav ul {
+    padding: 0;
 
-  body {
-    height: inherit;
+    li {
+        background-color: $nav_blue;
 
-    header nav ul {
-      padding: 0;
-
-      li {
-        background-color: #333355;
-        float: left;
+        a, a:visited {
+            color: $background;
+        }
 
         @each $item, $bg_color in $active_nav_colors {
-          a.active.#{$item} {
-            background-color: $bg_color;
-          }
+            a.active.#{$item} {
+                background-color: $bg_color;
+            }
         }
 
         @each $item, $bg_color in $hover_nav_colors {
-          a.#{$item}:hover {
-            background-color: $bg_color;
-            color: #333355;
-          }
+            a.#{$item}:hover {
+                background-color: $bg_color;
+                color: $nav_blue;
+            }
         }
 
         a.name {
-          background-color: #EEEEFF;
-          color: #333344;
+            background-color: $background;
+            color: $nav_blue;
         }
-      }
     }
-
-    main {
-      @extend .horizontal-flex;
-      height: inherit;
-      justify-content: space-between;
-
-      article {
-        display: block;
-        flex-grow: 10;
-        padding: 20px;
-
-        .blogpost {
-          background-color: #DDDDEE;
-          margin-bottom: 35px;
-          margin-left: 15px;
-          padding: 20px;
-          max-width: 80%;
-
-          p {
-            text-align: justify;
-            word-wrap: normal;
-          }
-        }
-
-        .code-stuff ul {
-          flex-direction: column;
-
-          li {
-            border-bottom: 1px solid #444455;
-            display: flex;
-            height: 50px;
-            margin-bottom: 5px;
-            margin-top: 5px;
-
-            a {
-              background-color: #DDDDEE;
-              color: #444444;
-              display: inline-block;
-              margin-right: 5px;
-              width: 150px;
-
-              &:hover {
-                background-color: #BBBBCC;
-              }
-            }
-
-            p {
-              vertical-align: center;
-            }
-          }
-        }
-
-        .languages {
-          @extend .horizontal-flex;
-
-          .language-section {
-            @extend .vertical-flex;
-          }
-        }
-      }
-
-      aside {
-        display: block;
-        height: inherit;
-        max-width: 20%;
-        padding-top: 20px;
-
-        .social {
-          height: 60%;
-
-          ul {
-            @extend .vertical-flex;
-            justify-content: space-between;
-            height: inherit;
-            padding-top: 20px;
-
-            li a {
-              border: 1px solid #444455;
-              color: #444455;
-              padding: 25px;
-
-              &:hover {
-                background-color: #DDDDEE;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
-#unix {
-  font-variant: small-caps;
+.social {
+    height: 60%;
+}
+
+.social-list li a {
+    border: 1px solid $social_color;
+    color: $social_color;
+    padding: 25px;
+
+    &:hover {
+        background-color: $social_hover_background;
+    }
+}
+
+.unix {
+    font-variant: small-caps;
+}
+
+.zeldo {
+    margin: 0;
+    width: 500px;
+}
+
+// CSS styles for HTML things.
+article {
+    flex-grow: 10;
+    padding: 20px;
+
+    .languages h3 {
+        text-align: center;
+    }
+}
+
+aside {
+    height: inherit;
+    max-width: 20%;
+    padding-top: 20px;
+}
+
+html {
+    background-color: $background;
+    height: 100%;
+    min-width: 1024px;
+    width: 100%;
+}
+
+main {
+    @extend %horizontal-flex;
+    height: inherit;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+
+    li {
+        flex-grow: 1;
+
+        a {
+            display: block;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+    }
 }
