@@ -1,0 +1,17 @@
+scss_files: "sass/main.scss"
+
+linters:
+  HexNotation:
+    style: "uppercase"
+
+  HexLength:
+    style: "long"
+
+  Indentation:
+    width: 4
+
+  NameFormat:
+    convention: "snake_case"
+
+  SingleLinePerSelector:
+    enabled: false
