@@ -15,3 +15,6 @@ linters:
 
   SingleLinePerSelector:
     enabled: false
+
+  SelectorDepth:
+    max_depth: 5
