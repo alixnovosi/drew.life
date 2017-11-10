@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for andrewmichaud.com                                                      //
-// UPDATED: 2016-09-08                                                                           //
+// UPDATED: 2017-11-09                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
@@ -42,46 +42,14 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     @extend %horizontal-flex;
 }
 
-summary::-webkit-details-marker {
-    display: none;
-}
-
-details {
-    summary {
-        cursor: pointer;
-        height: 80px;
-        vertical-align: middle;
-        width: 200px;
-
-        a {
-            height: inherit;
-        }
-    }
-
-    // Stolen from
-    // https://github.com/github/linguist
-    .python {
-        background-color: #3572A5;
-    }
-}
-
-.code-stuff li details summary {
-    background-color: $social_hover_background;
-    border: 1px solid $project_border;
-    border-bottom: 0;
-    // color: $project_bg;
-    margin-right: 5px;
-}
-
 .code-stuff li {
-    border-bottom: 1px solid $project_border;
+    border: 1px solid $project_border;
     display: flex;
-    height: 50px;
+    height: 69px;
     margin-bottom: 15px;
 
-    a {
+    .github-link {
         background-color: $social_hover_background;
-        border: 1px solid $project_border;
         border-bottom: 0;
         color: $project_bg;
         display: inline-block;
@@ -120,11 +88,6 @@ details {
                 background-color: $bg_color;
                 color: $nav_blue;
             }
-        }
-
-        a.name {
-            background-color: $background;
-            color: $nav_blue;
         }
     }
 }
@@ -175,20 +138,13 @@ html {
     width: 100%;
 }
 
-details {
-    display: flex;
-}
-
-summary {
-    display: block;
-}
-
 main {
     @extend %horizontal-flex;
     height: inherit;
 }
 
 ol, ul {
+    list-style-type: none;
     margin: 0;
 
     li {
@@ -203,6 +159,6 @@ ol, ul {
     }
 }
 
-ul {
-    list-style-type: none;
+summary {
+    display: block;
 }
