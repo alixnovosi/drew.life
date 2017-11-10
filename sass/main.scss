@@ -34,12 +34,43 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
 }
 
 // CSS styles for classes.
-.code-stuff, .language-section, .media-list, .social-list {
+.code-stuff, .language-section, .media-list, .social-list, display {
     @extend %vertical-flex;
 }
 
 .languages, .site-nav ul {
     @extend %horizontal-flex;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+details {
+    summary {
+        cursor: pointer;
+        height: 80px;
+        vertical-align: middle;
+        width: 200px;
+
+        a {
+            height: inherit;
+        }
+    }
+
+    // Stolen from
+    // https://github.com/github/linguist
+    .python {
+        background-color: #3572A5;
+    }
+}
+
+.code-stuff li details summary {
+    background-color: $social_hover_background;
+    border: 1px solid $project_border;
+    border-bottom: 0;
+    // color: $project_bg;
+    margin-right: 5px;
 }
 
 .code-stuff li {
@@ -144,13 +175,20 @@ html {
     width: 100%;
 }
 
+details {
+    display: flex;
+}
+
+summary {
+    display: block;
+}
+
 main {
     @extend %horizontal-flex;
     height: inherit;
 }
 
-ul {
-    list-style-type: none;
+ol, ul {
     margin: 0;
 
     li {
@@ -163,4 +201,8 @@ ul {
             text-decoration: none;
         }
     }
+}
+
+ul {
+    list-style-type: none;
 }
