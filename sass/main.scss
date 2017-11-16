@@ -131,6 +131,15 @@ aside {
     padding-top: 20px;
 }
 
+canvas {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800;
+}
+
 html {
     background-color: $background;
     height: 100%;
