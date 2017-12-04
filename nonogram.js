@@ -1,1 +1,1 @@
-../nonogram-web/nonogram.js
+../nonogram_web/nonogram.js
