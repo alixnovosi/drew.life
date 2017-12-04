@@ -8,10 +8,13 @@
 
   <body>
     <main>
-      <canvas id="nonogram_board" height="5" width="5"></canvas>
+      <div class="nonogram-container">
+        <canvas id="nonogram-board" height="5" width="5"></canvas>
+        <textarea readonly id="nonogram-label"></textarea>
 
-      <script src="dist/pako_inflate.js"></script>
-      <script src="./nonogram.js"></script>
+        <script src="dist/pako_inflate.js"></script>
+        <script src="./nonogram.js"></script>
+      </div>
     </main>
   </body>
 </html>
