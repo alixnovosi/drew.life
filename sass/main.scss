@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for andrewmichaud.com                                                      //
-// UPDATED: 2017-11-09                                                                           //
+// UPDATED: 2017-12-04                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
@@ -13,6 +13,7 @@ $project_bg: #444444;
 $project_border: #BBBBCC;
 $social_hover_background: #DDDDEE;
 $social_color: #444455;
+$textarea_background: #EFEFFF;
 
 $active_nav_colors: (name: $background, code: #77AA77, skills: #7777AA, about: #CC9966);
 $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB, about: #DDAA77);
@@ -21,7 +22,7 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     display: flex;
 }
 
-.code-stuff, .language-section, .media-list, .social-list, display {
+.code-stuff, .language-section, .media-list, .nonogram-container, .social-list, display {
     @extend %flex;
     flex-direction: column;
 }
@@ -118,13 +119,18 @@ aside {
     padding-top: 20px;
 }
 
-canvas {
-    display: block;
-    padding-left: 0;
-    padding-right: 0;
+.nonogram-container {
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    min-width: 500px;
+    padding-left: 0;
+    padding-right: 0;
+
+    textarea {
+        border: 0;
+        height: 40px;
+        text-align: center;
+    }
 }
 
 html {
