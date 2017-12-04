@@ -6,7 +6,6 @@
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
-// SASS variables.
 $background: #EEEEFF;
 $code_icon_color: #000000;
 $nav_blue: #333355;
@@ -18,28 +17,18 @@ $social_color: #444455;
 $active_nav_colors: (name: $background, code: #77AA77, skills: #7777AA, about: #CC9966);
 $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB, about: #DDAA77);
 
-// SASS classes extended by other things.
 %flex {
     display: flex;
 }
 
-%horizontal-flex {
-    @extend %flex;
-    flex-direction: row;
-}
-
-%vertical-flex {
+.code-stuff, .language-section, .media-list, .social-list, display {
     @extend %flex;
     flex-direction: column;
 }
 
-// CSS styles for classes.
-.code-stuff, .language-section, .media-list, .social-list, display {
-    @extend %vertical-flex;
-}
-
-.languages, .site-nav ul {
-    @extend %horizontal-flex;
+.languages, .site-nav ul, main {
+    @extend %flex;
+    flex-direction: row;
 }
 
 .code-stuff li {
@@ -50,7 +39,6 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
 
     .github-link {
         background-color: $social_hover_background;
-        border-bottom: 0;
         color: $project_bg;
         display: inline-block;
         margin-right: 5px;
@@ -115,7 +103,6 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     width: 700px;
 }
 
-// CSS styles for HTML things.
 article {
     flex-grow: 10;
     padding: 20px;
@@ -137,7 +124,7 @@ canvas {
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 800;
+    width: 500px;
 }
 
 html {
@@ -148,7 +135,6 @@ html {
 }
 
 main {
-    @extend %horizontal-flex;
     height: inherit;
 }
 
@@ -166,8 +152,4 @@ ol, ul {
             text-decoration: none;
         }
     }
-}
-
-summary {
-    display: block;
 }
