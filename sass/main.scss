@@ -22,28 +22,39 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     display: flex;
 }
 
-.code-stuff, .language-section, .media-list, .nonogram-container, .social-list, display {
-    @extend %flex;
-    flex-direction: column;
-}
-
-.languages, .site-nav ul, main {
+%horizontal-flex {
     @extend %flex;
     flex-direction: row;
 }
 
-.code-stuff li {
-    border: 1px solid $project_border;
-    display: flex;
-    height: 69px;
-    margin-bottom: 15px;
+%vertical-flex {
+    @extend %flex;
+    flex-direction: column;
+}
+
+.language-section, .media-list, .social-list, display {
+    @extend %vertical-flex;
+}
+
+.languages, main {
+    @extend %horizontal-flex;
+}
+
+.code-stuff {
+    @extend %vertical-flex;
+
+    li {
+        border: 1px solid $project_border;
+        display: flex;
+        margin-bottom: 1em;
+    }
 
     .github-link {
         background-color: $social_hover_background;
         color: $project_bg;
         display: inline-block;
-        margin-right: 5px;
-        min-width: 200px;
+        margin-right: 0.5em;
+        min-width: 10em;
 
         &:hover {
             background-color: $project_border;
@@ -53,10 +64,79 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
 
 .icon {
     color: $code_icon_color;
-    width: 40px;
+    width: 2em;
+}
+
+.goty {
+    a {
+        background-color: #DFDFFF;
+        color: #000000;
+        padding: 1em;
+
+        &:hover {
+            background-color: #FAFAFF;
+        }
+    }
+
+    article {
+        @extend %vertical-flex;
+        justify-content: space-between;
+        width: 60%;
+        text-align: center;
+    }
+
+    ol {
+        padding-right: 1em;
+    }
+
+    ol li, ul li {
+        margin-bottom: 1em;
+        border: solid 2px $background;
+    }
+
+    aside {
+        @extend %vertical-flex;
+        border-left: 2px solid #222233;
+        text-align: center;
+        width: 40%;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+
+    .top-ten {
+        @extend %vertical-flex;
+
+        .top-three, .rest {
+            @extend %horizontal-flex;
+        }
+
+        .rest {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.nonogram-container {
+    @extend %vertical-flex;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 30%;
+    padding-left: 0;
+    padding-right: 0;
+
+    textarea {
+        border: 0;
+        height: 10em;
+        text-align: center;
+    }
 }
 
 .site-nav ul {
+    @extend %horizontal-flex;
+    list-style-type: none;
     padding: 0;
 
     li {
@@ -104,9 +184,15 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     width: 700px;
 }
 
+a {
+    text-align: center;
+    text-decoration: none;
+}
+
 article {
     flex-grow: 10;
     padding: 20px;
+    min-height: 100;
 
     .languages h3 {
         text-align: center;
@@ -114,34 +200,17 @@ article {
 }
 
 aside {
-    height: inherit;
     max-width: 20%;
-    padding-top: 20px;
+    min-height: 100%;
+    padding-top: 2em;
 }
 
-.nonogram-container {
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 500px;
-    padding-left: 0;
-    padding-right: 0;
-
-    textarea {
-        border: 0;
-        height: 40px;
-        text-align: center;
-    }
+body, html {
+    min-height: 100%;
 }
 
 html {
     background-color: $background;
-    height: 100%;
-    min-width: 1024px;
-    width: 100%;
-}
-
-main {
-    height: inherit;
 }
 
 ol, ul {
@@ -154,8 +223,6 @@ ol, ul {
         a {
             display: block;
             padding: 16px;
-            text-align: center;
-            text-decoration: none;
         }
     }
 }
