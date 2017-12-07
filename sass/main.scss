@@ -44,21 +44,35 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     @extend %vertical-flex;
 
     li {
+        @extend %horizontal-flex;
         border: 1px solid $project_border;
-        display: flex;
+        justify-content: space-between;
         margin-bottom: 1em;
     }
 
-    .github-link {
+    p {
+        text-align: left;
+
+        a {
+            display: inline-block;
+            padding: 0;
+        }
+    }
+
+    .language {
+        margin: 0;
+        padding: 16px;
+    }
+
+    .github-link, .language {
         background-color: $social_hover_background;
         color: $project_bg;
         display: inline-block;
-        margin-right: 0.5em;
         min-width: 10em;
+    }
 
-        &:hover {
-            background-color: $project_border;
-        }
+    .github-link:hover {
+        background-color: $project_border;
     }
 }
 
