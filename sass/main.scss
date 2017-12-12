@@ -80,6 +80,10 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     .top-ten {
         @extend %vertical-flex;
 
+        .top-three li {
+            max-width: 33%;
+        }
+
         .top-three, .rest {
             @extend %horizontal-flex;
         }
