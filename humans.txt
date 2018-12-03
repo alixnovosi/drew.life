@@ -4,7 +4,7 @@
 # TEAM
     Developer/Owner: Andrew Michaud
     Contact:
-    Twitter: @andrewjmichaud
+    Twitter: @alixnovosi
     From: California, USA
 
 # TECHNOLOGY COLOPHON
