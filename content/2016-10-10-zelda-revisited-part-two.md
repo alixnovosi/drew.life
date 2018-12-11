@@ -20,7 +20,7 @@ but,
 unfortunately,
 that's not quite the same as actually running through it.
 I was glad to finally  get a chance to play what turned out to be a really cool game!
-<img src="{static}/media/zelda/la_boat.jpg" alt=""/>
+<img src="{static}/media/zelda/la_boat.jpg" alt="Title screen boat in Link's Awakening."/>
 
 I've always thought of the portable Zeldas as somehow lesser than the console games.
 I don't have a good reason for this,
@@ -60,8 +60,8 @@ At the same time,
 you find a bunch more squares that you still can't get to with the items you have.
 The areas around the last couple dungeons stay blank until nearly the end of the game,
 and finally getting over there was very satisfying.
-<img src="{static}/media/zelda/la_in_game_map.jpg" alt=""/>
-<img src="{static}/media/zelda/la_all_screens_map.jpg" alt=""/>
+<img src="{static}/media/zelda/la_in_game_map.jpg" alt="The LA in-game map."/>
+<img src="{static}/media/zelda/la_all_screens_map.jpg" alt="All screens in the in-game map."/>
 
 I'm a big fan of the music in this game.
 The gritty Game Boy bass on the intro got me on board immediately,
@@ -79,7 +79,7 @@ and I think it's going to have to stay on for a while.
 The Mt. Tamaranch/Tal Tal Heights music is probably my favorite.
 I was glad that I spent enough time around there to hear a dozen loops of that track.
 I'm really happy that the dev team for this game managed to squeeze so much good audio out of the Game Boy.
-<img src="{static}/media/zelda/la_marin_link.jpg" alt=""/>
+<img src="{static}/media/zelda/la_marin_link.jpg" alt="Link and Marin in LA."/>
 
 This is the first Zelda game that calls out chests on the dungeon map.
 I always figured Ocarina of Time was the first,
@@ -166,7 +166,7 @@ so I can see what they do differently and what they do alike -
 and I'll try to capture that in later blog posts.
 I'll definitely write in some comparisons with the DS Zelda games as well,
 when I get that far.
-<img src="{static}/media/zelda/links_awakening.jpg" alt=""/>
+<img src="{static}/media/zelda/links_awakening.jpg" alt="A Link's Awakening screenshot."/>
 
 Next blog post will cover Ocarina of Time and Majora's Mask.
 Thanks for reading!
