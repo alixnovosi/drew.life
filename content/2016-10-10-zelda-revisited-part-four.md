@@ -184,8 +184,8 @@ I didn't think to grab pictures of the sprites in the credits).
 <img src="{static}/media/zelda/nayru and maple.jpg" alt="Nayru and Maple together."/>
 <img src="{static}/media/zelda/ages credits 1.jpg" alt="Some Ages credits."/>
 <img src="{static}/media/zelda/ages credits 4.jpg" alt="Some Ages credits"/>
-<img src="{static}/media/zelda/ages credits 5.jpg" alt="Nayru and Maple together."/>
-<img src="{static}/media/zelda/ages credits 6jpg" alt="Nayru and Maple together."/>
+<img src="{static}/media/zelda/ages credits 5.jpg" alt="Some Ages credits."/>
+<img src="{static}/media/zelda/ages credits 6jpg" alt="Some Ages credits."/>
 
 I had a lot of fun playing Oracle of Ages,
 and I'm glad I finally got around to playing it.

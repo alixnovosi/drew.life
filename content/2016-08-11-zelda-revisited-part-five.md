@@ -29,9 +29,9 @@ The game smoothly transitions into a more somber theme to accompany the game's b
 That theme matches Ganondorf's rise,
 defeat,
 and return so well that I can still see the panels in my head when I listen to it.
-<img src="{static}/media/zelda/ww_young_boy.png" alt=""/>
-<img src="{static}/media/zelda/ww_appeal_gods.png" alt=""/>
-<img src="{static}/media/zelda/ww_memory_survived.png" alt=""/>
+<img src="{static}/media/zelda/ww_young_boy.png" alt="Panels: a young boy."/>
+<img src="{static}/media/zelda/ww_appeal_gods.png" alt="Panels: appeal to the gods."/>
+<img src="{static}/media/zelda/ww_memory_survived.png" alt="Panels: only the memory survived."/>
 
 (It kind of works the other way,
 too.)
@@ -58,14 +58,13 @@ It brings back memories of every bit of the island for me,
 from the first bars.
 Somehow,
 it manages to be reworked into an even sadder theme when Medli awakens as a sage.
-<img src="{static}/media/zelda/ww_medli_awakening.png" alt=""/>
+<img src="{static}/media/zelda/ww_medli_awakening.png" alt="The scene of medli awakening as a sage."/>
 
 This scene breaks my heart,
 and the scoring is what does it.
 
 Link is more expressive in this game than in any other Zelda game.
-
-<img src="{static}/media/zelda/ww_frown.png" alt=""/>
+<img src="{static}/media/zelda/ww_frown.png" alt="Link's frown."/>
 Just look at that frown.
 
 He frowns when sidling or lifting rocks.

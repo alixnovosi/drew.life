@@ -193,7 +193,8 @@ I taught puckfetcher how to tell me what was downloaded in the current session,
 so I didn't need to do that.
 I also taught it to show me a longer list of "recently"-downloaded episodes for individual podcasts,
 just for funsies.
-<img src="{static}/media/dev/sideprojects_recently_downloaded_subscription.png" alt=""/>
+<img src="{static}/media/dev/sideprojects_recently_downloaded_subscription.png"
+     alt="Recently download subscriptions console screenshot."/>
 
 ### bots
 puckfetcher wasn't the only thing I worked on last year.
