@@ -103,7 +103,7 @@ you can even see her upgrade to a UFO.
 
 I like the Maku Tree in Ages,
 but only because she's the most anime character I've ever seen in a Zelda game.
-<img src="{static}/media/zelda/age_ANIME.png" alt="The Maku Tree, very anime."/>
+<img src="{static}/media/zelda/ages_ANIME.png" alt="The Maku Tree, very anime."/>
 
 The animal friends are a lot of fun.
 I really enjoyed interacting with them -
@@ -185,7 +185,7 @@ I didn't think to grab pictures of the sprites in the credits).
 <img src="{static}/media/zelda/ages credits 1.jpg" alt="Some Ages credits."/>
 <img src="{static}/media/zelda/ages credits 4.jpg" alt="Some Ages credits"/>
 <img src="{static}/media/zelda/ages credits 5.jpg" alt="Some Ages credits."/>
-<img src="{static}/media/zelda/ages credits 6jpg" alt="Some Ages credits."/>
+<img src="{static}/media/zelda/ages credits 6.jpg" alt="Some Ages credits."/>
 
 I had a lot of fun playing Oracle of Ages,
 and I'm glad I finally got around to playing it.
