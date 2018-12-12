@@ -64,7 +64,7 @@ This scene breaks my heart,
 and the scoring is what does it.
 
 Link is more expressive in this game than in any other Zelda game.
-<img src="{static}/media/zelda/ww_frown.png" alt="Link's frown."/>
+<img src="{static}/media/zelda/ww_frown.jpg" alt="Link's frown."/>
 Just look at that frown.
 
 He frowns when sidling or lifting rocks.
