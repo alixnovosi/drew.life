@@ -1,0 +1,174 @@
+//-----------------------------------------------------------------------------------------------//
+// AUTHOR:  Andrew Michaud                                                                       //
+// FILE:    all.scss                                                                             //
+// PURPOSE: SCSS file for blog.drew.life                                                        //
+// UPDATED: 2018-12-11                                                                           //
+// LICENSE: ISC                                                                                  //
+//-----------------------------------------------------------------------------------------------//
+$background: #EEEEFF;
+$code_icon_color: #000000;
+$nav_blue: #333355;
+$project_bg: #444444;
+$project_border: #BBBBCC;
+$social_hover_background: #DDDDEE;
+$social_color: #444455;
+$textarea_background: #EFEFFF;
+
+$article_headers: #000022;
+
+$menu_hover: #BB8888;
+
+$menu_hover: #BB8888;
+
+%flex {
+    display: flex;
+}
+
+%horizontal-flex {
+    @extend %flex;
+    flex-direction: row;
+}
+
+%vertical-flex {
+    @extend %flex;
+    flex-direction: column;
+}
+
+display {
+    @extend %vertical-flex;
+}
+
+#index header h1 {
+    a, a:visited, a:hover {
+        color: $article_headers;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $menu_hover;
+    }
+}
+
+#banner, #menu {
+    @extend %horizontal-flex;
+}
+
+#content header {
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        color: $article-headers;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        text-shadow: 1px 1px 1px $article-headers;
+    }
+}
+
+#menu  {
+    width: 100%;
+
+    ul {
+        @extend %horizontal-flex;
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+
+        li {
+            background-color: $nav_blue;
+
+            a, a:visited {
+                color: $background;
+                text-decoration: none;
+            }
+
+            a:hover {
+                background-color: $menu_hover;
+            }
+        }
+    }
+}
+
+body {
+    clear: both;
+    margin: 0 auto;
+    padding: 2.5em 0 0;
+    width: 800px;
+}
+
+#content {
+    background-color: #FFFFFF;
+    padding: 0.5em;
+    margin: 0.5em;
+
+    ol, ul {
+        list-style-type: none;
+    }
+
+    li {
+        border-bottom: 1px solid $article_headers;
+        padding: 0 20px 0 20px;
+    }
+}
+
+nav {
+    ol, ul {
+        list-style-type: none;
+        margin: 0;
+
+        li {
+            flex-grow: 1;
+
+            a {
+                display: block;
+                padding: 1em;
+            }
+        }
+    }
+
+}
+
+#content, nav#menu {
+    justify-content: space-between;
+    margin: 0 auto 1em auto;
+}
+
+a {
+    text-align: center;
+}
+
+article {
+    @extend %vertical-flex;
+    flex-grow: 10;
+    min-height: 100;
+    padding: 20px;
+
+    .languages h3 {
+        text-align: center;
+    }
+}
+
+aside {
+    @extend %vertical-flex;
+    max-width: 20%;
+    min-height: 100%;
+    padding-top: 2em;
+}
+
+body, html {
+    min-height: 100%;
+}
+
+html {
+    background-color: $background;
+}
+
+.entry-content img {
+    display:  block;
+    height: auto;
+    width: 500px;
+    margin: 0 auto;
+    padding: 1em;
+}
