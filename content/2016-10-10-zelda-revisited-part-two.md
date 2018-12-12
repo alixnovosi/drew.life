@@ -60,8 +60,8 @@ At the same time,
 you find a bunch more squares that you still can't get to with the items you have.
 The areas around the last couple dungeons stay blank until nearly the end of the game,
 and finally getting over there was very satisfying.
-<img src="{static}/media/zelda/la_in_game_map.jpg" alt="The LA in-game map."/>
-<img src="{static}/media/zelda/la_all_screens_map.jpg" alt="All screens in the in-game map."/>
+<img src="{static}/media/zelda/la_in_game_map.png" alt="The LA in-game map."/>
+<img src="{static}/media/zelda/la_all_screens_map.png" alt="All screens in the in-game map."/>
 
 I'm a big fan of the music in this game.
 The gritty Game Boy bass on the intro got me on board immediately,
