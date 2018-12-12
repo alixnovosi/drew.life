@@ -35,7 +35,7 @@ PATH = "content/"
 # SITEURL = "https://blog.drew.life"
 SLUGIFY_SOURCE = "title"
 
-# THEME = "theme"
+THEME = "theme"
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
