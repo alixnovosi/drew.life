@@ -1,6 +1,7 @@
 Title: Rebuilt website!
 Date: 2016-03-09 06:29:00
-Category: Website
+Category: Dev
+Tags: website
 
 I decided to rewrite my website.
 I was inspired by being forced into frontend development at work,
