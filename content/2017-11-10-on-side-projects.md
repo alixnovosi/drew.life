@@ -1,6 +1,6 @@
 Title: Side Projects Are Fun
 Category: Dev
-Tags: side-projects
+Tags: side-projects, puckfetcher, botskeleton, bots
 Author: drew
 Date: 2017-11-10 04:25:08
 Modified: 2018-12-03 21:50:14
@@ -56,7 +56,7 @@ and at some point it just broke for me.
 
 > gpodder has been broken on downloads for me for weeks
 >
-> — [@alixnovosi](https://twitter.com/alixnovosi/status/684110565845774336), 2016-01-04 12:34 PM
+> [@alixnovosi](https://twitter.com/alixnovosi/status/684110565845774336), 2016-01-04 12:34 PM
 
 I kept downloading by hand,
 and for a while I was OK with that.
