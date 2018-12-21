@@ -2,10 +2,11 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for drew.life                                                              //
-// UPDATED: 2018-12-03                                                                           //
+// UPDATED: 2018-12-20                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
+//-------------------------------- VARIABLES ----------------------------------------------------//
 $background: #EEEEFF;
 $code_icon_color: #000000;
 $nav_blue: #333355;
@@ -18,6 +19,7 @@ $textarea_background: #EFEFFF;
 $active_nav_colors: (name: $background, code: #77AA77, skills: #7777AA, about: #CC9966);
 $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB, about: #DDAA77);
 
+//----------------------------- SCSS DEFINITIONS ------------------------------------------------//
 %flex {
     display: flex;
 }
@@ -32,10 +34,52 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
     flex-direction: column;
 }
 
-.language-section, .media-list, .social-list, display {
-    @extend %vertical-flex;
+//-------------------------- STANDARD ELEMENT STYLES --------------------------------------------//
+a {
+    text-align: center;
 }
 
+article {
+    @extend %vertical-flex;
+    flex-grow: 10;
+    min-height: 100;
+    padding: 20px;
+
+    .languages h3 {
+        text-align: center;
+    }
+}
+
+aside {
+    @extend %vertical-flex;
+    max-width: 20%;
+    min-height: 100%;
+    padding-top: 2em;
+}
+
+body, html {
+    min-height: 100%;
+}
+
+html {
+    background-color: $background;
+}
+
+ol, ul {
+    list-style-type: none;
+    margin: 0;
+
+    li {
+        flex-grow: 1;
+
+        a {
+            display: block;
+            padding: 1em;
+        }
+    }
+}
+
+//--------------------------------- CLASS STYLES ------------------------------------------------//
 .code-stuff {
     @extend %vertical-flex;
 
@@ -77,25 +121,29 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
 .goty {
     text-align: center;
 
-    .top-ten {
-        @extend %vertical-flex;
+    a, article {
+        padding: 0;
+    }
 
-        .top-three li {
-            max-width: 33%;
-        }
-
-        .top-three, .rest {
-            @extend %horizontal-flex;
-        }
-
-        .rest {
-            flex-wrap: wrap;
-        }
+    article .honorable-mention li {
+        margin: 0 auto;
+        max-width: 60%;
+        max-height: 60%;
     }
 
     aside {
         border-left: 2px solid $nav_blue;
+        padding-top: 0;
         width: 40%;
+
+        a {
+            padding: 1em;
+        }
+
+        .honorable-mention li {
+            min-height: 69px;
+            min-width: 69px;
+        }
     }
 
     img {
@@ -108,19 +156,61 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
 
         li {
             padding-bottom: 0;
-            padding-top: 1em;
+            padding-top: 0.5em;
         }
     }
 
     ol, ul {
-        padding-left: 1em;
-        padding-right: 1em;
+        padding: 0 1em 0 1em;
+        justify-content: space-around;
+    }
+
+    .backlog-bracket {
+        a {
+            padding: 1em;
+        }
+
+        li {
+            padding: 0;
+        }
+    }
+
+    .honorable-mention {
+        border-top: 2px solid $nav_blue;
+    }
+
+    .top-ten {
+        @extend %vertical-flex;
+
+        li {
+            padding: 0;
+        }
+
+        .rest li {
+            max-width: 25%;
+        }
+
+        .top-three li, .honorable-mention li {
+            max-width: 33%;
+        }
+
+        .top-three, .rest {
+            @extend %horizontal-flex;
+        }
+
+        .rest {
+            flex-wrap: wrap;
+        }
     }
 }
 
 .icon {
     color: $code_icon_color;
     width: 2em;
+}
+
+.language-section, .media-list, .social-list, display {
+    @extend %vertical-flex;
 }
 
 .languages, main {
@@ -192,48 +282,4 @@ $hover_nav_colors: (name: #CCCCDD, blog: #BB8888, code: #88BB88, skills: #8888BB
 .zeldo {
     margin: 0;
     width: 700px;
-}
-
-a {
-    text-align: center;
-}
-
-article {
-    @extend %vertical-flex;
-    flex-grow: 10;
-    min-height: 100;
-    padding: 20px;
-
-    .languages h3 {
-        text-align: center;
-    }
-}
-
-aside {
-    @extend %vertical-flex;
-    max-width: 20%;
-    min-height: 100%;
-    padding-top: 2em;
-}
-
-body, html {
-    min-height: 100%;
-}
-
-html {
-    background-color: $background;
-}
-
-ol, ul {
-    list-style-type: none;
-    margin: 0;
-
-    li {
-        flex-grow: 1;
-
-        a {
-            display: block;
-            padding: 1em;
-        }
-    }
 }
