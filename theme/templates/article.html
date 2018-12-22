@@ -41,19 +41,19 @@
     {% endif %}
     {% if article.authors %}
     <address class="vcard author">
-      By {% for author in article.authors %}
+      by {% for author in article.authors %}
           <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
         {% endfor %}
     </address>
     {% endif %}
     {% if article.category %}
     <div class="category">
-        Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+        category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
     </div>
     {% endif %}
     {% if article.tags %}
     <div class="tags">
-        Tags:
+        tags:
         {% for tag in article.tags %}
             <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
         {% endfor %}

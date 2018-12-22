@@ -1,111 +1,204 @@
-#banner, #menu, #menu ul {
+.languages, main, .site-nav ul, body.home, .code-stuff li,
+.goty .top-ten .top-three, .goty .top-ten .rest {
   display: flex;
   flex-direction: row;
 }
-article, section.body footer {
+article, aside, .language-section, .media-list, .social-list, .nonogram-container,
+section.body footer, .code-stuff, .code-stuff .github-link, .code-stuff .language,
+.goty .top-ten {
   display: flex;
   flex-direction: column;
-}
-#content {
-  background-color: #FFFFFF;
-  padding: 0.5em;
-  margin: 0.5em;
-}
-#content .read-more {
-  align: left;
-  color: #000022;
-}
-#content .read-more:visited {
-  color: #000022;
-}
-#content .read-more:hover {
-  background-color: #BB8888;
-}
-#content ol, #content ul {
-  list-style-type: none;
-  padding-left: 1em;
-  padding-right: 1em;
-}
-#content li {
-  padding: 0 20px 0 20px;
-}
-#content, nav#menu {
-  justify-content: space-between;
-  margin: 0 auto 1em auto;
-}
-#index header h1 a, #index header h1 a:visited, #index header h1 a:hover {
-  background-color: #EEEEFF;
-  color: #000022;
-  text-decoration: none;
-}
-#index header h1 a:hover {
-  background-color: inherit;
-  color: #BB8888;
-}
-#menu {
-  width: 100%;
-}
-#menu ul {
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-}
-#menu ul li.site-home {
-  background-color: #555577;
-}
-#menu ul li {
-  background-color: #333355;
-}
-#menu ul li a, #menu ul li a:visited {
-  color: #EEEEFF;
-  text-decoration: none;
-}
-#menu ul li a:hover {
-  background-color: #BB8888;
 }
 a {
   color: #000011;
   text-align: center;
   text-decoration: underline;
 }
-a:visited {
-  color: inherit;
-}
-a:hover {
-  background-color: #BBBBCC;
-}
 article {
   flex-grow: 10;
-  min-height: 100;
-  padding: 20px;
+  padding: 0 1em 0 1em;
 }
-body {
+article .languages h3 {
+  text-align: center;
+}
+aside {
   clear: both;
-  margin: 0 auto;
-  padding: 2.5em 0 0;
-  width: 800px;
+  float: right;
+  max-width: 20%;
+  padding-top: 2em;
+}
+article, aside {
+  min-height: 100%;
 }
 body, html {
   min-height: 100%;
 }
-footer#contentinfo {
+li {
+  flex-grow: 1;
+}
+nav {
+  width: 100%;
+}
+ol, ul {
+  list-style-type: none;
+  margin: 0;
+}
+header h1 a {
+  background-color: #EEEEFF;
+  color: #000022;
+}
+nav li a {
+  display: block;
+  padding: 1em;
+}
+.goty a {
+  padding: 0;
+}
+a:hover {
+  background-color: #BB8888;
+}
+a:visited {
+  color: inherit;
+}
+.goty li, .goty li a {
+  background-color: #DDDDEE;
+  color: #444444;
+}
+.social-list li a {
+  border: 1px solid #444455;
+  color: #444455;
+  padding: 25px;
+  text-decoration: none;
+}
+aside .backlog-bracket li a, aside .honorable-mention li a {
+  display: block;
+  padding: 1em;
+}
+.site-nav {
+  border: 1px solid #000022;
+  justify-content: space-between;
+  margin: 0 auto 1em auto;
+}
+header h1 a:visited {
+  background-color: #EEEEFF;
+  color: #000022;
+}
+.site-home {
+  background-color: #555577;
+}
+header h1 a:hover {
+  color: #BB8888;
+}
+html, header h1 a:hover {
+  background-color: #EEEEFF;
+}
+.hentry li header a {
+  color: #000022;
+}
+.site-nav ul li a {
+  color: #EEEEFF;
+  text-decoration: none;
+}
+section.body li header a {
+  color: #000022;
+}
+.site-home a:hover {
+  background-color: #BBBBCC;
+}
+.github-link {
+  background-color: #DDDDEE;
+  color: #444444;
+}
+.github-link:hover, .goty a:hover {
+  background-color: #BBBBCC;
+}
+.goty .backlog-bracket a {
+  padding: 1em;
+}
+.social-list li a:hover {
+  background-color: #DDDDEE;
+}
+.site-nav ul li a:visited {
+  color: #EEEEFF;
+  text-decoration: none;
+}
+body.home {
+  clear: both;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 2.5em 0 0;
+  width: 800px;
+}
+.site-nav, #contentinfo {
+  box-shadow: 3px 3px 5px #000022;
+}
+#contentinfo {
   background-color: #FFFFFF;
   text-align: center;
   vertical-align: middle;
 }
-html {
+.hentry li {
+  border-top: 1px solid #666699;
+}
+.code-stuff li, .goty li {
+  border: 1px solid #BBBBCC;
+  margin: 0.5em;
+}
+.top-ten li {
+  padding: 0;
+}
+nav li:hover {
+  box-shadow: 3px 3px 5px #000022;
+}
+.goty ol li {
+  padding: 0.5em inherit 0 inherit;
+}
+section.body li {
+  border-top: 1px solid #666699;
+}
+.site-nav ul li {
+  background-color: #333355;
+}
+.site-nav ul li a:hover {
+  color: #333355;
+}
+.site-nav ul li a.active.name {
   background-color: #EEEEFF;
 }
-nav ol, nav ul {
-  list-style-type: none;
-  margin: 0;
+.site-nav ul li a.active.code {
+  background-color: #77AA77;
 }
-nav ol li, nav ul li {
-  flex-grow: 1;
+.site-nav ul li a.active.skills {
+  background-color: #7777AA;
 }
-nav ol li a, nav ul li a {
-  display: block;
-  padding: 1em;
+.site-nav ul li a.active.about {
+  background-color: #CC9966;
+}
+.site-nav ul li a.name:hover {
+  background-color: #CCCCDD;
+  color: #333355;
+}
+.site-nav ul li a.blog:hover {
+  background-color: #BB8888;
+  color: #333355;
+}
+.site-nav ul li a.code:hover {
+  background-color: #88BB88;
+  color: #333355;
+}
+.site-nav ul li a.skills:hover {
+  background-color: #8888BB;
+  color: #333355;
+}
+.site-nav ul li a.about:hover {
+  background-color: #DDAA77;
+  color: #333355;
+}
+.goty .backlog-bracket li {
+  padding: 0;
+}
+.hentry li:hover, section.body li:hover {
+  border-top-color: #FFFFFF;
 }
 section.body header {
   width: 100%;
@@ -122,33 +215,110 @@ section.body footer .published, section.body footer .modified {
   font-style: italic;
 }
 section.body footer .published::before {
-  content: "published: ";
+  content: "published @ ";
+  font-style: oblique;
 }
 section.body footer .modified::before {
-  content: "updated: ";
+  content: "updated @ ";
+  font-style: oblique;
 }
 section.body .entry-content {
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0 1em 0 1em;
 }
-section.body, .hentry {
-  border-bottom: 1px solid #EEEEFF;
+.language {
+  background-color: #DDDDEE;
+  color: #444444;
+  margin: 0;
 }
-section.body header a, .hentry header a {
-  color: #000022;
-  text-decoration: none;
-}
-section.body header a:hover, .hentry header a:hover {
-  text-shadow: 1px 1px 1px #000022;
-}
-.entry-content img {
-  display: block;
-  height: auto;
-  width: 500px;
-  margin: 0 auto;
+.code-stuff p, .code-stuff .language {
   padding: 1em;
 }
-.entry-content p {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+.code-stuff .github-link, .code-stuff .language {
+  display: flex;
+  justify-content: space-around;
+  min-width: 11em;
+}
+.entry-content img {
+  width: 80%;
+}
+.goty {
+  text-align: center;
+}
+.goty article .honorable-mention li {
+  margin: 0 auto;
+  max-height: 60%;
+  max-width: 60%;
+}
+.goty aside {
+  border-left: 2px solid #333355;
+  padding-top: 0;
+  width: 40%;
+}
+.goty aside .honorable-mention li {
+  min-height: 69px;
+  min-width: 69px;
+}
+.goty img {
+  height: auto;
+  width: 100%;
+}
+.goty ol {
+  list-style: inside decimal-leading-zero;
+}
+.goty ol, .goty ul {
+  justify-content: space-around;
+  padding: 0 1em 0 1em;
+}
+.goty .honorable-mention {
+  border-top: 2px solid #333355;
+}
+.goty .top-ten .rest li {
+  max-width: 25%;
+}
+.goty .top-ten .top-three li, .goty .top-ten .honorable-mention li {
+  max-width: 33%;
+}
+.goty .top-ten .rest {
+  flex-wrap: wrap;
+}
+.icon {
+  color: #000000;
+  margin-right: 0.5em;
+  width: 2em;
+}
+.nonogram-container {
+  margin: inherit auto inherit auto;
+  min-width: 30%;
+  padding: inherit 0 inherit 0;
+}
+.nonogram-container textarea {
+  border: 0;
+  height: 10em;
+  text-align: center;
+}
+.site-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+.social {
+  height: 60%;
+}
+.unix {
+  font-variant: small-caps;
+}
+.zeldo {
+  margin: 0;
+  width: 700px;
+}
+#content {
+  background-color: #FFFFFF;
+  box-shadow: 5px 5px 5px #666699;
+  justify-content: space-between;
+  margin: 0 auto 1em auto;
+  padding: 0.5em;
+}
+#content .read-more {
+  line-height: 30px;
+  text-align: left;
+  width: 30%;
 }
