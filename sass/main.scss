@@ -155,6 +155,10 @@ html, header h1 a:hover {
     background-color: $background;
 }
 
+.hentry header {
+    border-top: 1px solid $article_headers;
+}
+
 .hentry li header a {
     color: $article_headers;
 }

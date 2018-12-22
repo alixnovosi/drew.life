@@ -92,6 +92,9 @@ header h1 a:hover {
 html, header h1 a:hover {
   background-color: #EEEEFF;
 }
+.hentry header {
+  border-top: 1px solid #000022;
+}
 .hentry li header a {
   color: #000022;
 }
