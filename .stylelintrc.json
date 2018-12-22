@@ -1,0 +1,14 @@
+{
+    "plugins": [
+      "stylelint-scss"
+    ],
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "at-rule-no-unknown": null,
+        "color-hex-length": "long",
+        "color-hex-case": "lowercase",
+        "indentation": 4,
+        "selector-list-comma-newline-after": "never-multi-line",
+        "scss/at-rule-no-unknown": true
+    }
+}

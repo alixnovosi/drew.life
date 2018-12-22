@@ -1,75 +1,33 @@
-PY?=python3
-PELICAN?=pelican
-PELICANOPTS=
-
+##-----------------------------------------------------------------------------------------------##
+## AUTHOR:  Andrew Michaud                                                                       ##
+## FILE:    Makefile                                                                             ##
+## PURPOSE: compiling sass -> css for drew.life                                                  ##
+## UPDATED: 2018-12-21                                                                           ##
+## LICENSE: ISC                                                                                  ##
+##-----------------------------------------------------------------------------------------------##
 BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/output
-CONFFILE=$(BASEDIR)/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/publishconf.py
 
+SASSINPUTDIR=$(BASEDIR)/sass
+CSSOUTPUTDIR=$(BASEDIR)/css
 
-DEBUG ?= 0
-ifeq ($(DEBUG), 1)
-	PELICANOPTS += -D
-endif
+BLOGCSSDIR=$(BASEDIR)/theme/static/css
+BLOGSASSDIR=$(BASEDIR)/theme/static/sass
+WEBCSSDIR=$(BASEDIR)/nginx_content/css
+WEBSASSDIR=$(BASEDIR)/nginx_content/sass
 
-RELATIVE ?= 0
-ifeq ($(RELATIVE), 1)
-	PELICANOPTS += --relative-urls
-endif
+.PHONY: all sasscompile csscopy clean
 
-help:
-	@echo 'Makefile for a pelican Web site                                           '
-	@echo '                                                                          '
-	@echo 'Usage:                                                                    '
-	@echo '   make html                           (re)generate the web site          '
-	@echo '   make clean                          remove the generated files         '
-	@echo '   make regenerate                     regenerate files upon modification '
-	@echo '   make publish                        generate using production settings '
-	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
-	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
-	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
-	@echo '   make ssh_upload                     upload the web site via SSH        '
-	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
-	@echo '                                                                          '
-	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
-	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
-	@echo '                                                                          '
+all: clean sasscompile csscopy
 
-html:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+sasscompile:
+	pyscss $(SASSINPUTDIR)/main.scss --output $(CSSOUTPUTDIR)/main.css --no-compress
+
+csscopy:
+	cp $(CSSOUTPUTDIR)/main.css $(BLOGCSSDIR)
+	cp $(CSSOUTPUTDIR)/main.css $(WEBCSSDIR)
+	cp $(SASSINPUTDIR)/main.scss $(BLOGSASSDIR)
+	cp $(SASSINPUTDIR)/main.scss $(WEBSASSDIR)
 
 clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
-
-regenerate:
-	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
-
-serve:
-ifdef PORT
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
-else
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
-endif
-
-serve-global:
-ifdef SERVER
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b $(SERVER)
-else
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b 0.0.0.0
-endif
-
-
-devserver:
-ifdef PORT
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
-else
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
-endif
-
-publish:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
-
-
-.PHONY: html help clean regenerate serve serve-global devserver stopserver publish 
+	rm $(CSSOUTPUTDIR)/main.css $(WEBCSSDIR)/main.css $(WEBSASSDIR)/main.scss \
+	$(BLOGCSSDIR)/main.css $(BLOGSASSDIR)/main.scss

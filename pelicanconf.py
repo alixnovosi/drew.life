@@ -23,12 +23,12 @@ AUTHOR_FEED_RSS = None
 LINKS = ()
 
 # Social widget
-SOCIAL = (
+SOCIAL = [
           ("github", "https://github.com/alixnovosi/"),
           ("twitter", "https://twitter.com/alixnovosi"),
           ("twitch", "https://twitch.tv/alixnovosi"),
           ("youtube", "https://youtube.com/alixnovosi"),
-          )
+]
 
 DEFAULT_PAGINATION = False
 PATH = "content/"
