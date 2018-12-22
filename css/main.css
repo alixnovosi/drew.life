@@ -287,9 +287,9 @@ section.body .entry-content {
   width: 2em;
 }
 .nonogram-container {
-  margin: inherit auto inherit auto;
+  margin: 0 auto;
   min-width: 30%;
-  padding: inherit 0 inherit 0;
+  padding: 1em;
 }
 .nonogram-container textarea {
   border: 0;
