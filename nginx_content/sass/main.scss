@@ -99,7 +99,7 @@ nav li a {
     @extend %vertical-flex;
 }
 
-.languages, main, .site-nav ul {
+.languages, main, .site-nav ul, body.home, .code-stuff li {
     @extend %horizontal-flex;
 }
 
@@ -198,10 +198,6 @@ section.body li header a {
     text-decoration: none;
 }
 
-body.home, .code-stuff li {
-    @extend %horizontal-flex;
-}
-
 body.home {
     clear: both;
     justify-content: space-between;
@@ -222,13 +218,17 @@ body.home {
     vertical-align: middle;
 }
 
-.hentry li {
-    border-top: 1px solid $article_highlight;
+.code-stuff li {
+    justify-content: space-between;
 }
 
 .code-stuff li, .goty li {
     border: 1px solid $project_border;
     margin: 0.5em;
+}
+
+.hentry li {
+    border-top: 1px solid $article_highlight;
 }
 
 .top-ten li {
@@ -239,12 +239,12 @@ nav li:hover {
     box-shadow: 3px 3px 5px $article_headers;
 }
 
-.goty ol li {
-    padding: 0.5em inherit 0 inherit;
-}
-
 section.body li {
     border-top: 1px solid $article_highlight;
+}
+
+.goty ol li {
+    padding: 0.5em inherit 0 inherit;
 }
 
 .site-nav ul li {

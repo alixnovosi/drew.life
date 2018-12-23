@@ -142,12 +142,15 @@ body.home {
   text-align: center;
   vertical-align: middle;
 }
-.hentry li {
-  border-top: 1px solid #666699;
+.code-stuff li {
+  justify-content: space-between;
 }
 .code-stuff li, .goty li {
   border: 1px solid #BBBBCC;
   margin: 0.5em;
+}
+.hentry li {
+  border-top: 1px solid #666699;
 }
 .top-ten li {
   padding: 0;
@@ -155,11 +158,11 @@ body.home {
 nav li:hover {
   box-shadow: 3px 3px 5px #000022;
 }
-.goty ol li {
-  padding: 0.5em inherit 0 inherit;
-}
 section.body li {
   border-top: 1px solid #666699;
+}
+.goty ol li {
+  padding: 0.5em inherit 0 inherit;
 }
 .site-nav ul li {
   background-color: #333355;
