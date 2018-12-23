@@ -3,14 +3,14 @@
   display: flex;
   flex-direction: row;
 }
-article, aside, .language-section, .media-list, .social-list, .nonogram-container,
+article, aside, .language-section, .media-list, .nonogram-container, .social-list,
 section.body footer, .code-stuff, .code-stuff .github-link, .code-stuff .language,
 .goty .top-ten {
   display: flex;
   flex-direction: column;
 }
 a {
-  color: #000011;
+  color: #000022;
   text-align: center;
   text-decoration: underline;
 }
@@ -26,12 +26,6 @@ aside {
   float: right;
   max-width: 20%;
   padding-top: 2em;
-}
-article, aside {
-  min-height: 100%;
-}
-body, html {
-  min-height: 100%;
 }
 li {
   flex-grow: 1;
@@ -51,6 +45,9 @@ nav li a {
   display: block;
   padding: 1em;
 }
+li header a {
+  color: #000022;
+}
 .goty a {
   padding: 0;
 }
@@ -58,7 +55,7 @@ a:hover {
   background-color: #BB8888;
 }
 a:visited {
-  color: inherit;
+  color: #000022;
 }
 .goty li, .goty li a {
   background-color: #DDDDEE;
@@ -69,6 +66,9 @@ a:visited {
   color: #444455;
   padding: 25px;
   text-decoration: none;
+}
+li header a:visited {
+  color: #000022;
 }
 aside .backlog-bracket li a, aside .honorable-mention li a {
   display: block;
@@ -81,7 +81,6 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
 }
 header h1 a:visited {
   background-color: #EEEEFF;
-  color: #000022;
 }
 .site-home {
   background-color: #555577;
@@ -95,15 +94,9 @@ html, header h1 a:hover {
 .hentry header {
   border-top: 1px solid #000022;
 }
-.hentry li header a {
-  color: #000022;
-}
 .site-nav ul li a {
   color: #EEEEFF;
   text-decoration: none;
-}
-section.body li header a {
-  color: #000022;
 }
 .site-home a:hover {
   background-color: #BBBBCC;
@@ -290,7 +283,7 @@ section.body .entry-content {
   flex-wrap: wrap;
 }
 .icon {
-  color: #000000;
+  color: #000022;
   margin-right: 0.5em;
   width: 2em;
 }

@@ -8,13 +8,12 @@
 
 //-------------------------------- VARIABLES ----------------------------------------------------//
 $article_background: #FFFFFF;
-$article_headers: #000022;
 $article_highlight: #666699;
 $background: #EEEEFF;
-$code_icon_color: #000000;
+
+$black_blue: #000022;
 
 $lighter_nav_blue: #555577;
-$link_color: #000011;
 $link_hover: #BBBBCC;
 $menu_hover: #BB8888;
 $nav_blue: #333355;
@@ -41,9 +40,13 @@ $hover_nav_colors: (name: #CCCCDD, blog: $menu_hover, code: #88BB88, skills: #88
 
 //---------------------------------- STYLES -----------------------------------------------------//
 a {
-    color: $link_color;
+    color: $black_blue;
     text-align: center;
     text-decoration: underline;
+}
+
+article, aside, .language-section, .media-list, .nonogram-container, .social-list {
+    @extend %vertical-flex;
 }
 
 article {
@@ -62,16 +65,6 @@ aside {
     padding-top: 2em;
 }
 
-article, aside {
-    @extend %vertical-flex;
-
-    min-height: 100%;
-}
-
-body, html {
-    min-height: 100%;
-}
-
 li {
     flex-grow: 1;
 }
@@ -87,7 +80,7 @@ ol, ul {
 
 header h1 a {
     background-color: $background;
-    color: $article_headers;
+    color: $black_blue;
 }
 
 nav li a {
@@ -95,8 +88,8 @@ nav li a {
     padding: 1em;
 }
 
-.language-section, .media-list, .social-list, .nonogram-container {
-    @extend %vertical-flex;
+li header a {
+    color: $black_blue;
 }
 
 .languages, main, .site-nav ul, body.home, .code-stuff li {
@@ -112,7 +105,7 @@ a:hover {
 }
 
 a:visited {
-    color: inherit;
+    color: $black_blue;
 }
 
 .goty li, .goty li a {
@@ -127,20 +120,23 @@ a:visited {
     text-decoration: none;
 }
 
+li header a:visited {
+    color: $black_blue;
+}
+
 aside .backlog-bracket li a, aside .honorable-mention li a {
     display: block;
     padding: 1em;
 }
 
 .site-nav {
-    border: 1px solid $article_headers;
+    border: 1px solid $black_blue;
     justify-content: space-between;
     margin: 0 auto 1em auto;
 }
 
 header h1 a:visited {
     background-color: $background;
-    color: $article_headers;
 }
 
 .site-home {
@@ -156,20 +152,12 @@ html, header h1 a:hover {
 }
 
 .hentry header {
-    border-top: 1px solid $article_headers;
-}
-
-.hentry li header a {
-    color: $article_headers;
+    border-top: 1px solid $black_blue;
 }
 
 .site-nav ul li a {
     color: $background;
     text-decoration: none;
-}
-
-section.body li header a {
-    color: $article_headers;
 }
 
 .site-home a:hover {
@@ -208,7 +196,7 @@ body.home {
 }
 
 .site-nav, #contentinfo {
-    box-shadow: 3px 3px 5px $article_headers;
+    box-shadow: 3px 3px 5px $black_blue;
 }
 
 #contentinfo {
@@ -236,7 +224,7 @@ body.home {
 }
 
 nav li:hover {
-    box-shadow: 3px 3px 5px $article_headers;
+    box-shadow: 3px 3px 5px $black_blue;
 }
 
 section.body li {
@@ -398,7 +386,7 @@ section.body {
 }
 
 .icon {
-    color: $code_icon_color;
+    color: $black_blue;
     margin-right: 0.5em;
     width: 2em;
 }
