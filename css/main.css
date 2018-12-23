@@ -129,14 +129,16 @@ body.home {
   clear: both;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 2.5em 0 0;
-  width: 800px;
+  max-width: 1200px;
+  min-width: 90%;
+  padding: 2.5em 1em 0;
 }
 .site-nav, #contentinfo {
   box-shadow: 3px 3px 5px #000022;
 }
 #contentinfo {
   background-color: #FFFFFF;
+  line-height: 2;
   text-align: center;
   vertical-align: middle;
 }
@@ -312,6 +314,9 @@ section.body .entry-content {
 .zeldo {
   margin: 0;
   width: 700px;
+}
+.zeldo img {
+  width: 400px;
 }
 #content {
   background-color: #FFFFFF;
