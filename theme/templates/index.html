@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<section id="content">
+<section class="page-content">
 {% block content_title %}
 <h2>All articles</h2>
 {% endblock %}
@@ -10,7 +10,7 @@
         <li><article class="hentry">
                 <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
                 <footer class="post-info">
-                    <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
+                    <time class="published" datetime="{{ article.date.isoformat() }}"> published @ {{ article.locale_date }} </time>
                     <address class="vcard author">By
                     {% for author in article.authors %}
                         <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
@@ -18,7 +18,7 @@
                     </address>
                 </footer><!-- /.post-info -->
                 <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-                <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read More</a>
+                <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Continue "{{ article.title|striptags }}"</a>
         </article>
         </li>
 {% endfor %}

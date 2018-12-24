@@ -32,11 +32,11 @@
   </header>
   <footer class="post-info">
     <time class="published" datetime="{{ article.date.isoformat() }}">
-      {{ article.locale_date }}
+      published @ {{ article.locale_date }}
     </time>
     {% if article.modified %}
     <time class="modified" datetime="{{ article.modified.isoformat() }}">
-      {{ article.locale_modified }}
+      modified @ {{ article.locale_modified }}
     </time>
     {% endif %}
     {% if article.authors %}

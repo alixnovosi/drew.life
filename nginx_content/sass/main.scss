@@ -45,7 +45,7 @@ a {
     text-decoration: underline;
 }
 
-article, aside, .language-section, .media-list, .nonogram-container, .social-list {
+article, aside, footer {
     @extend %vertical-flex;
 }
 
@@ -69,8 +69,16 @@ li {
     flex-grow: 1;
 }
 
+main {
+    @extend %horizontal-flex;
+}
+
 nav {
     width: 100%;
+}
+
+nav a {
+    text-decoration: none;
 }
 
 ol, ul {
@@ -80,7 +88,6 @@ ol, ul {
 
 header h1 a {
     background-color: $background;
-    color: $black_blue;
 }
 
 nav li a {
@@ -88,24 +95,40 @@ nav li a {
     padding: 1em;
 }
 
-li header a {
-    color: $black_blue;
+.code-stuff, .github-link, .language-section, .media-list, .nonogram-container, .social-list {
+    @extend %vertical-flex;
 }
 
-.languages, main, .site-nav ul, body.home, .code-stuff li {
+.language, .top-ten {
+    @extend %vertical-flex;
+}
+
+.languages, .top-three, .rest, .site-nav ul, body.home, .code-stuff li {
     @extend %horizontal-flex;
+}
+
+.site-home {
+    background-color: $lighter_nav_blue;
 }
 
 .goty a {
     padding: 0;
 }
 
+a:visited {
+    color: $black_blue;
+}
+
 a:hover {
+    background-color: $link_hover;
+}
+
+nav a:hover {
     background-color: $menu_hover;
 }
 
-a:visited {
-    color: $black_blue;
+nav a:visited {
+    text-decoration: none;
 }
 
 .goty li, .goty li a {
@@ -117,7 +140,6 @@ a:visited {
     border: 1px solid $social_color;
     color: $social_color;
     padding: 25px;
-    text-decoration: none;
 }
 
 li header a:visited {
@@ -139,10 +161,6 @@ header h1 a:visited {
     background-color: $background;
 }
 
-.site-home {
-    background-color: $lighter_nav_blue;
-}
-
 header h1 a:hover {
     color: $menu_hover;
 }
@@ -157,7 +175,6 @@ html, header h1 a:hover {
 
 .site-nav ul li a {
     color: $background;
-    text-decoration: none;
 }
 
 .site-home a:hover {
@@ -183,7 +200,6 @@ html, header h1 a:hover {
 
 .site-nav ul li a:visited {
     color: $background;
-    text-decoration: none;
 }
 
 body.home {
@@ -223,10 +239,6 @@ body.home {
     padding: 0;
 }
 
-nav li:hover {
-    box-shadow: 3px 3px 5px $black_blue;
-}
-
 section.body li {
     border-top: 1px solid $article_highlight;
 }
@@ -256,6 +268,10 @@ section.body li {
     }
 }
 
+.site-nav li:hover {
+    box-shadow: 3px 3px 5px $black_blue;
+}
+
 .goty .backlog-bracket li {
     padding: 0;
 }
@@ -274,25 +290,9 @@ section.body {
     }
 
     footer {
-        @extend %vertical-flex;
-
         float: right;
         text-align: right;
         width: 40%;
-
-        .published, .modified {
-            font-style: italic;
-        }
-
-        .published::before {
-            content: "published @ ";
-            font-style: oblique;
-        }
-
-        .modified::before {
-            content: "updated @ ";
-            font-style: oblique;
-        }
     }
 
     .entry-content {
@@ -307,15 +307,11 @@ section.body {
 }
 
 .code-stuff {
-    @extend %vertical-flex;
-
     p, .language {
         padding: 1em;
     }
 
     .github-link, .language {
-        @extend %vertical-flex;
-
         display: flex;
         justify-content: space-around;
         min-width: 11em;
@@ -364,24 +360,16 @@ section.body {
         border-top: 2px solid $nav_blue;
     }
 
-    .top-ten {
-        @extend %vertical-flex;
+    .top-ten .top-three li, .top-ten .honorable-mention li {
+        max-width: 33%;
+    }
 
-        .rest li {
-            max-width: 25%;
-        }
+    .top-ten .rest {
+        flex-wrap: wrap;
+    }
 
-        .top-three li, .honorable-mention li {
-            max-width: 33%;
-        }
-
-        .top-three, .rest {
-            @extend %horizontal-flex;
-        }
-
-        .rest {
-            flex-wrap: wrap;
-        }
+    .top-ten .rest li {
+        max-width: 25%;
     }
 }
 
@@ -403,8 +391,21 @@ section.body {
     }
 }
 
+.page-content, section.body {
+    background-color: $article_background;
+    box-shadow: 5px 5px 5px $article_highlight;
+    justify-content: space-between;
+    margin: 0 auto 1em auto;
+    padding: 0.5em;
+
+    .read-more {
+        line-height: 2;
+        text-align: left;
+        width: 50%;
+    }
+}
+
 .site-nav ul {
-    list-style-type: none;
     padding: 0;
 }
 
@@ -422,19 +423,5 @@ section.body {
 
     img {
         width: 400px;
-    }
-}
-
-#content {
-    background-color: $article_background;
-    box-shadow: 5px 5px 5px $article_highlight;
-    justify-content: space-between;
-    margin: 0 auto 1em auto;
-    padding: 0.5em;
-
-    .read-more {
-        line-height: 30px;
-        text-align: left;
-        width: 30%;
     }
 }
