@@ -17,7 +17,7 @@ Previously:
 This post will cover The Wind Waker,
 and The Minish Cap.
 
-#### 9. The Wind Waker (2003)
+### 9. The Wind Waker (2003)
 I love this game so much.
 
 Other Zelda games have good music.
@@ -181,7 +181,7 @@ some neat new tricks,
 and more emotion and personality than most other Zelda games can muster.
 It was a treat to replay it.
 
-#### 10. The Minish Cap (2005)
+### 10. The Minish Cap (2005)
 I never played The Minish Cap before
 (and this is the last time I'll be saying this about a game in this replay quest,
 not counting Breath of the Wild).

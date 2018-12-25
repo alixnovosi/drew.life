@@ -15,19 +15,19 @@ so I skipped making the cucumber and endive salad.
 <img src="{static}/media/cooking/grilled_cheese_goat_cheese.jpg"
      alt="Grilled cheese sandwiches with goat cheese and jam."/>
 
-#### Difficulty Preparing
+### Difficulty Preparing
 Pretty easy
 
-#### Appearance
+### Appearance
 Perfect!
 
-#### Deliciousness
+### Deliciousness
 I loved it.
 
-#### Overall
+### Overall
 I'd love to have this again.
 
-#### Process
+### Process
 I really liked this meal.
 
 I knew the goat cheese was going to be good before I'd even finished assembling the sandwich.
