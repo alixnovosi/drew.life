@@ -2,16 +2,19 @@ main, .languages, .top-three, .rest, .site-nav ul, body.home, .code-stuff li {
   display: flex;
   flex-direction: row;
 }
+
 article, aside, footer, .code-stuff, .github-link, .language-section, .media-list,
 .nonogram-container, .social-list, .language, .top-ten {
   display: flex;
   flex-direction: column;
 }
+
 a {
   color: #000022;
   text-align: center;
   text-decoration: underline;
 }
+
 article {
   flex-grow: 10;
   padding: 0 1em 0 1em;
@@ -19,105 +22,127 @@ article {
 article .languages h3 {
   text-align: center;
 }
+
 aside {
   clear: both;
   float: right;
   max-width: 20%;
   padding-top: 2em;
 }
+
 li {
   flex-grow: 1;
 }
+
 nav {
   width: 100%;
 }
+
 nav a {
   text-decoration: none;
 }
+
 ol, ul {
   list-style-type: none;
   margin: 0;
 }
+
 header h1 a {
   background-color: #EEEEFF;
 }
+
 nav li a {
   display: block;
   padding: 1em;
 }
+
 .site-home {
   background-color: #555577;
 }
+
 .goty a {
   padding: 0;
 }
+
 a:visited {
   color: #000022;
 }
+
 a:hover {
   background-color: #BBBBCC;
 }
+
 nav a:hover {
   background-color: #BB8888;
 }
+
 nav a:visited {
   text-decoration: none;
 }
+
 .goty li, .goty li a {
   background-color: #DDDDEE;
   color: #444444;
 }
+
 .social-list li a {
   border: 1px solid #444455;
   color: #444455;
   padding: 25px;
 }
-li header a:visited {
-  color: #000022;
-}
+
 aside .backlog-bracket li a, aside .honorable-mention li a {
   display: block;
   padding: 1em;
 }
+
 .site-nav {
   border: 1px solid #000022;
   justify-content: space-between;
   margin: 0 auto 1em auto;
 }
+
 header h1 a:visited {
   background-color: #EEEEFF;
 }
+
 header h1 a:hover {
   color: #BB8888;
 }
+
 html, header h1 a:hover {
   background-color: #EEEEFF;
 }
+
 .hentry header {
   border-top: 1px solid #000022;
 }
+
 .site-nav ul li a {
   color: #EEEEFF;
 }
-.site-home a:hover {
-  background-color: #BBBBCC;
-}
+
 .github-link {
   background-color: #DDDDEE;
   color: #444444;
 }
+
 .github-link:hover, .goty a:hover {
   background-color: #BBBBCC;
 }
+
 .goty .backlog-bracket a {
   padding: 1em;
 }
+
 .social-list li a:hover {
   background-color: #DDDDEE;
 }
+
 .site-nav ul li a:visited {
   color: #EEEEFF;
 }
+
 body.home {
   clear: both;
   justify-content: space-between;
@@ -126,34 +151,39 @@ body.home {
   min-width: 90%;
   padding: 2.5em 1em 0;
 }
+
 .site-nav, #contentinfo {
   box-shadow: 3px 3px 5px #000022;
 }
+
 #contentinfo {
   background-color: #FFFFFF;
   line-height: 2;
   text-align: center;
   vertical-align: middle;
 }
+
 .code-stuff li {
   justify-content: space-between;
 }
+
 .code-stuff li, .goty li {
   border: 1px solid #BBBBCC;
   margin: 0.5em;
 }
-.hentry li {
+
+.body li, .hentry li {
   border-top: 1px solid #666699;
 }
+
 .top-ten li {
   padding: 0;
 }
-section.body li {
-  border-top: 1px solid #666699;
-}
+
 .goty ol li {
   padding: 0.5em inherit 0 inherit;
 }
+
 .site-nav ul li {
   background-color: #333355;
 }
@@ -192,15 +222,19 @@ section.body li {
   background-color: #DDAA77;
   color: #333355;
 }
+
 .site-nav li:hover {
   box-shadow: 3px 3px 5px #000022;
 }
+
 .goty .backlog-bracket li {
   padding: 0;
 }
+
 .hentry li:hover, section.body li:hover {
   border-top-color: #FFFFFF;
 }
+
 section.body header {
   width: 100%;
 }
@@ -215,11 +249,13 @@ section.body footer {
 section.body .entry-content {
   padding: 0 1em 0 1em;
 }
+
 .language {
   background-color: #DDDDEE;
   color: #444444;
   margin: 0;
 }
+
 .code-stuff p, .code-stuff .language {
   padding: 1em;
 }
@@ -228,9 +264,11 @@ section.body .entry-content {
   justify-content: space-around;
   min-width: 11em;
 }
+
 .entry-content img {
   width: 80%;
 }
+
 .goty {
   text-align: center;
 }
@@ -271,11 +309,13 @@ section.body .entry-content {
 .goty .top-ten .rest li {
   max-width: 25%;
 }
+
 .icon {
   color: #000022;
   margin-right: 0.5em;
   width: 2em;
 }
+
 .nonogram-container {
   margin: 0 auto;
   min-width: 30%;
@@ -286,6 +326,7 @@ section.body .entry-content {
   height: 10em;
   text-align: center;
 }
+
 .page-content, section.body {
   background-color: #FFFFFF;
   box-shadow: 5px 5px 5px #666699;
@@ -298,15 +339,19 @@ section.body .entry-content {
   text-align: left;
   width: 50%;
 }
+
 .site-nav ul {
   padding: 0;
 }
+
 .social {
   height: 60%;
 }
+
 .unix {
   font-variant: small-caps;
 }
+
 .zeldo {
   margin: 0;
   width: 700px;

@@ -20,7 +20,8 @@ WEBSASSDIR=$(BASEDIR)/nginx_content/sass
 all: clean sasscompile csscopy
 
 sasscompile:
-	pyscss $(SASSINPUTDIR)/main.scss --output $(CSSOUTPUTDIR)/main.css --no-compress
+	pyscss $(SASSINPUTDIR)/main.scss --output $(CSSOUTPUTDIR)/main.css --no-compress \
+	--style expanded
 
 csscopy:
 	cp $(CSSOUTPUTDIR)/main.css $(BLOGCSSDIR)
@@ -29,5 +30,5 @@ csscopy:
 	cp $(SASSINPUTDIR)/main.scss $(WEBSASSDIR)
 
 clean:
-	rm $(CSSOUTPUTDIR)/main.css $(WEBCSSDIR)/main.css $(WEBSASSDIR)/main.scss \
+	rm -f $(CSSOUTPUTDIR)/main.css $(WEBCSSDIR)/main.css $(WEBSASSDIR)/main.scss \
 	$(BLOGCSSDIR)/main.css $(BLOGSASSDIR)/main.scss
