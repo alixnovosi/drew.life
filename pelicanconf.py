@@ -28,6 +28,7 @@ SOCIAL = [
           ("twitter", "https://twitter.com/alixnovosi"),
           ("twitch", "https://twitch.tv/alixnovosi"),
           ("youtube", "https://youtube.com/alixnovosi"),
+          ("itch.io", "https://alixnovosi.itch.io"),
 ]
 
 DEFAULT_PAGINATION = False
