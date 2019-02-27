@@ -1,38 +1,50 @@
 ##-----------------------------------------------------------------------------------------------##
 ## AUTHOR:  Andrew Michaud                                                                       ##
 ## FILE:    Makefile                                                                             ##
-## PURPOSE: compiling sass -> css for drew.life                                                  ##
-## UPDATED: 2018-12-21                                                                           ##
+## PURPOSE: compiling sass -> css for drew.life, and moving other stuff around                   ##
+## UPDATED: 2019-02-26                                                                           ##
 ## LICENSE: ISC                                                                                  ##
 ##-----------------------------------------------------------------------------------------------##
 BASEDIR=.
 
-SASSINPUTDIR=$(BASEDIR)/sass
-CSSOUTPUTDIR=$(BASEDIR)/css
+SASS_INPUT_DIR=$(BASEDIR)/sass
+CSS_OUTPUT_DIR=$(BASEDIR)/css
 
-BLOGCSSDIR=$(BASEDIR)/theme/static/css
-BLOGSASSDIR=$(BASEDIR)/theme/static/sass
-WEBCSSDIR=$(BASEDIR)/nginx_content/css
-WEBSASSDIR=$(BASEDIR)/nginx_content/sass
+BLOG_CSS_DIR=$(BASEDIR)/theme/static/css
+BLOG_SASS_DIR=$(BASEDIR)/theme/static/sass
+NGINX_CONTENT=$(BASEDIR)/nginx_content
+WEB_CSS_DIR=$(NGINX_CONTENT)/css
+WEB_SASS_DIR=$(NGINX_CONTENT)/sass
 
-.PHONY: all sasscompile csscopy clean
+NONOGRAM_DIR=$(BASEDIR)/nonogram_web
 
-all: clean sasscompile csscopy
+.PHONY: all sasscompile csscopy jscopy clean
+
+all: clean sasscompile csscopy jscopy
 
 sasscompile:
-	pyscss $(SASSINPUTDIR)/main.scss --output $(CSSOUTPUTDIR)/main.css --no-compress \
-	--style expanded
+	pyscss $(SASS_INPUT_DIR)/main.scss \
+		--output $(CSS_OUTPUT_DIR)/main.css \
+		--no-compress \
+		--style expanded
 
 csscopy:
-	cp $(CSSOUTPUTDIR)/main.css $(BLOGCSSDIR)
-	cp $(CSSOUTPUTDIR)/main.css.map $(BLOGCSSDIR)
-	cp $(CSSOUTPUTDIR)/main.css $(WEBCSSDIR)
-	cp $(CSSOUTPUTDIR)/main.css.map $(WEBCSSDIR)
-	cp $(SASSINPUTDIR)/main.scss $(BLOGSASSDIR)
-	cp $(SASSINPUTDIR)/main.scss $(WEBSASSDIR)
+	cp $(CSS_OUTPUT_DIR)/main.css $(BLOG_CSS_DIR)
+	cp $(CSS_OUTPUT_DIR)/main.css.map $(BLOG_CSS_DIR)
+	cp $(CSS_OUTPUT_DIR)/main.css $(WEB_CSS_DIR)
+	cp $(CSS_OUTPUT_DIR)/main.css.map $(WEB_CSS_DIR)
+	cp $(SASS_INPUT_DIR)/main.scss $(BLOG_SASS_DIR)
+	cp $(SASS_INPUT_DIR)/main.scss $(WEB_SASS_DIR)
+
+jscopy:
+	cp -R $(NONOGRAM_DIR)/nonogram_web/dist $(NGINX_CONTENT)/
+	cp $(NONOGRAM_DIR)/nonogram_web/nonogram.html $(NGINX_CONTENT)/
 
 clean:
-	rm -f $(CSSOUTPUTDIR)/main.css \
-		$(WEBCSSDIR)/main.css $(WEBSASSDIR)/main.scss \
-		$(BLOGCSSDIR)/main.css $(BLOGSASSDIR)/main.scss \
-		$(WEBCSSDIR)/main.css.map $(BLOGCSSDIR)/main.css.map
+	rm -f $(CSS_OUTPUT_DIR)/main.css \
+		$(WEB_CSS_DIR)/main.css $(WEB_SASS_DIR)/main.scss \
+		$(BLOG_CSS_DIR)/main.css $(BLOG_SASS_DIR)/main.scss \
+		$(WEB_CSS_DIR)/main.css.map $(BLOG_CSS_DIR)/main.css.map
+
+	rm -f $(NGINX_CONTENT)/dist
+	rm -f $(NGINX_CONTENT)/nonogram.html
