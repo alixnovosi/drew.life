@@ -46,5 +46,5 @@ clean:
 		$(BLOG_CSS_DIR)/main.css $(BLOG_SASS_DIR)/main.scss \
 		$(WEB_CSS_DIR)/main.css.map $(BLOG_CSS_DIR)/main.css.map
 
-	rm -f $(NGINX_CONTENT)/dist
+	rm -rf $(NGINX_CONTENT)/dist
 	rm -f $(NGINX_CONTENT)/nonogram.html
