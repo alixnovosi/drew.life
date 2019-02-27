@@ -25,10 +25,14 @@ sasscompile:
 
 csscopy:
 	cp $(CSSOUTPUTDIR)/main.css $(BLOGCSSDIR)
+	cp $(CSSOUTPUTDIR)/main.css.map $(BLOGCSSDIR)
 	cp $(CSSOUTPUTDIR)/main.css $(WEBCSSDIR)
+	cp $(CSSOUTPUTDIR)/main.css.map $(WEBCSSDIR)
 	cp $(SASSINPUTDIR)/main.scss $(BLOGSASSDIR)
 	cp $(SASSINPUTDIR)/main.scss $(WEBSASSDIR)
 
 clean:
-	rm -f $(CSSOUTPUTDIR)/main.css $(WEBCSSDIR)/main.css $(WEBSASSDIR)/main.scss \
-	$(BLOGCSSDIR)/main.css $(BLOGSASSDIR)/main.scss
+	rm -f $(CSSOUTPUTDIR)/main.css \
+		$(WEBCSSDIR)/main.css $(WEBSASSDIR)/main.scss \
+		$(BLOGCSSDIR)/main.css $(BLOGSASSDIR)/main.scss \
+		$(WEBCSSDIR)/main.css.map $(BLOGCSSDIR)/main.css.map

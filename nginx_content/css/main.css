@@ -64,12 +64,12 @@ nav li a {
   padding: 0;
 }
 
-a:visited {
-  color: #000022;
-}
-
 a:hover {
   background-color: #BBBBCC;
+}
+
+a:visited {
+  color: #000022;
 }
 
 nav a:hover {
@@ -106,12 +106,12 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
   margin: 0 auto 1em auto;
 }
 
-header h1 a:visited {
-  background-color: #EEEEFF;
-}
-
 header h1 a:hover {
   color: #BB8888;
+}
+
+header h1 a:visited {
+  background-color: #EEEEFF;
 }
 
 html, header h1 a:hover {
@@ -314,8 +314,9 @@ section.body .entry-content {
 .game .board-row-spacer {
   margin: 0 0 5px 0;
 }
-.game .filled_square, .game .empty_square, .game .blocked_square {
-  background: #EEEEFF;
+.game .filled-square, .game .empty-square, .game .blocked-square,
+.game .force-blocked-square {
+  background-color: #EEEEFF;
   border: none;
   color: #666677;
   float: left;
@@ -327,13 +328,17 @@ section.body .entry-content {
   text-align: center;
   width: 34px;
 }
-.game .filled_square, .game .empty_square {
+.game .filled-square, .game .empty-square {
   color: #333355;
 }
-.game .blocked_square {
+.game .force-blocked-square {
+  background-color: #DEDEEF;
+  color: #9999BB;
+}
+.game .blocked-square {
   background-color: #DEDEEF;
 }
-.game .filled_square {
+.game .filled-square {
   background-color: #666677;
 }
 .game .board-row, .game .board-row-spacer {
@@ -343,7 +348,6 @@ section.body .entry-content {
 }
 .game .game-board {
   margin: 1em;
-  flex-grow: 10;
 }
 .game .game-info {
   color: #333355;
@@ -353,7 +357,6 @@ section.body .entry-content {
   font-size: 18px;
   font-weight: bold;
   flex-direction: column;
-  flex-grow: 1;
   justify-content: center;
   line-height: 34px;
   margin: 1em;

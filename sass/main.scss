@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for drew.life                                                              //
-// UPDATED: 2018-12-21                                                                           //
+// UPDATED: 2019-02-26                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
@@ -124,12 +124,12 @@ nav li a {
     padding: 0;
 }
 
-a:visited {
-    color: $black_blue;
-}
-
 a:hover {
     background-color: $link_hover;
+}
+
+a:visited {
+    color: $black_blue;
 }
 
 nav a:hover {
@@ -166,12 +166,12 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
     margin: 0 auto 1em auto;
 }
 
-header h1 a:visited {
-    background-color: $background;
-}
-
 header h1 a:hover {
     color: $menu_hover;
+}
+
+header h1 a:visited {
+    background-color: $background;
 }
 
 html, header h1 a:hover {
@@ -368,8 +368,8 @@ section.body {
         margin: 0 0 5px 0;
     }
 
-    .filled_square, .empty_square, .blocked_square {
-        background: $background;
+    .filled-square, .empty-square, .blocked-square, .force-blocked-square {
+        background-color: $background;
         border: none;
         color: $board_filled;
         float: left;
@@ -382,15 +382,20 @@ section.body {
         width: $cell_size;
     }
 
-    .filled_square, .empty_square {
+    .filled-square, .empty-square {
         color: $nav_blue;
     }
 
-    .blocked_square {
+    .force-blocked-square {
         background-color: $board_blocked_denied;
+        color: $faint_nav_blue;
     }
 
-    .filled_square {
+    .blocked-square {
+        background-color: $board-blocked-denied;
+    }
+
+    .filled-square {
         background-color: $board_filled;
     }
 
@@ -402,7 +407,6 @@ section.body {
 
     .game-board {
         margin: 1em;
-        flex-grow: 10;
     }
 
     .game-info {
@@ -413,7 +417,6 @@ section.body {
         font-size: 18px;
         font-weight: bold;
         flex-direction: column;
-        flex-grow: 1;
         justify-content: center;
         line-height: $cell_size;
         margin: 1em;
