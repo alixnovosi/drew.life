@@ -1,1 +1,0 @@
-nonogram_web/nonogram.js
