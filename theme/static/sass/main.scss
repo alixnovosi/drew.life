@@ -351,6 +351,7 @@ section.body {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    min-width: 800px;
 
     .board-entry {
         margin: 0 5px 5px 0;
