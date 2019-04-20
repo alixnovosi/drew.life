@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for drew.life                                                              //
-// UPDATED: 2019-02-26                                                                           //
+// UPDATED: 2019-04-19                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
@@ -54,7 +54,7 @@ a {
     text-decoration: underline;
 }
 
-article, aside, footer {
+article, aside {
     @extend %vertical-flex;
 }
 
@@ -67,11 +67,14 @@ article {
     }
 }
 
-aside {
-    clear: both;
-    float: right;
-    max-width: 20%;
-    padding-top: 2em;
+body {
+    @extend %vertical-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+body, html {
+    height: 100%;
 }
 
 li {
@@ -80,10 +83,7 @@ li {
 
 main {
     @extend %horizontal-flex;
-}
-
-nav {
-    width: 100%;
+    align-items: flex-start;
 }
 
 nav a {
@@ -163,7 +163,6 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
 .site-nav {
     border: 1px solid $black_blue;
     justify-content: space-between;
-    margin: 0 auto 1em auto;
 }
 
 header h1 a:hover {
@@ -227,8 +226,7 @@ body.home {
 #contentinfo {
     background-color: $article_background;
     line-height: 2;
-    text-align: center;
-    vertical-align: middle;
+    padding-left: 2em;
 }
 
 .code-stuff li {

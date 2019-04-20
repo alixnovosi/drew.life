@@ -1,6 +1,7 @@
-{% extends "base.html" %}
+{% extends "blogbase.html" %}
 {% block content %}
   <section class="page-content">
+
   {% block content_title %}
     <h2>All articles</h2>
   {% endblock %}
@@ -49,4 +50,4 @@
       {% include 'pagination.html' %}
   {% endif %}
   </section><!-- /#content -->
-{% endblock content %}
+{% endblock %}

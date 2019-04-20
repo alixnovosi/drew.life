@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block header %}
+  {% if DISPLAY_PAGES_ON_MENU %}
+    <nav class="site-nav">
+      <ul>
+        <li><a class="name" href="{{ SITEURL }}">drew</a></li>
+
+        {% for p in pages %}
+          <li>
+            <a
+              class="{% if p == page %}active {{ slug }}{% else %}{{ slug }}{% endif %}"
+              href="{{ SITEURL }}/{{ p.url }}"
+            >
+              {{ p.slug }}
+            </a>
+          </li>
+        {% endfor %}
+      <ul>
+    </nav>
+  {% endif %}
+{% endblock header %}

@@ -1,28 +1,36 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
+#!/usr/bin/env python3
 
 AUTHOR = "drew"
+DEFAULT_LANG = "en"
+DEFAULT_PAGINATION = False
+
+PATH = "content/"
+
+# uncomment following line if you want document-relative URLs when developing
+RELATIVE_URLS = True
+
 SITENAME = "drewblog"
 SITEURL = ""
+# SITEURL = "https://blog.drew.life"
+SLUGIFY_SOURCE = "title"
 
-PATH = "content"
-
+THEME = "theme"
 TIMEZONE = "America/Los_Angeles"
 
-DEFAULT_LANG = "en"
-
-# Feed generation is usually not desired when developing
+# feed generation settings
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = ()
+# blogroll
+LINKS = (
+    ("blog", "/blog/"),
+    ("skills", "{pages}/skills.html"),
+)
 
-# Social widget
+# social widget
 SOCIAL = [
           ("github", "https://github.com/alixnovosi/"),
           ("twitter", "https://twitter.com/alixnovosi"),
@@ -31,17 +39,13 @@ SOCIAL = [
           ("itch.io", "https://alixnovosi.itch.io"),
 ]
 
-DEFAULT_PAGINATION = False
-PATH = "content/"
-# SITEURL = "https://blog.drew.life"
-SLUGIFY_SOURCE = "title"
+TEMPLATE_PAGES = {
+    "../theme/templates/home.html": "index.html",
+}
 
-THEME = "theme"
+# file location settings
+ARTICLE_URL = "posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/"
+ARTICLE_SAVE_AS = "posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html"
+PAGE_URL = "{slug}.html"
+PAGE_SAVE_AS = "{slug}.html"
 
-ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
-ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
-PAGE_URL = 'pages/{slug}/'
-PAGE_SAVE_AS = 'pages/{slug}/index.html'
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True

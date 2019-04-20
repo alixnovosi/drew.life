@@ -2,12 +2,6 @@
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
   <head>
     {% block head %}
-      <title>
-        {% block title %}
-          {{ SITENAME }}
-        {% endblock title %}
-      </title>
-
       <meta charset="utf-8" />
 
       <link
@@ -19,95 +13,39 @@
 
       <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css">
 
-      {% if FEED_ALL_RSS %}
-        <link
-          href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
-          type="application/rss+xml"
-          rel="alternate"
-          title="{{ SITENAME }} Full RSS Feed"
-        />
-      {% endif %}
-
-      {% if FEED_RSS %}
-        <link
-          href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}"
-          type="application/rss+xml"
-          rel="alternate"
-          title="{{ SITENAME }} RSS Feed"
-        />
-      {% endif %}
-
-      {% if CATEGORY_FEED_RSS and category %}
-        <link
-          href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL|format(category.slug) }}{% else %}{{ CATEGORY_FEED_RSS|format(category.slug) }}{% endif %}"
-          type="application/rss+xml"
-          rel="alternate"
-          title="{{ SITENAME }} Categories RSS Feed"
-        />
-      {% endif %}
-
-      {% if TAG_FEED_RSS and tag %}
-        <link
-          href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL|format(tag.slug) }}{% else %}{{ TAG_FEED_RSS|format(tag.slug) }}{% endif %}"
-          type="application/rss+xml"
-          rel="alternate"
-          title="{{ SITENAME }} Tags RSS Feed"
-          />
-      {% endif %}
-
     {% endblock head %}
   </head>
 
-  <body id="index" class="home">
-    <section class="main">
-      <header id="banner" class="body">
-        <h1>
-          <a href="{{ SITEURL }}/">
-            {{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong>
-          </a>
-        </h1>
-      </header><!-- /#banner -->
+  <body>
+    {% block body %}
 
-      <nav id="menu" class="site-nav">
-        <ul>
-          <li class="site-home"><a href="https://drew.life">Site Home</a></li>
-          {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
-          {% endfor %}
+      {% block header %}
+      {% endblock header %}
 
-          {% if DISPLAY_PAGES_ON_MENU %}
-            {% for p in pages %}
-              <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-            {% endfor %}
-          {% endif %}
+      <main>
+        {% block main %}
+          <article>
+            {% block content %}
+            {% endblock content %}
+          </article>
 
-          {% if DISPLAY_CATEGORIES_ON_MENU %}
-            {% for cat, null in categories %}
-              <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-            {% endfor %}
-          {% endif %}
-        </ul>
-      </nav><!-- /#menu -->
-
-      {% block content %}
-      {% endblock %}
+          <aside>
+            <nav class="social">
+              <ul class="social-list">
+                {% for name, link in SOCIAL %}
+                  <li><a href="{{ link }}">{{ name }}</a></li>
+                {% endfor %}
+              </ul>
+            </nav>
+          </aside>
+        {% endblock main %}
+      </main>
 
       <footer id="contentinfo" class="body">
         <address id="about" class="vcard body">
-          Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
-          which takes great advantage of <a href="https://python.org">Python</a>.
+          powered by <a href="https://getpelican.com/">Pelican</a>
         </address><!-- /#about -->
       </footer><!-- /#contentinfo -->
-    </section>
-
-    <aside>
-      <nav class="social">
-        <ul class="social-list">
-          {% for name, link in SOCIAL %}
-            <li><a href="{{ link }}">{{ name }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-    </aside>
+    {% endblock body %}
   </body>
 </html>

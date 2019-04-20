@@ -37,8 +37,8 @@ csscopy:
 	cp $(SASS_INPUT_DIR)/main.scss $(WEB_SASS_DIR)
 
 jscopy:
-	cp -R $(NONOGRAM_DIR)/nonogram_web/dist $(NGINX_CONTENT)/
-	cp $(NONOGRAM_DIR)/nonogram_web/nonogram.html $(NGINX_CONTENT)/
+	cp -R $(NONOGRAM_DIR)/dist $(NGINX_CONTENT)/
+	cp $(NONOGRAM_DIR)/dist/nonogram.html $(NGINX_CONTENT)/
 
 clean:
 	rm -f $(CSS_OUTPUT_DIR)/main.css \

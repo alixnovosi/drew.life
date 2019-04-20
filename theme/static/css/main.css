@@ -3,7 +3,7 @@ main, .languages, .top-three, .rest, .site-nav ul, body.home, .code-stuff li {
   flex-direction: row;
 }
 
-article, aside, footer, .code-stuff, .github-link, .language-section, .media-list,
+article, aside, body, .code-stuff, .github-link, .language-section, .media-list,
 .nonogram-container, .social-list, .language, .top-ten {
   display: flex;
   flex-direction: column;
@@ -23,19 +23,21 @@ article .languages h3 {
   text-align: center;
 }
 
-aside {
-  clear: both;
-  float: right;
-  max-width: 20%;
-  padding-top: 2em;
+body {
+  width: 100%;
+  justify-content: space-between;
+}
+
+body, html {
+  height: 100%;
 }
 
 li {
   flex-grow: 1;
 }
 
-nav {
-  width: 100%;
+main {
+  align-items: flex-start;
 }
 
 nav a {
@@ -103,7 +105,6 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
 .site-nav {
   border: 1px solid #000022;
   justify-content: space-between;
-  margin: 0 auto 1em auto;
 }
 
 header h1 a:hover {
@@ -167,8 +168,7 @@ body.home {
 #contentinfo {
   background-color: #FFFFFF;
   line-height: 2;
-  text-align: center;
-  vertical-align: middle;
+  padding-left: 2em;
 }
 
 .code-stuff li {
