@@ -7,20 +7,19 @@
 ##-----------------------------------------------------------------------------------------------##
 BASEDIR=.
 
-SASS_INPUT_DIR=$(BASEDIR)/sass
-CSS_OUTPUT_DIR=$(BASEDIR)/css
+SASS_INPUT_DIR=$(BASEDIR)/theme/static/sass
+CSS_OUTPUT_DIR=$(BASEDIR)/theme/static/css
 
-BLOG_CSS_DIR=$(BASEDIR)/theme/static/css
-BLOG_SASS_DIR=$(BASEDIR)/theme/static/sass
 NGINX_CONTENT=$(BASEDIR)/nginx_content
-WEB_CSS_DIR=$(NGINX_CONTENT)/css
-WEB_SASS_DIR=$(NGINX_CONTENT)/sass
 
 NONOGRAM_DIR=$(BASEDIR)/nonogram_web
 
-.PHONY: all sasscompile csscopy jscopy clean
+.PHONY: all sasscompile csscopy jscopy pelican clean
 
 all: clean sasscompile csscopy jscopy
+
+pelican:
+	pelican content --verbose
 
 sasscompile:
 	pyscss $(SASS_INPUT_DIR)/main.scss \
@@ -28,23 +27,12 @@ sasscompile:
 		--no-compress \
 		--style expanded
 
-csscopy:
-	cp $(CSS_OUTPUT_DIR)/main.css $(BLOG_CSS_DIR)
-	cp $(CSS_OUTPUT_DIR)/main.css.map $(BLOG_CSS_DIR)
-	cp $(CSS_OUTPUT_DIR)/main.css $(WEB_CSS_DIR)
-	cp $(CSS_OUTPUT_DIR)/main.css.map $(WEB_CSS_DIR)
-	cp $(SASS_INPUT_DIR)/main.scss $(BLOG_SASS_DIR)
-	cp $(SASS_INPUT_DIR)/main.scss $(WEB_SASS_DIR)
-
 jscopy:
 	cp -R $(NONOGRAM_DIR)/dist $(NGINX_CONTENT)/
 	cp $(NONOGRAM_DIR)/dist/nonogram.html $(NGINX_CONTENT)/
 
 clean:
-	rm -f $(CSS_OUTPUT_DIR)/main.css \
-		$(WEB_CSS_DIR)/main.css $(WEB_SASS_DIR)/main.scss \
-		$(BLOG_CSS_DIR)/main.css $(BLOG_SASS_DIR)/main.scss \
-		$(WEB_CSS_DIR)/main.css.map $(BLOG_CSS_DIR)/main.css.map
+	rm -f $(CSS_DIR)/main.css \ $(CSS_DIR)/main.css.map
 
 	rm -rf $(NGINX_CONTENT)/dist
 	rm -f $(NGINX_CONTENT)/nonogram.html

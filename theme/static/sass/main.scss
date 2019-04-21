@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for drew.life                                                              //
-// UPDATED: 2019-04-19                                                                           //
+// UPDATED: 2019-04-20                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
@@ -48,59 +48,6 @@ $hover_nav_colors: (name: #CCCCDD, blog: $menu_hover, code: #88BB88, skills: #88
 }
 
 //---------------------------------- STYLES -----------------------------------------------------//
-a {
-    color: $black_blue;
-    text-align: center;
-    text-decoration: underline;
-}
-
-article, aside {
-    @extend %vertical-flex;
-}
-
-article {
-    margin: 1em;
-}
-
-aside {
-    min-width: 12em;
-    max-width: 12em;
-
-    nav {
-        padding: 1em;
-        padding-bottom: 0.5em;
-
-        li, li a {
-            border-radius: 0.5em;
-        }
-
-        li a {
-            display: block;
-        }
-    }
-}
-
-article {
-    flex-grow: 10;
-    padding: 0 1em 0 1em;
-
-    .languages h3 {
-        text-align: center;
-    }
-}
-
-header {
-    height: 8em;
-
-    flex: 1 100%;
-    padding-left: 1em;
-
-    h1 {
-        vertical-align: center;
-
-    }
-}
-
 body {
     width: 100%;
     display: flex;
@@ -119,9 +66,15 @@ li {
 header.site-banner {
     background-color: $background_dark;
     box-shadow: 3px -3px 5px $black_blue;
+    flex: 1 100%;
     max-height: 5em;
     min-height: 5em;
     padding-left: 1em;
+
+    h1 {
+        vertical-align: center;
+
+    }
 
      h1 a, h1 a:visited {
         background-color: $background_dark;
@@ -138,18 +91,13 @@ footer {
 
 }
 
-main {
+main.content {
     @extend %horizontal-flex;
     flex: 1 auto;
 }
 
 nav a {
     text-decoration: none;
-}
-
-ol, ul {
-    list-style-type: none;
-    margin: 0;
 }
 
 nav li a {
@@ -220,7 +168,6 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
 }
 
 .site-nav, .site-nav-goty, .social {
-
     li {
         border-top: 1px solid $black_blue;
     }
@@ -590,12 +537,13 @@ section.body {
     }
 }
 
-.site-nav ul, .site-nav-goty ul, .social ul {
-    padding: 0;
+nav ul {
+    list-style-type: none;
+    margin: 0;
 }
 
-.social {
-    height: 60%;
+.site-nav ul, .site-nav-goty ul, .social ul {
+    padding: 0;
 }
 
 .zeldo {

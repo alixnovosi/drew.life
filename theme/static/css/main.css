@@ -1,54 +1,12 @@
-main, .languages, .top-three, .rest, body.home, .code-stuff li {
+main.content, .languages, .top-three, .rest, body.home, .code-stuff li {
   display: flex;
   flex-direction: row;
 }
 
-article, aside, .code-stuff, .github-link, .language-section, .media-list,
-.nonogram-container, .social-list, .language, .top-ten {
+.code-stuff, .github-link, .language-section, .media-list, .nonogram-container,
+.social-list, .language, .top-ten {
   display: flex;
   flex-direction: column;
-}
-
-a {
-  color: #000022;
-  text-align: center;
-  text-decoration: underline;
-}
-
-article {
-  margin: 1em;
-}
-
-aside {
-  min-width: 12em;
-  max-width: 12em;
-}
-aside nav {
-  padding: 1em;
-  padding-bottom: 0.5em;
-}
-aside nav li, aside nav li a {
-  border-radius: 0.5em;
-}
-aside nav li a {
-  display: block;
-}
-
-article {
-  flex-grow: 10;
-  padding: 0 1em 0 1em;
-}
-article .languages h3 {
-  text-align: center;
-}
-
-header {
-  height: 8em;
-  flex: 1 100%;
-  padding-left: 1em;
-}
-header h1 {
-  vertical-align: center;
 }
 
 body {
@@ -69,9 +27,13 @@ li {
 header.site-banner {
   background-color: #BBBBDD;
   box-shadow: 3px -3px 5px #000022;
+  flex: 1 100%;
   max-height: 5em;
   min-height: 5em;
   padding-left: 1em;
+}
+header.site-banner h1 {
+  vertical-align: center;
 }
 header.site-banner h1 a, header.site-banner h1 a:visited {
   background-color: #BBBBDD;
@@ -85,17 +47,12 @@ footer {
   flex: 1 auto;
 }
 
-main {
+main.content {
   flex: 1 auto;
 }
 
 nav a {
   text-decoration: none;
-}
-
-ol, ul {
-  list-style-type: none;
-  margin: 0;
 }
 
 nav li a {
@@ -513,12 +470,13 @@ section.body .entry-content {
   width: 50%;
 }
 
-.site-nav ul, .site-nav-goty ul, .social ul {
-  padding: 0;
+nav ul {
+  list-style-type: none;
+  margin: 0;
 }
 
-.social {
-  height: 60%;
+.site-nav ul, .site-nav-goty ul, .social ul {
+  padding: 0;
 }
 
 .zeldo {
