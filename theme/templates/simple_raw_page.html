@@ -1,0 +1,20 @@
+{% extends "simple_modern_page.html" %}
+{% block body %}
+  <header>
+    {% block header %}
+      <nav class="site-nav">
+        <ul>
+          <li>
+            <a class="name" href="{{ SITEURL }}/">Home</a>
+          </li>
+        </ul>
+      </nav>
+    {% endblock header %}
+  </header>
+
+  <main>
+    {{ page.content }}
+  </main>
+
+  {{ macros.pelican_credit() }}
+{% endblock body %}

@@ -1,22 +1,13 @@
+{% import 'macros.html' as macros with context %}
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
   <head>
     {% block head %}
-      <meta charset="utf-8" />
-
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
-        integrity="sha384-jTFzRHnGayPcZHkUx5hTuWbygQevlGFimHdpRHicjyJXGyyjcioudSScb7/YN0PE"
-        crossorigin="anonymous"
-      >
-
-      <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css">
-
+      {{ macros.head_base() }}
     {% endblock head %}
   </head>
 
-  <body>
+  <body class="page">
     {% block body %}
       <header class="site-banner">
         {% block header %}
@@ -26,14 +17,14 @@
         {% endblock header %}
       </header>
 
-      <main>
+      <main class="content">
         {% block main %}
           <article>
             {% block content %}
             {% endblock content %}
           </article>
 
-          <aside>
+          <aside class="links">
             {% block aside %}
               <nav class="social">
                 <ul class="social-list">
@@ -55,7 +46,6 @@
           powered by <a href="https://getpelican.com/">Pelican</a>
         </address><!-- /.about -->
       </footer><!-- /.pelican -->
-
     {% endblock body %}
   </body>
 </html>

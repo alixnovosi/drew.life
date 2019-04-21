@@ -1,0 +1,25 @@
+{% macro head_base() %}
+  <meta charset="utf-8" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    integrity="sha384-M86HUGbBFILBBZ9ykMAbT3nVb0+2C7yZlF8X2CiKNpDOQjKroMJqIeGZ/Le8N2Qp"
+    crossorigin="anonymous"
+  >
+
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css">
+
+  <title>
+    {% block title %}
+    {% endblock %}
+  </title>
+{% endmacro %}
+
+{% macro pelican_credit() %}
+  <footer class="pelican">
+    <address>
+      powered by <a href="https://getpelican.com/">Pelican</a>
+    </address><!-- /.about -->
+  </footer><!-- /.pelican -->
+{% endmacro %}

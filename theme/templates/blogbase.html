@@ -1,83 +1,84 @@
 {% extends "base.html" %}
-  {% block head %}
-    {{ super() }}
-    <title>
-      {% block title %}
-        {{ SITENAME }}
-      {% endblock %}
-    </title>
+{% block head %}
+  {{ super() }}
+  <title>
+    {% block title %}
+      {{ SITENAME }}
+    {% endblock %}
+  </title>
 
-    {% if FEED_ALL_RSS %}
-      <link
-        href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
-        type="application/rss+xml"
-        rel="alternate"
-        title="{{ SITENAME }} Full RSS Feed"
+  {% if FEED_ALL_RSS %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Full RSS Feed"
+    />
+  {% endif %}
+
+  {% if FEED_RSS %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} RSS Feed"
+    />
+  {% endif %}
+
+  {% if CATEGORY_FEED_RSS and category %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL|format(category.slug) }}{% else %}{{ CATEGORY_FEED_RSS|format(category.slug) }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Categories RSS Feed"
+    />
+  {% endif %}
+
+  {% if TAG_FEED_RSS and tag %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL|format(tag.slug) }}{% else %}{{ TAG_FEED_RSS|format(tag.slug) }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Tags RSS Feed"
       />
-    {% endif %}
+  {% endif %}
 
-    {% if FEED_RSS %}
-      <link
-        href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}"
-        type="application/rss+xml"
-        rel="alternate"
-        title="{{ SITENAME }} RSS Feed"
-      />
-    {% endif %}
+{% endblock %}
 
-    {% if CATEGORY_FEED_RSS and category %}
-      <link
-        href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL|format(category.slug) }}{% else %}{{ CATEGORY_FEED_RSS|format(category.slug) }}{% endif %}"
-        type="application/rss+xml"
-        rel="alternate"
-        title="{{ SITENAME }} Categories RSS Feed"
-      />
-    {% endif %}
+{% block body %}
+  {{ super() }}
 
-    {% if TAG_FEED_RSS and tag %}
-      <link
-        href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL|format(tag.slug) }}{% else %}{{ TAG_FEED_RSS|format(tag.slug) }}{% endif %}"
-        type="application/rss+xml"
-        rel="alternate"
-        title="{{ SITENAME }} Tags RSS Feed"
-        />
-    {% endif %}
+  <section class="main">
+    <header id="banner" class="body">
+      <h1>
+        <a href="{{ SITEURL }}/">
+          {{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong>
+        </a>
+      </h1>
+    </header><!-- /#banner -->
 
-  {% endblock %}
+    <nav id="menu" class="site-nav">
+      <ul>
+        <li class="site-home"><a href="https://drew.life">Site Home</a></li>
+        {% for title, link in MENUITEMS %}
+          <li>
+            <a href="{{ link }}">{{ title }}</a>
+          </li>
+        {% endfor %}
 
-  {% block body %}
-    {{ super() }}
-
-    <section class="main">
-      <header id="banner" class="body">
-        <h1>
-          <a href="{{ SITEURL }}/">
-            {{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong>
-          </a>
-        </h1>
-      </header><!-- /#banner -->
-
-      <nav id="menu" class="site-nav">
-        <ul>
-          <li class="site-home"><a href="https://drew.life">Site Home</a></li>
-          {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+          {% for cat, null in categories %}
+            <li{% if cat == category %} class="active"{% endif %}>
+              <a href="{{ SITEURL }}/{{ cat.url }}">
+                {{ cat }}
+              </a>
+            </li>
           {% endfor %}
+        {% endif %}
+      </ul>
+    </nav><!-- /#menu -->
 
-          {% if DISPLAY_CATEGORIES_ON_MENU %}
-            {% for cat, null in categories %}
-              <li{% if cat == category %} class="active"{% endif %}>
-                <a href="{{ SITEURL }}/{{ cat.url }}">
-                  {{ cat }}
-                </a>
-              </li>
-            {% endfor %}
-          {% endif %}
-        </ul>
-      </nav><!-- /#menu -->
-
-      {% block content %}
-      {% endblock %}
-    </section>
-  {% endblock %}
-</html>
+    {% block content %}
+    {% endblock %}
+  </section>
+{% endblock %}

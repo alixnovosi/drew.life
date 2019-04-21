@@ -2,10 +2,10 @@
 {% block head %}
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@alixnovosi" />
-  <meta name="twitter:title" content="GOTY {{page.year}}" />
+  <meta name="twitter:title" content="{{page.title}}" />
   <meta name="twitter:desription" content="Come read the list!" />
-  <meta name="twitter:image" content="{{ SITEURL }}media/goty/trophy.jpg" />
-  <title>GOTY List {{page.year}}</title>
+  <meta name="twitter:image" content="{{ SITEURL }}/media/goty/trophy.jpg" />
+  <title>{{page.title}}</title>
   {{ super() }}
 {% endblock head %}
 
@@ -23,7 +23,7 @@
             </a>
           </li>
           <li>
-            <a class="name" href="/">home</a>
+            <a class="name" href="{{ SITEURL }}/">home</a>
           </li>
           <li>
             <a

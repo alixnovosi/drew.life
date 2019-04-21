@@ -16,7 +16,6 @@ $background_dark: #BBBBDD;
 $black_blue: #000022;
 
 $lighter_nav_blue: #555577;
-$link_hover: $background_dark;
 $menu_hover: #BB8888;
 $nav_blue: #333355;
 
@@ -48,19 +47,137 @@ $hover_nav_colors: (name: #CCCCDD, blog: $menu_hover, code: #88BB88, skills: #88
 }
 
 //---------------------------------- STYLES -----------------------------------------------------//
-body {
-    width: 100%;
+body.page {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-body, html {
-    height: 100%;
+body {
+    flex: 10 auto;
 }
 
-li {
-    flex-grow: 1;
+body, html {
+    background-color: $background;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    flex: 2 auto;
+}
+
+footer {
+    min-height: 2em;
+    max-height: 2em;
+}
+
+main {
+    flex: 100 auto;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+ul li a {
+    text-align: center;
+}
+
+nav li a {
+    display: block;
+    padding: 1em;
+}
+
+a:hover {
+    background-color: $background_dark;
+}
+
+a:visited {
+    color: $black_blue;
+    background-color: $background_dark;
+}
+
+.goty a {
+    padding: 0;
+}
+
+nav a:hover {
+    background-color: $menu_hover;
+}
+
+nav a:visited {
+    text-decoration: none;
+}
+
+nav ul {
+    width: 100%;
+
+    li {
+        flex: 1 auto;
+    }
+}
+
+nav ul, .content ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+}
+
+.goty li, .goty li a, .social-list li a {
+    background-color: $social_hover_background;
+    color: $social-color;
+}
+
+header h1 a:hover {
+    background-color: $background;
+    color: $menu_hover;
+}
+
+header h1 a:visited {
+    background-color: $background;
+}
+
+li header a:visited {
+    color: $black_blue;
+}
+
+aside .backlog-bracket li a, aside .honorable-mention li a {
+    display: block;
+    padding: 1em;
+}
+
+.site-nav ul li a, .site-nav-goty ul li a, .social ul li a {
+    color: $background;
+}
+
+header.site-banner h1 a {
+    background-color: $background_dark;
+    color: $nav_blue;
+}
+
+.goty .backlog-bracket a {
+    padding: 1em;
+}
+
+.social-list li a:hover {
+    border: 1px solid $social_color;
+}
+
+.github-link {
+    @extend %vertical-flex;
+
+    background-color: $social_hover_background;
+    color: $social-color;
+}
+
+header.site-banner h1 a:visited {
+    background-color: $background_dark;
+    color: $nav_blue;
+}
+
+.github-link:hover {
+    background-color: $background_dark;
 }
 
 header.site-banner {
@@ -73,12 +190,6 @@ header.site-banner {
 
     h1 {
         vertical-align: center;
-
-    }
-
-     h1 a, h1 a:visited {
-        background-color: $background_dark;
-        color: $nav_blue;
     }
 
     h1 a:hover {
@@ -86,85 +197,42 @@ header.site-banner {
     }
 }
 
-footer {
-    flex: 1 auto;
-
-}
-
 main.content {
     @extend %horizontal-flex;
+
     flex: 1 auto;
-}
 
-nav a {
-    text-decoration: none;
-}
+    article {
+        flex: 5 auto;
+    }
 
-nav li a {
-    display: block;
-    padding: 1em;
+    aside {
+        flex: 1 auto;
+    }
 }
 
 .language-section span.unix {
     font-variant: small-caps;
 }
 
-.code-stuff, .github-link, .language-section, .media-list, .nonogram-container, .social-list {
+.code-stuff,
+.language,
+.language-section,
+.media-list,
+.nonogram-container,
+.social-list,
+.top-ten,
+.site-nav ul,
+.social ul {
     @extend %vertical-flex;
 }
 
-.language, .top-ten {
-    @extend %vertical-flex;
-}
-
-.languages, .top-three, .rest, body.home, .code-stuff li {
+.languages, .top-three, .rest, body.home, .code-stuff li, .site-nav-goty ul {
     @extend %horizontal-flex;
 }
 
 .site-home {
     background-color: $lighter_nav_blue;
-}
-
-.goty a {
-    padding: 0;
-}
-
-a:hover {
-    background-color: $link_hover;
-}
-
-a:visited {
-    color: $black_blue;
-}
-
-nav a:hover {
-    background-color: $menu_hover;
-}
-
-nav a:visited {
-    text-decoration: none;
-}
-
-.goty li, .goty li a {
-    background-color: $social_hover_background;
-    color: $social-color;
-}
-
-.social-list li a {
-    color: $social_color;
-}
-
-li header a:visited {
-    color: $black_blue;
-}
-
-aside .backlog-bracket li a, aside .honorable-mention li a {
-    display: block;
-    padding: 1em;
-}
-
-.site-nav-goty ul {
-    %extend horizontal-flex;
 }
 
 .site-nav, .site-nav-goty, .social {
@@ -173,50 +241,8 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
     }
 }
 
-header h1 a:hover {
-    color: $menu_hover;
-}
-
-header h1 a:visited {
-    background-color: $background;
-}
-
-html, header h1 a:hover {
-    background-color: $background;
-}
-
 .hentry header {
     border-top: 1px solid $black_blue;
-}
-
-.site-nav ul, .social ul {
-    %extend vertical-flex;
-}
-
-.site-nav ul li a, .site-nav-goty ul li a, .social ul li a {
-    color: $background;
-}
-
-.site-home a:hover {
-    background-color: $link_hover;
-}
-
-.github-link {
-    background-color: $social_hover_background;
-    color: $social-color;
-}
-
-.github-link:hover, .goty a:hover {
-    background-color: $background_dark;
-}
-
-.goty .backlog-bracket a {
-    padding: 1em;
-}
-
-.social-list li a:hover {
-    background-color: $background_dark;
-    border: 1px solid $social_color;
 }
 
 .site-nav ul li a:visited, .site-nav-goty ul li a:visited, .social ul li a:visited {
@@ -537,17 +563,11 @@ section.body {
     }
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-}
-
 .site-nav ul, .site-nav-goty ul, .social ul {
     padding: 0;
 }
 
 .zeldo {
-    margin: 0;
     width: 700px;
 
     img {

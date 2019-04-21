@@ -1,41 +1,24 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" integrity="sha384-jTFzRHnGayPcZHkUx5hTuWbygQevlGFimHdpRHicjyJXGyyjcioudSScb7/YN0PE" crossorigin="anonymous">
-    <title>{{page.title}}</title>
-  </head>
-
-  <body>
-    <header>
-      {% block header %}
-        <nav>
-          <ul>
-            <li>
-              <a {% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %} >
-                  {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
-              </a>
-            </li>
-            <li>
-              <a href="{{ SITEURL }}/">home</a>
-            </li>
-            <li>
-              <a {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %} >
-                  {% if page.next %}
-                    {{page.next}}
-                  {%else %}
-                    No more, yet.
-                  {% endif %}
-              </a>
-            </li>
-          </ul>
-        </nav>
-      {% endblock header %}
-    </header>
-
-    <main>
-      {% block main %}
-        {{ page.content }}
-      {% endblock main %}
-    </main>
-  </body>
-</html>
+{% extends "simple_raw_page.html" %}
+{% block header %}
+  <nav class="site-nav-goty">
+    <ul>
+      <li>
+        <a {% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %} >
+            {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
+        </a>
+      </li>
+      <li>
+        <a href="{{ SITEURL }}/">home</a>
+      </li>
+      <li>
+        <a {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %} >
+            {% if page.next %}
+              {{page.next}}
+            {%else %}
+              No more, yet.
+            {% endif %}
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endblock header %}

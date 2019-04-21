@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+  {{ page.title }}
+{% endblock %}
+
+{% block body %}
+  <header>
+    {% block header %}
+      <nav class="site-nav">
+        <ul>
+          <li>
+            <a class="name" href="{{ SITEURL }}/">Home</a>
+          </li>
+        </ul>
+      </nav>
+    {% endblock header %}
+  </header>
+
+  <main class="content">
+    {{ page.content }}
+  </main>
+
+  <footer class="pelican">
+    <address>
+      powered by <a href="https://getpelican.com/">Pelican</a>
+    </address><!-- /.about -->
+  </footer><!-- /.pelican -->
+{% endblock body %}

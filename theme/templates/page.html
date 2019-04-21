@@ -1,7 +1,16 @@
 {% if page.type == "gotymodern" %}
+  <!-- goty_modern_page -->
   {% extends "goty_modern_page.html" %}
 {% elif page.type == "gotylegacy" %}
+  <!-- goty_legacy_page -->
   {% extends "goty_legacy_page.html" %}
+{% elif page.type == "simplemodern" %}
+  <!-- simple_modern_page -->
+  {% extends "simple_modern_page.html" %}
+{% elif page.type == "simpleraw" %}
+  <!-- simple_raw_page -->
+  {% extends "simple_raw_page.html" %}
 {% else %}
+  <!-- static_page -->
   {% extends "static_page.html" %}
 {% endif %}

@@ -1,27 +1,143 @@
-main.content, .languages, .top-three, .rest, body.home, .code-stuff li {
+main.content, .languages, .top-three, .rest, body.home, .code-stuff li,
+.site-nav-goty ul {
   display: flex;
   flex-direction: row;
 }
 
-.code-stuff, .github-link, .language-section, .media-list, .nonogram-container,
-.social-list, .language, .top-ten {
+.github-link, .code-stuff, .language, .language-section, .media-list,
+.nonogram-container, .social-list, .top-ten, .site-nav ul, .social ul {
   display: flex;
   flex-direction: column;
 }
 
-body {
-  width: 100%;
+body.page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-body, html {
-  height: 100%;
+body {
+  flex: 10 auto;
 }
 
-li {
-  flex-grow: 1;
+body, html {
+  background-color: #EEEEFF;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  flex: 2 auto;
+}
+
+footer {
+  min-height: 2em;
+  max-height: 2em;
+}
+
+main {
+  flex: 100 auto;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+ul li a {
+  text-align: center;
+}
+
+nav li a {
+  display: block;
+  padding: 1em;
+}
+
+a:hover {
+  background-color: #BBBBDD;
+}
+
+a:visited {
+  color: #000022;
+  background-color: #BBBBDD;
+}
+
+.goty a {
+  padding: 0;
+}
+
+nav a:hover {
+  background-color: #BB8888;
+}
+
+nav a:visited {
+  text-decoration: none;
+}
+
+nav ul {
+  width: 100%;
+}
+nav ul li {
+  flex: 1 auto;
+}
+
+nav ul, .content ul {
+  list-style-type: none;
+  margin: 0;
+  text-align: center;
+}
+
+.goty li, .goty li a, .social-list li a {
+  background-color: #DDDDEE;
+  color: #444455;
+}
+
+header h1 a:hover {
+  background-color: #EEEEFF;
+  color: #BB8888;
+}
+
+header h1 a:visited {
+  background-color: #EEEEFF;
+}
+
+li header a:visited {
+  color: #000022;
+}
+
+aside .backlog-bracket li a, aside .honorable-mention li a {
+  display: block;
+  padding: 1em;
+}
+
+.site-nav ul li a, .site-nav-goty ul li a, .social ul li a {
+  color: #EEEEFF;
+}
+
+header.site-banner h1 a {
+  background-color: #BBBBDD;
+  color: #333355;
+}
+
+.goty .backlog-bracket a {
+  padding: 1em;
+}
+
+.social-list li a:hover {
+  border: 1px solid #444455;
+}
+
+.github-link {
+  background-color: #DDDDEE;
+  color: #444455;
+}
+
+header.site-banner h1 a:visited {
+  background-color: #BBBBDD;
+  color: #333355;
+}
+
+.github-link:hover {
+  background-color: #BBBBDD;
 }
 
 header.site-banner {
@@ -35,29 +151,18 @@ header.site-banner {
 header.site-banner h1 {
   vertical-align: center;
 }
-header.site-banner h1 a, header.site-banner h1 a:visited {
-  background-color: #BBBBDD;
-  color: #333355;
-}
 header.site-banner h1 a:hover {
   color: #EEEEFF;
-}
-
-footer {
-  flex: 1 auto;
 }
 
 main.content {
   flex: 1 auto;
 }
-
-nav a {
-  text-decoration: none;
+main.content article {
+  flex: 5 auto;
 }
-
-nav li a {
-  display: block;
-  padding: 1em;
+main.content aside {
+  flex: 1 auto;
 }
 
 .language-section span.unix {
@@ -68,96 +173,12 @@ nav li a {
   background-color: #555577;
 }
 
-.goty a {
-  padding: 0;
-}
-
-a:hover {
-  background-color: #BBBBDD;
-}
-
-a:visited {
-  color: #000022;
-}
-
-nav a:hover {
-  background-color: #BB8888;
-}
-
-nav a:visited {
-  text-decoration: none;
-}
-
-.goty li, .goty li a {
-  background-color: #DDDDEE;
-  color: #444455;
-}
-
-.social-list li a {
-  color: #444455;
-}
-
-li header a:visited {
-  color: #000022;
-}
-
-aside .backlog-bracket li a, aside .honorable-mention li a {
-  display: block;
-  padding: 1em;
-}
-
-.site-nav-goty ul {
-  %extend horizontal-flex;
-}
-
 .site-nav li, .site-nav-goty li, .social li {
   border-top: 1px solid #000022;
 }
 
-header h1 a:hover {
-  color: #BB8888;
-}
-
-header h1 a:visited {
-  background-color: #EEEEFF;
-}
-
-html, header h1 a:hover {
-  background-color: #EEEEFF;
-}
-
 .hentry header {
   border-top: 1px solid #000022;
-}
-
-.site-nav ul, .social ul {
-  %extend vertical-flex;
-}
-
-.site-nav ul li a, .site-nav-goty ul li a, .social ul li a {
-  color: #EEEEFF;
-}
-
-.site-home a:hover {
-  background-color: #BBBBDD;
-}
-
-.github-link {
-  background-color: #DDDDEE;
-  color: #444455;
-}
-
-.github-link:hover, .goty a:hover {
-  background-color: #BBBBDD;
-}
-
-.goty .backlog-bracket a {
-  padding: 1em;
-}
-
-.social-list li a:hover {
-  background-color: #BBBBDD;
-  border: 1px solid #444455;
 }
 
 .site-nav ul li a:visited, .site-nav-goty ul li a:visited, .social ul li a:visited {
@@ -470,17 +491,11 @@ section.body .entry-content {
   width: 50%;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-}
-
 .site-nav ul, .site-nav-goty ul, .social ul {
   padding: 0;
 }
 
 .zeldo {
-  margin: 0;
   width: 700px;
 }
 .zeldo img {
