@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block head %}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alixnovosi" />
+  <meta name="twitter:title" content="GOTY {{page.year}}" />
+  <meta name="twitter:desription" content="Come read the list!" />
+  <meta name="twitter:image" content="{{ SITEURL }}media/goty/trophy.jpg" />
+  <title>GOTY List {{page.year}}</title>
+  {{ super() }}
+{% endblock head %}
+
+{% block body %}
+  <header>
+    {% block header %}
+      <nav class="site-nav-goty">
+        <ul>
+          <li>
+            <a
+              class="name"
+              {% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %}
+            >
+                {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
+            </a>
+          </li>
+          <li>
+            <a class="name" href="/">home</a>
+          </li>
+          <li>
+            <a
+              class="name"
+              {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %}
+            >
+                {% if page.next %} {{page.next}} {%else %} No more, yet. {% endif %}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    {% endblock header %}
+  </header>
+
+  {% block main %}
+    {{ page.content }}
+  {% endblock main %}
+{% endblock body %}

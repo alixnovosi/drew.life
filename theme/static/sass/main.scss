@@ -11,15 +11,15 @@ $article_background: #FFFFFF;
 $article_highlight: #666699;
 $background: #EEEEFF;
 
+$background_dark: #BBBBDD;
+
 $black_blue: #000022;
 
 $lighter_nav_blue: #555577;
-$link_hover: #BBBBCC;
+$link_hover: $background_dark;
 $menu_hover: #BB8888;
 $nav_blue: #333355;
 
-$project_bg: #444444;
-$project_border: #BBBBCC;
 $social_color: #444455;
 $social_hover_background: #DDDDEE;
 $textarea_background: #EFEFFF;
@@ -59,6 +59,28 @@ article, aside {
 }
 
 article {
+    margin: 1em;
+}
+
+aside {
+    min-width: 12em;
+    max-width: 12em;
+
+    nav {
+        padding: 1em;
+        padding-bottom: 0.5em;
+
+        li, li a {
+            border-radius: 0.5em;
+        }
+
+        li a {
+            display: block;
+        }
+    }
+}
+
+article {
     flex-grow: 10;
     padding: 0 1em 0 1em;
 
@@ -67,9 +89,22 @@ article {
     }
 }
 
+header {
+    height: 8em;
+
+    flex: 1 100%;
+    padding-left: 1em;
+
+    h1 {
+        vertical-align: center;
+
+    }
+}
+
 body {
-    @extend %vertical-flex;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -81,9 +116,31 @@ li {
     flex-grow: 1;
 }
 
+header.site-banner {
+    background-color: $background_dark;
+    box-shadow: 3px -3px 5px $black_blue;
+    max-height: 5em;
+    min-height: 5em;
+    padding-left: 1em;
+
+     h1 a, h1 a:visited {
+        background-color: $background_dark;
+        color: $nav_blue;
+    }
+
+    h1 a:hover {
+        color: $background;
+    }
+}
+
+footer {
+    flex: 1 auto;
+
+}
+
 main {
     @extend %horizontal-flex;
-    align-items: flex-start;
+    flex: 1 auto;
 }
 
 nav a {
@@ -95,13 +152,13 @@ ol, ul {
     margin: 0;
 }
 
-header h1 a {
-    background-color: $background;
-}
-
 nav li a {
     display: block;
     padding: 1em;
+}
+
+.language-section span.unix {
+    font-variant: small-caps;
 }
 
 .code-stuff, .github-link, .language-section, .media-list, .nonogram-container, .social-list {
@@ -112,7 +169,7 @@ nav li a {
     @extend %vertical-flex;
 }
 
-.languages, .top-three, .rest, .site-nav ul, body.home, .code-stuff li {
+.languages, .top-three, .rest, body.home, .code-stuff li {
     @extend %horizontal-flex;
 }
 
@@ -142,13 +199,11 @@ nav a:visited {
 
 .goty li, .goty li a {
     background-color: $social_hover_background;
-    color: $project_bg;
+    color: $social-color;
 }
 
 .social-list li a {
-    border: 1px solid $social_color;
     color: $social_color;
-    padding: 25px;
 }
 
 li header a:visited {
@@ -160,9 +215,15 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
     padding: 1em;
 }
 
-.site-nav {
-    border: 1px solid $black_blue;
-    justify-content: space-between;
+.site-nav-goty ul {
+    %extend horizontal-flex;
+}
+
+.site-nav, .site-nav-goty, .social {
+
+    li {
+        border-top: 1px solid $black_blue;
+    }
 }
 
 header h1 a:hover {
@@ -181,7 +242,11 @@ html, header h1 a:hover {
     border-top: 1px solid $black_blue;
 }
 
-.site-nav ul li a {
+.site-nav ul, .social ul {
+    %extend vertical-flex;
+}
+
+.site-nav ul li a, .site-nav-goty ul li a, .social ul li a {
     color: $background;
 }
 
@@ -191,11 +256,11 @@ html, header h1 a:hover {
 
 .github-link {
     background-color: $social_hover_background;
-    color: $project_bg;
+    color: $social-color;
 }
 
 .github-link:hover, .goty a:hover {
-    background-color: $project_border;
+    background-color: $background_dark;
 }
 
 .goty .backlog-bracket a {
@@ -203,10 +268,11 @@ html, header h1 a:hover {
 }
 
 .social-list li a:hover {
-    background-color: $social_hover_background;
+    background-color: $background_dark;
+    border: 1px solid $social_color;
 }
 
-.site-nav ul li a:visited {
+.site-nav ul li a:visited, .site-nav-goty ul li a:visited, .social ul li a:visited {
     color: $background;
 }
 
@@ -219,12 +285,9 @@ body.home {
     padding: 2.5em 1em 0;
 }
 
-.site-nav, #contentinfo {
-    box-shadow: 3px 3px 5px $black_blue;
-}
-
-#contentinfo {
+.pelican {
     background-color: $article_background;
+    box-shadow: 3px 3px 5px $black_blue;
     line-height: 2;
     padding-left: 2em;
 }
@@ -234,7 +297,7 @@ body.home {
 }
 
 .code-stuff li, .goty li {
-    border: 1px solid $project_border;
+    border: 1px solid $background_dark;
     margin: 0.5em;
 }
 
@@ -266,7 +329,7 @@ section.body li {
     padding: 0.5em inherit 0 inherit;
 }
 
-.site-nav ul li {
+.site-nav ul li, .site-nav-goty ul li, .social ul li {
     background-color: $nav_blue;
 
     a:hover {
@@ -287,7 +350,7 @@ section.body li {
     }
 }
 
-.site-nav li:hover {
+.site-nav li:hover, .site-nav-goty li:hover, .social li:hover {
     box-shadow: 3px 3px 5px $black_blue;
 }
 
@@ -321,7 +384,7 @@ section.body {
 
 .language {
     background-color: $social_hover_background;
-    color: $project_bg;
+    color: $social-color;
     margin: 0;
 }
 
@@ -527,16 +590,12 @@ section.body {
     }
 }
 
-.site-nav ul {
+.site-nav ul, .site-nav-goty ul, .social ul {
     padding: 0;
 }
 
 .social {
     height: 60%;
-}
-
-.unix {
-    font-variant: small-caps;
 }
 
 .zeldo {

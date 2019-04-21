@@ -1,26 +1,7 @@
-{% extends "staticbase.html" %}
-{% block html_lang %}{{ page.lang }}{% endblock %}
-
-{% block title %}{{ SITENAME }} - {{ page.title }}{%endblock%}
-
-{% block head %}
-  {{ super() }}
-
-  {% import 'translations.html' as translations with context %}
-  {% if translations.entry_hreflang(page) %}
-    {{ translations.entry_hreflang(page) }}
-  {% endif %}
-{% endblock %}
-
-{% block content %}
-    {% import 'translations.html' as translations with context %}
-    {{ translations.translations_for(page) }}
-
-    {{ page.content }}
-
-    {% if page.modified %}
-        <p>
-        Last updated: {{ page.locale_modified }}
-        </p>
-    {% endif %}
-{% endblock %}
+{% if page.type == "gotymodern" %}
+  {% extends "goty_modern_page.html" %}
+{% elif page.type == "gotylegacy" %}
+  {% extends "goty_legacy_page.html" %}
+{% else %}
+  {% extends "static_page.html" %}
+{% endif %}

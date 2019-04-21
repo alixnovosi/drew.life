@@ -1,9 +1,9 @@
-main, .languages, .top-three, .rest, .site-nav ul, body.home, .code-stuff li {
+main, .languages, .top-three, .rest, body.home, .code-stuff li {
   display: flex;
   flex-direction: row;
 }
 
-article, aside, body, .code-stuff, .github-link, .language-section, .media-list,
+article, aside, .code-stuff, .github-link, .language-section, .media-list,
 .nonogram-container, .social-list, .language, .top-ten {
   display: flex;
   flex-direction: column;
@@ -16,6 +16,25 @@ a {
 }
 
 article {
+  margin: 1em;
+}
+
+aside {
+  min-width: 12em;
+  max-width: 12em;
+}
+aside nav {
+  padding: 1em;
+  padding-bottom: 0.5em;
+}
+aside nav li, aside nav li a {
+  border-radius: 0.5em;
+}
+aside nav li a {
+  display: block;
+}
+
+article {
   flex-grow: 10;
   padding: 0 1em 0 1em;
 }
@@ -23,8 +42,19 @@ article .languages h3 {
   text-align: center;
 }
 
+header {
+  height: 8em;
+  flex: 1 100%;
+  padding-left: 1em;
+}
+header h1 {
+  vertical-align: center;
+}
+
 body {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -36,8 +66,27 @@ li {
   flex-grow: 1;
 }
 
+header.site-banner {
+  background-color: #BBBBDD;
+  box-shadow: 3px -3px 5px #000022;
+  max-height: 5em;
+  min-height: 5em;
+  padding-left: 1em;
+}
+header.site-banner h1 a, header.site-banner h1 a:visited {
+  background-color: #BBBBDD;
+  color: #333355;
+}
+header.site-banner h1 a:hover {
+  color: #EEEEFF;
+}
+
+footer {
+  flex: 1 auto;
+}
+
 main {
-  align-items: flex-start;
+  flex: 1 auto;
 }
 
 nav a {
@@ -49,13 +98,13 @@ ol, ul {
   margin: 0;
 }
 
-header h1 a {
-  background-color: #EEEEFF;
-}
-
 nav li a {
   display: block;
   padding: 1em;
+}
+
+.language-section span.unix {
+  font-variant: small-caps;
 }
 
 .site-home {
@@ -67,7 +116,7 @@ nav li a {
 }
 
 a:hover {
-  background-color: #BBBBCC;
+  background-color: #BBBBDD;
 }
 
 a:visited {
@@ -84,13 +133,11 @@ nav a:visited {
 
 .goty li, .goty li a {
   background-color: #DDDDEE;
-  color: #444444;
+  color: #444455;
 }
 
 .social-list li a {
-  border: 1px solid #444455;
   color: #444455;
-  padding: 25px;
 }
 
 li header a:visited {
@@ -102,9 +149,12 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
   padding: 1em;
 }
 
-.site-nav {
-  border: 1px solid #000022;
-  justify-content: space-between;
+.site-nav-goty ul {
+  %extend horizontal-flex;
+}
+
+.site-nav li, .site-nav-goty li, .social li {
+  border-top: 1px solid #000022;
 }
 
 header h1 a:hover {
@@ -123,21 +173,25 @@ html, header h1 a:hover {
   border-top: 1px solid #000022;
 }
 
-.site-nav ul li a {
+.site-nav ul, .social ul {
+  %extend vertical-flex;
+}
+
+.site-nav ul li a, .site-nav-goty ul li a, .social ul li a {
   color: #EEEEFF;
 }
 
 .site-home a:hover {
-  background-color: #BBBBCC;
+  background-color: #BBBBDD;
 }
 
 .github-link {
   background-color: #DDDDEE;
-  color: #444444;
+  color: #444455;
 }
 
 .github-link:hover, .goty a:hover {
-  background-color: #BBBBCC;
+  background-color: #BBBBDD;
 }
 
 .goty .backlog-bracket a {
@@ -145,10 +199,11 @@ html, header h1 a:hover {
 }
 
 .social-list li a:hover {
-  background-color: #DDDDEE;
+  background-color: #BBBBDD;
+  border: 1px solid #444455;
 }
 
-.site-nav ul li a:visited {
+.site-nav ul li a:visited, .site-nav-goty ul li a:visited, .social ul li a:visited {
   color: #EEEEFF;
 }
 
@@ -161,12 +216,9 @@ body.home {
   padding: 2.5em 1em 0;
 }
 
-.site-nav, #contentinfo {
-  box-shadow: 3px 3px 5px #000022;
-}
-
-#contentinfo {
+.pelican {
   background-color: #FFFFFF;
+  box-shadow: 3px 3px 5px #000022;
   line-height: 2;
   padding-left: 2em;
 }
@@ -176,7 +228,7 @@ body.home {
 }
 
 .code-stuff li, .goty li {
-  border: 1px solid #BBBBCC;
+  border: 1px solid #BBBBDD;
   margin: 0.5em;
 }
 
@@ -208,46 +260,55 @@ section.body li {
   padding: 0.5em inherit 0 inherit;
 }
 
-.site-nav ul li {
+.site-nav ul li, .site-nav-goty ul li, .social ul li {
   background-color: #333355;
 }
-.site-nav ul li a:hover {
+.site-nav ul li a:hover, .site-nav-goty ul li a:hover, .social ul li a:hover {
   color: #333355;
 }
-.site-nav ul li a.active.name {
+.site-nav ul li a.active.name, .site-nav-goty ul li a.active.name,
+.social ul li a.active.name {
   background-color: #EEEEFF;
 }
-.site-nav ul li a.active.code {
+.site-nav ul li a.active.code, .site-nav-goty ul li a.active.code,
+.social ul li a.active.code {
   background-color: #77AA77;
 }
-.site-nav ul li a.active.skills {
+.site-nav ul li a.active.skills, .site-nav-goty ul li a.active.skills,
+.social ul li a.active.skills {
   background-color: #7777AA;
 }
-.site-nav ul li a.active.about {
+.site-nav ul li a.active.about, .site-nav-goty ul li a.active.about,
+.social ul li a.active.about {
   background-color: #CC9966;
 }
-.site-nav ul li a.name:hover {
+.site-nav ul li a.name:hover, .site-nav-goty ul li a.name:hover,
+.social ul li a.name:hover {
   background-color: #CCCCDD;
   color: #333355;
 }
-.site-nav ul li a.blog:hover {
+.site-nav ul li a.blog:hover, .site-nav-goty ul li a.blog:hover,
+.social ul li a.blog:hover {
   background-color: #BB8888;
   color: #333355;
 }
-.site-nav ul li a.code:hover {
+.site-nav ul li a.code:hover, .site-nav-goty ul li a.code:hover,
+.social ul li a.code:hover {
   background-color: #88BB88;
   color: #333355;
 }
-.site-nav ul li a.skills:hover {
+.site-nav ul li a.skills:hover, .site-nav-goty ul li a.skills:hover,
+.social ul li a.skills:hover {
   background-color: #8888BB;
   color: #333355;
 }
-.site-nav ul li a.about:hover {
+.site-nav ul li a.about:hover, .site-nav-goty ul li a.about:hover,
+.social ul li a.about:hover {
   background-color: #DDAA77;
   color: #333355;
 }
 
-.site-nav li:hover {
+.site-nav li:hover, .site-nav-goty li:hover, .social li:hover {
   box-shadow: 3px 3px 5px #000022;
 }
 
@@ -276,7 +337,7 @@ section.body .entry-content {
 
 .language {
   background-color: #DDDDEE;
-  color: #444444;
+  color: #444455;
   margin: 0;
 }
 
@@ -452,16 +513,12 @@ section.body .entry-content {
   width: 50%;
 }
 
-.site-nav ul {
+.site-nav ul, .site-nav-goty ul, .social ul {
   padding: 0;
 }
 
 .social {
   height: 60%;
-}
-
-.unix {
-  font-variant: small-caps;
 }
 
 .zeldo {

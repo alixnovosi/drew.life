@@ -18,9 +18,13 @@
 
   <body>
     {% block body %}
-
-      {% block header %}
-      {% endblock header %}
+      <header class="site-banner">
+        {% block header %}
+          <h1>
+            <a href="{{ SITEURL }}">hi</a>
+          </h1>
+        {% endblock header %}
+      </header>
 
       <main>
         {% block main %}
@@ -30,22 +34,28 @@
           </article>
 
           <aside>
-            <nav class="social">
-              <ul class="social-list">
-                {% for name, link in SOCIAL %}
-                  <li><a href="{{ link }}">{{ name }}</a></li>
-                {% endfor %}
-              </ul>
-            </nav>
+            {% block aside %}
+              <nav class="social">
+                <ul class="social-list">
+                  {% for name, link in SOCIAL %}
+                    <li>
+                      <a href="{{ link }}">{{ name }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </nav>
+            {% endblock aside %}
           </aside>
+
         {% endblock main %}
       </main>
 
-      <footer id="contentinfo" class="body">
-        <address id="about" class="vcard body">
+      <footer class="pelican" class="body">
+        <address>
           powered by <a href="https://getpelican.com/">Pelican</a>
-        </address><!-- /#about -->
-      </footer><!-- /#contentinfo -->
+        </address><!-- /.about -->
+      </footer><!-- /.pelican -->
+
     {% endblock body %}
   </body>
 </html>
