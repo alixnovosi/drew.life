@@ -8,7 +8,7 @@ PATH = "content/"
 # uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-SITENAME = "drewblog"
+SITENAME = "drew"
 SITEURL = ""
 # SITEURL = "https://blog.drew.life"
 SLUGIFY_SOURCE = "title"

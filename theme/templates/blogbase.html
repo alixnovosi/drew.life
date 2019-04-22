@@ -45,40 +45,6 @@
 
 {% endblock %}
 
-{% block body %}
-  {{ super() }}
-
-  <section class="main">
-    <header id="banner" class="body">
-      <h1>
-        <a href="{{ SITEURL }}/">
-          {{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong>
-        </a>
-      </h1>
-    </header><!-- /#banner -->
-
-    <nav id="menu" class="site-nav">
-      <ul>
-        <li class="site-home"><a href="https://drew.life">Site Home</a></li>
-        {% for title, link in MENUITEMS %}
-          <li>
-            <a href="{{ link }}">{{ title }}</a>
-          </li>
-        {% endfor %}
-
-        {% if DISPLAY_CATEGORIES_ON_MENU %}
-          {% for cat, null in categories %}
-            <li{% if cat == category %} class="active"{% endif %}>
-              <a href="{{ SITEURL }}/{{ cat.url }}">
-                {{ cat }}
-              </a>
-            </li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-    </nav><!-- /#menu -->
-
-    {% block content %}
-    {% endblock %}
-  </section>
+{% block content %}
+  {{ page.content }}
 {% endblock %}

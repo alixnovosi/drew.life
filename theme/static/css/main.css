@@ -39,6 +39,10 @@ main {
   flex: 100 auto;
 }
 
+.js-toy {
+  flex: 20 auto;
+}
+
 nav a {
   text-decoration: none;
 }

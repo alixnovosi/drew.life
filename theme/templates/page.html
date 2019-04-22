@@ -1,15 +1,12 @@
 <!-- static_page -->
-{% extends "staticbase.html" %}
+{% extends "base.html" %}
 
 {% import '_lib.html' as lib with context %}
 
 {% block html_lang %}{{ page.lang }}{% endblock %}
 
-{% block title %}{{ SITENAME }} - {{ page.title }}{%endblock%}
-
 {% block aside %}
   {{ lib.site_nav(page) }}
-  {{ super() }}
 {% endblock aside %}
 
 {% block head %}
@@ -19,7 +16,8 @@
   {% if translations.entry_hreflang(page) %}
     {{ translations.entry_hreflang(page) }}
   {% endif %}
-{% endblock %}
+
+{% endblock head %}
 
 {% block content %}
     {% import 'translations.html' as translations with context %}

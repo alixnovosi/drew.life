@@ -1,8 +1,8 @@
 <!-- simple_modern_page -->
 {% extends "base.html" %}
-{% block title %}
-  {{ page.title }}
-{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock head %}
 
 {% block body %}
   <header>

@@ -5,6 +5,12 @@
     {% block head %}
       {{ lib.head_base() }}
     {% endblock head %}
+
+    <title>
+      {% block title %}
+        {% if page is defined %}{{ SITENAME }} - {{ page.title }}{% else %} drew {% endif %}
+      {% endblock title %}
+    </title>
   </head>
 
   <body class="page">
@@ -25,17 +31,11 @@
           </article>
 
           <aside class="links">
-            {% block aside %}
-              <nav class="social">
-                <ul class="social-list">
-                  {% for name, link in SOCIAL %}
-                    <li>
-                      <a href="{{ link }}">{{ name }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </nav>
-            {% endblock aside %}
+            {% if page is defined %}
+              {{ lib.site_nav(page) }}
+            {% else %}
+              {{ lib.site_nav("none") }}
+            {% endif %}
           </aside>
 
         {% endblock main %}

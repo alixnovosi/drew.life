@@ -11,11 +11,6 @@
   >
 
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css">
-
-  <title>
-    {% block title %}
-    {% endblock %}
-  </title>
 {% endmacro %}
 
 {% macro site_nav(page) %}
@@ -26,7 +21,7 @@
       {% for slug, url in TOPLEVEL_PAGES %}
         <li>
           <a
-            class="{% if slug == page.slug %}active {% endif %} {{ slug }}"
+            class="{% if slug == page.slug %}active {% endif %} {{ page.slug }}"
             href="{{ SITEURL }}/{{ url }}"
           >
             {{ slug }}
@@ -34,6 +29,15 @@
         </li>
       {% endfor %}
     <ul>
+  </nav>
+  <nav class="social">
+    <ul class="social-list">
+      {% for name, link in SOCIAL %}
+        <li>
+          <a href="{{ link }}">{{ name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
   </nav>
 {% endmacro %}
 
