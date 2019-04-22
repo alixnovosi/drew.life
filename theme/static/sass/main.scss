@@ -77,6 +77,10 @@ main {
     flex: 100 auto;
 }
 
+.js-toy {
+    flex: 20 auto;
+}
+
 nav a {
     text-decoration: none;
 }
@@ -271,11 +275,13 @@ main.content {
     background-color: $lighter_nav_blue;
 }
 
-.links, .site-nav-goty, {
-    li {
-        border: 1px solid $nav_blue;
-        border-top: 1px solid $black_blue;
-    }
+.links li {
+    border: 1px solid $nav_blue;
+    border-top: 1px solid $black_blue;
+}
+
+.site-nav-goty li {
+    border: 1px solid $lighter_nav_blue;
 }
 
 .hentry header {
@@ -333,6 +339,10 @@ section.body li {
 
 .goty ol li {
     padding: 0.5em inherit 0 inherit;
+}
+
+.site-nav ul li {
+    background-color: $nav_blue;
 }
 
 .links ul li, .site-nav-goty ul li {

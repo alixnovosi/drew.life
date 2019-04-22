@@ -44,21 +44,30 @@ PAGES = [
 ]
 
 TOPLEVEL_PAGES = [
-    ("blog", "blog"),
+    ("blog", "blog/index.html"),
     ("code stuff", "dev.html"),
     ("skills", "skills.html"),
     ("about me", "about.html"),
 ]
 
+DIRECT_TEMPLATES = ['blog_index', 'category']
+PAGINATED_DIRECT_TEMPLATES = ['blog_index', 'category']
+BLOG_INDEX_SAVE_AS = 'blog/index.html'
+
 STATIC_PATHS = [
     "media",
     "extra",  # favicon and robots.txt here.
+    "dist",  # javascript for nonograms
 ]
 
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
     "extra/humans.txt": {"path": "humans.txt"},
     "extra/favicon.ico": {"path": "favicon.ico"},
+    "dist/NonogramWeb.js": {"path": "NonogramWeb.js"},
+    "dist/app.js": {"path": "app.js"},
+    "dist/main.js": {"path": "main.js"},
+    "dist/main.js.map": {"path": "main.js.map"},
 }
 
 TEMPLATE_PAGES = {

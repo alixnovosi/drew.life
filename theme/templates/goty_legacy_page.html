@@ -1,24 +1,5 @@
+<!-- goty_legacy_page -->
 {% extends "simple_raw_page.html" %}
 {% block header %}
-  <nav class="site-nav-goty">
-    <ul>
-      <li>
-        <a {% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %} >
-            {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
-        </a>
-      </li>
-      <li>
-        <a href="{{ SITEURL }}/">home</a>
-      </li>
-      <li>
-        <a {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %} >
-            {% if page.next %}
-              {{page.next}}
-            {%else %}
-              No more, yet.
-            {% endif %}
-        </a>
-      </li>
-    </ul>
-  </nav>
+  {{ lib.goty_nav(page) }}
 {% endblock header %}

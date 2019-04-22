@@ -1,6 +1,6 @@
 Title: legendary
 Identifier: zelda
-type: simplemodern
+template: simple_modern_page
 
 <ul class="media-list">
   <li>

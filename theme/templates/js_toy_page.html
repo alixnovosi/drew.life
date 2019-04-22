@@ -1,5 +1,6 @@
-<!-- simple_raw_page -->
-{% extends "simple_modern_page.html" %}
+<!-- js_toy_page -->
+{% extends "base.html" %}
+
 {% block body %}
   <header>
     {% block header %}
@@ -7,7 +8,7 @@
     {% endblock header %}
   </header>
 
-  <main>
+  <main class="js-toy">
     {{ page.content }}
   </main>
 

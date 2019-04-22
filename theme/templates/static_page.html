@@ -1,7 +1,16 @@
 {% extends "staticbase.html" %}
+<!-- static_page -->
+
+{% import '_lib.html' as lib with context %}
+
 {% block html_lang %}{{ page.lang }}{% endblock %}
 
 {% block title %}{{ SITENAME }} - {{ page.title }}{%endblock%}
+
+{% block aside %}
+  {{ lib.site_nav(page) }}
+  {{ super() }}
+{% endblock aside %}
 
 {% block head %}
   {{ super() }}

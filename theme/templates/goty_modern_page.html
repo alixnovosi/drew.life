@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+<!-- goty_modern_page -->
 {% block head %}
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@alixnovosi" />
@@ -12,29 +13,7 @@
 {% block body %}
   <header>
     {% block header %}
-      <nav class="site-nav-goty">
-        <ul>
-          <li>
-            <a
-              class="name"
-              {% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %}
-            >
-                {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
-            </a>
-          </li>
-          <li>
-            <a class="name" href="{{ SITEURL }}/">home</a>
-          </li>
-          <li>
-            <a
-              class="name"
-              {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %}
-            >
-                {% if page.next %} {{page.next}} {%else %} No more, yet. {% endif %}
-            </a>
-          </li>
-        </ul>
-      </nav>
+      {{ lib.goty_nav(page) }}
     {% endblock header %}
   </header>
 

@@ -1,21 +1,4 @@
 {% extends "base.html" %}
 {% block aside %}
-  <nav class="site-nav">
-    <ul>
-      <li><a class="name" href="{{ SITEURL }}/">drew</a></li>
-
-      {% for slug, url in TOPLEVEL_PAGES %}
-        <li>
-          <a
-            class="{% if "a" == "b" %}active {% endif %} {{ slug }}"
-            href="{{ SITEURL }}/{{ url }}"
-          >
-            {{ slug }}
-          </a>
-        </li>
-      {% endfor %}
-    <ul>
-  </nav>
-
   {{ super() }}
 {% endblock aside %}

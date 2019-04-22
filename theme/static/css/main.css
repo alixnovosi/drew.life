@@ -203,9 +203,13 @@ main.content aside {
   background-color: #555577;
 }
 
-.links li, .site-nav-goty li {
+.links li {
   border: 1px solid #333355;
   border-top: 1px solid #000022;
+}
+
+.site-nav-goty li {
+  border: 1px solid #555577;
 }
 
 .hentry header {
@@ -265,6 +269,10 @@ section.body li {
   padding: 0.5em inherit 0 inherit;
 }
 
+.site-nav ul li {
+  background-color: #333355;
+}
+
 .links ul li, .site-nav-goty ul li {
   background-color: #333355;
 }
@@ -282,6 +290,10 @@ section.body li {
 }
 .links ul li a.active.about, .site-nav-goty ul li a.active.about {
   background-color: #CC9966;
+}
+.links ul li a.:hover, .site-nav-goty ul li a.:hover {
+  background-color: #FF0000;
+  color: #333355;
 }
 .links ul li a.name:hover, .site-nav-goty ul li a.name:hover {
   background-color: #CCCCDD;

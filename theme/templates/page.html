@@ -1,16 +1,35 @@
-{% if page.type == "gotymodern" %}
-  <!-- goty_modern_page -->
-  {% extends "goty_modern_page.html" %}
-{% elif page.type == "gotylegacy" %}
-  <!-- goty_legacy_page -->
-  {% extends "goty_legacy_page.html" %}
-{% elif page.type == "simplemodern" %}
-  <!-- simple_modern_page -->
-  {% extends "simple_modern_page.html" %}
-{% elif page.type == "simpleraw" %}
-  <!-- simple_raw_page -->
-  {% extends "simple_raw_page.html" %}
-{% else %}
-  <!-- static_page -->
-  {% extends "static_page.html" %}
-{% endif %}
+<!-- static_page -->
+{% extends "staticbase.html" %}
+
+{% import '_lib.html' as lib with context %}
+
+{% block html_lang %}{{ page.lang }}{% endblock %}
+
+{% block title %}{{ SITENAME }} - {{ page.title }}{%endblock%}
+
+{% block aside %}
+  {{ lib.site_nav(page) }}
+  {{ super() }}
+{% endblock aside %}
+
+{% block head %}
+  {{ super() }}
+
+  {% import 'translations.html' as translations with context %}
+  {% if translations.entry_hreflang(page) %}
+    {{ translations.entry_hreflang(page) }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(page) }}
+
+    {{ page.content }}
+
+    {% if page.modified %}
+        <p>
+        Last updated: {{ page.locale_modified }}
+        </p>
+    {% endif %}
+{% endblock %}

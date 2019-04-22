@@ -1,3 +1,4 @@
+<!-- simple_modern_page -->
 {% extends "base.html" %}
 {% block title %}
   {{ page.title }}
@@ -6,13 +7,7 @@
 {% block body %}
   <header>
     {% block header %}
-      <nav class="site-nav">
-        <ul>
-          <li>
-            <a class="name" href="{{ SITEURL }}/">Home</a>
-          </li>
-        </ul>
-      </nav>
+      {{ lib.simple_nav() }}
     {% endblock header %}
   </header>
 

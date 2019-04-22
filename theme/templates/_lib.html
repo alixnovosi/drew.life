@@ -18,6 +18,59 @@
   </title>
 {% endmacro %}
 
+{% macro site_nav(page) %}
+  <nav class="site-nav">
+    <ul>
+      <li><a class="name" href="{{ SITEURL }}/">drew</a></li>
+
+      {% for slug, url in TOPLEVEL_PAGES %}
+        <li>
+          <a
+            class="{% if slug == page.slug %}active {% endif %} {{ slug }}"
+            href="{{ SITEURL }}/{{ url }}"
+          >
+            {{ slug }}
+          </a>
+        </li>
+      {% endfor %}
+    <ul>
+  </nav>
+{% endmacro %}
+
+{% macro simple_nav() %}
+  <nav class="site-nav">
+    <ul>
+      <li>
+        <a class="name" href="{{ SITEURL }}/">Home</a>
+      </li>
+    </ul>
+  </nav>
+{% endmacro %}
+
+{% macro goty_nav(page) %}
+  <nav class="site-nav-goty">
+    <ul>
+      <li>
+        <a {% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %} >
+            {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
+        </a>
+      </li>
+      <li>
+        <a href="{{ SITEURL }}/">home</a>
+      </li>
+      <li>
+        <a {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %} >
+            {% if page.next %}
+              {{page.next}}
+            {%else %}
+              No more, yet.
+            {% endif %}
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endmacro %}
+
 {% macro pelican_credit() %}
   <footer class="pelican">
     <address>

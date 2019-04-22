@@ -10,8 +10,6 @@ BASEDIR=.
 SASS_INPUT_DIR=$(BASEDIR)/theme/static/sass
 CSS_OUTPUT_DIR=$(BASEDIR)/theme/static/css
 
-NGINX_CONTENT=$(BASEDIR)/nginx_content
-
 NONOGRAM_DIR=$(BASEDIR)/nonogram_web
 
 .PHONY: all sasscompile csscopy jscopy pelican clean
@@ -28,8 +26,8 @@ sasscompile:
 		--style expanded
 
 jscopy:
-	cp -R $(NONOGRAM_DIR)/dist $(NGINX_CONTENT)/
-	cp $(NONOGRAM_DIR)/dist/nonogram.html $(NGINX_CONTENT)/
+	cp $(NONOGRAM_DIR)/dist/*.js $(BASEDIR)/content/dist/
+	cp $(NONOGRAM_DIR)/dist/*.js.map $(BASEDIR)/content/dist/
 
 clean:
 	rm -f $(CSS_DIR)/main.css \ $(CSS_DIR)/main.css.map

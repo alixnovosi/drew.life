@@ -1,6 +1,6 @@
 Title: best games of all time
 Identifier: gamefaqssort
-type: simpleraw
+template: simple_raw_page
 
 ##Played in 2015
 |Rank | Game                |
