@@ -1,5 +1,5 @@
-main.content, .languages, .top-three, .rest, body.home, .code-stuff li,
-.site-nav-goty ul {
+main.content, .code-stuff li, .languages, .top-three, .rest, body.home,
+.site-nav-goty ul, .goty {
   display: flex;
   flex-direction: row;
 }
@@ -26,13 +26,13 @@ body, html {
   width: 100%;
 }
 
-header {
-  flex: 2 auto;
-}
-
 footer {
   min-height: 2em;
   max-height: 2em;
+}
+
+header {
+  flex: 2 auto;
 }
 
 main {
@@ -41,6 +41,10 @@ main {
 
 nav a {
   text-decoration: none;
+}
+
+span.small-caps {
+  font-variant: small-caps;
 }
 
 ul li a {
@@ -80,13 +84,13 @@ nav ul li {
   flex: 1 auto;
 }
 
-nav ul, .content ul {
+nav ul, .content ul, .goty ul {
   list-style-type: none;
   margin: 0;
   text-align: center;
 }
 
-.goty li, .goty li a, .social-list li a {
+.goty li, .goty li a {
   background-color: #DDDDEE;
   color: #444455;
 }
@@ -122,8 +126,8 @@ header.site-banner h1 a {
   padding: 1em;
 }
 
-.social-list li a:hover {
-  border: 1px solid #444455;
+.code-stuff li a:hover {
+  background-color: #9999BB;
 }
 
 .github-link {
@@ -155,25 +159,52 @@ header.site-banner h1 a:hover {
   color: #EEEEFF;
 }
 
+.goty aside {
+  border-left: 2px solid #333355;
+  padding-top: 0;
+  width: 40%;
+}
+
 main.content {
   flex: 1 auto;
 }
 main.content article {
   flex: 5 auto;
+  padding: 1em;
 }
 main.content aside {
   flex: 1 auto;
+  padding: 1em;
 }
 
-.language-section span.unix {
-  font-variant: small-caps;
+.code-stuff li {
+  justify-content: space-between;
+}
+
+.language-section li {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links nav {
+  padding-bottom: 1em;
+}
+
+.languages {
+  justify-content: space-around;
+}
+.languages ul {
+  margin: 1em;
+  text-align: center;
 }
 
 .site-home {
   background-color: #555577;
 }
 
-.site-nav li, .site-nav-goty li, .social li {
+.links li, .site-nav-goty li {
+  border: 1px solid #333355;
   border-top: 1px solid #000022;
 }
 
@@ -201,12 +232,8 @@ body.home {
   padding-left: 2em;
 }
 
-.code-stuff li {
-  justify-content: space-between;
-}
-
 .code-stuff li, .goty li {
-  border: 1px solid #BBBBDD;
+  border: 1px solid #9999BB;
   margin: 0.5em;
 }
 
@@ -238,56 +265,43 @@ section.body li {
   padding: 0.5em inherit 0 inherit;
 }
 
-.site-nav ul li, .site-nav-goty ul li, .social ul li {
+.links ul li, .site-nav-goty ul li {
   background-color: #333355;
 }
-.site-nav ul li a:hover, .site-nav-goty ul li a:hover, .social ul li a:hover {
+.links ul li a:hover, .site-nav-goty ul li a:hover {
   color: #333355;
 }
-.site-nav ul li a.active.name, .site-nav-goty ul li a.active.name,
-.social ul li a.active.name {
+.links ul li a.active.name, .site-nav-goty ul li a.active.name {
   background-color: #EEEEFF;
 }
-.site-nav ul li a.active.code, .site-nav-goty ul li a.active.code,
-.social ul li a.active.code {
+.links ul li a.active.code, .site-nav-goty ul li a.active.code {
   background-color: #77AA77;
 }
-.site-nav ul li a.active.skills, .site-nav-goty ul li a.active.skills,
-.social ul li a.active.skills {
+.links ul li a.active.skills, .site-nav-goty ul li a.active.skills {
   background-color: #7777AA;
 }
-.site-nav ul li a.active.about, .site-nav-goty ul li a.active.about,
-.social ul li a.active.about {
+.links ul li a.active.about, .site-nav-goty ul li a.active.about {
   background-color: #CC9966;
 }
-.site-nav ul li a.name:hover, .site-nav-goty ul li a.name:hover,
-.social ul li a.name:hover {
+.links ul li a.name:hover, .site-nav-goty ul li a.name:hover {
   background-color: #CCCCDD;
   color: #333355;
 }
-.site-nav ul li a.blog:hover, .site-nav-goty ul li a.blog:hover,
-.social ul li a.blog:hover {
+.links ul li a.blog:hover, .site-nav-goty ul li a.blog:hover {
   background-color: #BB8888;
   color: #333355;
 }
-.site-nav ul li a.code:hover, .site-nav-goty ul li a.code:hover,
-.social ul li a.code:hover {
+.links ul li a.code:hover, .site-nav-goty ul li a.code:hover {
   background-color: #88BB88;
   color: #333355;
 }
-.site-nav ul li a.skills:hover, .site-nav-goty ul li a.skills:hover,
-.social ul li a.skills:hover {
+.links ul li a.skills:hover, .site-nav-goty ul li a.skills:hover {
   background-color: #8888BB;
   color: #333355;
 }
-.site-nav ul li a.about:hover, .site-nav-goty ul li a.about:hover,
-.social ul li a.about:hover {
+.links ul li a.about:hover, .site-nav-goty ul li a.about:hover {
   background-color: #DDAA77;
   color: #333355;
-}
-
-.site-nav li:hover, .site-nav-goty li:hover, .social li:hover {
-  box-shadow: 3px 3px 5px #000022;
 }
 
 .goty .backlog-bracket li {
@@ -322,6 +336,7 @@ section.body .entry-content {
 .code-stuff p, .code-stuff .language {
   padding: 1em;
 }
+
 .code-stuff .github-link, .code-stuff .language {
   display: flex;
   justify-content: space-around;
@@ -420,22 +435,27 @@ section.body .entry-content {
   flex-direction: row;
 }
 
-.goty {
-  text-align: center;
-}
 .goty article .honorable-mention li {
   margin: 0 auto;
   max-height: 60%;
   max-width: 60%;
 }
-.goty aside {
-  border-left: 2px solid #333355;
-  padding-top: 0;
-  width: 40%;
+
+.goty .top-ten .top-three li, .goty .top-ten .honorable-mention li {
+  max-width: 33%;
 }
-.goty aside .honorable-mention li {
+
+.goty .top-ten .rest li {
+  max-width: 25%;
+}
+
+main.content .goty aside .honorable-mention li {
   min-height: 69px;
   min-width: 69px;
+}
+
+.goty {
+  text-align: center;
 }
 .goty img {
   height: auto;
@@ -451,20 +471,12 @@ section.body .entry-content {
 .goty .honorable-mention {
   border-top: 2px solid #333355;
 }
-.goty .top-ten .top-three li, .goty .top-ten .honorable-mention li {
-  max-width: 33%;
-}
 .goty .top-ten .rest {
   flex-wrap: wrap;
 }
-.goty .top-ten .rest li {
-  max-width: 25%;
-}
 
 .icon {
-  color: #000022;
-  margin-right: 0.5em;
-  width: 2em;
+  height: 4.5em;
 }
 
 .nonogram-container {

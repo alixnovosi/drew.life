@@ -1,9 +1,9 @@
-{% import 'macros.html' as macros with context %}
+{% import '_lib.html' as lib with context %}
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
   <head>
     {% block head %}
-      {{ macros.head_base() }}
+      {{ lib.head_base() }}
     {% endblock head %}
   </head>
 

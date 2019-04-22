@@ -20,9 +20,5 @@
     {{ page.content }}
   </main>
 
-  <footer class="pelican">
-    <address>
-      powered by <a href="https://getpelican.com/">Pelican</a>
-    </address><!-- /.about -->
-  </footer><!-- /.pelican -->
+  {{ lib.pelican_credit() }}
 {% endblock body %}
