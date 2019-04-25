@@ -16,7 +16,7 @@
 {% macro site_nav(page) %}
   <nav class="site-nav">
     <ul>
-      <li><a class="name" href="{{ SITEURL }}/">drew</a></li>
+      <li><a class="default" href="{{ SITEURL }}/">drew</a></li>
 
       {% for slug, url, identifier in TOPLEVEL_PAGES %}
         <li>
@@ -30,11 +30,11 @@
       {% endfor %}
     <ul>
   </nav>
-  <nav class="social">
-    <ul class="social-list">
+  <nav>
+    <ul>
       {% for name, link in SOCIAL %}
         <li>
-          <a href="{{ link }}">{{ name }}</a>
+          <a class="default" href="{{ link }}">{{ name }}</a>
         </li>
       {% endfor %}
     </ul>
@@ -42,10 +42,10 @@
 {% endmacro %}
 
 {% macro simple_nav() %}
-  <nav class="site-nav">
+  <nav>
     <ul>
       <li>
-        <a class="name" href="{{ SITEURL }}/">Home</a>
+        <a class="default" href="{{ SITEURL }}/">Home</a>
       </li>
     </ul>
   </nav>
@@ -55,15 +55,15 @@
   <nav class="site-nav-goty">
     <ul>
       <li>
-        <a {% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %} >
+        <a class="default"{% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %} >
             {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
         </a>
       </li>
       <li>
-        <a href="{{ SITEURL }}/">home</a>
+        <a class="default" href="{{ SITEURL }}/">home</a>
       </li>
       <li>
-        <a {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %} >
+        <a class="default" {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %} >
             {% if page.next %}
               {{page.next}}
             {%else %}

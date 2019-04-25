@@ -1,18 +1,16 @@
-main.content, .code-stuff li, .languages, .top-three, .rest, body.home,
-.site-nav-goty ul, .goty, .booklist ul {
+main.content, .code-stuff li, .top-three, .rest, body.home, .site-nav-goty ul,
+.goty, .languages, .booklist ul, .game, .game .board-row, .game .board-row-spacer,
+.game .game-info {
   display: flex;
   flex-direction: row;
 }
 
-.github-link, .code-stuff, .language, .language-section, .media-list,
-.nonogram-container, .social-list, .top-ten, .site-nav ul, .social ul {
+body.page, nav ul, .code-stuff, .media-list, .top-ten, .languages li {
   display: flex;
   flex-direction: column;
 }
 
 body.page {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -23,7 +21,7 @@ body {
 body, html {
   background-color: #EEEEFF;
   height: 100%;
-  width: 100%;
+  min-width: 800px;
 }
 
 footer {
@@ -35,29 +33,23 @@ header {
   flex: 2 auto;
 }
 
+img {
+  height: auto;
+  width: 100%;
+}
+
 main {
   flex: 100 auto;
 }
 
-.js-toy {
-  flex: 20 auto;
-}
-
 nav a {
-  text-decoration: none;
-}
-
-span.small-caps {
-  font-variant: small-caps;
-}
-
-ul li a {
-  text-align: center;
-}
-
-nav li a {
   display: block;
   padding: 1em;
+  text-decoration: none;
+}
+nav li {
+  background-color: #333355;
+  color: background;
 }
 
 a:hover {
@@ -74,17 +66,73 @@ a:visited {
 }
 
 nav a:hover {
-  background-color: #BB8888;
+  background-color: #CCCCDD;
+  color: #333355;
+}
+
+nav a.active.default {
+  background-color: #EEEEFF;
+  color: #333355;
+}
+
+nav a.active.code {
+  background-color: #77AA77;
+  color: #333355;
+}
+
+nav a.active.skills {
+  background-color: #7777AA;
+  color: #333355;
+}
+
+nav a.active.about {
+  background-color: #CC9966;
+  color: #333355;
+}
+
+nav a.default:hover {
+  background-color: #CCCCDD;
+  color: #333355;
+}
+
+nav a.blog:hover {
+  background-color: #CCCCDD;
+  color: #333355;
+}
+
+nav a.code:hover {
+  background-color: #88BB88;
+  color: #333355;
+}
+
+nav a.skills:hover {
+  background-color: #8888BB;
+  color: #333355;
+}
+
+nav a.about:hover {
+  background-color: #DDAA77;
+  color: #333355;
 }
 
 nav a:visited {
-  text-decoration: none;
+  color: #EEEEFF;
+}
+
+.js-toy {
+  flex: 20 auto;
+}
+
+span.small-caps {
+  font-variant: small-caps;
 }
 
 nav ul {
+  padding: 0;
   width: 100%;
 }
 nav ul li {
+  border: 1px solid #555577;
   flex: 1 auto;
 }
 
@@ -98,18 +146,38 @@ nav ul, .content ul, .goty ul {
   list-style-type: none;
 }
 
+.code-stuff {
+  justify-content: space-between;
+}
+.code-stuff .github-link, .code-stuff .language {
+  align-items: center;
+  background-color: #9999BB;
+  color: #333355;
+  display: flex;
+  flex: 1 auto;
+  margin: 0;
+  padding: 0.5em;
+}
+.code-stuff .github-link {
+  border: 1px solid #9999BB;
+  max-width: 9em;
+  min-width: 9em;
+}
+.code-stuff .github-link:hover {
+  background-color: #CCCCDD;
+  border-color: #333355;
+}
+.code-stuff .language {
+  max-width: 11em;
+  min-width: 11em;
+}
+.code-stuff p {
+  margin: 1em;
+}
+
 .goty li, .goty li a {
   background-color: #DDDDEE;
-  color: #444455;
-}
-
-header h1 a:hover {
-  background-color: #EEEEFF;
-  color: #BB8888;
-}
-
-header h1 a:visited {
-  background-color: #EEEEFF;
+  color: #333355;
 }
 
 li header a:visited {
@@ -121,11 +189,7 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
   padding: 1em;
 }
 
-.site-nav ul li a, .site-nav-goty ul li a, .social ul li a {
-  color: #EEEEFF;
-}
-
-header.site-banner h1 a {
+.site-banner h1 a {
   background-color: #BBBBDD;
   color: #333355;
 }
@@ -134,22 +198,9 @@ header.site-banner h1 a {
   padding: 1em;
 }
 
-.code-stuff li a:hover {
-  background-color: #9999BB;
-}
-
-.github-link {
-  background-color: #DDDDEE;
-  color: #444455;
-}
-
 header.site-banner h1 a:visited {
   background-color: #BBBBDD;
   color: #333355;
-}
-
-.github-link:hover {
-  background-color: #BBBBDD;
 }
 
 header.site-banner {
@@ -186,46 +237,28 @@ main.content aside {
 }
 
 .code-stuff li {
+  align-items: stretch;
   justify-content: space-between;
-}
-
-.language-section li {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
+  margin: 0.5em 0.5em;
 }
 
 .links nav {
   padding-bottom: 1em;
 }
 
-.languages {
-  justify-content: space-around;
+.languages li {
+  justify-content: stretch;
 }
-.languages ul {
-  margin: 1em;
-  text-align: center;
+.languages li h3, .languages li .language-section {
+  justify-content: center;
 }
-
-.site-home {
-  background-color: #555577;
-}
-
-.links li {
-  border: 1px solid #333355;
-  border-top: 1px solid #000022;
-}
-
-.site-nav-goty li {
-  border: 1px solid #555577;
+.languages img {
+  width: 4.5em;
 }
 
 .hentry header {
   border-top: 1px solid #000022;
-}
-
-.site-nav ul li a:visited, .site-nav-goty ul li a:visited, .social ul li a:visited {
-  color: #EEEEFF;
 }
 
 body.home {
@@ -244,9 +277,14 @@ body.home {
   padding-left: 2em;
 }
 
+.goty li {
+  align-items: center;
+  margin: 1em;
+  padding: 1em;
+}
+
 .code-stuff li, .goty li {
   border: 1px solid #9999BB;
-  margin: 0.5em;
 }
 
 .body li, .hentry li {
@@ -278,56 +316,26 @@ section.body li {
 }
 
 .booklist ul {
+  flex-wrap: wrap;
   justify-content: space-between;
   list-style-type: none;
 }
 
+.entry-content img {
+  width: 80%;
+}
+
+.zeldo {
+  width: 500px;
+}
+
 .booklist ul li {
+  flex: 1 auto;
   width: 100px;
   padding: 1em;
 }
-
-.links ul li, .site-nav-goty ul li {
-  background-color: #333355;
-}
-.links ul li a:hover, .site-nav-goty ul li a:hover {
-  color: #333355;
-}
-.links ul li a.active.name, .site-nav-goty ul li a.active.name {
-  background-color: #EEEEFF;
-}
-.links ul li a.active.code, .site-nav-goty ul li a.active.code {
-  background-color: #77AA77;
-}
-.links ul li a.active.skills, .site-nav-goty ul li a.active.skills {
-  background-color: #7777AA;
-}
-.links ul li a.active.about, .site-nav-goty ul li a.active.about {
-  background-color: #CC9966;
-}
-.links ul li a.:hover, .site-nav-goty ul li a.:hover {
-  background-color: #FF0000;
-  color: #333355;
-}
-.links ul li a.name:hover, .site-nav-goty ul li a.name:hover {
-  background-color: #CCCCDD;
-  color: #333355;
-}
-.links ul li a.blog:hover, .site-nav-goty ul li a.blog:hover {
-  background-color: #BB8888;
-  color: #333355;
-}
-.links ul li a.code:hover, .site-nav-goty ul li a.code:hover {
-  background-color: #88BB88;
-  color: #333355;
-}
-.links ul li a.skills:hover, .site-nav-goty ul li a.skills:hover {
-  background-color: #8888BB;
-  color: #333355;
-}
-.links ul li a.about:hover, .site-nav-goty ul li a.about:hover {
-  background-color: #DDAA77;
-  color: #333355;
+.booklist ul li img {
+  width: inherit;
 }
 
 .goty .backlog-bracket li {
@@ -353,32 +361,10 @@ section.body .entry-content {
   padding: 0 1em 0 1em;
 }
 
-.language {
-  background-color: #DDDDEE;
-  color: #444455;
-  margin: 0;
-}
-
-.code-stuff p, .code-stuff .language {
-  padding: 1em;
-}
-
-.code-stuff .github-link, .code-stuff .language {
-  display: flex;
-  justify-content: space-around;
-  min-width: 11em;
-}
-
-.entry-content img {
-  width: 80%;
-}
-
 .game {
   background-color: #333355;
   border-radius: 10px;
   color: #EEEEFF;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   min-width: 800px;
@@ -412,19 +398,16 @@ section.body .entry-content {
 .game .filled-square, .game .empty-square {
   color: #333355;
 }
-.game .force-blocked-square {
+.game .blocked-square, .game .force-blocked-square {
   background-color: #DEDEEF;
-  color: #9999BB;
 }
-.game .blocked-square {
-  background-color: #DEDEEF;
+.game .force-blocked-square {
+  color: #9999BB;
 }
 .game .filled-square {
   background-color: #666677;
 }
 .game .board-row, .game .board-row-spacer {
-  display: flex;
-  flex-direction: row;
   list-style-type: none;
 }
 .game .game-board {
@@ -434,7 +417,6 @@ section.body .entry-content {
   color: #333355;
   background-color: #EEEEFF;
   border-radius: 10px;
-  display: flex;
   font-size: 18px;
   font-weight: bold;
   flex-direction: column;
@@ -483,10 +465,6 @@ main.content .goty aside .honorable-mention li {
 .goty {
   text-align: center;
 }
-.goty img {
-  height: auto;
-  width: 100%;
-}
 .goty ol {
   list-style: inside decimal-leading-zero;
 }
@@ -501,21 +479,6 @@ main.content .goty aside .honorable-mention li {
   flex-wrap: wrap;
 }
 
-.icon {
-  height: 4.5em;
-}
-
-.nonogram-container {
-  margin: 0 auto;
-  min-width: 30%;
-  padding: 1em;
-}
-.nonogram-container textarea {
-  border: 0;
-  height: 10em;
-  text-align: center;
-}
-
 .page-content, section.body {
   background-color: #FFFFFF;
   box-shadow: 5px 5px 5px #666699;
@@ -527,15 +490,4 @@ main.content .goty aside .honorable-mention li {
   line-height: 2;
   text-align: left;
   width: 50%;
-}
-
-.site-nav ul, .site-nav-goty ul, .social ul {
-  padding: 0;
-}
-
-.zeldo {
-  width: 700px;
-}
-.zeldo img {
-  width: 400px;
 }
