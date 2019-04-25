@@ -17,9 +17,11 @@
     {% endblock header %}
   </header>
 
-  {% block main %}
-    {{ page.content }}
-  {% endblock main %}
+  <main class="goty">
+    {% block main %}
+      {{ page.content }}
+    {% endblock main %}
+  </main>
 
   {{ lib.pelican_credit() }}
 {% endblock body %}

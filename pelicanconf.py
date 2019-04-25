@@ -44,10 +44,10 @@ PAGES = [
 ]
 
 TOPLEVEL_PAGES = [
-    ("blog", "blog/index.html"),
-    ("code stuff", "dev.html"),
-    ("skills", "skills.html"),
-    ("about me", "about.html"),
+    ("blog", "blog/index.html", "blog"),
+    ("code stuff", "dev.html", "code"),
+    ("skills", "skills.html", "skills"),
+    ("about me", "about.html", "about"),
 ]
 
 DIRECT_TEMPLATES = ['blog_index', 'category']
@@ -63,7 +63,10 @@ STATIC_PATHS = [
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt"},
     "extra/humans.txt": {"path": "humans.txt"},
+    "extra/keybase.txt": {"path": "keybase.txt"},
+
     "extra/favicon.ico": {"path": "favicon.ico"},
+
     "dist/NonogramWeb.js": {"path": "NonogramWeb.js"},
     "dist/app.js": {"path": "app.js"},
     "dist/main.js": {"path": "main.js"},

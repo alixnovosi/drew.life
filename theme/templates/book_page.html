@@ -1,0 +1,18 @@
+{% extends "goty_modern_page.html" %}
+<!-- book_page -->
+
+{% block body %}
+  <header>
+    {% block header %}
+      {{ lib.goty_nav(page) }}
+    {% endblock header %}
+  </header>
+
+  <main class="booklist">
+    {% block main %}
+      {{ page.content }}
+    {% endblock main %}
+  </main>
+
+  {{ lib.pelican_credit() }}
+{% endblock body %}

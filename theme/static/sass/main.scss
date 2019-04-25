@@ -133,6 +133,10 @@ nav ul, .content ul, .goty ul {
     text-align: center;
 }
 
+#post-list {
+    list-style-type: none;
+}
+
 .goty li, .goty li a {
     background-color: $social_hover_background;
     color: $social-color;
@@ -339,6 +343,18 @@ section.body li {
 
 .goty ol li {
     padding: 0.5em inherit 0 inherit;
+}
+
+.booklist ul {
+    @extend %horizontal-flex;
+
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.booklist ul li {
+    width: 100px;
+    padding: 1em;
 }
 
 .links ul li, .site-nav-goty ul li {

@@ -18,10 +18,10 @@
     <ul>
       <li><a class="name" href="{{ SITEURL }}/">drew</a></li>
 
-      {% for slug, url in TOPLEVEL_PAGES %}
+      {% for slug, url, identifier in TOPLEVEL_PAGES %}
         <li>
           <a
-            class="{% if slug == page.slug %}active {% endif %} {{ page.slug }}"
+            class="{% if slug == page.slug %}active {% endif %} {{ identifier }}"
             href="{{ SITEURL }}/{{ url }}"
           >
             {{ slug }}
