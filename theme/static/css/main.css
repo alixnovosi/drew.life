@@ -5,9 +5,14 @@ main.content, .code-stuff li, .top-three, .rest, body.home, .site-nav-goty ul,
   flex-direction: row;
 }
 
-body.page, nav ul, .code-stuff, .media-list, .top-ten, .languages li {
+body.page, nav ul, .code-stuff, .media-list, .top-ten, .languages li,
+.goty .honorable-mention ul {
   display: flex;
   flex-direction: column;
+}
+
+a {
+  color: #333355;
 }
 
 body.page {
@@ -43,6 +48,7 @@ main {
 }
 
 nav a {
+  color: background;
   display: block;
   padding: 1em;
   text-decoration: none;
@@ -57,8 +63,7 @@ a:hover {
 }
 
 a:visited {
-  color: #000022;
-  background-color: #BBBBDD;
+  color: #000011;
 }
 
 .goty a {
@@ -91,11 +96,6 @@ nav a.active.about {
 }
 
 nav a.default:hover {
-  background-color: #CCCCDD;
-  color: #333355;
-}
-
-nav a.blog:hover {
   background-color: #CCCCDD;
   color: #333355;
 }
@@ -152,6 +152,7 @@ nav ul, .content ul, .goty ul {
 .code-stuff .github-link, .code-stuff .language {
   align-items: center;
   background-color: #9999BB;
+  border: 1px solid #9999BB;
   color: #333355;
   display: flex;
   flex: 1 auto;
@@ -159,7 +160,6 @@ nav ul, .content ul, .goty ul {
   padding: 0.5em;
 }
 .code-stuff .github-link {
-  border: 1px solid #9999BB;
   max-width: 9em;
   min-width: 9em;
 }
@@ -175,18 +175,18 @@ nav ul, .content ul, .goty ul {
   margin: 1em;
 }
 
-.goty li, .goty li a {
+.goty li {
+  align-items: center;
   background-color: #DDDDEE;
   color: #333355;
-}
-
-li header a:visited {
-  color: #000022;
-}
-
-aside .backlog-bracket li a, aside .honorable-mention li a {
-  display: block;
+  margin: 1em;
   padding: 1em;
+}
+
+.honorable-mention li {
+  margin-bottom: 0.5em;
+  max-height: 60%;
+  max-width: 60%;
 }
 
 .site-banner h1 a {
@@ -194,18 +194,22 @@ aside .backlog-bracket li a, aside .honorable-mention li a {
   color: #333355;
 }
 
+aside .backlog-bracket li a, aside .honorable-mention li a {
+  display: block;
+  padding: 1em;
+}
+
 .goty .backlog-bracket a {
   padding: 1em;
 }
 
-header.site-banner h1 a:visited {
+.site-banner h1 a:visited {
   background-color: #BBBBDD;
   color: #333355;
 }
 
 header.site-banner {
   background-color: #BBBBDD;
-  box-shadow: 3px -3px 5px #000022;
   flex: 1 100%;
   max-height: 5em;
   min-height: 5em;
@@ -257,10 +261,6 @@ main.content aside {
   width: 4.5em;
 }
 
-.hentry header {
-  border-top: 1px solid #000022;
-}
-
 body.home {
   clear: both;
   justify-content: space-between;
@@ -272,38 +272,28 @@ body.home {
 
 .pelican {
   background-color: #FFFFFF;
-  box-shadow: 3px 3px 5px #000022;
   line-height: 2;
   padding-left: 2em;
-}
-
-.goty li {
-  align-items: center;
-  margin: 1em;
-  padding: 1em;
 }
 
 .code-stuff li, .goty li {
   border: 1px solid #9999BB;
 }
 
-.body li, .hentry li {
+.body li, .hentry li, .pelican {
   border-top: 1px solid #666699;
 }
 
 .game li {
   border: none;
   float: left;
-  font-size: 24px;
-  font-weight: bold;
   height: 34px;
   line-height: 34px;
-  padding: 0;
   text-align: center;
   width: 34px;
 }
 
-.top-ten li {
+.game li, .top-ten li {
   padding: 0;
 }
 
@@ -311,14 +301,30 @@ section.body li {
   border-top: 1px solid #666699;
 }
 
+.booklist ul {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+.booklist ul li {
+  background-color: #DDDDEE;
+  border: 1px solid #555577;
+  flex: 1 auto;
+  margin: 0.5em;
+  max-width: 15em;
+  min-width: 15em;
+}
+
 .goty ol li {
   padding: 0.5em inherit 0 inherit;
 }
 
-.booklist ul {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style-type: none;
+.goty li:hover, .booklist li:hover {
+  background-color: #BBBBDD;
+}
+
+.goty img, .booklist img {
+  padding-bottom: 1em;
 }
 
 .entry-content img {
@@ -327,15 +333,6 @@ section.body li {
 
 .zeldo {
   width: 500px;
-}
-
-.booklist ul li {
-  flex: 1 auto;
-  width: 100px;
-  padding: 1em;
-}
-.booklist ul li img {
-  width: inherit;
 }
 
 .goty .backlog-bracket li {
@@ -362,9 +359,11 @@ section.body .entry-content {
 }
 
 .game {
-  background-color: #333355;
+  background-color: #555577;
   border-radius: 10px;
   color: #EEEEFF;
+  font-size: 24px;
+  font-weight: bold;
   justify-content: center;
   flex-wrap: wrap;
   min-width: 800px;
@@ -387,8 +386,6 @@ section.body .entry-content {
   border: none;
   color: #666677;
   float: left;
-  font-size: 24px;
-  font-weight: bold;
   height: 34px;
   line-height: 34px;
   padding: 0;
@@ -417,20 +414,21 @@ section.body .entry-content {
   color: #333355;
   background-color: #EEEEFF;
   border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
   flex-direction: column;
+  font-size: 18px;
   justify-content: center;
   line-height: 34px;
   margin: 1em;
 }
 .game .game-info button {
-  background-color: #9999BB;
-  border: none;
-  font-size: 18px;
+  background-color: #BBBBDD;
+  border: 1px solid #9999BB;
   padding: 0;
   width: 96px;
   height: 34px;
+}
+.game .game-info button:hover {
+  background-color: #9999BB;
 }
 .game .game-info div {
   margin: 0 auto;
@@ -443,23 +441,12 @@ section.body .entry-content {
   flex-direction: row;
 }
 
-.goty article .honorable-mention li {
-  margin: 0 auto;
-  max-height: 60%;
-  max-width: 60%;
-}
-
 .goty .top-ten .top-three li, .goty .top-ten .honorable-mention li {
   max-width: 33%;
 }
 
 .goty .top-ten .rest li {
   max-width: 25%;
-}
-
-main.content .goty aside .honorable-mention li {
-  min-height: 69px;
-  min-width: 69px;
 }
 
 .goty {
@@ -474,6 +461,9 @@ main.content .goty aside .honorable-mention li {
 }
 .goty .honorable-mention {
   border-top: 2px solid #333355;
+}
+.goty .honorable-mention ul {
+  justify-content: center;
 }
 .goty .top-ten .rest {
   flex-wrap: wrap;

@@ -21,7 +21,7 @@
       {% for slug, url, identifier in TOPLEVEL_PAGES %}
         <li>
           <a
-            class="{% if slug == page.slug %}active {% endif %} {{ identifier }}"
+            class="{% if identifier == page.identifier %}active {% endif %} {{ identifier }}"
             href="{{ SITEURL }}/{{ url }}"
           >
             {{ slug }}

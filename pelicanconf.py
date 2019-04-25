@@ -32,7 +32,7 @@ SOCIAL = [
           ("itch.io", "https://alixnovosi.itch.io"),
 ]
 
-# static pages (that aren't "secret")
+# static pages
 PAGES = [
     ("code stuff", "dev.html"),
     ("skills", "skills.html"),
@@ -43,16 +43,18 @@ PAGES = [
     ("goty2018", "goty2018.html"),
 ]
 
+# pages in main menu - done manually instead of letting Pelican help,
+# because I have specific ideas about what's linked and what's "secret".
 TOPLEVEL_PAGES = [
-    ("blog", "blog/index.html", "blog"),
+    ("blog", "blog/index.html", "default"),
     ("code stuff", "dev.html", "code"),
     ("skills", "skills.html", "skills"),
     ("about me", "about.html", "about"),
 ]
 
-DIRECT_TEMPLATES = ['blog_index', 'category']
-PAGINATED_DIRECT_TEMPLATES = ['blog_index', 'category']
-BLOG_INDEX_SAVE_AS = 'blog/index.html'
+DIRECT_TEMPLATES = ["blog_index", "category", "author"]
+PAGINATED_DIRECT_TEMPLATES = ["blog_index", "category", "author"]
+BLOG_INDEX_SAVE_AS = "blog/index.html"
 
 STATIC_PATHS = [
     "media",
