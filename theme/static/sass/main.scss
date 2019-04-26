@@ -33,9 +33,6 @@ $social_hover_background: #DDDDEE;
 
 // nonogram section items.
 $cell_size: 34px;
-$board_filled: #666677;
-$board_denied: #BCBCCD;
-$board_blocked_denied: #DEDEEF;
 
 $active_nav_colors: (
     default: $background,
@@ -116,6 +113,15 @@ nav {
 }
 
 // non-hell classes
+body.home {
+    @extend %horizontal-flex;
+
+    clear: both;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 90%;
+    padding: 2.5em 1em 0;
+}
 
 .booklist h1 {
     text-align: center;
@@ -135,15 +141,11 @@ nav {
     }
 }
 
-body.home, .goty {
-    @extend %horizontal-flex;
+.code-stuff, .honorable-mention, .language-section, .media-list, .page, .top-ten {
+    @extend %vertical-flex;
 }
 
 .code-stuff {
-    @extend %vertical-flex;
-
-    justify-content: space-between;
-
     .github-link, .language {
         align-items: center;
         background-color: $background_darker;
@@ -175,25 +177,30 @@ body.home, .goty {
     }
 }
 
-.content {
+.content, .game, .goty, .languages, .rest, .top-three {
     @extend %horizontal-flex;
+}
 
+.content, .content aside {
     flex: 1 auto;
+}
 
-    article {
-        flex: 5 auto;
-        padding: 1em;
-    }
+.content article, .content aside {
+    padding: 1em;
+}
 
-    aside {
-        flex: 1 auto;
-        padding: 1em;
-    }
+.content article {
+    flex: 5 auto;
+}
+
+.credit {
+    border-top: 1px solid $article_highlight;
+    background-color: $article_background;
+    line-height: 2;
+    padding-left: 2em;
 }
 
 .game {
-    @extend %horizontal-flex;
-
     background-color: $nav_blue_lighter;
     border-radius: 10px;
     color: $background;
@@ -214,8 +221,9 @@ body.home, .goty {
     .filled-square, .empty-square, .blocked-square, .force-blocked-square {
         background-color: $background;
         border: none;
-        color: $board_filled;
+        color: $nav_blue;
         float: left;
+        font-weight: bold;
         height: $cell_size;
         line-height: $cell_size;
         padding: 0;
@@ -228,7 +236,7 @@ body.home, .goty {
     }
 
     .blocked-square, .force-blocked-square {
-        background-color: $board_blocked_denied;
+        background-color: $background_dark;
     }
 
     .force-blocked-square {
@@ -236,13 +244,11 @@ body.home, .goty {
     }
 
     .filled-square {
-        background-color: $board_filled;
+        background-color: $background_darker;
     }
 
     .board-row, .board-row-spacer {
         @extend %horizontal-flex;
-
-        list-style-type: none;
     }
 
     .game-board {
@@ -280,7 +286,7 @@ body.home, .goty {
     }
 
     .kbd-navigation .square:focus {
-        background: #dddddd;
+        background: $background_darker;
     }
 
     .top-hints {
@@ -303,14 +309,12 @@ body.home, .goty {
     }
 
     .honorable-mention {
-        @extend %vertical-flex;
-
         align-items: stretch;
         border-top: 2px solid $nav_blue;
     }
 
-    .top-three {
-        @extend %horizontal-flex;
+    .rest {
+        flex-wrap: wrap;
     }
 }
 
@@ -318,49 +322,23 @@ body.home, .goty {
     flex: 20 auto;
 }
 
-.languages {
-    @extend %horizontal-flex;
+.language-section {
+    align-items: center;
+    padding: 0;
+}
 
+.languages {
     justify-content: space-evenly;
+    padding-left: 0;
 
     img {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.75em;
         width: 4.5em;
     }
 }
 
-.media-list,
-.page,
-.top-ten {
-    @extend %vertical-flex;
-}
-
-.page {
+.page, body.home {
     justify-content: space-between;
-}
-
-.credit {
-    border-top: 1px solid $article_highlight;
-    background-color: $article_background;
-    line-height: 2;
-    padding-left: 2em;
-}
-
-.rest {
-    @extend %horizontal-flex;
-}
-
-.top-ten .rest {
-    flex-wrap: wrap;
-}
-
-body.home {
-    clear: both;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-    min-width: 90%;
-    padding: 2.5em 1em 0;
 }
 
 .site-banner {
@@ -382,58 +360,22 @@ nav li {
     flex: 1 auto;
 }
 
-ol li, ul li, .game li, .top-ten li {
+ol li, ul li, .game li {
     padding: 0;
-}
-
-.body li, .hentry li {
-    border-top: 1px solid $article_highlight;
-}
-
-.code-stuff li, .goty li {
-    border: 1px solid $background_darker;
-}
-
-.game li {
-    border: none;
-    float: left;
-    height: $cell_size;
-    line-height: $cell_size;
-    margin: 0 5px 5px 0;
-    text-align: center;
-    width: $cell_size;
 }
 
 .languages li {
     @extend %vertical-flex;
-
-    align-items: stretch;
-
-    h3, .language-section {
-        @extend %vertical-flex;
-
-        align-items: center;
-        padding: 0;
-    }
-}
-
-.honorable-mention li, .top-ten li {
-    min-height: 5em;
-}
-
-.backlog-bracket li, .honorable-mention li {
-    @extend %vertical-flex;
-}
-
-.backlog-bracket li, .goty li, .honorable-mention li {
-    align-items: center;
-    background-color: $social_hover_background;
 }
 
 .backlog-bracket li {
     justify-content: space-around;
     height: 6em;
     width: 9em;
+}
+
+.body li, .hentry li {
+    border-top: 1px solid $article_highlight;
 }
 
 .booklist li {
@@ -453,36 +395,42 @@ ol li, ul li, .game li, .top-ten li {
     margin: 0.5em 0.5em;
 }
 
+.code-stuff li, .goty li {
+    border: 1px solid $background_darker;
+}
+
+.game li {
+    border: none;
+    float: left;
+    height: $cell_size;
+    line-height: $cell_size;
+    margin: 0 5px 5px 0;
+    width: $cell_size;
+}
+
 .goty li {
+    align-items: center;
+    background-color: $social_hover_background;
     color: $nav_blue;
+    flex: 1 auto;
+    height: auto;
     margin: 0 0.25em 1em 0.25em;
-    padding: 1em;
+    padding: 0.75em 0;
 }
 
 article .honorable-mention li {
     max-height: 60%;
     max-width: 60%;
+    min-width: 60%;
 }
 
-aside .honorable-mention li {
-    align-items: center;
-    justify-content: space-around;
-    height: 6em;
-    width: 9em;
-}
-
-.goty article li, {
-    flex: 1 auto;
+.goty article li {
     margin: 0.25em;
-    padding: 0;
-}
-
-.goty aside li {
-    padding: 1em;
 }
 
 .goty .rest li {
     max-width: 27%;
+    min-width: 27%;
 }
 
 .goty .top-three li {
@@ -503,37 +451,40 @@ header nav ul {
     margin: 0;
 }
 
+// can't be ol/ul unconditionally because I'm still trying to preserve goty2015/goty2016
+// in a "raw" format.
+.backlog-bracket ol, .booklist ul, .goty ol, .goty ul, .honorable-mention ul, .site-nav-goty ul {
+    padding-left: 0;
+}
+
 .backlog-bracket ol, .honorable-mention ul {
     align-items: center;
-    padding-left: 0;
 }
 
 .booklist ul, .site-nav-goty ul {
     @extend %horizontal-flex;
-
-    padding-left: 0;
 }
 
 .booklist ul {
     flex-wrap: wrap;
     justify-content: space-evenly;
-    list-style-type: none;
 }
 
 .content ul, .game ul, .goty ul {
-    list-style-type: none;
     margin: 0;
     text-align: center;
 }
 
-.goty ol {
-    list-style: inside decimal-leading-zero;
+.goty ol, .goty ul {
     justify-content: space-around;
 }
 
-.goty ul {
-    align-items: center;
-    justify-content: space-around;
+.goty ol {
+    list-style: inside decimal-leading-zero;
+}
+
+.game ul, .goty ul {
+    list-style-type: none;
 }
 
 .site-nav ul {
@@ -585,24 +536,4 @@ nav a:visited {
 
 .zeldo {
     width: 500px;
-}
-
-section.body {
-    header {
-        width: 100%;
-    }
-
-    header, footer {
-        padding: 1em;
-    }
-
-    footer {
-        float: right;
-        text-align: right;
-        width: 40%;
-    }
-
-    .entry-content {
-        padding: 0 1em 0 1em;
-    }
 }

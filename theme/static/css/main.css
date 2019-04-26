@@ -1,13 +1,12 @@
-body.home, .goty, .content, .game, .game .board-row, .game .board-row-spacer,
-.game .game-info, .goty .top-three, .languages, .rest, .code-stuff li,
-.booklist ul, .site-nav-goty ul {
+body.home, .content, .game, .goty, .languages, .rest, .top-three, .game .board-row,
+.game .board-row-spacer, .game .game-info, .code-stuff li, .booklist ul,
+.site-nav-goty ul {
   display: flex;
   flex-direction: row;
 }
 
-ol, ul, .code-stuff, .goty .honorable-mention, .media-list, .page, .top-ten,
-.languages li, .languages li h3, .languages li .language-section,
-.backlog-bracket li, .honorable-mention li, nav ul {
+ol, ul, .code-stuff, .honorable-mention, .language-section, .media-list,
+.page, .top-ten, .languages li, nav ul {
   display: flex;
   flex-direction: column;
 }
@@ -58,6 +57,14 @@ nav a {
   text-decoration: none;
 }
 
+body.home {
+  clear: both;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-width: 90%;
+  padding: 2.5em 1em 0;
+}
+
 .booklist h1 {
   text-align: center;
 }
@@ -75,9 +82,6 @@ nav a {
   width: 50%;
 }
 
-.code-stuff {
-  justify-content: space-between;
-}
 .code-stuff .github-link, .code-stuff .language {
   align-items: center;
   background-color: #9999BB;
@@ -104,16 +108,23 @@ nav a {
   margin: 1em;
 }
 
-.content {
+.content, .content aside {
   flex: 1 auto;
 }
+
+.content article, .content aside {
+  padding: 1em;
+}
+
 .content article {
   flex: 5 auto;
-  padding: 1em;
 }
-.content aside {
-  flex: 1 auto;
-  padding: 1em;
+
+.credit {
+  border-top: 1px solid #666699;
+  background-color: #FFFFFF;
+  line-height: 2;
+  padding-left: 2em;
 }
 
 .game {
@@ -136,8 +147,9 @@ nav a {
 .game .force-blocked-square {
   background-color: #EEEEFF;
   border: none;
-  color: #666677;
+  color: #333355;
   float: left;
+  font-weight: bold;
   height: 34px;
   line-height: 34px;
   padding: 0;
@@ -148,16 +160,13 @@ nav a {
   color: #333355;
 }
 .game .blocked-square, .game .force-blocked-square {
-  background-color: #DEDEEF;
+  background-color: #BBBBDD;
 }
 .game .force-blocked-square {
   color: #9999BB;
 }
 .game .filled-square {
-  background-color: #666677;
-}
-.game .board-row, .game .board-row-spacer {
-  list-style-type: none;
+  background-color: #9999BB;
 }
 .game .game-board {
   margin: 1em;
@@ -187,7 +196,7 @@ nav a {
   padding: 1em;
 }
 .game .kbd-navigation .square:focus {
-  background: #dddddd;
+  background: #9999BB;
 }
 .game .top-hints {
   flex-direction: row;
@@ -209,41 +218,30 @@ nav a {
   align-items: stretch;
   border-top: 2px solid #333355;
 }
+.goty .rest {
+  flex-wrap: wrap;
+}
 
 .js-toy {
   flex: 20 auto;
 }
 
+.language-section {
+  align-items: center;
+  padding: 0;
+}
+
 .languages {
   justify-content: space-evenly;
+  padding-left: 0;
 }
 .languages img {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
   width: 4.5em;
 }
 
-.page {
+.page, body.home {
   justify-content: space-between;
-}
-
-.credit {
-  border-top: 1px solid #666699;
-  background-color: #FFFFFF;
-  line-height: 2;
-  padding-left: 2em;
-}
-
-.top-ten .rest {
-  flex-wrap: wrap;
-}
-
-body.home {
-  clear: both;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1200px;
-  min-width: 90%;
-  padding: 2.5em 1em 0;
 }
 
 .site-banner {
@@ -263,49 +261,18 @@ nav li {
   flex: 1 auto;
 }
 
-ol li, ul li, .game li, .top-ten li {
+ol li, ul li, .game li {
   padding: 0;
-}
-
-.body li, .hentry li {
-  border-top: 1px solid #666699;
-}
-
-.code-stuff li, .goty li {
-  border: 1px solid #9999BB;
-}
-
-.game li {
-  border: none;
-  float: left;
-  height: 34px;
-  line-height: 34px;
-  margin: 0 5px 5px 0;
-  text-align: center;
-  width: 34px;
-}
-
-.languages li {
-  align-items: stretch;
-}
-.languages li h3, .languages li .language-section {
-  align-items: center;
-  padding: 0;
-}
-
-.honorable-mention li, .top-ten li {
-  min-height: 5em;
-}
-
-.backlog-bracket li, .goty li, .honorable-mention li {
-  align-items: center;
-  background-color: #DDDDEE;
 }
 
 .backlog-bracket li {
   justify-content: space-around;
   height: 6em;
   width: 9em;
+}
+
+.body li, .hentry li {
+  border-top: 1px solid #666699;
 }
 
 .booklist li {
@@ -323,36 +290,42 @@ ol li, ul li, .game li, .top-ten li {
   margin: 0.5em 0.5em;
 }
 
+.code-stuff li, .goty li {
+  border: 1px solid #9999BB;
+}
+
+.game li {
+  border: none;
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  margin: 0 5px 5px 0;
+  width: 34px;
+}
+
 .goty li {
+  align-items: center;
+  background-color: #DDDDEE;
   color: #333355;
+  flex: 1 auto;
+  height: auto;
   margin: 0 0.25em 1em 0.25em;
-  padding: 1em;
+  padding: 0.75em 0;
 }
 
 article .honorable-mention li {
   max-height: 60%;
   max-width: 60%;
-}
-
-aside .honorable-mention li {
-  align-items: center;
-  justify-content: space-around;
-  height: 6em;
-  width: 9em;
+  min-width: 60%;
 }
 
 .goty article li {
-  flex: 1 auto;
   margin: 0.25em;
-  padding: 0;
-}
-
-.goty aside li {
-  padding: 1em;
 }
 
 .goty .rest li {
   max-width: 27%;
+  min-width: 27%;
 }
 
 .goty .top-three li {
@@ -370,35 +343,35 @@ header nav ul {
   margin: 0;
 }
 
-.backlog-bracket ol, .honorable-mention ul {
-  align-items: center;
+.backlog-bracket ol, .booklist ul, .goty ol, .goty ul, .honorable-mention ul,
+.site-nav-goty ul {
   padding-left: 0;
 }
 
-.booklist ul, .site-nav-goty ul {
-  padding-left: 0;
+.backlog-bracket ol, .honorable-mention ul {
+  align-items: center;
 }
 
 .booklist ul {
   flex-wrap: wrap;
   justify-content: space-evenly;
-  list-style-type: none;
 }
 
 .content ul, .game ul, .goty ul {
-  list-style-type: none;
   margin: 0;
   text-align: center;
 }
 
-.goty ol {
-  list-style: inside decimal-leading-zero;
+.goty ol, .goty ul {
   justify-content: space-around;
 }
 
-.goty ul {
-  align-items: center;
-  justify-content: space-around;
+.goty ol {
+  list-style: inside decimal-leading-zero;
+}
+
+.game ul, .goty ul {
+  list-style-type: none;
 }
 
 .site-nav ul {
@@ -475,19 +448,4 @@ nav a.about:hover {
 
 .zeldo {
   width: 500px;
-}
-
-section.body header {
-  width: 100%;
-}
-section.body header, section.body footer {
-  padding: 1em;
-}
-section.body footer {
-  float: right;
-  text-align: right;
-  width: 40%;
-}
-section.body .entry-content {
-  padding: 0 1em 0 1em;
 }
