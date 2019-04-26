@@ -268,7 +268,8 @@ ol li, ul li, .game li {
 .backlog-bracket li {
   justify-content: space-around;
   height: 6em;
-  width: 9em;
+  max-width: 80%;
+  min-width: 10em;
 }
 
 .body li, .hentry li {
@@ -330,6 +331,7 @@ article .honorable-mention li {
 
 .goty .top-three li {
   max-width: 33%;
+  min-width: 33%;
 }
 
 nav ul {
@@ -343,11 +345,6 @@ header nav ul {
   margin: 0;
 }
 
-.backlog-bracket ol, .booklist ul, .goty ol, .goty ul, .honorable-mention ul,
-.site-nav-goty ul {
-  padding-left: 0;
-}
-
 .backlog-bracket ol, .honorable-mention ul {
   align-items: center;
 }
@@ -355,6 +352,7 @@ header nav ul {
 .booklist ul {
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding-left: 0;
 }
 
 .content ul, .game ul, .goty ul {
@@ -363,6 +361,7 @@ header nav ul {
 }
 
 .goty ol, .goty ul {
+  padding: 0 1em;
   justify-content: space-around;
 }
 
@@ -370,7 +369,7 @@ header nav ul {
   list-style: inside decimal-leading-zero;
 }
 
-.game ul, .goty ul {
+.booklist ul, .game ul, .goty ul {
   list-style-type: none;
 }
 
