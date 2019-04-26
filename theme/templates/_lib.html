@@ -28,9 +28,14 @@
           </a>
         </li>
       {% endfor %}
+    </ul>
     <ul>
-  </nav>
-  <nav>
+      {% for name, link in SUBPAGES %}
+        <li>
+          <a class="default" href="{{ link }}">{{ name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
     <ul>
       {% for name, link in SOCIAL %}
         <li>
@@ -75,10 +80,15 @@
   </nav>
 {% endmacro %}
 
-{% macro pelican_credit() %}
-  <footer class="pelican">
+{% macro credit() %}
+  <footer class="credit">
     <address>
-      powered by <a href="https://getpelican.com/">Pelican</a>
+      built with
+      <a href="https://getpelican.com/">Pelican</a>.
+      powered by
+      <a href="https://nginx.org/">nginx</a>
+      and
+      <a href="https://www.freebsd.org/">FreeBSD</a>
     </address><!-- /.about -->
   </footer><!-- /.pelican -->
 {% endmacro %}

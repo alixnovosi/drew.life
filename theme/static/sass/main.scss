@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for drew.life                                                              //
-// UPDATED: 2019-04-20                                                                           //
+// UPDATED: 2019-04-25                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
@@ -63,24 +63,23 @@ $hover_nav_colors: (
 }
 
 //---------------------------------- STYLES -----------------------------------------------------//
+// bare elements
 a {
     color: $nav_blue;
 }
 
-body.page {
-    @extend %vertical-flex;
-
-    justify-content: space-between;
-}
-
-body {
-    flex: 10 auto;
+article {
+    padding-right: 0.5em;
 }
 
 body, html {
     background-color: $background;
     height: 100%;
     min-width: 800px;
+}
+
+body {
+    flex: 10 auto;
 }
 
 footer {
@@ -101,83 +100,43 @@ main {
     flex: 100 auto;
 }
 
+ol, ul {
+    @extend %vertical-flex;
+}
+
 nav {
+    color: background;
+
     a {
-        color: background;
+        color: inherit;
         display: block;
         padding: 1em;
         text-decoration: none;
     }
-
-    li {
-        background-color: $nav_blue;
-        color: background;
-    }
 }
 
-a:hover {
-    background-color: $background_dark;
-}
+// non-hell classes
 
-a:visited {
-    color: $nav_blue_darker;
-}
-
-.goty a {
-    padding: 0;
-}
-
-nav a:hover {
-    background-color: $menu_hover;
-    color: $nav_blue;
-}
-
-@each $item, $bg_color in $active_nav_colors {
-    nav a.active.#{$item} {
-        background-color: $bg_color;
-        color: $nav_blue;
-    }
-}
-
-@each $item, $bg_color in $hover_nav_colors {
-    nav a.#{$item}:hover {
-        background-color: $bg_color;
-        color: $nav_blue;
-    }
-}
-
-nav a:visited {
-    color: $background;
-}
-
-.js-toy {
-    flex: 20 auto;
-}
-
-span.small-caps {
-    font-variant: small-caps;
-}
-
-nav ul {
-    @extend %vertical-flex;
-
-    padding: 0;
-    width: 100%;
-
-    li {
-        border: 1px solid $nav_blue_lighter;
-        flex: 1 auto;
-    }
-}
-
-nav ul, .content ul, .goty ul {
-    list-style-type: none;
-    margin: 0;
+.booklist h1 {
     text-align: center;
 }
 
-#post-list {
-    list-style-type: none;
+.page-content, section.body {
+    background-color: $article_background;
+    box-shadow: 5px 5px 5px $article_highlight;
+    justify-content: space-between;
+    margin: 0 auto 1em auto;
+    padding: 0.5em;
+
+    .read-more {
+        line-height: 2;
+        text-align: left;
+        width: 50%;
+    }
+}
+
+body.home, .goty {
+    @extend %horizontal-flex;
 }
 
 .code-stuff {
@@ -216,62 +175,7 @@ nav ul, .content ul, .goty ul {
     }
 }
 
-.goty li {
-    align-items: center;
-    background-color: $social_hover_background;
-    color: $nav_blue;
-    margin: 1em;
-    padding: 1em;
-}
-
-.honorable-mention li {
-    margin-bottom: 0.5em;
-    max-height: 60%;
-    max-width: 60%;
-}
-
-.site-banner h1 a {
-    background-color: $background_dark;
-    color: $nav_blue;
-}
-
-aside .backlog-bracket li a, aside .honorable-mention li a {
-    display: block;
-    padding: 1em;
-}
-
-.goty .backlog-bracket a {
-    padding: 1em;
-}
-
-.site-banner h1 a:visited {
-    background-color: $background_dark;
-    color: $nav_blue;
-}
-
-header.site-banner {
-    background-color: $background_dark;
-    flex: 1 100%;
-    max-height: 5em;
-    min-height: 5em;
-    padding-left: 1em;
-
-    h1 {
-        vertical-align: center;
-    }
-
-    h1 a:hover {
-        color: $background;
-    }
-}
-
-.goty aside {
-    border-left: 2px solid $nav_blue;
-    padding-top: 0;
-    width: 40%;
-}
-
-main.content {
+.content {
     @extend %horizontal-flex;
 
     flex: 1 auto;
@@ -287,151 +191,6 @@ main.content {
     }
 }
 
-.code-stuff li {
-    @extend %horizontal-flex;
-
-    align-items: stretch;
-    justify-content: space-between;
-    text-align: center;
-    margin: 0.5em 0.5em;
-}
-
-.links nav {
-    padding-bottom: 1em;
-}
-
-.media-list,
-.top-ten {
-    @extend %vertical-flex;
-}
-
-.top-three, .rest, body.home, .site-nav-goty ul, .goty {
-    @extend %horizontal-flex;
-}
-
-.languages {
-    @extend %horizontal-flex;
-
-    li {
-        @extend %vertical-flex;
-
-        justify-content: stretch;
-
-        h3, .language-section {
-            justify-content: center;
-        }
-    }
-
-    img {
-        width: 4.5em;
-    }
-}
-
-body.home {
-    clear: both;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-    min-width: 90%;
-    padding: 2.5em 1em 0;
-}
-
-.pelican {
-    background-color: $article_background;
-    line-height: 2;
-    padding-left: 2em;
-}
-
-.code-stuff li, .goty li {
-    border: 1px solid $background_darker;
-}
-
-.body li, .hentry li, .pelican {
-    border-top: 1px solid $article_highlight;
-}
-
-.game li {
-    border: none;
-    float: left;
-    height: $cell_size;
-    line-height: $cell_size;
-    text-align: center;
-    width: $cell_size;
-}
-
-.game li, .top-ten li {
-    padding: 0;
-}
-
-section.body li {
-    border-top: 1px solid $article_highlight;
-}
-
-.booklist ul {
-    @extend %horizontal-flex;
-
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    list-style-type: none;
-
-    li {
-        background-color: $social_hover_background;
-        border: 1px solid $nav_blue_lighter;
-        flex: 1 auto;
-        margin: 0.5em;
-        max-width: 15em;
-        min-width: 15em;
-    }
-}
-
-.goty ol li {
-    padding: 0.5em inherit 0 inherit;
-}
-
-.goty li:hover, .booklist li:hover {
-    background-color: $background_dark;
-}
-
-.goty img, .booklist img {
-    padding-bottom: 1em;
-}
-
-.entry-content img {
-    width: 80%;
-}
-
-.zeldo {
-    width: 500px;
-}
-
-.goty .backlog-bracket li {
-    padding: 0;
-}
-
-.hentry li:hover, section.body li:hover {
-    border-top-color: $article_background;
-}
-
-section.body {
-    header {
-        width: 100%;
-    }
-
-    header, footer {
-        padding: 1em;
-    }
-
-    footer {
-        float: right;
-        text-align: right;
-        width: 40%;
-    }
-
-    .entry-content {
-        padding: 0 1em 0 1em;
-    }
-}
-
 .game {
     @extend %horizontal-flex;
 
@@ -444,20 +203,12 @@ section.body {
     flex-wrap: wrap;
     min-width: 800px;
 
-    .board-entry {
-        margin: 0 5px 5px 0;
-    }
-
     .board-entry-spacer {
-        margin: 0 10px 5px 0;
-    }
-
-    .board-row {
-        margin: 0;
+        margin-right: 10px;
     }
 
     .board-row-spacer {
-        margin: 0 0 5px 0;
+        margin-bottom: 5px;
     }
 
     .filled-square, .empty-square, .blocked-square, .force-blocked-square {
@@ -537,51 +288,321 @@ section.body {
     }
 }
 
-.goty .top-ten .top-three li, .goty .top-ten .honorable-mention li {
-    max-width: 33%;
-}
-
-.goty .top-ten .rest li {
-    max-width: 25%;
-}
-
 .goty {
     text-align: center;
+    justify-content: space-evenly;
 
-    ol {
-        list-style: inside decimal-leading-zero;
+    article {
+        padding: 0 1em 0 0.5em;
     }
 
-    ol, ul {
-        justify-content: space-around;
-        padding: 0 1em 0 1em;
+    aside {
+        border-left: 2px solid $nav_blue;
+        padding: 0 0.5em;
+        width: 40%;
     }
 
     .honorable-mention {
+        @extend %vertical-flex;
+
+        align-items: stretch;
         border-top: 2px solid $nav_blue;
-
-        ul {
-            @extend %vertical-flex;
-
-            justify-content: center;
-        }
     }
 
-    .top-ten .rest {
-        flex-wrap: wrap;
+    .top-three {
+        @extend %horizontal-flex;
     }
 }
 
-.page-content, section.body {
-    background-color: $article_background;
-    box-shadow: 5px 5px 5px $article_highlight;
-    justify-content: space-between;
-    margin: 0 auto 1em auto;
-    padding: 0.5em;
+.js-toy {
+    flex: 20 auto;
+}
 
-    .read-more {
-        line-height: 2;
-        text-align: left;
-        width: 50%;
+.languages {
+    @extend %horizontal-flex;
+
+    justify-content: space-evenly;
+
+    img {
+        margin-bottom: 0.5em;
+        width: 4.5em;
+    }
+}
+
+.media-list,
+.page,
+.top-ten {
+    @extend %vertical-flex;
+}
+
+.page {
+    justify-content: space-between;
+}
+
+.credit {
+    border-top: 1px solid $article_highlight;
+    background-color: $article_background;
+    line-height: 2;
+    padding-left: 2em;
+}
+
+.rest {
+    @extend %horizontal-flex;
+}
+
+.top-ten .rest {
+    flex-wrap: wrap;
+}
+
+body.home {
+    clear: both;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 90%;
+    padding: 2.5em 1em 0;
+}
+
+.site-banner {
+    background-color: $background_dark;
+    flex: 1 100%;
+    max-height: 5em;
+    min-height: 5em;
+    padding-left: 1em;
+
+    h1 {
+        vertical-align: center;
+    }
+}
+
+// li hell
+nav li {
+    background-color: $nav_blue;
+    border: 1px solid $nav_blue_lighter;
+    flex: 1 auto;
+}
+
+ol li, ul li, .game li, .top-ten li {
+    padding: 0;
+}
+
+.body li, .hentry li {
+    border-top: 1px solid $article_highlight;
+}
+
+.code-stuff li, .goty li {
+    border: 1px solid $background_darker;
+}
+
+.game li {
+    border: none;
+    float: left;
+    height: $cell_size;
+    line-height: $cell_size;
+    margin: 0 5px 5px 0;
+    text-align: center;
+    width: $cell_size;
+}
+
+.languages li {
+    @extend %vertical-flex;
+
+    align-items: stretch;
+
+    h3, .language-section {
+        @extend %vertical-flex;
+
+        align-items: center;
+        padding: 0;
+    }
+}
+
+.honorable-mention li, .top-ten li {
+    min-height: 5em;
+}
+
+.backlog-bracket li, .honorable-mention li {
+    @extend %vertical-flex;
+}
+
+.backlog-bracket li, .goty li, .honorable-mention li {
+    align-items: center;
+    background-color: $social_hover_background;
+}
+
+.backlog-bracket li {
+    justify-content: space-around;
+    height: 6em;
+    width: 9em;
+}
+
+.booklist li {
+    border: 1px solid $nav_blue_lighter;
+    flex: 1 auto;
+    margin: 0.5em;
+    max-width: 15em;
+    min-width: 15em;
+}
+
+.code-stuff li {
+    @extend %horizontal-flex;
+
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0.5em 0.5em;
+}
+
+.goty li {
+    color: $nav_blue;
+    margin: 0 0.25em 1em 0.25em;
+    padding: 1em;
+}
+
+article .honorable-mention li {
+    max-height: 60%;
+    max-width: 60%;
+}
+
+aside .honorable-mention li {
+    align-items: center;
+    justify-content: space-around;
+    height: 6em;
+    width: 9em;
+}
+
+.goty article li, {
+    flex: 1 auto;
+    margin: 0.25em;
+    padding: 0;
+}
+
+.goty aside li {
+    padding: 1em;
+}
+
+.goty .rest li {
+    max-width: 27%;
+}
+
+.goty .top-three li {
+    max-width: 33%;
+}
+
+// ol/ul hell
+nav ul {
+    @extend %vertical-flex;
+
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+header nav ul {
+    margin: 0;
+}
+
+.backlog-bracket ol, .honorable-mention ul {
+    align-items: center;
+    padding-left: 0;
+}
+
+.booklist ul, .site-nav-goty ul {
+    @extend %horizontal-flex;
+
+    padding-left: 0;
+}
+
+.booklist ul {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.content ul, .game ul, .goty ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+}
+
+.goty ol {
+    list-style: inside decimal-leading-zero;
+    justify-content: space-around;
+}
+
+.goty ul {
+    align-items: center;
+    justify-content: space-around;
+}
+
+.site-nav ul {
+    margin-bottom: 1em;
+}
+
+// pseudo-styles
+a:hover {
+    background-color: $background_dark;
+}
+
+a:visited {
+    color: $nav_blue_darker;
+}
+
+nav a:visited {
+    color: $background;
+}
+
+@each $item, $bg_color in $active_nav_colors {
+    nav a.active.#{$item} {
+        background-color: $bg_color;
+        color: $nav_blue;
+    }
+}
+
+@each $item, $bg_color in $hover_nav_colors {
+    nav a.#{$item}:hover {
+        background-color: $bg_color;
+        color: $nav_blue;
+    }
+}
+
+.site-banner a:hover {
+    color: $background;
+}
+
+.goty li:hover, .booklist li:hover {
+    background-color: $background_dark;
+}
+
+.goty img, .booklist img {
+    padding-bottom: 1em;
+}
+
+.entry-content img {
+    width: 80%;
+}
+
+.zeldo {
+    width: 500px;
+}
+
+section.body {
+    header {
+        width: 100%;
+    }
+
+    header, footer {
+        padding: 1em;
+    }
+
+    footer {
+        float: right;
+        text-align: right;
+        width: 40%;
+    }
+
+    .entry-content {
+        padding: 0 1em 0 1em;
     }
 }

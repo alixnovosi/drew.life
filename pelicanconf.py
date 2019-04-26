@@ -43,6 +43,12 @@ PAGES = [
     ("goty2018", "goty2018.html"),
 ]
 
+# pages besides blog that go into their own little zones with different nav.
+SUBPAGES = [
+    ("GOTY", "goty2018.html"),
+    ("books", "books2018.html"),
+]
+
 # pages in main menu - done manually instead of letting Pelican help,
 # because I have specific ideas about what's linked and what's "secret".
 TOPLEVEL_PAGES = [

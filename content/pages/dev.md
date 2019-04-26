@@ -14,8 +14,8 @@ Identifier: dev
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/nonogram_web">Nonogram Web</a>
-      <p>Web counterpart to nonogram_bot. Displays solutions to its puzzles.</p>
-      <p class="language">ECMAScript2016</p>
+      <p>Web counterpart to nonogram_bot. Displays solutions to its puzzles, and is playable.</p>
+      <p class="language">TypeScript/ReactJS</p>
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/nonogram_bot">nonogram_bot</a>
@@ -24,7 +24,7 @@ Identifier: dev
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/puckfetcher">puckfetcher</a>
-      <p>A simple command-line podcast downloader. Should work on Linux and OSX, Windows support eventual.</p>
+      <p>A simple command-line podcast downloader. Should work on Linux and OSX, Windows support possible.</p>
       <p class="language">Python 3.6</p>
     </li>
   </ul>
@@ -127,7 +127,7 @@ Identifier: dev
   <ul class="code-stuff">
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/puckfetcher">puckfetcher</a>
-      <p>A simple command-line podcast downloader. Should work on Linux and OSX, Windows support eventual.</p>
+      <p>A simple command-line podcast downloader. Should work on Linux and OSX, Windows support possible.</p>
       <p class="language">Python 3.6</p>
     </li>
     <li>
@@ -138,7 +138,7 @@ Identifier: dev
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/drew.life">drew.life</a>
       <p>Source code for this very website.</p>
-      <p class="language">HTML5, SCSS/CSS3</p>
+      <p class="language">HTML5, SCSS/CSS3, Markdown</p>
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/JustSudoku">JustSudoku</a>
@@ -147,8 +147,8 @@ Identifier: dev
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/nonogram_web">Nonogram Web</a>
-      <p>Web counterpart to nonogram_bot. Displays solutions to its puzzles.</p>
-      <p class="language">ECMAScript2016</p>
+      <p>Web counterpart to nonogram_bot. Displays solutions to its puzzles, and is playable.</p>
+      <p class="language">TypeScript/ReactJS</p>
     </li>
   </ul>
 

@@ -18,7 +18,7 @@
       <header class="site-banner">
         {% block header %}
           <h1>
-            <a href="{{ SITEURL }}">hi</a>
+            <a href="{{ SITEURL }}">drew</a>
           </h1>
         {% endblock header %}
       </header>
@@ -30,7 +30,7 @@
             {% endblock content %}
           </article>
 
-          <aside class="links">
+          <aside>
             {% if page is defined %}
               {{ lib.site_nav(page) }}
             {% else %}
@@ -41,11 +41,7 @@
         {% endblock main %}
       </main>
 
-      <footer class="pelican" class="body">
-        <address>
-          powered by <a href="https://getpelican.com/">Pelican</a>
-        </address><!-- /.about -->
-      </footer><!-- /.pelican -->
+      {{ lib.credit() }}
     {% endblock body %}
   </body>
 </html>
