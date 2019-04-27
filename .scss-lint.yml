@@ -1,4 +1,4 @@
-scss_files: "sass/main.scss"
+scss_files: "theme/static/sass/main.scss"
 
 linters:
     HexNotation:
