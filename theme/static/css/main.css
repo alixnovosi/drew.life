@@ -428,35 +428,83 @@ nav a:visited {
 }
 
 nav a.active.default {
+  color: #333355;
   background-color: #EEEEFF;
 }
 
-nav a.active.code {
+nav a.active.dev {
+  color: #333355;
   background-color: #AA7777;
 }
 
 nav a.active.skills {
+  color: #333355;
   background-color: #77AA77;
 }
 
 nav a.active.about {
+  color: #333355;
   background-color: #7777AA;
 }
 
 nav a.default:hover {
+  color: #333355;
   background-color: #CCCCDD;
 }
 
-nav a.code:hover {
+nav a.dev:hover {
+  color: #333355;
   background-color: #BB8888;
 }
 
 nav a.skills:hover {
+  color: #333355;
   background-color: #88BB88;
 }
 
 nav a.about:hover {
+  color: #333355;
   background-color: #8888BB;
+}
+
+nav a.blog:hover {
+  color: #333355;
+  background-color: #BB8888;
+}
+
+nav a.GOTY:hover {
+  color: #333355;
+  background-color: #88BB88;
+}
+
+nav a.books:hover {
+  color: #333355;
+  background-color: #8888BB;
+}
+
+nav a.github:hover {
+  color: #333355;
+  background-color: #BB8888;
+}
+
+nav a.itchio:hover {
+  color: #333355;
+  background-color: #88BB88;
+}
+
+nav a.twitter:hover {
+  color: #333355;
+  background-color: #8888BB;
+}
+
+nav a.twitch:hover {
+  color: #333355;
+  background-color: #DDAA77;
+}
+
+nav a.youtube:hover {
+  color: #333355;
+  background-color: #997799;
 }
 
 .article-body {

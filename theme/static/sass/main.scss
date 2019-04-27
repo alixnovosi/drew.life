@@ -2,7 +2,7 @@
 // AUTHOR:  Andrew Michaud                                                                       //
 // FILE:    main.scss                                                                            //
 // PURPOSE: SCSS file for drew.life                                                              //
-// UPDATED: 2019-04-25                                                                           //
+// UPDATED: 2019-04-27                                                                           //
 // LICENSE: ISC                                                                                  //
 //-----------------------------------------------------------------------------------------------//
 
@@ -20,17 +20,20 @@ $nav_blue_darker: #000011;
 
 $menu_hover: #CCCCDD;
 
-$blue: #7777AA;
-$blue_highlight: #8888BB;
-
-$green: #77AA77;
-$green_highlight: #88BB88;
+$red: #AA7777;
+$red_highlight: #BB8888;
 
 $orange: #CC9966;
 $orange_highlight: #DDAA77;
 
-$red: #AA7777;
-$red_highlight: #BB8888;
+$green: #77AA77;
+$green_highlight: #88BB88;
+
+$blue: #7777AA;
+$blue_highlight: #8888BB;
+
+$violet: #886688;
+$violet_highlight: #997799;
 
 $social_hover_background: #DDDDEE;
 
@@ -49,6 +52,14 @@ $hover_nav_colors: (
     code: $red_highlight,
     skills: $green_highlight,
     about: $blue_highlight,
+    blog: $red_highlight,
+    GOTY: $green_highlight,
+    books: $blue_highlight,
+    github: $red_highlight,
+    itchio: $green_highlight,
+    twitter: $blue_highlight,
+    twitch: $orange_highlight,
+    youtube: $violet_highlight,
 );
 
 //----------------------------- SCSS DEFINITIONS ------------------------------------------------//
@@ -525,12 +536,14 @@ nav a:visited {
 
 @each $item, $bg_color in $active_nav_colors {
     nav a.active.#{$item} {
+        color: $nav_blue;
         background-color: $bg_color;
     }
 }
 
 @each $item, $bg_color in $hover_nav_colors {
     nav a.#{$item}:hover {
+        color: $nav_blue;
         background-color: $bg_color;
     }
 }

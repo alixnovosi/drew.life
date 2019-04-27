@@ -7,7 +7,6 @@ DEFAULT_LANG = "en"
 PATH = "content/"
 
 SITENAME = "drewblog"
-SITEURL = ""
 SLUGIFY_SOURCE = "title"
 
 THEME = "theme"
@@ -32,22 +31,24 @@ SOCIAL = [
 
 # static pages
 PAGES = [
-    ("code stuff", f"{SITEURL}dev.html"),
-    ("skills", f"{SITEURL}skills.html"),
-    ("about me", f"{SITEURL}about.html"),
-    ("goty2015", f"{SITEURL}goty2015.html"),
-    ("goty2016", f"{SITEURL}goty2016.html"),
-    ("goty2017", f"{SITEURL}goty2017.html"),
-    ("goty2018", f"{SITEURL}goty2018.html"),
-    ("books", f"{SITEURL}books2018.html"),
+    ("code stuff", "dev.html"),
+    ("skills", "skills.html"),
+    ("about me", "about.html"),
+
+    ("goty2015", "goty2015.html"),
+    ("goty2016", "goty2016.html"),
+    ("goty2017", "goty2017.html"),
+    ("goty2018", "goty2018.html"),
+
+    ("books", "books2018.html"),
 ]
 
 # pages that go into their own little zones.
 # with possibly different nav
 SUBPAGES = [
-    ("blog", f"{SITEURL}blog/index.html"),
-    ("GOTY", f"{SITEURL}goty2018.html"),
-    ("books", f"{SITEURL}books2018.html"),
+    ("blog", "blog/index.html"),
+    ("GOTY", "goty2018.html"),
+    ("books", "books2018.html"),
 ]
 
 # pages in main menu - done manually instead of letting Pelican help,
@@ -55,13 +56,18 @@ SUBPAGES = [
 DISPLAY_PAGES_ON_MENU = False
 
 TOPLEVEL_PAGES = [
-    ("code stuff", f"{SITEURL}/dev.html", "code"),
-    ("skills", f"{SITEURL}/skills.html", "skills"),
-    ("about me", f"{SITEURL}/about.html", "about"),
+    ("code stuff", "dev.html", "dev"),
+    ("skills", "skills.html", "skills"),
+    ("about me", "about.html", "about"),
 ]
 
 DIRECT_TEMPLATES = ["blog_index", "category", "author", "tag"]
-PAGINATED_DIRECT_TEMPLATES = ["blog_index", "category", "author", "tag"]
+PAGINATED_TEMPLATES = {
+    "blog_index": 10,
+    "category": 10,
+    "author": 10,
+    "tag": 10
+}
 BLOG_INDEX_SAVE_AS = "blog/index.html"
 
 STATIC_PATHS = [
@@ -104,3 +110,4 @@ PLUGINS = [
 DELETE_OUTPUT_DIRECTORY = True
 
 READERS = dict(html=None)
+RELATIVE_URLS = False

@@ -32,14 +32,16 @@
     <ul>
       {% for name, link in SUBPAGES %}
         <li>
-          <a class="default" href="{{ link }}">{{ name }}</a>
+          <a class="{{ name|replace(".", "") }}"
+             href="{{ SITEURL }}/{{ link }}">{{ name }}</a>
         </li>
       {% endfor %}
     </ul>
     <ul>
       {% for name, link in SOCIAL %}
         <li>
-          <a class="default" href="{{ link }}">{{ name }}</a>
+          <a class="{{ name|replace(".", "") }}"
+             href="{{ link }}">{{ name }}</a>
         </li>
       {% endfor %}
     </ul>
