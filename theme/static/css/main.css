@@ -1,12 +1,12 @@
 body.home, .content, .game, .goty, .languages, .rest, .top-three, .game .board-row,
 .game .board-row-spacer, .game .game-info, .code-stuff li, .booklist ul,
-.site-nav-goty ul {
+.site-nav-goty ul, .article-body .post-info {
   display: flex;
   flex-direction: row;
 }
 
 ol, ul, .code-stuff, .honorable-mention, .language-section, .media-list,
-.page, .top-ten, .languages li, nav ul {
+.page, .top-ten, .languages li, nav ul, .article-body .post-info > div {
   display: flex;
   flex-direction: column;
 }
@@ -69,17 +69,19 @@ body.home {
   text-align: center;
 }
 
-.page-content, section.body {
+.article-body, .page-content {
   background-color: #FFFFFF;
-  box-shadow: 5px 5px 5px #666699;
-  justify-content: space-between;
   margin: 0 auto 1em auto;
   padding: 0.5em;
 }
-.page-content .read-more, section.body .read-more {
+.article-body .read-more, .page-content .read-more {
   line-height: 2;
   text-align: left;
   width: 50%;
+}
+
+.article-body header {
+  text-align: center;
 }
 
 .code-stuff .github-link, .code-stuff .language {
@@ -121,7 +123,7 @@ body.home {
 }
 
 .credit {
-  border-top: 1px solid #666699;
+  border-top: 2px solid #9999BB;
   background-color: #FFFFFF;
   line-height: 2;
   padding-left: 2em;
@@ -246,6 +248,7 @@ body.home {
 
 .site-banner {
   background-color: #BBBBDD;
+  border-bottom: 2px solid #666699;
   flex: 1 100%;
   max-height: 5em;
   min-height: 5em;
@@ -312,6 +315,14 @@ ol li, ul li, .game li {
   height: auto;
   margin: 0 0.25em 1em 0.25em;
   padding: 0.75em 0;
+}
+
+.post-list {
+  list-style-type: none;
+}
+
+.post-list li {
+  border-bottom: 4px solid #BBBBDD;
 }
 
 article .honorable-mention li {
@@ -429,8 +440,37 @@ nav a.about:hover {
   color: #333355;
 }
 
-.site-banner a:hover {
-  color: #EEEEFF;
+.article-body {
+  padding: 1em;
+}
+.article-body p {
+  line-height: 1.3;
+  text-align: justify;
+}
+
+.article-body .post-info {
+  border-bottom: 2px solid #9999BB;
+  justify-content: space-between;
+  min-height: 4em;
+  padding-bottom: 0.5em;
+}
+.article-body .post-info .meta {
+  justify-content: space-between;
+  text-align: right;
+}
+.article-body .post-info .time {
+  justify-content: top;
+  text-align: left;
+}
+
+.entry-content blockquote, .entry-content img {
+  display: block;
+  padding: 1em;
+  margin: 0 auto;
+  max-width: 80%;
+}
+.entry-content blockquote {
+  border: 1px solid #BBBBDD;
 }
 
 .goty li:hover, .booklist li:hover {
@@ -441,8 +481,17 @@ nav a.about:hover {
   padding-bottom: 1em;
 }
 
-.entry-content img {
-  width: 80%;
+.hentry .entry-content {
+  text-align: justify;
+}
+
+.hentry .post-info {
+  border-bottom: 2px solid #9999BB;
+  padding-bottom: 0.75em;
+}
+
+.site-banner a:hover {
+  color: #EEEEFF;
 }
 
 .zeldo {

@@ -8,7 +8,7 @@ PATH = "content/"
 # uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-SITENAME = "drew"
+SITENAME = "drewblog"
 SITEURL = ""
 # SITEURL = "https://blog.drew.life"
 SLUGIFY_SOURCE = "title"
@@ -41,6 +41,7 @@ PAGES = [
     ("goty2016", "goty2016.html"),
     ("goty2017", "goty2017.html"),
     ("goty2018", "goty2018.html"),
+    ("books", "books2018.html"),
 ]
 
 # pages besides blog that go into their own little zones with different nav.
@@ -58,8 +59,8 @@ TOPLEVEL_PAGES = [
     ("about me", "about.html", "about"),
 ]
 
-DIRECT_TEMPLATES = ["blog_index", "category", "author"]
-PAGINATED_DIRECT_TEMPLATES = ["blog_index", "category", "author"]
+DIRECT_TEMPLATES = ["blog_index", "category", "author", "tag"]
+PAGINATED_DIRECT_TEMPLATES = ["blog_index", "category", "author", "tag"]
 BLOG_INDEX_SAVE_AS = "blog/index.html"
 
 STATIC_PATHS = [

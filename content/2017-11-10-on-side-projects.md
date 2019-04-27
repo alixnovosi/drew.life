@@ -153,7 +153,7 @@ I wanted to set up a Proper Dev Process.
 I wrote tests,
 like a responsible developer.
 I hooked my GitHub repo up to
-[Travis CI](https://travis-ci.org
+[Travis CI](https://travis-ci.org)
 (free for open source projects!),
 to run all of my tests whenever I pushed new code.
 I also set up

@@ -127,10 +127,8 @@ body.home {
     text-align: center;
 }
 
-.page-content, section.body {
+.article-body, .page-content {
     background-color: $article_background;
-    box-shadow: 5px 5px 5px $article_highlight;
-    justify-content: space-between;
     margin: 0 auto 1em auto;
     padding: 0.5em;
 
@@ -139,6 +137,10 @@ body.home {
         text-align: left;
         width: 50%;
     }
+}
+
+.article-body header {
+    text-align: center;
 }
 
 .code-stuff, .honorable-mention, .language-section, .media-list, .page, .top-ten {
@@ -194,7 +196,7 @@ body.home {
 }
 
 .credit {
-    border-top: 1px solid $article_highlight;
+    border-top: 2px solid $background_darker;
     background-color: $article_background;
     line-height: 2;
     padding-left: 2em;
@@ -343,6 +345,7 @@ body.home {
 
 .site-banner {
     background-color: $background_dark;
+    border-bottom: 2px solid $article_highlight;
     flex: 1 100%;
     max-height: 5em;
     min-height: 5em;
@@ -417,6 +420,14 @@ ol li, ul li, .game li {
     height: auto;
     margin: 0 0.25em 1em 0.25em;
     padding: 0.75em 0;
+}
+
+.post-list {
+    list-style-type: none;
+}
+
+.post-list li {
+    border-bottom: 4px solid $background_dark;
 }
 
 article .honorable-mention li {
@@ -518,8 +529,49 @@ nav a:visited {
     }
 }
 
-.site-banner a:hover {
-    color: $background;
+.article-body {
+    padding: 1em;
+
+    p {
+        line-height: 1.3;
+        text-align: justify;
+    }
+}
+
+.article-body .post-info {
+    @extend %horizontal-flex;
+
+    border-bottom: 2px solid $background_darker;
+    justify-content: space-between;
+    min-height: 4em;
+    padding-bottom: 0.5em;
+
+    .meta {
+        justify-content: space-between;
+        text-align: right;
+    }
+
+    .time {
+        justify-content: top;
+        text-align: left;
+    }
+
+    > div {
+        @extend %vertical-flex;
+    }
+}
+
+.entry-content {
+    blockquote, img {
+        display: block;
+        padding: 1em;
+        margin: 0 auto;
+        max-width: 80%;
+    }
+
+    blockquote {
+        border: 1px solid $background_dark;
+    }
 }
 
 .goty li:hover, .booklist li:hover {
@@ -530,8 +582,17 @@ nav a:visited {
     padding-bottom: 1em;
 }
 
-.entry-content img {
-    width: 80%;
+.hentry .entry-content {
+    text-align: justify;
+}
+
+.hentry .post-info {
+    border-bottom: 2px solid $background_darker;
+    padding-bottom: 0.75em;
+}
+
+.site-banner a:hover {
+    color: $background;
 }
 
 .zeldo {

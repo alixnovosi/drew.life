@@ -6,7 +6,7 @@
     <h2>All articles</h2>
   {% endblock %}
 
-  <ol id="post-list">
+  <ol class="post-list">
     {% for article in articles_page.object_list %}
       <li>
         <article class="hentry">
@@ -22,16 +22,15 @@
           </header>
 
           <footer class="post-info">
-            <time class="published" datetime="{{ article.date.isoformat() }}">
-              published @ {{ article.locale_date }}
-            </time>
-
             <address class="vcard author">
               By
               {% for author in article.authors %}
                 <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
               {% endfor %}
             </address>
+            <time class="published" datetime="{{ article.date.isoformat() }}">
+              published @ {{ article.locale_date }}
+            </time>
           </footer><!-- /.post-info -->
 
           <div class="entry-content">
