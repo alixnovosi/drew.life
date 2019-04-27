@@ -2,35 +2,95 @@
 ## AUTHOR:  Andrew Michaud                                                                       ##
 ## FILE:    Makefile                                                                             ##
 ## PURPOSE: compiling sass -> css for drew.life, and moving other stuff around                   ##
-## UPDATED: 2019-02-26                                                                           ##
+## UPDATED: 2019-04-27                                                                           ##
 ## LICENSE: ISC                                                                                  ##
 ##-----------------------------------------------------------------------------------------------##
-BASEDIR=.
+PY?=python3
+PELICAN?=pelican
+PELICANOPTS=
 
-SASS_INPUT_DIR=$(BASEDIR)/theme/static/sass
-CSS_OUTPUT_DIR=$(BASEDIR)/theme/static/css
+BASEDIR=$(CURDIR)
+INPUTDIR=$(BASEDIR)/content
+OUTPUTDIR=$(BASEDIR)/output
+CONFFILE=$(BASEDIR)/pelicanconf.py
+PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-NONOGRAM_DIR=$(BASEDIR)/nonogram_web
+# custom items for SCSS compile and nonogram JS setup
+CSSDIR=$(BASEDIR)/theme/static/css
+SASSDIR=$(BASEDIR)/theme/static/sass
+NONOGRAMDIR=$(BASEDIR)/nonogram_web
 
-.PHONY: all sasscompile csscopy jscopy pelican clean
+DEBUG ?= 0
+ifeq ($(DEBUG), 1)
+	PELICANOPTS += -D
+endif
 
-all: clean sasscompile csscopy jscopy
+RELATIVE ?= 0
+ifeq ($(RELATIVE), 1)
+	PELICANOPTS += --relative-urls
+endif
 
-pelican:
-	pelican content --verbose
+help:
+	@echo 'Makefile for a pelican Web site                                           '
+	@echo '                                                                          '
+	@echo 'Usage:                                                                    '
+	@echo '   make html                           (re)generate the web site          '
+	@echo '   make clean                          remove the generated files         '
+	@echo '   make regenerate                     regenerate files upon modification '
+	@echo '   make publish                        generate using production settings '
+	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
+	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
+	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
+	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
+	@echo '                                                                          '
+	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
+	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
+	@echo '                                                                          '
 
+# custom for SCSS compile
 sasscompile:
-	pyscss $(SASS_INPUT_DIR)/main.scss \
-		--output $(CSS_OUTPUT_DIR)/main.css \
-		--no-compress \
-		--style expanded
+	pysassc $(SASSDIR)/main.scss $(CSSDIR)/main.css --style expanded
 
+# custom for ReactJS toy,
+# in git submodule
 jscopy:
-	cp $(NONOGRAM_DIR)/dist/*.js $(BASEDIR)/content/dist/
-	cp $(NONOGRAM_DIR)/dist/*.js.map $(BASEDIR)/content/dist/
+	cp $(NONOGRAMDIR)/dist/*.js $(INPUTDIR)/dist/
+	cp $(NONOGRAMDIR)/dist/*.js.map $(INPUTDIR)/dist/
+
+html: sasscompile jscopy
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
-	rm -f $(CSS_DIR)/main.css \ $(CSS_DIR)/main.css.map
+	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+	rm -f $(CSSDIR)/main.css $(CSSDIR)/main.css.map
+	rm -f $(INPUTDIR)/dist/*.js $(INPUTDIR)/dist/*.js.map
 
-	rm -rf $(NGINX_CONTENT)/dist
-	rm -f $(NGINX_CONTENT)/nonogram.html
+regenerate: sasscompile jscopy
+	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+
+serve:
+ifdef PORT
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+else
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+endif
+
+serve-global:
+ifdef SERVER
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b $(SERVER)
+else
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b 0.0.0.0
+endif
+
+devserver:
+ifdef PORT
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+else
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+endif
+
+publish:
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+
+.PHONY: html help clean regenerate serve serve-global devserver stopserver publish sasscompile \
+jscopy

@@ -1,12 +1,9 @@
-body.home, .content, .game, .goty, .languages, .rest, .top-three, .game .board-row,
-.game .board-row-spacer, .game .game-info, .code-stuff li, .booklist ul,
-.site-nav-goty ul, .article-body .post-info {
+body.home, .content, .game, .goty, .languages, .rest, .top-three, .game .board-row, .game .board-row-spacer, .game .game-info, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info {
   display: flex;
   flex-direction: row;
 }
 
-ol, ul, .code-stuff, .honorable-mention, .language-section, .media-list,
-.page, .top-ten, .languages li, nav ul, .article-body .post-info > div {
+ol, ul, .code-stuff, .honorable-mention, .language-section, .media-list, .page, .top-ten, .languages li, nav ul, .article-body .post-info > div {
   display: flex;
   flex-direction: column;
 }
@@ -47,11 +44,8 @@ main {
   flex: 100 auto;
 }
 
-nav {
-  color: background;
-}
 nav a {
-  color: inherit;
+  color: background;
   display: block;
   padding: 1em;
   text-decoration: none;
@@ -74,6 +68,7 @@ body.home {
   margin: 0 auto 1em auto;
   padding: 0.5em;
 }
+
 .article-body .read-more, .page-content .read-more {
   line-height: 2;
   text-align: left;
@@ -94,24 +89,29 @@ body.home {
   margin: 0;
   padding: 0.5em;
 }
+
 .code-stuff .github-link {
   max-width: 9em;
   min-width: 9em;
 }
+
 .code-stuff .github-link:hover {
   background-color: #CCCCDD;
   border-color: #333355;
 }
+
 .code-stuff .language {
   max-width: 11em;
   min-width: 11em;
 }
+
 .code-stuff p {
   margin: 1em;
 }
 
-.content, .content aside {
-  flex: 1 auto;
+.content aside {
+  max-width: 15%;
+  min-width: 15%;
 }
 
 .content article, .content aside {
@@ -139,14 +139,16 @@ body.home {
   flex-wrap: wrap;
   min-width: 800px;
 }
+
 .game .board-entry-spacer {
   margin-right: 10px;
 }
+
 .game .board-row-spacer {
   margin-bottom: 5px;
 }
-.game .filled-square, .game .empty-square, .game .blocked-square,
-.game .force-blocked-square {
+
+.game .filled-square, .game .empty-square, .game .blocked-square, .game .force-blocked-square {
   background-color: #EEEEFF;
   border: none;
   color: #333355;
@@ -158,21 +160,27 @@ body.home {
   text-align: center;
   width: 34px;
 }
+
 .game .filled-square, .game .empty-square {
   color: #333355;
 }
+
 .game .blocked-square, .game .force-blocked-square {
   background-color: #BBBBDD;
 }
+
 .game .force-blocked-square {
   color: #9999BB;
 }
+
 .game .filled-square {
   background-color: #9999BB;
 }
+
 .game .game-board {
   margin: 1em;
 }
+
 .game .game-info {
   color: #333355;
   background-color: #EEEEFF;
@@ -183,6 +191,7 @@ body.home {
   line-height: 34px;
   margin: 1em;
 }
+
 .game .game-info button {
   background-color: #BBBBDD;
   border: 1px solid #9999BB;
@@ -190,16 +199,20 @@ body.home {
   width: 96px;
   height: 34px;
 }
+
 .game .game-info button:hover {
   background-color: #9999BB;
 }
+
 .game .game-info div {
   margin: 0 auto;
   padding: 1em;
 }
+
 .game .kbd-navigation .square:focus {
   background: #9999BB;
 }
+
 .game .top-hints {
   flex-direction: row;
 }
@@ -208,24 +221,32 @@ body.home {
   text-align: center;
   justify-content: space-evenly;
 }
+
 .goty article {
   padding: 0 1em 0 0.5em;
 }
+
 .goty aside {
   border-left: 2px solid #333355;
   padding: 0 0.5em;
   width: 40%;
 }
+
 .goty .honorable-mention {
   align-items: stretch;
   border-top: 2px solid #333355;
 }
+
 .goty .rest {
   flex-wrap: wrap;
 }
 
 .js-toy {
   flex: 20 auto;
+}
+
+.js-toy .game {
+  margin: 1em;
 }
 
 .language-section {
@@ -237,6 +258,7 @@ body.home {
   justify-content: space-evenly;
   padding-left: 0;
 }
+
 .languages img {
   margin-bottom: 0.75em;
   width: 4.5em;
@@ -254,6 +276,7 @@ body.home {
   min-height: 5em;
   padding-left: 1em;
 }
+
 .site-banner h1 {
   vertical-align: center;
 }
@@ -396,53 +419,50 @@ a:visited {
   color: #000011;
 }
 
+nav a:hover {
+  color: #333355;
+}
+
 nav a:visited {
   color: #EEEEFF;
 }
 
 nav a.active.default {
   background-color: #EEEEFF;
-  color: #333355;
 }
 
 nav a.active.code {
-  background-color: #77AA77;
-  color: #333355;
+  background-color: #AA7777;
 }
 
 nav a.active.skills {
-  background-color: #7777AA;
-  color: #333355;
+  background-color: #77AA77;
 }
 
 nav a.active.about {
-  background-color: #CC9966;
-  color: #333355;
+  background-color: #7777AA;
 }
 
 nav a.default:hover {
   background-color: #CCCCDD;
-  color: #333355;
 }
 
 nav a.code:hover {
-  background-color: #88BB88;
-  color: #333355;
+  background-color: #BB8888;
 }
 
 nav a.skills:hover {
-  background-color: #8888BB;
-  color: #333355;
+  background-color: #88BB88;
 }
 
 nav a.about:hover {
-  background-color: #DDAA77;
-  color: #333355;
+  background-color: #8888BB;
 }
 
 .article-body {
   padding: 1em;
 }
+
 .article-body p {
   line-height: 1.3;
   text-align: justify;
@@ -454,10 +474,12 @@ nav a.about:hover {
   min-height: 4em;
   padding-bottom: 0.5em;
 }
+
 .article-body .post-info .meta {
   justify-content: space-between;
   text-align: right;
 }
+
 .article-body .post-info .time {
   justify-content: top;
   text-align: left;
@@ -469,6 +491,7 @@ nav a.about:hover {
   margin: 0 auto;
   max-width: 80%;
 }
+
 .entry-content blockquote {
   border: 1px solid #BBBBDD;
 }

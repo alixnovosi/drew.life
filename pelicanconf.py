@@ -1,22 +1,20 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*- #
 
 AUTHOR = "drew"
 DEFAULT_LANG = "en"
 
 PATH = "content/"
 
-# uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
-
 SITENAME = "drewblog"
 SITEURL = ""
-# SITEURL = "https://blog.drew.life"
 SLUGIFY_SOURCE = "title"
 
 THEME = "theme"
 TIMEZONE = "America/Los_Angeles"
 
 # feed generation settings
+# no feeds
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
@@ -26,37 +24,40 @@ AUTHOR_FEED_RSS = None
 # social links
 SOCIAL = [
           ("github", "https://github.com/alixnovosi/"),
+          ("itch.io", "https://alixnovosi.itch.io"),
           ("twitter", "https://twitter.com/alixnovosi"),
           ("twitch", "https://twitch.tv/alixnovosi"),
           ("youtube", "https://youtube.com/alixnovosi"),
-          ("itch.io", "https://alixnovosi.itch.io"),
 ]
 
 # static pages
 PAGES = [
-    ("code stuff", "dev.html"),
-    ("skills", "skills.html"),
-    ("about me", "about.html"),
-    ("goty2015", "goty2015.html"),
-    ("goty2016", "goty2016.html"),
-    ("goty2017", "goty2017.html"),
-    ("goty2018", "goty2018.html"),
-    ("books", "books2018.html"),
+    ("code stuff", f"{SITEURL}dev.html"),
+    ("skills", f"{SITEURL}skills.html"),
+    ("about me", f"{SITEURL}about.html"),
+    ("goty2015", f"{SITEURL}goty2015.html"),
+    ("goty2016", f"{SITEURL}goty2016.html"),
+    ("goty2017", f"{SITEURL}goty2017.html"),
+    ("goty2018", f"{SITEURL}goty2018.html"),
+    ("books", f"{SITEURL}books2018.html"),
 ]
 
-# pages besides blog that go into their own little zones with different nav.
+# pages that go into their own little zones.
+# with possibly different nav
 SUBPAGES = [
-    ("GOTY", "goty2018.html"),
-    ("books", "books2018.html"),
+    ("blog", f"{SITEURL}blog/index.html"),
+    ("GOTY", f"{SITEURL}goty2018.html"),
+    ("books", f"{SITEURL}books2018.html"),
 ]
 
 # pages in main menu - done manually instead of letting Pelican help,
 # because I have specific ideas about what's linked and what's "secret".
+DISPLAY_PAGES_ON_MENU = False
+
 TOPLEVEL_PAGES = [
-    ("blog", "blog/index.html", "default"),
-    ("code stuff", "dev.html", "code"),
-    ("skills", "skills.html", "skills"),
-    ("about me", "about.html", "about"),
+    ("code stuff", f"{SITEURL}/dev.html", "code"),
+    ("skills", f"{SITEURL}/skills.html", "skills"),
+    ("about me", f"{SITEURL}/about.html", "about"),
 ]
 
 DIRECT_TEMPLATES = ["blog_index", "category", "author", "tag"]
@@ -85,8 +86,6 @@ EXTRA_PATH_METADATA = {
 TEMPLATE_PAGES = {
     "../theme/templates/home.html": "index.html",
 }
-
-DISPLAY_PAGES_ON_MENU = False
 
 # file location settings
 ARTICLE_URL = "posts/{date:%Y}/{date:%m}/{date:%d}/{slug}/"

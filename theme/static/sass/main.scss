@@ -20,14 +20,17 @@ $nav_blue_darker: #000011;
 
 $menu_hover: #CCCCDD;
 
-$orange: #CC9966;
-$orange_highlight: #DDAA77;
+$blue: #7777AA;
+$blue_highlight: #8888BB;
 
 $green: #77AA77;
 $green_highlight: #88BB88;
 
-$blue: #7777AA;
-$blue_highlight: #8888BB;
+$orange: #CC9966;
+$orange_highlight: #DDAA77;
+
+$red: #AA7777;
+$red_highlight: #BB8888;
 
 $social_hover_background: #DDDDEE;
 
@@ -36,16 +39,16 @@ $cell_size: 34px;
 
 $active_nav_colors: (
     default: $background,
-    code: $green,
-    skills: $blue,
-    about: $orange,
+    code: $red,
+    skills: $green,
+    about: $blue,
 );
 
 $hover_nav_colors: (
     default: $menu_hover,
-    code: $green_highlight,
-    skills: $blue_highlight,
-    about: $orange_highlight,
+    code: $red_highlight,
+    skills: $green_highlight,
+    about: $blue_highlight,
 );
 
 //----------------------------- SCSS DEFINITIONS ------------------------------------------------//
@@ -101,15 +104,11 @@ ol, ul {
     @extend %vertical-flex;
 }
 
-nav {
+nav a {
     color: background;
-
-    a {
-        color: inherit;
-        display: block;
-        padding: 1em;
-        text-decoration: none;
-    }
+    display: block;
+    padding: 1em;
+    text-decoration: none;
 }
 
 // non-hell classes
@@ -183,8 +182,9 @@ body.home {
     @extend %horizontal-flex;
 }
 
-.content, .content aside {
-    flex: 1 auto;
+.content aside {
+    max-width: 15%;
+    min-width: 15%;
 }
 
 .content article, .content aside {
@@ -322,6 +322,10 @@ body.home {
 
 .js-toy {
     flex: 20 auto;
+
+    .game {
+        margin: 1em;
+    }
 }
 
 .language-section {
@@ -511,6 +515,10 @@ a:visited {
     color: $nav_blue_darker;
 }
 
+nav a:hover {
+    color: $nav_blue;
+}
+
 nav a:visited {
     color: $background;
 }
@@ -518,14 +526,12 @@ nav a:visited {
 @each $item, $bg_color in $active_nav_colors {
     nav a.active.#{$item} {
         background-color: $bg_color;
-        color: $nav_blue;
     }
 }
 
 @each $item, $bg_color in $hover_nav_colors {
     nav a.#{$item}:hover {
         background-color: $bg_color;
-        color: $nav_blue;
     }
 }
 
