@@ -1,8 +1,9 @@
 ##-----------------------------------------------------------------------------------------------##
 ## AUTHOR:  Andrew Michaud                                                                       ##
 ## FILE:    Makefile                                                                             ##
-## PURPOSE: compiling sass -> css for drew.life, and moving other stuff around                   ##
-## UPDATED: 2019-04-27                                                                           ##
+## PURPOSE: pelican generated makefile,                                                          ##
+##          plus compiling sass -> css for drew.life, and moving other js around                 ##
+## UPDATED: 2019-04-28                                                                           ##
 ## LICENSE: ISC                                                                                  ##
 ##-----------------------------------------------------------------------------------------------##
 PY?=python3

@@ -7,7 +7,7 @@
         "at-rule-blacklist": [],
         "at-rule-no-unknown": null,
         "color-hex-length": "long",
-        "color-hex-case": "lowercase",
+        "color-hex-case": "lower",
         "indentation": 4,
         "selector-list-comma-newline-after": "always-multi-line",
 
