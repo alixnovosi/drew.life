@@ -1,4 +1,4 @@
-body.home, .content, .game, .goty, .languages, .rest, .top-three, .game .board-row, .game .board-row-spacer, .game .game-info, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info {
+body.home, .archive-article, .content, .game, .goty, .languages, .rest, .top-three, .credit, .game .board-row, .game .board-row-spacer, .game .game-info, .paginator, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info {
   display: flex;
   flex-direction: row;
 }
@@ -51,12 +51,40 @@ nav a {
   text-decoration: none;
 }
 
+p {
+  color: #000011;
+}
+
 body.home {
   clear: both;
   margin: 0 auto;
   max-width: 1200px;
   min-width: 90%;
   padding: 2.5em 1em 0;
+}
+
+.archive-article {
+  align-items: top;
+  border-color: #bbbbdd;
+  border-top: 1px solid;
+  justify-content: space-evenly;
+  padding: 1em 0;
+}
+
+.archive-article .dates {
+  max-width: 15%;
+  min-width: 15%;
+}
+
+.archive-article div {
+  align-self: center;
+  min-width: 33%;
+  text-align: left;
+}
+
+.archive-article .tags {
+  max-width: 20%;
+  min-width: 20%;
 }
 
 .booklist h1 {
@@ -123,10 +151,11 @@ body.home {
 }
 
 .credit {
+  background: url(/theme/images/palm-leaf.png) #9999bb;
   border-top: 2px solid #9999bb;
-  background-color: #ffffff;
+  justify-content: space-between;
   line-height: 2;
-  padding-left: 2em;
+  padding: 0 2em;
 }
 
 .game {
@@ -268,9 +297,16 @@ body.home {
   justify-content: space-between;
 }
 
+.paginator {
+  border-top: 3px solid #bbbbdd;
+  font-size: 24px;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
 .site-banner {
-  background-color: #bbbbdd;
-  border-bottom: 2px solid #666699;
+  background: url(/theme/images/palm-leaf.png) #9999bb;
+  border-bottom: 2px solid #9999bb;
   flex: 1 100%;
   max-height: 5em;
   min-height: 5em;
@@ -345,7 +381,7 @@ ol li, ul li, .game li {
 }
 
 .post-list li {
-  border-bottom: 4px solid #bbbbdd;
+  border-top: 4px solid #bbbbdd;
 }
 
 article .honorable-mention li {
@@ -379,6 +415,10 @@ header nav ul {
   margin: 0;
 }
 
+.article-body ul {
+  text-align: left;
+}
+
 .backlog-bracket ol, .honorable-mention ul {
   align-items: center;
 }
@@ -403,7 +443,7 @@ header nav ul {
   list-style: inside decimal-leading-zero;
 }
 
-.booklist ul, .game ul, .goty ul {
+.article-body ul, .booklist ul, .game ul, .goty ul {
   list-style-type: none;
 }
 

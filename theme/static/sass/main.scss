@@ -14,6 +14,8 @@ $background: #eeeeff;
 $background_dark: #bbbbdd;
 $background_darker: #9999bb;
 
+$bg_img: url(/theme/images/palm-leaf.png) $background_darker;
+
 $nav_blue_lighter: #555577;
 $nav_blue: #333355;
 $nav_blue_darker: #000011;
@@ -111,15 +113,19 @@ main {
     flex: 100 auto;
 }
 
-ol, ul {
-    @extend %vertical-flex;
-}
-
 nav a {
     color: background;
     display: block;
     padding: 1em;
     text-decoration: none;
+}
+
+ol, ul {
+    @extend %vertical-flex;
+}
+
+p {
+    color: $nav_blue_darker;
 }
 
 // non-hell classes
@@ -131,6 +137,32 @@ body.home {
     max-width: 1200px;
     min-width: 90%;
     padding: 2.5em 1em 0;
+}
+
+.archive-article {
+    @extend %horizontal-flex;
+
+    align-items: top;
+    border-color: $background_dark;
+    border-top: 1px solid;
+    justify-content: space-evenly;
+    padding: 1em 0;
+
+    .dates {
+        max-width: 15%;
+        min-width: 15%;
+    }
+
+    div {
+        align-self: center;
+        min-width: 33%;
+        text-align: left;
+    }
+
+    .tags {
+        max-width: 20%;
+        min-width: 20%;
+    }
 }
 
 .booklist h1 {
@@ -207,10 +239,13 @@ body.home {
 }
 
 .credit {
+    @extend %horizontal-flex;
+
+    background: $bg_img;
     border-top: 2px solid $background_darker;
-    background-color: $article_background;
+    justify-content: space-between;
     line-height: 2;
-    padding-left: 2em;
+    padding: 0 2em;
 }
 
 .game {
@@ -358,9 +393,18 @@ body.home {
     justify-content: space-between;
 }
 
+.paginator {
+    @extend %horizontal-flex;
+
+    border-top: 3px solid $background_dark;
+    font-size: 24px;
+    justify-content: space-between;
+    padding: 0.5em;
+}
+
 .site-banner {
-    background-color: $background_dark;
-    border-bottom: 2px solid $article_highlight;
+    background: $bg_img;
+    border-bottom: 2px solid $background_darker;
     flex: 1 100%;
     max-height: 5em;
     min-height: 5em;
@@ -442,7 +486,7 @@ ol li, ul li, .game li {
 }
 
 .post-list li {
-    border-bottom: 4px solid $background_dark;
+    border-top: 4px solid $background_dark;
 }
 
 article .honorable-mention li {
@@ -479,6 +523,10 @@ header nav ul {
     margin: 0;
 }
 
+.article-body ul {
+    text-align: left;
+}
+
 .backlog-bracket ol, .honorable-mention ul {
     align-items: center;
 }
@@ -509,7 +557,7 @@ header nav ul {
 
 // can't be ol/ul unconditionally because I'm still trying to preserve goty2015/goty2016
 // in a "raw" format.
-.booklist ul, .game ul, .goty ul {
+.article-body ul, .booklist ul, .game ul, .goty ul {
     list-style-type: none;
 }
 

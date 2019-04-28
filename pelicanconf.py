@@ -61,8 +61,15 @@ TOPLEVEL_PAGES = [
     ("about me", "about.html", "about"),
 ]
 
-DIRECT_TEMPLATES = ["blog_index", "category", "author", "tag"]
-DFAULT_PAGINATION = 5
+DIRECT_TEMPLATES = ["blog_index", "category", "author", "tag", "archives"]
+DEFAULT_PAGINATION = 10
+PAGINATED_TEMPLATES = {
+    "blog_index": DEFAULT_PAGINATION,
+    "category": DEFAULT_PAGINATION,
+    "author": DEFAULT_PAGINATION,
+    "tag": DEFAULT_PAGINATION,
+    "archives": 0,
+}
 BLOG_INDEX_SAVE_AS = "blog/index.html"
 
 STATIC_PATHS = [
