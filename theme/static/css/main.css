@@ -93,8 +93,9 @@ body.home {
 
 .article-body, .page-content {
   background-color: #ffffff;
+  border: 2px solid #9999bb;
   margin: 0 auto 1em auto;
-  padding: 0.5em;
+  padding: 1em 2em;
 }
 
 .article-body .read-more, .page-content .read-more {
@@ -547,10 +548,6 @@ nav a.youtube:hover {
   background-color: #997799;
 }
 
-.article-body {
-  padding: 1em;
-}
-
 .article-body p {
   line-height: 1.3;
   text-align: justify;
@@ -559,7 +556,7 @@ nav a.youtube:hover {
 .article-body .post-info {
   border-bottom: 2px solid #9999bb;
   justify-content: space-between;
-  min-height: 4em;
+  min-height: 5em;
   padding-bottom: 0.5em;
 }
 

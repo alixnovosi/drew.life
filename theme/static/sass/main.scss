@@ -171,8 +171,10 @@ body.home {
 
 .article-body, .page-content {
     background-color: $article_background;
+    // box-shadow: 5px 5px 5px $background_darker;
+    border: 2px solid $background_darker;
     margin: 0 auto 1em auto;
-    padding: 0.5em;
+    padding: 1em 2em;
 
     .read-more {
         line-height: 2;
@@ -597,8 +599,6 @@ nav a:visited {
 }
 
 .article-body {
-    padding: 1em;
-
     p {
         line-height: 1.3;
         text-align: justify;
@@ -610,7 +610,7 @@ nav a:visited {
 
     border-bottom: 2px solid $background_darker;
     justify-content: space-between;
-    min-height: 4em;
+    min-height: 5em;
     padding-bottom: 0.5em;
 
     .meta {
