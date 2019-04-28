@@ -1,14 +1,13 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
 
-# TEAM
-    Developer/Owner: Andrew Michaud
-    Contact:
-    Twitter: @alixnovosi
+/* TEAM */
+    Developer/Owner: drew
+    Contact: dev [at] drew.life
     From: California, USA
 
-# TECHNOLOGY COLOPHON
-    Last update: 2016-03-08
+/* SITE */
+    Last update: 2019-04-27
     Language: English
-    Technologies: HTML5, CSS3, nginx
-    IDE: neovim
+    Standards: HTML5, CSS3
+    Software: neovim, Pelican, nginx, FreeBSD

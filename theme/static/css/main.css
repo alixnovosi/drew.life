@@ -432,7 +432,7 @@ nav a.active.default {
   background-color: #eeeeff;
 }
 
-nav a.active.code {
+nav a.active.dev {
   color: #333355;
   background-color: #aa7777;
 }
@@ -452,7 +452,7 @@ nav a.default:hover {
   background-color: #ccccdd;
 }
 
-nav a.code:hover {
+nav a.dev:hover {
   color: #333355;
   background-color: #bb8888;
 }

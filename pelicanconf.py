@@ -62,12 +62,7 @@ TOPLEVEL_PAGES = [
 ]
 
 DIRECT_TEMPLATES = ["blog_index", "category", "author", "tag"]
-PAGINATED_TEMPLATES = {
-    "blog_index": 10,
-    "category": 10,
-    "author": 10,
-    "tag": 10
-}
+DFAULT_PAGINATION = 5
 BLOG_INDEX_SAVE_AS = "blog/index.html"
 
 STATIC_PATHS = [

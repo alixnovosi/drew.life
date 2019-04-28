@@ -3,7 +3,7 @@
 ## FILE:    Makefile                                                                             ##
 ## PURPOSE: pelican generated makefile,                                                          ##
 ##          plus compiling sass -> css for drew.life, and moving other js around                 ##
-## UPDATED: 2019-04-28                                                                           ##
+## UPDATED: 2019-04-27                                                                           ##
 ## LICENSE: ISC                                                                                  ##
 ##-----------------------------------------------------------------------------------------------##
 PY?=python3

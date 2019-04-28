@@ -8,7 +8,7 @@
 
     <title>
       {% block title %}
-      {% if page is defined %}{{ page.title }}{% else %} {{ SITENAME }} {% endif %}
+        {% if page is defined %}{{ page.title }}{% else %} {{ SITENAME }} {% endif %}
       {% endblock title %}
     </title>
   </head>
@@ -18,7 +18,7 @@
       <header class="site-banner">
         {% block header %}
           <h1>
-            <a href="{{ SITEURL }}">{{ SITENAME }}</a>
+            <a href="{{ SITEURL }}/">{{ SITENAME }}</a>
           </h1>
         {% endblock header %}
       </header>

@@ -42,14 +42,14 @@ $cell_size: 34px;
 
 $active_nav_colors: (
     default: $background,
-    code: $red,
+    dev: $red,
     skills: $green,
     about: $blue,
 );
 
 $hover_nav_colors: (
     default: $menu_hover,
-    code: $red_highlight,
+    dev: $red_highlight,
     skills: $green_highlight,
     about: $blue_highlight,
     blog: $red_highlight,
