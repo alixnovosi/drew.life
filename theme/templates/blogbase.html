@@ -1,11 +1,9 @@
 {% extends "base.html" %}
+
+{% block title %}{{ SITENAME }}{% endblock title %}
+
 {% block head %}
   {{ super() }}
-  <title>
-    {% block title %}
-      {{ SITENAME }}
-    {% endblock %}
-  </title>
 
   {% if FEED_ALL_RSS %}
     <link

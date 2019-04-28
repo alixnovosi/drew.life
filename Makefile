@@ -16,6 +16,11 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
+SSH_HOST=laphicet.drew.life
+SSH_PORT=22
+SSH_USER=amichaud
+SSH_TARGET_DIR=/usr/local/www/nginx/output
+
 # custom items for SCSS compile and nonogram JS setup
 CSSDIR=$(BASEDIR)/theme/static/css
 SASSDIR=$(BASEDIR)/theme/static/sass
@@ -90,8 +95,12 @@ else
 	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 endif
 
-publish:
+publish: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
+rsync_upload: publish
+	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ \
+$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
+
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish sasscompile \
-jscopy
+jscopy rsync_upload

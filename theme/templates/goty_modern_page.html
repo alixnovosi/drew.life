@@ -1,13 +1,14 @@
 {% extends "base.html" %}
-<!-- goty_modern_page -->
+
+{% block title %}{{page.title}}{% endblock title %}
+
 {% block head %}
+  {{ super() }}
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@alixnovosi" />
   <meta name="twitter:title" content="{{page.title}}" />
   <meta name="twitter:desription" content="Come read the list!" />
   <meta name="twitter:image" content="{{ SITEURL }}/media/goty/trophy.jpg" />
-  <title>{{page.title}}</title>
-  {{ super() }}
 {% endblock head %}
 
 {% block body %}
