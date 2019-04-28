@@ -602,7 +602,8 @@ nav a.youtube:hover {
 }
 
 .site-banner a:hover {
-  color: #eeeeff;
+  background: transparent;
+  color: #555577;
 }
 
 .zeldo {

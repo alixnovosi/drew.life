@@ -659,7 +659,8 @@ nav a:visited {
 }
 
 .site-banner a:hover {
-    color: $background;
+    background: transparent;
+    color: $nav_blue_lighter;
 }
 
 .zeldo {
