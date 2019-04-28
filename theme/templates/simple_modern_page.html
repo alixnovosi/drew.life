@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+{% endblock head %}
+
+{% block body %}
+  <header>
+    {% block header %}
+      {{ lib.simple_nav() }}
+    {% endblock header %}
+  </header>
+
+  <main class="content">
+    {{ page.content }}
+  </main>
+
+  {{ lib.credit() }}
+{% endblock body %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% import '_lib.html' as lib with context %}
+
+{% block head %}
+  {{ super() }}
+
+  {% import 'translations.html' as translations with context %}
+  {% if translations.entry_hreflang("home") %}
+    {{ translations.entry_hreflang("home") }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <p>Hello!  This is my personal website, updated sometimes.</p>
+  <p>Enjoy your stay!</p>
+{% endblock content %}
+
+{% block aside %}
+  {{ lib.site_nav("home") }}
+  {{ super() }}
+{% endblock aside %}

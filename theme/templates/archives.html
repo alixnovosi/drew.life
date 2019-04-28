@@ -1,18 +1,27 @@
-{% extends "base.html" %}
+{% extends "blogbase.html" %}
 
 {% block title %}{{ SITENAME }} - Archives{% endblock %}
 
 {% block content %}
-  <h1>Archives for {{ SITENAME }}</h1>
+  <section class="article-body">
+    <h1>Archives for {{ SITENAME }}</h1>
 
-  <dl>
-    {% for article in dates %}
-      <dt>{{ article.locale_date }}</dt>
-      <dd>
-        <a href="{{ SITEURL }}/{{ article.url }}">
-          {{ article.title }}
-        </a>
-      </dd>
-    {% endfor %}
-  </dl>
+    <ul>
+      {% for article in dates %}
+        <li class="archive-article">
+          <div class="dates">{{ article.date.strftime("%d %b %Y") }}</div>
+          <div class="title">
+            <a href="{{ SITEURL }}/{{ article.url }}">
+              {{ article.title }}
+            </a>
+          </div>
+          <div class="tags">
+            {% for tag in article.tags %}
+              <a href="{{ tag.url }}">{{ tag.name }}</a>
+            {% endfor %}
+          </div>
+        <li>
+      {% endfor %}
+    </ul>
+  </section>
 {% endblock %}

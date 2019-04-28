@@ -1,0 +1,101 @@
+{% macro head_base() %}
+  <meta charset="utf-8" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    integrity="sha384-M86HUGbBFILBBZ9ykMAbT3nVb0+2C7yZlF8X2CiKNpDOQjKroMJqIeGZ/Le8N2Qp"
+    crossorigin="anonymous"
+  >
+
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" type="text/css">
+{% endmacro %}
+
+{% macro site_nav(page) %}
+  <nav class="site-nav">
+    <ul>
+      <li><a class="default" href="{{ SITEURL }}/">home</a></li>
+
+      {% for slug, url, identifier in TOPLEVEL_PAGES %}
+        <li>
+          <a
+            class="{% if identifier == page.identifier %}active {% endif %} {{ identifier }}"
+            href="{{ SITEURL }}/{{ url }}"
+          >
+            {{ slug }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for name, link in SUBPAGES %}
+        <li>
+          <a class="{{ name|replace(".", "") }}"
+             href="{{ SITEURL }}/{{ link }}">{{ name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for name, link in SOCIAL %}
+        <li>
+          <a class="{{ name|replace(".", "") }}"
+             href="{{ link }}">{{ name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endmacro %}
+
+{% macro simple_nav() %}
+  <nav>
+    <ul>
+      <li>
+        <a class="default" href="{{ SITEURL }}/">home</a>
+      </li>
+    </ul>
+  </nav>
+{% endmacro %}
+
+{% macro goty_nav(page) %}
+  <nav class="site-nav-goty">
+    <ul>
+      <li>
+        <a class="default"{% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %} >
+            {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
+        </a>
+      </li>
+      <li>
+        <a class="default" href="{{ SITEURL }}/">home</a>
+      </li>
+      <li>
+        <a class="default" {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %} >
+            {% if page.next %}
+              {{page.next}}
+            {%else %}
+              No more, yet.
+            {% endif %}
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endmacro %}
+
+{% macro credit() %}
+  <footer class="credit">
+    <address>
+      built with
+      <a href="https://getpelican.com/">Pelican</a>.
+      powered by
+      <a href="https://nginx.org/">nginx</a>
+      and
+      <a href="https://www.freebsd.org/">FreeBSD</a>
+    </address><!-- /.about -->
+    <address>
+      header/footer background from
+      <a href="https://www.toptal.com/designers/subtlepatterns/">subtle patterns</a>
+    </address>
+    <address>
+      <a href="https://github.com/alixnovosi/drew.life">source code</a>
+    </address>
+  </footer><!-- /.pelican -->
+{% endmacro %}

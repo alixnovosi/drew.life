@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <header>
+    {% block header %}
+      {{ lib.simple_nav() }}
+    {% endblock header %}
+  </header>
+
+  <main class="js-toy">
+    {{ page.content }}
+  </main>
+
+  {{ lib.credit() }}
+{% endblock body %}

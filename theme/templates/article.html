@@ -1,4 +1,5 @@
-{% extends "base.html" %}
+{% extends "blogbase.html" %}
+
 {% block html_lang %}{{ article.lang }}{% endblock %}
 
 {% block title %}{{ SITENAME }} - {{ article.title }}{% endblock %}
@@ -22,7 +23,7 @@
 {% endblock %}
 
 {% block content %}
-  <section id="content" class="body">
+  <section class="article-body">
     <header>
       <h2 class="entry-title">
         <a
@@ -37,38 +38,41 @@
     </header>
 
     <footer class="post-info">
-      <time class="published" datetime="{{ article.date.isoformat() }}">
-        published @ {{ article.locale_date }}
-      </time>
-
-      {% if article.modified %}
-        <time class="modified" datetime="{{ article.modified.isoformat() }}">
-          modified @ {{ article.locale_modified }}
+      <div class="times">
+        <time class="published" datetime="{{ article.date.isoformat() }}">
+          published @ {{ article.locale_date }}
         </time>
-      {% endif %}
+        {% if article.modified %}
+          <time class="modified" datetime="{{ article.modified.isoformat() }}">
+            modified @ {{ article.locale_modified }}
+          </time>
+        {% endif %}
+      </div>
 
-      {% if article.authors %}
-        <address class="vcard author">
-          by {% for author in article.authors %}
-              <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-            {% endfor %}
-        </address>
-      {% endif %}
+      <div class="meta">
+        {% if article.authors %}
+          <address class="vcard author">
+            by {% for author in article.authors %}
+                <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+              {% endfor %}
+          </address>
+        {% endif %}
 
-      {% if article.category %}
-        <div class="category">
-            category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-        </div>
-      {% endif %}
+        {% if article.category %}
+          <div class="category">
+              category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+          </div>
+        {% endif %}
 
-      {% if article.tags %}
-        <div class="tags">
-            tags:
-            {% for tag in article.tags %}
-                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-            {% endfor %}
-        </div>
-      {% endif %}
+        {% if article.tags %}
+          <div class="tags">
+              tags:
+              {% for tag in article.tags %}
+                  <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+              {% endfor %}
+          </div>
+        {% endif %}
+      </div>
     </footer><!-- /.post-info -->
 
     <div class="entry-content">

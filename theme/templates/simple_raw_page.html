@@ -1,0 +1,15 @@
+{% extends "simple_modern_page.html" %}
+
+{% block body %}
+  <header>
+    {% block header %}
+      {{ lib.simple_nav() }}
+    {% endblock header %}
+  </header>
+
+  <main>
+    {{ page.content }}
+  </main>
+
+  {{ lib.credit() }}
+{% endblock body %}

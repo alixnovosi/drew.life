@@ -1,50 +1,106 @@
 ##-----------------------------------------------------------------------------------------------##
 ## AUTHOR:  Andrew Michaud                                                                       ##
 ## FILE:    Makefile                                                                             ##
-## PURPOSE: compiling sass -> css for drew.life, and moving other stuff around                   ##
-## UPDATED: 2019-02-26                                                                           ##
+## PURPOSE: pelican generated makefile,                                                          ##
+##          plus compiling sass -> css for drew.life, and moving other js around                 ##
+## UPDATED: 2019-04-27                                                                           ##
 ## LICENSE: ISC                                                                                  ##
 ##-----------------------------------------------------------------------------------------------##
-BASEDIR=.
+PY?=python3
+PELICAN?=pelican
+PELICANOPTS=
 
-SASS_INPUT_DIR=$(BASEDIR)/sass
-CSS_OUTPUT_DIR=$(BASEDIR)/css
+BASEDIR=$(CURDIR)
+INPUTDIR=$(BASEDIR)/content
+OUTPUTDIR=$(BASEDIR)/output
+CONFFILE=$(BASEDIR)/pelicanconf.py
+PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-BLOG_CSS_DIR=$(BASEDIR)/theme/static/css
-BLOG_SASS_DIR=$(BASEDIR)/theme/static/sass
-NGINX_CONTENT=$(BASEDIR)/nginx_content
-WEB_CSS_DIR=$(NGINX_CONTENT)/css
-WEB_SASS_DIR=$(NGINX_CONTENT)/sass
+SSH_HOST=laphicet.drew.life
+SSH_PORT=22
+SSH_USER=amichaud
+SSH_TARGET_DIR=/usr/local/www/nginx/output
 
-NONOGRAM_DIR=$(BASEDIR)/nonogram_web
+# custom items for SCSS compile and nonogram JS setup
+CSSDIR=$(BASEDIR)/theme/static/css
+SASSDIR=$(BASEDIR)/theme/static/sass
+NONOGRAMDIR=$(BASEDIR)/nonogram_web
 
-.PHONY: all sasscompile csscopy jscopy clean
+DEBUG ?= 0
+ifeq ($(DEBUG), 1)
+	PELICANOPTS += -D
+endif
 
-all: clean sasscompile csscopy jscopy
+RELATIVE ?= 0
+ifeq ($(RELATIVE), 1)
+	PELICANOPTS += --relative-urls
+endif
 
+help:
+	@echo 'Makefile for a pelican Web site                                           '
+	@echo '                                                                          '
+	@echo 'Usage:                                                                    '
+	@echo '   make html                           (re)generate the web site          '
+	@echo '   make clean                          remove the generated files         '
+	@echo '   make regenerate                     regenerate files upon modification '
+	@echo '   make publish                        generate using production settings '
+	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
+	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
+	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
+	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
+	@echo '                                                                          '
+	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
+	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
+	@echo '                                                                          '
+
+# custom for SCSS compile
 sasscompile:
-	pyscss $(SASS_INPUT_DIR)/main.scss \
-		--output $(CSS_OUTPUT_DIR)/main.css \
-		--no-compress \
-		--style expanded
+	pysassc $(SASSDIR)/main.scss $(CSSDIR)/main.css --style expanded
 
-csscopy:
-	cp $(CSS_OUTPUT_DIR)/main.css $(BLOG_CSS_DIR)
-	cp $(CSS_OUTPUT_DIR)/main.css.map $(BLOG_CSS_DIR)
-	cp $(CSS_OUTPUT_DIR)/main.css $(WEB_CSS_DIR)
-	cp $(CSS_OUTPUT_DIR)/main.css.map $(WEB_CSS_DIR)
-	cp $(SASS_INPUT_DIR)/main.scss $(BLOG_SASS_DIR)
-	cp $(SASS_INPUT_DIR)/main.scss $(WEB_SASS_DIR)
-
+# custom for ReactJS toy,
+# in git submodule
 jscopy:
-	cp -R $(NONOGRAM_DIR)/nonogram_web/dist $(NGINX_CONTENT)/
-	cp $(NONOGRAM_DIR)/nonogram_web/nonogram.html $(NGINX_CONTENT)/
+	cp $(NONOGRAMDIR)/dist/*.js $(INPUTDIR)/dist/
+	cp $(NONOGRAMDIR)/dist/*.js.map $(INPUTDIR)/dist/
+
+html: sasscompile jscopy
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
-	rm -f $(CSS_OUTPUT_DIR)/main.css \
-		$(WEB_CSS_DIR)/main.css $(WEB_SASS_DIR)/main.scss \
-		$(BLOG_CSS_DIR)/main.css $(BLOG_SASS_DIR)/main.scss \
-		$(WEB_CSS_DIR)/main.css.map $(BLOG_CSS_DIR)/main.css.map
+	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+	rm -f $(CSSDIR)/main.css $(CSSDIR)/main.css.map
+	rm -f $(INPUTDIR)/dist/*.js $(INPUTDIR)/dist/*.js.map
 
-	rm -rf $(NGINX_CONTENT)/dist
-	rm -f $(NGINX_CONTENT)/nonogram.html
+regenerate: sasscompile jscopy
+	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+
+serve:
+ifdef PORT
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+else
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+endif
+
+serve-global:
+ifdef SERVER
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b $(SERVER)
+else
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b 0.0.0.0
+endif
+
+devserver:
+ifdef PORT
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+else
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+endif
+
+publish: sasscompile jscopy
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+
+rsync_upload: publish
+	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ \
+$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
+
+.PHONY: html help clean regenerate serve serve-global devserver stopserver publish sasscompile \
+jscopy rsync_upload
