@@ -87,6 +87,7 @@ article {
 
 body, html {
     background-color: $background;
+    font: sans-serif;
     height: 100%;
     min-width: 800px;
 }
@@ -97,7 +98,6 @@ body {
 
 footer {
     min-height: 2em;
-    max-height: 2em;
 }
 
 header {
@@ -246,6 +246,7 @@ body.home {
     background: $bg_img;
     border-top: 2px solid $background_darker;
     justify-content: space-between;
+    flex-wrap: wrap;
     font-size: 14px;
     line-height: 2;
     padding: 0 2em;
@@ -405,6 +406,10 @@ body.home {
     padding: 0.5em;
 }
 
+.post-list {
+    list-style-type: none;
+}
+
 .site-banner {
     background: $bg_img;
     border-bottom: 2px solid $background_darker;
@@ -416,6 +421,7 @@ body.home {
 
 // li hell
 nav li {
+    color: $background;
     background-color: $nav_blue;
     border: 1px solid $nav_blue_lighter;
     flex: 1 auto;
@@ -480,12 +486,12 @@ ol li, ul li, .game li {
     padding: 0.75em 0;
 }
 
-.post-list {
-    list-style-type: none;
-}
-
 .post-list li {
     border-top: 4px solid $background_dark;
+}
+
+nav li:visited {
+    color: $background;
 }
 
 article .honorable-mention li {
