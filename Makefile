@@ -60,8 +60,8 @@ sasscompile:
 # custom for ReactJS toy,
 # in git submodule
 jscopy:
-	cp $(NONOGRAMDIR)/dist/*.js $(INPUTDIR)/dist/
-	cp $(NONOGRAMDIR)/dist/*.js.map $(INPUTDIR)/dist/
+	cp $(NONOGRAMDIR)/dist/main.js $(INPUTDIR)/dist/
+	cp $(NONOGRAMDIR)/dist/main.js.map $(INPUTDIR)/dist/
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
