@@ -4,3 +4,6 @@
 [submodule "pelican-plugins"]
 	path = pelican-plugins
 	url = https://github.com/getpelican/pelican-plugins.git
+[submodule "sudoku_web"]
+	path = sudoku_web
+	url = https://github.com/alixnovosi/sudoku_web

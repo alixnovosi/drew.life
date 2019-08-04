@@ -151,6 +151,15 @@ body.home {
   flex: 5 auto;
 }
 
+.toycredit {
+  background: url(/theme/images/palm-leaf.png) #9999bb;
+  border-top: 2px solid #9999bb;
+  font-size: 14px;
+  line-height: 2;
+  max-height: 14px;
+  padding: 0 0.5em;
+}
+
 .credit {
   background: url(/theme/images/palm-leaf.png) #9999bb;
   border-top: 2px solid #9999bb;
@@ -274,7 +283,10 @@ body.home {
 }
 
 .js-toy {
+  display: flex;
   flex: 20 auto;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .js-toy .game {

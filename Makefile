@@ -3,7 +3,7 @@
 ## FILE:    Makefile                                                                             ##
 ## PURPOSE: pelican generated makefile,                                                          ##
 ##          plus compiling sass -> css for drew.life, and moving other js around                 ##
-## UPDATED: 2019-04-27                                                                           ##
+## UPDATED: 2019-08-03                                                                           ##
 ## LICENSE: ISC                                                                                  ##
 ##-----------------------------------------------------------------------------------------------##
 PY?=python3
@@ -21,10 +21,11 @@ SSH_PORT=22
 SSH_USER=amichaud
 SSH_TARGET_DIR=/usr/local/www/nginx/output
 
-# custom items for SCSS compile and nonogram JS setup
+# custom items for SCSS compile, and JS toy setup.
 CSSDIR=$(BASEDIR)/theme/static/css
 SASSDIR=$(BASEDIR)/theme/static/sass
 NONOGRAMDIR=$(BASEDIR)/nonogram_web
+SUDOKUDIR=$(BASEDIR)/sudoku_web
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -60,8 +61,11 @@ sasscompile:
 # custom for ReactJS toy,
 # in git submodule
 jscopy:
-	cp $(NONOGRAMDIR)/dist/main.js $(INPUTDIR)/dist/
-	cp $(NONOGRAMDIR)/dist/main.js.map $(INPUTDIR)/dist/
+	cp $(NONOGRAMDIR)/dist/main.js $(INPUTDIR)/dist/nonogram.js
+	cp $(NONOGRAMDIR)/dist/main.js.map $(INPUTDIR)/dist/nonogram.js.map
+
+	cp $(SUDOKUDIR)/dist/bundle.js $(INPUTDIR)/dist/sudoku.js
+	cp $(SUDOKUDIR)/dist/main.css $(INPUTDIR)/dist/sudoku.css
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -70,6 +74,7 @@ clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 	rm -f $(CSSDIR)/main.css $(CSSDIR)/main.css.map
 	rm -f $(INPUTDIR)/dist/*.js $(INPUTDIR)/dist/*.js.map
+	rm -f $(INPUTDIR)/dist/*.css
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

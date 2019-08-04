@@ -240,6 +240,15 @@ body.home {
     flex: 5 auto;
 }
 
+.toycredit {
+    background: $bg_img;
+    border-top: 2px solid $background_darker;
+    font-size: 14px;
+    line-height: 2;
+    max-height: 14px;
+    padding: 0 0.5em;
+}
+
 .credit {
     @extend %horizontal-flex;
 
@@ -371,7 +380,10 @@ body.home {
 }
 
 .js-toy {
+    display: flex;
     flex: 20 auto;
+    flex-direction: column;
+    justify-content: space-between;
 
     .game {
         margin: 1em;

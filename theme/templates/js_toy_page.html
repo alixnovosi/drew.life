@@ -9,6 +9,12 @@
 
   <main class="js-toy">
     {{ page.content }}
+    <footer class="toycredit">
+      The source code for this toy can be found at
+      <a href={{ page.url }}>
+        my GitHub.
+      </a>
+    </footer>
   </main>
 
   {{ lib.credit() }}

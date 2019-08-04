@@ -24,7 +24,6 @@ AUTHOR_FEED_RSS = None
 SOCIAL = [
           ("github", "https://github.com/alixnovosi/"),
           ("itch.io", "https://alixnovosi.itch.io"),
-          ("twitter", "https://twitter.com/alixnovosi"),
           ("twitch", "https://twitch.tv/alixnovosi"),
           ("youtube", "https://youtube.com/alixnovosi"),
 ]
@@ -87,8 +86,10 @@ EXTRA_PATH_METADATA = {
 
     "dist/NonogramWeb.js": {"path": "NonogramWeb.js"},
     "dist/app.js": {"path": "app.js"},
-    "dist/main.js": {"path": "main.js"},
-    "dist/main.js.map": {"path": "main.js.map"},
+    "dist/nonogram.js": {"path": "nonogram.js"},
+    "dist/nonogram.js.map": {"path": "nonogram.js.map"},
+
+    "dist/sudoku.js": {"path": "sudoku.js"},
 }
 
 TEMPLATE_PAGES = {
