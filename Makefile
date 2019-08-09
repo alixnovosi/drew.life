@@ -64,8 +64,8 @@ jscopy:
 	cp $(NONOGRAMDIR)/dist/main.js $(INPUTDIR)/dist/nonogram.js
 	cp $(NONOGRAMDIR)/dist/main.js.map $(INPUTDIR)/dist/nonogram.js.map
 
-	cp $(SUDOKUDIR)/dist/bundle.js $(INPUTDIR)/dist/sudoku.js
-	cp $(SUDOKUDIR)/dist/main.css $(INPUTDIR)/dist/sudoku.css
+	cp $(SUDOKUDIR)/dist/main.*.js $(INPUTDIR)/dist/sudoku/
+	cp $(SUDOKUDIR)/dist/main.*.css $(INPUTDIR)/dist/sudoku/
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
