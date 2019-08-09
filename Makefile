@@ -74,7 +74,9 @@ clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 	rm -f $(CSSDIR)/main.css $(CSSDIR)/main.css.map
 	rm -f $(INPUTDIR)/dist/*.js $(INPUTDIR)/dist/*.js.map
+	rm -f $(INPUTDIR)/dist/sudoku/*.js $(INPUTDIR)/dist/*.js.map
 	rm -f $(INPUTDIR)/dist/*.css
+	rm -f $(INPUTDIR)/dist/sudoku/*.css
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
