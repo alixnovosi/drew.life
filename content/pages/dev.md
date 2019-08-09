@@ -13,7 +13,12 @@ Identifier: dev
       <p class="language">Python 3.6</p>
     </li>
     <li>
-      <a class="github-link" href="https://github.com/alixnovosi/nonogram_web">Nonogram Web</a>
+      <a class="github-link" href="https://github.com/alixnovosi/sudoku_web">sudoku_web</a>
+      <p>Web player of Sudoku puzzles. No corresponding generator, yet.</p>
+      <p class="language">TypeScript/VueJS</p>
+    </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/nonogram_web">nonogram_web</a>
       <p>Web counterpart to nonogram_bot. Displays solutions to its puzzles, and is playable.</p>
       <p class="language">TypeScript/ReactJS</p>
     </li>
@@ -146,9 +151,14 @@ Identifier: dev
       <p class="language">Haskell</p>
     </li>
     <li>
-      <a class="github-link" href="https://github.com/alixnovosi/nonogram_web">Nonogram Web</a>
+      <a class="github-link" href="https://github.com/alixnovosi/nonogram_web">nonogram_web</a>
       <p>Web counterpart to nonogram_bot. Displays solutions to its puzzles, and is playable.</p>
       <p class="language">TypeScript/ReactJS</p>
+    </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/sudoku_web">sudoku_web</a>
+      <p>Web player of Sudoku puzzles. No corresponding generator, yet.</p>
+      <p class="language">TypeScript/VueJS</p>
     </li>
   </ul>
 
