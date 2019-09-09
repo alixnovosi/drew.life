@@ -14,8 +14,17 @@ Identifier: dev
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/sudoku_web">sudoku_web</a>
-      <p>Web player of Sudoku puzzles. No corresponding generator, yet.</p>
+      <p>Web player of Sudoku puzzles.</p>
       <p class="language">TypeScript/VueJS</p>
+    </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/sudokugen">sudokugen</a>
+      <p>
+        Library to create Sudoku puzzles. Deployed at
+        <a href="https://botsin.space/@sudoku_bot"> Mastodon</a>,
+        and posts every ~8 hours, linking to sudoku_web.
+      </p>
+      <p class="language">Python 3.6</p>
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/nonogram_web">nonogram_web</a>
@@ -23,8 +32,17 @@ Identifier: dev
       <p class="language">TypeScript/ReactJS</p>
     </li>
     <li>
-      <a class="github-link" href="https://github.com/alixnovosi/nonogram_bot">nonogram_bot</a>
-      <p>Creates nonogram (also known as picross) puzzles every six hours.</p>
+      <a class="github-link" href="https://github.com/alixnovosi/nonogen">nonogen</a>
+      <p>
+        Library for creating Nonogram (also called Picross) puzzles. Deployed as a bot on
+        <a href="https://twitter.com/nonogram_bot">Twitter</a>,
+        and
+        <a href="https://botsin.space/@nonogram_bot">Mastodon</a>.
+        Both post every ~6 hours, linking to nonogram_web.
+        <a href="https://github.com/alixnovosi/nonogram_bot">
+          Bot code.
+        </a>
+      </p>
       <p class="language">Python 3.6</p>
     </li>
     <li>
@@ -51,6 +69,40 @@ Identifier: dev
 </div>
 
 <div>
+  <h3>Twitter Bots - 2019</h3>
+  <ul class="code-stuff">
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/sudoku_bot">sudoku_bot</a>
+      <p>Creates sudoku puzzles every ~8 hours.</p>
+      <p class="language">Python 3.6</p>
+    </li>
+  </ul>
+
+<div>
+  <h3>Twitter Bots - #NaBoMaMo 2017</h3>
+  <ul class="code-stuff">
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/botskeleton">botskeleton</a>
+      <p>Skeleton of a Twitter/Mastodon bot, to make making the rest of these bots easier and more repeatable.</p>
+      <p class="language">Python 3.6</p>
+    </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/nonogram_bot">nonogram_bot</a>
+      <p>Creates nonogram (also known as picross) puzzles every 6 hours.</p>
+      <p class="language">Python 3.6</p>
+    </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/treegen_bot">treegen_bot</a>
+      <p>Draws trees of various colors and shapes every hour.</p>
+      <p class="language">Python 3.6</p>
+    </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/knowsska_bot">knowsska_bot</a>
+      <p>Answers isthisska_bot periodically.</p>
+      <p class="language">Python 3.6</p>
+    </li>
+  </ul>
+
   <h3>Twitter Bots - #NaBoMaMo 2016</h3>
   <ul class="code-stuff">
     <li>
@@ -104,36 +156,12 @@ Identifier: dev
     </li>
   </ul>
 
-  <h3>Twitter Bots - #NaBoMaMo 2017</h3>
-  <ul class="code-stuff">
-    <li>
-      <a class="github-link" href="https://github.com/alixnovosi/botskeleton">botskeleton</a>
-      <p>Skeleton of a Twitter/Mastodon bot, to make making the rest of these bots easier and more repeatable.</p>
-      <p class="language">Python 3.6</p>
-    </li>
-    <li>
-      <a class="github-link" href="https://github.com/alixnovosi/nonogram_bot">nonogram_bot</a>
-      <p>Creates nonogram (also known as picross) puzzles every six hours.</p>
-      <p class="language">Python 3.6</p>
-    </li>
-    <li>
-      <a class="github-link" href="https://github.com/alixnovosi/treegen_bot">treegen_bot</a>
-      <p>Draws trees of various colors and shapes every hour.</p>
-      <p class="language">Python 3.6</p>
-    </li>
-    <li>
-      <a class="github-link" href="https://github.com/alixnovosi/knowsska_bot">knowsska_bot</a>
-      <p>Answers isthisska_bot periodically.</p>
-      <p class="language">Python 3.6</p>
-    </li>
-  </ul>
-
   <h3>Other</h3>
   <ul class="code-stuff">
     <li>
-      <a class="github-link" href="https://github.com/alixnovosi/puckfetcher">puckfetcher</a>
-      <p>A simple command-line podcast downloader. Should work on Linux and OSX, Windows support possible.</p>
-      <p class="language">Python 3.6</p>
+      <a class="github-link" href="https://github.com/alixnovosi/drew.life">drew.life</a>
+      <p>Source code for this very website.</p>
+      <p class="language">HTML5, SCSS/CSS3, Markdown</p>
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/config">config</a>
@@ -141,14 +169,14 @@ Identifier: dev
       <p class="language">Various</p>
     </li>
     <li>
-      <a class="github-link" href="https://github.com/alixnovosi/drew.life">drew.life</a>
-      <p>Source code for this very website.</p>
-      <p class="language">HTML5, SCSS/CSS3, Markdown</p>
+      <a class="github-link" href="https://github.com/alixnovosi/puckfetcher">puckfetcher</a>
+      <p>A simple command-line podcast downloader. Should work on Linux and OSX, Windows support possible.</p>
+      <p class="language">Python 3.6</p>
     </li>
     <li>
-      <a class="github-link" href="https://github.com/alixnovosi/JustSudoku">JustSudoku</a>
-      <p>Haskell command-line-only Sudoku app. No puzzle generation yet.</p>
-      <p class="language">Haskell</p>
+      <a class="github-link" href="https://github.com/alixnovosi/sudoku_web">sudoku_web</a>
+      <p>Web player of Sudoku puzzles.</p>
+      <p class="language">TypeScript/VueJS</p>
     </li>
     <li>
       <a class="github-link" href="https://github.com/alixnovosi/nonogram_web">nonogram_web</a>
@@ -156,9 +184,9 @@ Identifier: dev
       <p class="language">TypeScript/ReactJS</p>
     </li>
     <li>
-      <a class="github-link" href="https://github.com/alixnovosi/sudoku_web">sudoku_web</a>
-      <p>Web player of Sudoku puzzles. No corresponding generator, yet.</p>
-      <p class="language">TypeScript/VueJS</p>
+      <a class="github-link" href="https://github.com/alixnovosi/JustSudoku">JustSudoku</a>
+      <p>Haskell command-line-only Sudoku app. No puzzle generation.</p>
+      <p class="language">Haskell</p>
     </li>
   </ul>
 

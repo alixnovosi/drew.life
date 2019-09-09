@@ -136,6 +136,7 @@ body.home {
 
 .code-stuff p {
   margin: 1em;
+  text-align: justify;
 }
 
 .content aside {
@@ -366,7 +367,7 @@ ol li, ul li, .game li {
 .code-stuff li {
   align-items: stretch;
   justify-content: space-between;
-  text-align: center;
+  text-align: justify;
   margin: 0.5em 0.5em;
 }
 
