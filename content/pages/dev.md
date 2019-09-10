@@ -21,7 +21,9 @@ Identifier: dev
       <a class="github-link" href="https://github.com/alixnovosi/sudokugen">sudokugen</a>
       <p>
         Library to create Sudoku puzzles. Deployed at
-        <a href="https://botsin.space/@sudoku_bot"> Mastodon</a>,
+        <a href="https://botsin.space/@sudoku_bot">Mastodon</a>,
+        and
+        <a href="https://twitter.com/sudokugen_bot">Twitter</a>,
         and posts every ~8 hours, linking to sudoku_web.
       </p>
       <p class="language">Python 3.6</p>
