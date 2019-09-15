@@ -27,11 +27,6 @@ and others.
       <li>
         <img src="{static}/media/dev/typescript.svg" alt="TypeScript" title="TypeScript">
       </li>
-    </ul>
-  </li>
-  <li>
-    <h3>Probably</h3>
-    <ul class="language-section">
       <li>
         <img src="{static}/media/dev/css3.svg" alt="CSS 3" title="CSS 3">
       </li>
@@ -41,6 +36,11 @@ and others.
       <li>
         <img src="{static}/media/dev/sass.svg" alt="Sass/SCSS" title="Sass/SCSS">
       </li>
+    </ul>
+  </li>
+  <li>
+    <h3>Probably</h3>
+    <ul class="language-section">
       <li>
         <img src="{static}/media/dev/psql.svg" alt="PostGreSQL" title="PostGreSQL">
       </li>
