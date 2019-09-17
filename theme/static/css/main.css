@@ -1,4 +1,4 @@
-body.home, .archive-article, .content, .game, .goty, .languages, .rest, .top-three, .credit, .game .board-row, .game .board-row-spacer, .game .game-info, .paginator, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info {
+body.home, #app, .archive-article, .content, .game, .goty, .languages, .rest, .top-three, .credit, .game .board-row, .game .board-row-spacer, .game .game-info, .paginator, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info {
   display: flex;
   flex-direction: row;
 }
@@ -61,6 +61,10 @@ body.home {
   max-width: 1200px;
   min-width: 90%;
   padding: 2.5em 1em 0;
+}
+
+#app {
+  justify-content: center;
 }
 
 .archive-article {

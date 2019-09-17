@@ -7,3 +7,6 @@
 [submodule "sudoku_web"]
 	path = sudoku_web
 	url = https://github.com/alixnovosi/sudoku_web
+[submodule "bounce"]
+	path = bounce
+	url = https://github.com/alixnovosi/bounce

@@ -139,6 +139,12 @@ body.home {
     padding: 2.5em 1em 0;
 }
 
+#app {
+    @extend %horizontal-flex;
+
+    justify-content: center;
+}
+
 .archive-article {
     @extend %horizontal-flex;
 

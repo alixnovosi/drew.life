@@ -24,8 +24,10 @@ SSH_TARGET_DIR=/usr/local/www/nginx/output
 # custom items for SCSS compile, and JS toy setup.
 CSSDIR=$(BASEDIR)/theme/static/css
 SASSDIR=$(BASEDIR)/theme/static/sass
+
 NONOGRAMDIR=$(BASEDIR)/nonogram_web
 SUDOKUDIR=$(BASEDIR)/sudoku_web
+BOUNCEDIR=$(BASEDIR)/bounce
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -67,6 +69,9 @@ jscopy:
 	cp $(SUDOKUDIR)/dist/main.*.js $(INPUTDIR)/dist/sudoku/
 	cp $(SUDOKUDIR)/dist/main.*.css $(INPUTDIR)/dist/sudoku/
 
+	cp $(BOUNCEDIR)/dist/main.*.js $(INPUTDIR)/dist/bounce/
+	cp $(BOUNCEDIR)/dist/main.*.js.map $(INPUTDIR)/dist/bounce/
+
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
@@ -77,6 +82,8 @@ clean:
 	rm -f $(INPUTDIR)/dist/sudoku/*.js $(INPUTDIR)/dist/*.js.map
 	rm -f $(INPUTDIR)/dist/*.css
 	rm -f $(INPUTDIR)/dist/sudoku/*.css
+	rm -f $(INPUTDIR)/dist/bounce/*.js
+	rm -f $(INPUTDIR)/dist/bounce/*.js.map
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -104,6 +111,7 @@ endif
 
 publish: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+	chmod -R o+r $(OUTPUTDIR)
 
 rsync_upload: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ \
