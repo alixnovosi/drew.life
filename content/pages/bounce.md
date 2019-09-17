@@ -6,4 +6,4 @@ template: js_toy_page
 <div id="app">
   <canvas id="canvas"></canvas>
 </div>
-<script src="dist/bounce/main.6107d367e9e9c07491b1.js"></script>
+<script src="dist/bounce/main.c89f08729db224899387.js"></script>
