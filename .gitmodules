@@ -11,5 +11,5 @@
 	path = bounce
 	url = https://github.com/alixnovosi/bounce
 [submodule "lorentz"]
-	path = lorentz
-	url = https://github.com/alixnovosi/lorentz
+	path = lorenz
+	url = https://github.com/alixnovosi/lorenz

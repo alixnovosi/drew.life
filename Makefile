@@ -29,7 +29,7 @@ SASSDIR=$(BASEDIR)/theme/static/sass
 NONOGRAMDIR=$(BASEDIR)/nonogram_web
 SUDOKUDIR=$(BASEDIR)/sudoku_web
 BOUNCEDIR=$(BASEDIR)/bounce
-LORENTZDIR=$(BASEDIR)/lorentz
+LORENZDIR=$(BASEDIR)/lorenz
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -65,16 +65,13 @@ sasscompile:
 # custom for ReactJS toy,
 # in git submodule
 jscopy:
-	cp $(NONOGRAMDIR)/dist/main.js $(INPUTDIR)/dist/nonogram.js
-	cp $(NONOGRAMDIR)/dist/main.js.map $(INPUTDIR)/dist/nonogram.js.map
-
+	cp $(NONOGRAMDIR)/dist/*.js $(INPUTDIR)/dist/nonogram/
+	cp $(NONOGRAMDIR)/dist/*.js.map $(INPUTDIR)/dist/nonogram/
 	cp $(SUDOKUDIR)/dist/main.*.js $(INPUTDIR)/dist/sudoku/
 	cp $(SUDOKUDIR)/dist/main.*.css $(INPUTDIR)/dist/sudoku/
-
 	cp $(BOUNCEDIR)/dist/main.*.js $(INPUTDIR)/dist/bounce/
 	cp $(BOUNCEDIR)/dist/main.*.js.map $(INPUTDIR)/dist/bounce/
-
-	cp $(LORENTZDIR)/dist/main.*.js $(INPUTDIR)/dist/lorentz/
+	cp $(LORENZDIR)/dist/main.*.js $(INPUTDIR)/dist/lorenz/
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -83,12 +80,14 @@ clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 	rm -f $(CSSDIR)/main.css $(CSSDIR)/main.css.map
 	rm -f $(INPUTDIR)/dist/*.js $(INPUTDIR)/dist/*.js.map
+	rm -f $(INPUTDIR)/dist/nonogram/*.js
+	rm -f $(INPUTDIR)/dist/nonogram/*.js.map
 	rm -f $(INPUTDIR)/dist/sudoku/*.js $(INPUTDIR)/dist/*.js.map
 	rm -f $(INPUTDIR)/dist/*.css
 	rm -f $(INPUTDIR)/dist/sudoku/*.css
 	rm -f $(INPUTDIR)/dist/bounce/*.js
 	rm -f $(INPUTDIR)/dist/bounce/*.js.map
-	rm -f $(INPUTDIR)/dist/lorentz/*.js
+	rm -f $(INPUTDIR)/dist/lorenz/*.js
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

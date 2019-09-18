@@ -263,9 +263,12 @@ body.home {
     border-top: 2px solid $background_darker;
     justify-content: space-between;
     flex-wrap: wrap;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 2;
-    padding: 0 2em;
+
+    address {
+        padding: 0 1em;
+    }
 }
 
 .game {
@@ -690,6 +693,35 @@ nav a:visited {
 .site-banner a:hover {
     background: transparent;
     color: $nav_blue_lighter;
+}
+
+.toybox {
+    .linkbox {
+        border: 1px solid $background-darker;
+        border-radius: 5px;
+        padding: 0 0.5em;
+    }
+
+    .linkbox:hover {
+        background-color: $background-darker;
+
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    ul {
+        text-align: justify;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, auto));
+        row-gap: 1em;
+        column-gap: 1em;
+    }
+
+    ul li {
+        list-style-type: none;
+    }
 }
 
 .zeldo {

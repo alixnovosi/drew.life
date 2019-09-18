@@ -170,9 +170,12 @@ body.home {
   border-top: 2px solid #9999bb;
   justify-content: space-between;
   flex-wrap: wrap;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 2;
-  padding: 0 2em;
+}
+
+.credit address {
+  padding: 0 1em;
 }
 
 .game {
@@ -628,6 +631,32 @@ nav a.youtube:hover {
 .site-banner a:hover {
   background: transparent;
   color: #555577;
+}
+
+.toybox .linkbox {
+  border: 1px solid #9999bb;
+  border-radius: 5px;
+  padding: 0 0.5em;
+}
+
+.toybox .linkbox:hover {
+  background-color: #9999bb;
+}
+
+.toybox h2 {
+  text-align: center;
+}
+
+.toybox ul {
+  text-align: justify;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, auto));
+  row-gap: 1em;
+  column-gap: 1em;
+}
+
+.toybox ul li {
+  list-style-type: none;
 }
 
 .zeldo {

@@ -46,8 +46,13 @@ PAGES = [
 # with possibly different nav
 SUBPAGES = [
     ("blog", "blog/index.html"),
-    ("GOTY", "goty2018.html"),
+    ("goty", "goty2018.html"),
     ("books", "books2018.html"),
+]
+
+# index subpages, just js toys for now.
+INDEX_SUBPAGES = [
+    ("javascript toys", "toybox.html"),
 ]
 
 # pages in main menu - done manually instead of letting Pelican help,
@@ -83,13 +88,6 @@ EXTRA_PATH_METADATA = {
     "extra/keybase.txt": {"path": "keybase.txt"},
 
     "extra/favicon.ico": {"path": "favicon.ico"},
-
-    "dist/NonogramWeb.js": {"path": "NonogramWeb.js"},
-    "dist/app.js": {"path": "app.js"},
-    "dist/nonogram.js": {"path": "nonogram.js"},
-    "dist/nonogram.js.map": {"path": "nonogram.js.map"},
-
-    "dist/sudoku.js": {"path": "sudoku.js"},
 }
 
 TEMPLATE_PAGES = {

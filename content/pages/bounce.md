@@ -1,6 +1,6 @@
 Title: bounce!
 Identifier: bounce
-url: https://github.com/alixnovosi/bounce
+git_url: https://github.com/alixnovosi/bounce
 template: js_toy_page
 
 <div id="app">

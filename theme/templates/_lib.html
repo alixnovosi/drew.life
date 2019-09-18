@@ -28,6 +28,14 @@
       {% endfor %}
     </ul>
     <ul>
+      {% for name, link in INDEX_SUBPAGES %}
+        <li>
+          <a class="{{ name|replace(".", "") }}"
+             href="{{ SITEURL }}/{{ link }}">{{ name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <ul>
       {% for name, link in SUBPAGES %}
         <li>
           <a class="{{ name|replace(".", "") }}"
