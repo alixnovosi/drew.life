@@ -25,9 +25,11 @@ SSH_TARGET_DIR=/usr/local/www/nginx/output
 CSSDIR=$(BASEDIR)/theme/static/css
 SASSDIR=$(BASEDIR)/theme/static/sass
 
+# TODO can you do this more succinctly in make?
 NONOGRAMDIR=$(BASEDIR)/nonogram_web
 SUDOKUDIR=$(BASEDIR)/sudoku_web
 BOUNCEDIR=$(BASEDIR)/bounce
+LORENTZDIR=$(BASEDIR)/lorentz
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -72,6 +74,8 @@ jscopy:
 	cp $(BOUNCEDIR)/dist/main.*.js $(INPUTDIR)/dist/bounce/
 	cp $(BOUNCEDIR)/dist/main.*.js.map $(INPUTDIR)/dist/bounce/
 
+	cp $(LORENTZDIR)/dist/main.*.js $(INPUTDIR)/dist/lorentz/
+
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
@@ -84,6 +88,7 @@ clean:
 	rm -f $(INPUTDIR)/dist/sudoku/*.css
 	rm -f $(INPUTDIR)/dist/bounce/*.js
 	rm -f $(INPUTDIR)/dist/bounce/*.js.map
+	rm -f $(INPUTDIR)/dist/lorentz/*.js
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
