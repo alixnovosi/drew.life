@@ -190,6 +190,16 @@ Identifier: dev
       <p>Haskell command-line-only Sudoku app. No puzzle generation.</p>
       <p class="language">Haskell</p>
     </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/bounce">bounce</a>
+      <p>bouncing ball in a box.</p>
+      <p class="language">Typescript</p>
+    </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/lorenz">lorenz</a>
+      <p>lorenz attractor in a box, with some controls to change parameters and plotting axes.</p>
+      <p class="language">Typescript</p>
+    </li>
   </ul>
 
 </div>

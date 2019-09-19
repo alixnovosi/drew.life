@@ -51,7 +51,7 @@ template: js_toybox
             lorenz
           </h3>
           <p>
-            mini lorenz attractor, plotted z over x
+            mini lorenz attractor with some controls
           </p>
         </div>
       </a>
