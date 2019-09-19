@@ -72,6 +72,7 @@ jscopy:
 	cp $(BOUNCEDIR)/dist/main.*.js $(INPUTDIR)/dist/bounce/
 	cp $(BOUNCEDIR)/dist/main.*.js.map $(INPUTDIR)/dist/bounce/
 	cp $(LORENZDIR)/dist/main.*.js $(INPUTDIR)/dist/lorenz/
+	cp $(LORENZDIR)/dist/main.*.css $(INPUTDIR)/dist/lorenz/
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -88,6 +89,7 @@ clean:
 	rm -f $(INPUTDIR)/dist/bounce/*.js
 	rm -f $(INPUTDIR)/dist/bounce/*.js.map
 	rm -f $(INPUTDIR)/dist/lorenz/*.js
+	rm -f $(INPUTDIR)/dist/lorenz/*.css
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
