@@ -30,6 +30,7 @@ NONOGRAMDIR=$(BASEDIR)/nonogram_web
 SUDOKUDIR=$(BASEDIR)/sudoku_web
 BOUNCEDIR=$(BASEDIR)/bounce
 LORENZDIR=$(BASEDIR)/lorenz
+TREEDIR=$(BASEDIR)/tree_web
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -73,6 +74,8 @@ jscopy:
 	cp $(BOUNCEDIR)/dist/main.*.js.map $(INPUTDIR)/dist/bounce/
 	cp $(LORENZDIR)/dist/main.*.js $(INPUTDIR)/dist/lorenz/
 	cp $(LORENZDIR)/dist/main.*.css $(INPUTDIR)/dist/lorenz/
+	cp $(TREEDIR)/dist/*.js $(INPUTDIR)/dist/tree/
+	cp $(TREEDIR)/dist/*.css $(INPUTDIR)/dist/tree/
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -90,6 +93,8 @@ clean:
 	rm -f $(INPUTDIR)/dist/bounce/*.js.map
 	rm -f $(INPUTDIR)/dist/lorenz/*.js
 	rm -f $(INPUTDIR)/dist/lorenz/*.css
+	rm -f $(INPUTDIR)/dist/tree/*.js
+	rm -f $(INPUTDIR)/dist/tree/*.css
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

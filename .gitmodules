@@ -13,3 +13,6 @@
 [submodule "lorentz"]
 	path = lorenz
 	url = https://github.com/alixnovosi/lorenz
+[submodule "tree_web"]
+	path = tree_web
+	url = https://github.com/alixnovosi/tree_web

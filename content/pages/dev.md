@@ -200,6 +200,11 @@ Identifier: dev
       <p>lorenz attractor in a box, with some controls to change parameters and plotting axes.</p>
       <p class="language">Typescript</p>
     </li>
+    <li>
+      <a class="github-link" href="https://github.com/alixnovosi/tree_web">tree_web</a>
+      <p>tree drawing experiment</p>
+      <p class="language">Typescript</p>
+    </li>
   </ul>
 
 </div>
