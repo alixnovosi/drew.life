@@ -16,3 +16,6 @@
 [submodule "tree_web"]
 	path = tree_web
 	url = https://github.com/alixnovosi/tree_web
+[submodule "sortviz"]
+	path = sortviz
+	url = https://github.com/alixnovosi/sortviz

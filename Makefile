@@ -31,6 +31,7 @@ SUDOKUDIR=$(BASEDIR)/sudoku_web
 BOUNCEDIR=$(BASEDIR)/bounce
 LORENZDIR=$(BASEDIR)/lorenz
 TREEDIR=$(BASEDIR)/tree_web
+SORTVIZDIR=$(BASEDIR)/sortviz
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -76,6 +77,8 @@ jscopy:
 	cp $(LORENZDIR)/dist/main.*.css $(INPUTDIR)/dist/lorenz/
 	cp $(TREEDIR)/dist/*.js $(INPUTDIR)/dist/tree/
 	cp $(TREEDIR)/dist/*.css $(INPUTDIR)/dist/tree/
+	cp $(SORTVIZDIR)/dist/*.js $(INPUTDIR)/dist/sortviz
+	cp $(SORTVIZDIR)/dist/*.css $(INPUTDIR)/dist/sortviz/
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -95,6 +98,8 @@ clean:
 	rm -f $(INPUTDIR)/dist/lorenz/*.css
 	rm -f $(INPUTDIR)/dist/tree/*.js
 	rm -f $(INPUTDIR)/dist/tree/*.css
+	rm -f $(INPUTDIR)/dist/sortviz/*.js
+	rm -f $(INPUTDIR)/dist/sortviz/*.css
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

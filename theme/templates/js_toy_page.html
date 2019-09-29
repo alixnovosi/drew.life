@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
+{% block head %}
+{{ super() }}
+{% if TOYS[page.identifier].css_url %}
+  <link rel="stylesheet" href="{{ TOYS[page.identifier].css_url }}" type="text/css">
+{% endif %}
+{% endblock %}
+
 {% block body %}
   <header>
     {% block header %}
@@ -8,10 +15,15 @@
   </header>
 
   <main class="js-toy">
+    {% if page.content %}
     {{ page.content }}
+    {% else %}
+    <div id="root"></div>
+    {% endif %}
+    <script src="{{ TOYS[page.identifier].js_url }}"></script>
     <footer class="toycredit">
       The source code for this toy can be found at
-      <a href={{ page.git_url }}>
+      <a href={{ TOYS[page.identifier].git_url }}>
         my GitHub.
       </a>
     </footer>

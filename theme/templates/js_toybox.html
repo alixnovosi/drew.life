@@ -12,7 +12,21 @@
 {% endblock %}
 
 {% block content %}
-  {{ page.content }}
+  <div class="toybox">
+    <h2>Javascript Toys</h2>
+    <ul>
+      {% for toy_name, data in TOYS.items() %}
+      <li>
+        <a href="{{data.page_name}}">
+          <div class="linkbox">
+            <h3>{{data.short_name}}</h3>
+            <p>{{data.desc}}</p>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock content %}
 
 {% block aside %}
