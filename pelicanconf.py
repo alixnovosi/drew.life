@@ -123,6 +123,8 @@ PROJECTS = {
         "types": ["other", "highlights"],
     },
 
+    # TODO put nonogram on the same pattern as everything else,
+    # so we can just have a hash var and then yes css and yes js, or something.
     "nonogram": {
         "git_name": "nonogram_web",
         "git_url": f"{GIT_ROOT}/nonogram_web",
@@ -368,8 +370,8 @@ PROJECTS = {
 
         "types": ["other", "toy"],
 
-        "css_url": "/dist/sortviz/main.439fdd2918545352a1d3.css",
-        "js_url": "/dist/sortviz/main.439fdd2918545352a1d3.js",
+        "css_url": "/dist/sortviz/main.ca4d57ef267e76abd622.css",
+        "js_url": "/dist/sortviz/main.ca4d57ef267e76abd622.js",
     },
 
     "JustSudoku": {
