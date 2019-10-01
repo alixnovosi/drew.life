@@ -370,8 +370,8 @@ PROJECTS = {
 
         "types": ["other", "toy"],
 
-        "css_url": "/dist/sortviz/main.ca4d57ef267e76abd622.css",
-        "js_url": "/dist/sortviz/main.ca4d57ef267e76abd622.js",
+        "css_url": "/dist/sortviz/main.4c1f701f657dfee6eeec.css",
+        "js_url": "/dist/sortviz/main.4c1f701f657dfee6eeec.js",
     },
 
     "JustSudoku": {
