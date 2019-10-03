@@ -193,6 +193,13 @@ body.home {
     text-align: center;
 }
 
+.code-page {
+    h1, h2, h3, p {
+        text-align: center;
+    }
+
+}
+
 .code-stuff, .honorable-mention, .language-section, .media-list, .page, .top-ten {
     @extend %vertical-flex;
 }
@@ -707,12 +714,11 @@ nav a:visited {
 
     }
 
-    h2 {
+    h2, h3, p, ul {
         text-align: center;
     }
 
     ul {
-        text-align: justify;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, auto));
         row-gap: 1em;

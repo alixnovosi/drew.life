@@ -63,6 +63,21 @@ INDEX_SUBPAGES = [
 # includes both information for dev page and for toy pages.
 # TODO find a clean way to do self-reference.
 PROJECTS = {
+    "sortviz": {
+        "git_name": "sortviz",
+        "git_url": f"{GIT_ROOT}/sortviz",
+        "page_name": "sortviz",
+        "toy_name": "sortviz",
+        "desc": "visualizer for various sort algorithms",
+        "long_desc": "Visualizer for various common (and uncommon) sorting algorithms.",
+        "language": "TypeScript",
+
+        "types": ["other", "highlights", "toy"],
+
+        "css_url": "/dist/sortviz/main.4c1f701f657dfee6eeec.css",
+        "js_url": "/dist/sortviz/main.4c1f701f657dfee6eeec.js",
+    },
+
     "drew.life": {
         "git_name": "drew.life",
         "git_url": f"{GIT_ROOT}/drew.life",
@@ -155,7 +170,7 @@ PROJECTS = {
         ),
         "language": "Python 3.6",
 
-        "types": ["other", "highlights"],
+        "types": ["other"],
     },
 
     "puckfetcher": {
@@ -168,7 +183,7 @@ PROJECTS = {
         ),
         "language": "Python 3.6",
 
-        "types": ["other", "highlights"],
+        "types": ["other"],
     },
 
     "boxventure": {
@@ -323,7 +338,7 @@ PROJECTS = {
         "toy_name": "bounce",
         "desc": "bouncing ball in a box",
         "long_desc": "Bouncing ball in a box",
-        "language": "TypeScript/ReactJS",
+        "language": "TypeScript",
 
         "types": ["other", "toy"],
 
@@ -337,7 +352,7 @@ PROJECTS = {
         "toy_name": "lorenz",
         "desc": "mini lorenz attractor with some controls",
         "long_desc": "mini lorenz attractor with some controls",
-        "language": "TypeScript/ReactJS",
+        "language": "TypeScript",
 
         "types": ["other", "toy"],
 
@@ -350,28 +365,13 @@ PROJECTS = {
         "git_url": f"{GIT_ROOT}/tree_web",
         "page_name": "tree",
         "toy_name": "tree",
-        "desc": "tree drawer",
+        "desc": "tree experiment",
         "long_desc": "Tree drawing experiment.",
-        "language": "TypeScript/ReactJS",
+        "language": "TypeScript",
 
         "types": ["other", "toy"],
 
         "js_url": "/dist/tree/main.6c7c761c5af011afb078.js",
-    },
-
-    "sortviz": {
-        "git_name": "sortviz",
-        "git_url": f"{GIT_ROOT}/sortviz",
-        "page_name": "sortviz",
-        "toy_name": "sortviz",
-        "desc": "visualizer for various sort algorithms",
-        "long_desc": "Visualizer for various common (and uncommon) sorting algorithms.",
-        "language": "TypeScript/ReactJS",
-
-        "types": ["other", "toy"],
-
-        "css_url": "/dist/sortviz/main.4c1f701f657dfee6eeec.css",
-        "js_url": "/dist/sortviz/main.4c1f701f657dfee6eeec.js",
     },
 
     "JustSudoku": {

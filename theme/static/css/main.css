@@ -112,6 +112,10 @@ body.home {
   text-align: center;
 }
 
+.code-page h1, .code-page h2, .code-page h3, .code-page p {
+  text-align: center;
+}
+
 .code-stuff .github-link, .code-stuff .language {
   align-items: center;
   background-color: #9999bb;
@@ -643,12 +647,11 @@ nav a.youtube:hover {
   background-color: #9999bb;
 }
 
-.toybox h2 {
+.toybox h2, .toybox h3, .toybox p, .toybox ul {
   text-align: center;
 }
 
 .toybox ul {
-  text-align: justify;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, auto));
   row-gap: 1em;

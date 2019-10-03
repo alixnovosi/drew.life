@@ -2,8 +2,9 @@ Title: about drew
 Slug: about me
 Identifier: about
 
-he/him
+He/Him
 
-i can't stop messing with computers
+I work professionally with computers,
+and also spend an irresponsible amount of time tinkering with them otherwise.
 
-cats are great
+I really like cats.
