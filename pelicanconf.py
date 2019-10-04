@@ -74,8 +74,8 @@ PROJECTS = {
 
         "types": ["other", "highlights", "toy"],
 
-        "css_url": "/dist/sortviz/main.efbc145a674f5bb705f5.css",
-        "js_url": "/dist/sortviz/main.efbc145a674f5bb705f5.js",
+        "css_url": "/dist/sortviz/main.098c15d116d313c927a2.css",
+        "js_url": "/dist/sortviz/main.098c15d116d313c927a2.js",
     },
 
     "drew.life": {
