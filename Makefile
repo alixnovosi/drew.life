@@ -1,11 +1,12 @@
-##-----------------------------------------------------------------------------------------------##
-## AUTHOR:  Andrew Michaud                                                                       ##
-## FILE:    Makefile                                                                             ##
-## PURPOSE: pelican generated makefile,                                                          ##
-##          plus compiling sass -> css for drew.life, and moving other js around                 ##
-## UPDATED: 2019-08-03                                                                           ##
-## LICENSE: ISC                                                                                  ##
-##-----------------------------------------------------------------------------------------------##
+##----------------------------------------------------------------------------##
+## author:  Andrew Michaud                                                    ##
+## file:    Makefile                                                          ##
+## purpose: pelican generated makefile,                                       ##
+##          plus compiling sass -> css for drew.life,                         ##
+##          and moving other js around                                        ##
+## updated: 2019-10-06                                                        ##
+## license: ISC                                                               ##
+##----------------------------------------------------------------------------##
 PY?=python3
 PELICAN?=pelican
 PELICANOPTS=
@@ -64,21 +65,15 @@ help:
 sasscompile:
 	pysassc $(SASSDIR)/main.scss $(CSSDIR)/main.css --style expanded
 
-# custom for ReactJS toy,
+# custom for js toys,
 # in git submodule
 jscopy:
-	cp $(NONOGRAMDIR)/dist/*.js $(INPUTDIR)/dist/nonogram/
-	cp $(NONOGRAMDIR)/dist/*.js.map $(INPUTDIR)/dist/nonogram/
-	cp $(SUDOKUDIR)/dist/main.*.js $(INPUTDIR)/dist/sudoku/
-	cp $(SUDOKUDIR)/dist/main.*.css $(INPUTDIR)/dist/sudoku/
-	cp $(BOUNCEDIR)/dist/main.*.js $(INPUTDIR)/dist/bounce/
-	cp $(BOUNCEDIR)/dist/main.*.js.map $(INPUTDIR)/dist/bounce/
-	cp $(LORENZDIR)/dist/main.*.js $(INPUTDIR)/dist/lorenz/
-	cp $(LORENZDIR)/dist/main.*.css $(INPUTDIR)/dist/lorenz/
-	cp $(TREEDIR)/dist/*.js $(INPUTDIR)/dist/tree/
-	cp $(TREEDIR)/dist/*.css $(INPUTDIR)/dist/tree/
-	cp $(SORTVIZDIR)/dist/*.js $(INPUTDIR)/dist/sortviz
-	cp $(SORTVIZDIR)/dist/*.css $(INPUTDIR)/dist/sortviz/
+	cp $(NONOGRAMDIR)/dist/* $(INPUTDIR)/dist/nonogram/
+	cp $(SUDOKUDIR)/dist/* $(INPUTDIR)/dist/sudoku/
+	cp $(BOUNCEDIR)/dist/* $(INPUTDIR)/dist/bounce/
+	cp $(LORENZDIR)/dist/* $(INPUTDIR)/dist/lorenz/
+	cp $(TREEDIR)/dist/* $(INPUTDIR)/dist/tree/
+	cp $(SORTVIZDIR)/dist/* $(INPUTDIR)/dist/sortviz/
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -86,41 +81,37 @@ html: sasscompile jscopy
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 	rm -f $(CSSDIR)/main.css $(CSSDIR)/main.css.map
-	rm -f $(INPUTDIR)/dist/*.js $(INPUTDIR)/dist/*.js.map
-	rm -f $(INPUTDIR)/dist/nonogram/*.js
-	rm -f $(INPUTDIR)/dist/nonogram/*.js.map
-	rm -f $(INPUTDIR)/dist/sudoku/*.js $(INPUTDIR)/dist/*.js.map
-	rm -f $(INPUTDIR)/dist/*.css
-	rm -f $(INPUTDIR)/dist/sudoku/*.css
-	rm -f $(INPUTDIR)/dist/bounce/*.js
-	rm -f $(INPUTDIR)/dist/bounce/*.js.map
-	rm -f $(INPUTDIR)/dist/lorenz/*.js
-	rm -f $(INPUTDIR)/dist/lorenz/*.css
-	rm -f $(INPUTDIR)/dist/tree/*.js
-	rm -f $(INPUTDIR)/dist/tree/*.css
-	rm -f $(INPUTDIR)/dist/sortviz/*.js
-	rm -f $(INPUTDIR)/dist/sortviz/*.css
+	rm -f $(INPUTDIR)/dist/nonogram/*
+	rm -f $(INPUTDIR)/dist/sudoku/*
+	rm -f $(INPUTDIR)/dist/bounce/*
+	rm -f $(INPUTDIR)/dist/lorenz/*
+	rm -f $(INPUTDIR)/dist/tree/*
+	rm -f $(INPUTDIR)/dist/sortviz/*
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 serve:
 ifdef PORT
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) \
+		-p $(PORT)
 else
 	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 endif
 
 serve-global:
 ifdef SERVER
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b $(SERVER)
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) \
+		-p $(PORT) -b $(SERVER)
 else
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT) -b 0.0.0.0
+	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) \
+		-p $(PORT) -b 0.0.0.0
 endif
 
 devserver:
 ifdef PORT
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -p $(PORT)
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) \
+		-p $(PORT)
 else
 	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 endif
@@ -133,5 +124,5 @@ rsync_upload: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ \
 $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
 
-.PHONY: html help clean regenerate serve serve-global devserver stopserver publish sasscompile \
-jscopy rsync_upload
+.PHONY: html help clean regenerate serve serve-global devserver stopserver \
+	publish sasscompile jscopy rsync_upload

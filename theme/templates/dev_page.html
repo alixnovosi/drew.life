@@ -32,7 +32,7 @@
       <li>
         <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
         <p>{{ data.long_desc }}</p>
-        <p class="language">{{ data.language }}</p>
+        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
       </li>
       {% endfor %}
     </ul>
@@ -45,7 +45,7 @@
       <li>
         <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
         <p>{{ data.long_desc }}</p>
-        <p class="language">{{ data.language }}</p>
+        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
       </li>
       {% endfor %}
     </ul>
@@ -56,7 +56,7 @@
       <li>
         <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
         <p>{{ data.long_desc }}</p>
-        <p class="language">{{ data.language }}</p>
+        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
       </li>
       {% endfor %}
     </ul>
@@ -67,7 +67,7 @@
       <li>
         <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
         <p>{{ data.long_desc }}</p>
-        <p class="language">{{ data.language }}</p>
+        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
       </li>
       {% endfor %}
     </ul>
@@ -78,7 +78,7 @@
       <li>
         <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
         <p>{{ data.long_desc }}</p>
-        <p class="language">{{ data.language }}</p>
+        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
       </li>
       {% endfor %}
     </ul>
@@ -89,15 +89,15 @@
       <li>
         <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
         <p>{{ data.long_desc }}</p>
-        <p class="language">{{ data.language }}</p>
+        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
       </li>
       {% endfor %}
     </ul>
   </div>
 
     {% if page.modified %}
-        <p>
-        Last updated: {{ page.locale_modified }}
-        </p>
+      <p>
+      Last updated: {{ page.locale_modified }}
+      </p>
     {% endif %}
 {% endblock %}
