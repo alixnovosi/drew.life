@@ -16,9 +16,9 @@
 
   <main class="js-toy">
     {% if page.content %}
-    {{ page.content }}
+      {{ page.content }}
     {% else %}
-    <div id="root"></div>
+      <div id="root"></div>
     {% endif %}
     <script src="{{ TOYS[page.identifier].js_url }}"></script>
     <footer class="toycredit">

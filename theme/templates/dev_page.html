@@ -1,27 +1,6 @@
-{% extends "base.html" %}
+{% extends "page.html" %}
 
-{% import '_lib.html' as lib with context %}
-
-{% block html_lang %}{{ page.lang }}{% endblock %}
-
-{% block aside %}
-  {{ lib.site_nav(page) }}
-{% endblock aside %}
-
-{% block head %}
-  {{ super() }}
-
-  {% import 'translations.html' as translations with context %}
-  {% if translations.entry_hreflang(page) %}
-    {{ translations.entry_hreflang(page) }}
-  {% endif %}
-
-{% endblock head %}
-
-{% block content %}
-  {% import 'translations.html' as translations with context %}
-  {{ translations.translations_for(page) }}
-
+{% block realcontent %}
   <div class="code-page">
     <h1>Code Stuff</h1>
     <p>This is an incomplete selection of my open-source projects.</p>
@@ -38,10 +17,11 @@
     </ul>
 
     <h2>All</h2>
-
-    <h3>Games</h3>
+    {% for title_key, title_value in DEV_ITEMS.items() %}
+    {% if title_key != "highlights" %}
+    <h3>{{ DEV_TITLES[title_key] }}</h3>
     <ul class="code-stuff">
-      {% for key, data in DEV_ITEMS["games"].items() %}
+      {% for key, data in DEV_ITEMS[title_key].items() %}
       <li>
         <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
         <p>{{ data.long_desc }}</p>
@@ -49,55 +29,6 @@
       </li>
       {% endfor %}
     </ul>
-
-    <h3>Twitter Bots - 2019</h3>
-    <ul class="code-stuff">
-      {% for key, data in DEV_ITEMS["bots2019"].items() %}
-      <li>
-        <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
-        <p>{{ data.long_desc }}</p>
-        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
-      </li>
-      {% endfor %}
-    </ul>
-
-    <h3>Twitter Bots - #NaBoMaMo 2017</h3>
-    <ul class="code-stuff">
-      {% for key, data in DEV_ITEMS["bots2017"].items() %}
-      <li>
-        <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
-        <p>{{ data.long_desc }}</p>
-        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
-      </li>
-      {% endfor %}
-    </ul>
-
-    <h3>Twitter Bots - #NaBoMaMo 2016</h3>
-    <ul class="code-stuff">
-      {% for key, data in DEV_ITEMS["bots2016"].items() %}
-      <li>
-        <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
-        <p>{{ data.long_desc }}</p>
-        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
-      </li>
-      {% endfor %}
-    </ul>
-
-    <h3>Other</h3>
-    <ul class="code-stuff">
-      {% for key, data in DEV_ITEMS["other"].items() %}
-      <li>
-        <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
-        <p>{{ data.long_desc }}</p>
-        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-
-    {% if page.modified %}
-      <p>
-      Last updated: {{ page.locale_modified }}
-      </p>
     {% endif %}
+    {% endfor %}
 {% endblock %}

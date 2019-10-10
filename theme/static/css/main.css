@@ -1,4 +1,4 @@
-body.home, #app, .archive-article, .content, .game, .goty, .rest, .top-three, .credit, .game .board-row, .game .board-row-spacer, .game .game-info, .paginator, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info {
+body.home, #app, .archive-article, .content, .credit, .game, .goty, .rest, .top-three, .game .board-row, .game .board-row-spacer, .game .game-info, .paginator, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info {
   display: flex;
   flex-direction: row;
 }
@@ -91,6 +91,13 @@ body.home {
   min-width: 20%;
 }
 
+.author img {
+  border: 1px solid #9999bb;
+  height: auto;
+  width: 25px;
+  vertical-align: middle;
+}
+
 .booklist h1 {
   text-align: center;
 }
@@ -143,6 +150,7 @@ body.home {
   border: 1px solid #9999bb;
   color: #333355;
   display: flex;
+  padding: 0.5em 0.5em;
 }
 
 .code-stuff .github-link {
@@ -158,7 +166,6 @@ body.home {
 .code-stuff .language {
   max-width: 11em;
   min-width: 11em;
-  padding: 0.5em;
 }
 
 .content aside {
@@ -174,13 +181,9 @@ body.home {
   flex: 5 auto;
 }
 
-.toycredit {
-  background: url(/theme/images/palm-leaf.png) #9999bb;
-  border-top: 2px solid #9999bb;
-  font-size: 14px;
-  line-height: 2;
-  max-height: 14px;
-  padding: 0 0.5em;
+.content .media-list {
+  margin: 0 auto;
+  text-align: justify;
 }
 
 .credit {
@@ -746,6 +749,10 @@ nav a.youtube:hover {
   padding-bottom: 0.75em;
 }
 
+.media-list img {
+  width: 500px;
+}
+
 .site-banner a:hover {
   background: transparent;
   color: #555577;
@@ -776,6 +783,11 @@ nav a.youtube:hover {
   list-style-type: none;
 }
 
-.zeldo {
-  width: 500px;
+.toycredit {
+  background: url(/theme/images/palm-leaf.png) #9999bb;
+  border-top: 2px solid #9999bb;
+  font-size: 14px;
+  line-height: 2;
+  max-height: 14px;
+  padding: 0 0.5em;
 }

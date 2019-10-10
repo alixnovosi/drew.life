@@ -2,7 +2,7 @@
 // author:  andrew michaud                                                    //
 // file:    main.scss                                                         //
 // purpose: scss file for drew.life                                           //
-// updated: 2019-10-06                                                        //
+// updated: 2019-10-10                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 
@@ -195,6 +195,13 @@ body.home {
     }
 }
 
+.author img {
+    border: 1px solid $background_darker;
+    height: auto;
+    width: 25px;
+    vertical-align: middle;
+}
+
 .booklist h1 {
     text-align: center;
 }
@@ -254,6 +261,7 @@ body.home {
         border: 1px solid $background_darker;
         color: $nav_blue;
         display: flex;
+        padding: 0.5em 0.5em;
     }
 
     .github-link {
@@ -269,11 +277,10 @@ body.home {
     .language {
         max-width: 11em;
         min-width: 11em;
-        padding: 0.5em;
     }
 }
 
-.content, .game, .goty, .rest, .top-three {
+.content, .credit, .game, .goty, .rest, .top-three {
     @extend %horizontal-flex;
 }
 
@@ -290,18 +297,12 @@ body.home {
     flex: 5 auto;
 }
 
-.toycredit {
-    background: $bg_img;
-    border-top: 2px solid $background_darker;
-    font-size: 14px;
-    line-height: 2;
-    max-height: 14px;
-    padding: 0 0.5em;
+.content .media-list {
+    margin: 0 auto;
+    text-align: justify;
 }
 
 .credit {
-    @extend %horizontal-flex;
-
     background: $bg_img;
     border-top: 2px solid $background_darker;
     justify-content: space-between;
@@ -746,6 +747,10 @@ nav a:visited {
     padding-bottom: 0.75em;
 }
 
+.media-list img {
+    width: 500px;
+}
+
 .site-banner a:hover {
     background: transparent;
     color: $nav_blue_lighter;
@@ -779,6 +784,11 @@ nav a:visited {
     }
 }
 
-.zeldo {
-    width: 500px;
+.toycredit {
+    background: $bg_img;
+    border-top: 2px solid $background_darker;
+    font-size: 14px;
+    line-height: 2;
+    max-height: 14px;
+    padding: 0 0.5em;
 }

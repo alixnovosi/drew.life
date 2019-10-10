@@ -3,19 +3,19 @@ Identifier: gamefaqssort
 template: simple_raw_page
 
 ##Played in 2015
-|Rank | Game                |
-|-----|---------------------|
-|8    | Splatoon            |
-|10   | Life is Strange     |
-|17   | Metal Gear Solid 3  |
-|18   | Super Mario Maker   |
-|28   | Metal Gear Solid V  |
-|30   | Metal Gear Solid 2  |
-|36   | Metal Gear Solid 4  |
-|38   | Undertale           |
-|41   | Halo 3              |
-|42   | Super Mario World   |
-|48   | Halo: Combat Evolved|
+| Rank | Game                 |
+|------|----------------------|
+| 8    | Splatoon             |
+| 10   | Life is Strange      |
+| 17   | Metal Gear Solid 3   |
+| 18   | Super Mario Maker    |
+| 28   | Metal Gear Solid V   |
+| 30   | Metal Gear Solid 2   |
+| 36   | Metal Gear Solid 4   |
+| 38   | Undertale            |
+| 41   | Halo 3               |
+| 42   | Super Mario World    |
+| 48   | Halo: Combat Evolved |
 
 ##All time
 | Rank | Game                      |

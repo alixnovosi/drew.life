@@ -19,14 +19,16 @@
 {% endblock head %}
 
 {% block content %}
-    {% import 'translations.html' as translations with context %}
-    {{ translations.translations_for(page) }}
+  {% import 'translations.html' as translations with context %}
+  {{ translations.translations_for(page) }}
 
-    {{ page.content }}
+  {% block realcontent %}
+  {{ page.content }}
+  {% endblock %}
 
-    {% if page.modified %}
-        <p>
-        Last updated: {{ page.locale_modified }}
-        </p>
-    {% endif %}
+  {% if page.modified %}
+  <p>
+    Last updated: {{ page.locale_modified }}
+  </p>
+  {% endif %}
 {% endblock %}

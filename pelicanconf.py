@@ -6,6 +6,7 @@ import sys
 sys.path.append(os.curdir)
 from projectdata import *
 from links import *
+from sitedata import *
 
 AUTHOR = "drew"
 DEFAULT_LANG = "en"
@@ -25,6 +26,9 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+# author_images plugin
+AUTHOR_IMAGES = "images/author_images"
 
 # pages in main menu - done manually instead of letting Pelican help,
 # because I have specific ideas about what's linked and what's "secret".
@@ -70,6 +74,7 @@ PLUGIN_PATHS = [
 ]
 
 PLUGINS = [
+    "author_images",
     "touch",
 ]
 

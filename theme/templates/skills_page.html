@@ -1,0 +1,27 @@
+{% extends "page.html" %}
+
+{% block realcontent %}
+  <!--
+  SVG icons from
+  https://vorillaz.github.io/devicons/#/main,
+  http://devicon.fr/ (defunct),
+  and others.
+  -->
+  <ul class="languages">
+    {% for key, value in SKILL_INFO.items() %}
+    <li>
+      <h3>{{ key }}</h3>
+      <ul class="language-section">
+      {% for item in value %}
+        <li>
+          <img
+            src="{{ static }}/media/dev/{{ item.filename }}.svg"
+            alt="{{ item.title }}"
+            title="{{ item.title }}">
+        </li>
+      {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

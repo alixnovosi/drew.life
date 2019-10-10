@@ -304,16 +304,19 @@ PROJECT_GENS = {
 PROJECTS = copy.deepcopy(PROJECT_GENS)
 for key, value in PROJECT_GENS.items():
 
-    if value.get("root", None) is not None:
-        value["git_url"] = f"{value.get('root')}/{value['git_name']}"
-    else:
-        value["git_url"] = f"{GIT_ROOT}/{value['git_name']}"
+    if value.get("root", None) is None:
+        value["root"] = GIT_ROOT
+
+    value["git_url"] = f"{value['root']}/{value['git_name']}"
+
+    if value.get("has_css", False) or value.get("has_js", False):
+        url_root = f"/dist/{key}/main.{value['hash']}"
 
     if value.get("has_css", False):
-        value["css_url"] = f"/dist/{key}/main.{value['hash']}.css"
+        value["css_url"] = f"{url_root}.css"
 
     if value.get("has_js", False):
-        value["js_url"] = f"/dist/{key}/main.{value['hash']}.js"
+        value["js_url"] = f"{url_root}.js"
 
     if value.get("lang_code", None) is None:
         value["lang_code"] = value["language"]
@@ -328,7 +331,15 @@ TOYS = {
 }
 
 # aid for constructing dev page without pain.
-DEV_SECTIONS = ["bots2016", "bots2017", "bots2019", "highlights", "games", "other"]
+DEV_SECTIONS = ["highlights", "games", "bots2019", "bots2017", "bots2016", "other"]
+DEV_TITLES = {
+    "bots2016": "Twitter Bots - #NaBoMaMo 2016",
+    "bots2017": "Twitter Bots - #NaBoMaMo 2017",
+    "bots2019": "Twitter Bots - 2019",
+    "games": "Games",
+    "other": "Other",
+}
+
 DEV_ITEMS = {
     section_key:{
         key:value
