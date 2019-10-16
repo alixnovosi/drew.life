@@ -19,3 +19,6 @@
 [submodule "sortviz"]
 	path = sortviz
 	url = https://github.com/alixnovosi/sortviz
+[submodule "markovbox"]
+	path = markovbox
+	url = https://github.com/alixnovosi/markovbox

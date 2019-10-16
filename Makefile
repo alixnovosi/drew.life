@@ -33,6 +33,7 @@ BOUNCEDIR=$(BASEDIR)/bounce
 LORENZDIR=$(BASEDIR)/lorenz
 TREEDIR=$(BASEDIR)/tree_web
 SORTVIZDIR=$(BASEDIR)/sortviz
+MARKOVBOXDIR=$(BASEDIR)/markovbox
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -74,6 +75,7 @@ jscopy:
 	cp $(LORENZDIR)/dist/* $(INPUTDIR)/dist/lorenz/
 	cp $(TREEDIR)/dist/* $(INPUTDIR)/dist/tree/
 	cp $(SORTVIZDIR)/dist/* $(INPUTDIR)/dist/sortviz/
+	cp $(MARKOVBOXDIR)/dist/* $(INPUTDIR)/dist/markovbox/
 
 html: sasscompile jscopy
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -87,6 +89,7 @@ clean:
 	rm -f $(INPUTDIR)/dist/lorenz/*
 	rm -f $(INPUTDIR)/dist/tree/*
 	rm -f $(INPUTDIR)/dist/sortviz/*
+	rm -f $(INPUTDIR)/dist/markovbox/*
 
 regenerate: sasscompile jscopy
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

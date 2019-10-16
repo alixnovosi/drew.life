@@ -11,6 +11,19 @@ ITCH_ROOT = "https://alixnovosi.itch.io"
 # project definitions.
 # includes both information for dev page and for toy pages.
 PROJECT_GENS = {
+    "markovbox": {
+        "git_name": "markovbox",
+        "page_name": "markovbox",
+        "toy_name": "markovbox",
+        "desc": "text box generating text via Markov processes",
+        "long_desc": "Generates text with Markov processes, pulling from public domain works.",
+        "language": "TypeScript",
+
+        "types": ["other", "highlights", "toy"],
+
+        "hash": "2e7d84fe92386a97b8b0",
+        "has_css": True,
+    },
     "sortviz": {
         "git_name": "sortviz",
         "page_name": "sortviz",
