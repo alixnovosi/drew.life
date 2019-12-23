@@ -1,9 +1,9 @@
-body.home, #app, .archive-article, .content, .credit, .game, .goty, .rest, .top-three, .game .board-row, .game .board-row-spacer, .game .game-info, .paginator, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info {
+body.home, #app, .archive-article, .content, .credit, .game, .goty, .rest, .top-three, .game .board-row, .game .board-row-spacer, .game .game-info, .paginator, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info, .goty-decade li {
   display: flex;
   flex-direction: row;
 }
 
-ol, ul, .honorable-mention, .media-list, .page, .top-ten, nav ul, .article-body .post-info > div {
+ol, ul, .honorable-mention, .media-list, .page, .top-ten, .goty li, .goty-decade ol, nav ul, .article-body .post-info > div, .goty-decade .hack {
   display: flex;
   flex-direction: column;
 }
@@ -305,6 +305,11 @@ body.home {
 .goty .honorable-mention {
   align-items: stretch;
   border-top: 2px solid #333355;
+  justify-content: space-around;
+}
+
+.goty .honorable-mention li {
+  padding: 0.5em;
 }
 
 .goty .rest {
@@ -423,6 +428,7 @@ ol li, ul li, .game li {
   background-color: #ddddee;
   color: #333355;
   flex: 1 auto;
+  justify-content: space-between;
   height: auto;
   margin: 0 0.25em 1em 0.25em;
   padding: 0.75em 0;
@@ -437,9 +443,9 @@ nav li:visited {
 }
 
 article .honorable-mention li {
-  max-height: 60%;
-  max-width: 60%;
-  min-width: 60%;
+  min-width: 70%;
+  max-width: 70%;
+  padding: 0.5em;
 }
 
 aside .honorable-mention li {
@@ -460,6 +466,25 @@ aside .honorable-mention li {
 .goty .top-three li {
   max-width: 33%;
   min-width: 33%;
+}
+
+.goty-decade ol {
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.goty-decade li {
+  list-style-type: none;
+  margin: 10px 0;
+  text-align: center;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.goty-decade li img {
+  max-height: 250px;
+  width: 600px;
 }
 
 nav ul {
@@ -732,12 +757,28 @@ nav a.youtube:hover {
   border: 1px solid #bbbbdd;
 }
 
-.goty li:hover, .booklist li:hover {
+.goty-decade li {
+  border: 5px solid #bbbbdd;
+}
+
+.goty-decade li img {
+  height: 250px;
+}
+
+.goty-decade .goty-backfilled li:hover {
+  background-color: #dbdbfb;
+}
+
+.goty li:hover, .booklist li:hover, .goty-decade li:hover {
   background-color: #bbbbdd;
 }
 
-.goty img, .booklist img {
+.goty img {
   padding-bottom: 1em;
+}
+
+.booklist img {
+  padding: 1em 0 1em 0;
 }
 
 .hentry .entry-content {
@@ -756,6 +797,31 @@ nav a.youtube:hover {
 .site-banner a:hover {
   background: transparent;
   color: #555577;
+}
+
+.goty-decade h2, .goty-decade h5 {
+  text-align: center;
+}
+
+.goty-decade .hack {
+  justify-content: space-around;
+  padding: 0.5em 0;
+  margin: 2em 0;
+}
+
+.goty-decade .hack h2 {
+  margin: 0 1em;
+}
+
+.goty-modern, .goty-backfilled {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+a.soundtrack {
+  border-top: 1px solid #333355;
+  padding: 0.5em 0 0;
+  width: 80%;
 }
 
 .toybox .linkbox {

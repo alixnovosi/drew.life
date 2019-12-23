@@ -64,11 +64,11 @@
   </nav>
 {% endmacro %}
 
-{% macro goty_nav(page) %}
+{% macro yearly_nav(page, prefix) %}
   <nav class="site-nav-goty">
     <ul>
       <li>
-        <a class="default"{% if page.previous%} href="{{ SITEURL }}/goty{{page.previous}}.html" {% endif %} >
+          <a class="default"{% if page.previous%} href="{{ SITEURL }}/{{prefix}}{{page.previous}}.html" {% endif %} >
             {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
         </a>
       </li>
@@ -76,7 +76,7 @@
         <a class="default" href="{{ SITEURL }}/">home</a>
       </li>
       <li>
-        <a class="default" {% if page.next%} href="{{ SITEURL }}/goty{{page.next}}.html" {% endif %} >
+          <a class="default" {% if page.next%} href="{{ SITEURL }}/{{prefix}}{{page.next}}.html" {% endif %} >
             {% if page.next %}
               {{page.next}}
             {%else %}
@@ -86,6 +86,15 @@
       </li>
     </ul>
   </nav>
+
+{% endmacro %}
+
+{% macro goty_nav(page) %}
+    {{yearly_nav(page, "goty")}}
+{% endmacro %}
+
+{% macro book_nav(page) %}
+    {{yearly_nav(page, "books")}}
 {% endmacro %}
 
 {% macro credit() %}

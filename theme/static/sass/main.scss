@@ -11,6 +11,7 @@ $article_background: #ffffff;
 $article_highlight: #666699;
 
 $background: #eeeeff;
+$background_lighter: #dbdbfb;
 $background_dark: #bbbbdd;
 $background_darker: #9999bb;
 
@@ -426,6 +427,11 @@ body.home {
     .honorable-mention {
         align-items: stretch;
         border-top: 2px solid $nav_blue;
+        justify-content: space-around;
+
+        li {
+            padding: 0.5em;
+        }
     }
 
     .rest {
@@ -546,10 +552,13 @@ ol li, ul li, .game li {
 }
 
 .goty li {
+    @extend %vertical-flex;
+
     align-items: center;
     background-color: $social_hover_background;
     color: $nav_blue;
     flex: 1 auto;
+    justify-content: space-between;
     height: auto;
     margin: 0 0.25em 1em 0.25em;
     padding: 0.75em 0;
@@ -564,9 +573,9 @@ nav li:visited {
 }
 
 article .honorable-mention li {
-    max-height: 60%;
-    max-width: 60%;
-    min-width: 60%;
+    min-width: 70%;
+    max-width: 70%;
+    padding: 0.5em;
 }
 
 aside .honorable-mention li {
@@ -587,6 +596,28 @@ aside .honorable-mention li {
 .goty .top-three li {
     max-width: 33%;
     min-width: 33%;
+}
+
+.goty-decade ol {
+    @extend %vertical-flex;
+
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.goty-decade li {
+    list-style-type: none;
+    margin: 10px 0;
+    text-align: center;
+
+    max-height: 250px;
+    overflow: hidden;
+
+    img {
+        max-height: 250px;
+        width: 600px;
+    }
 }
 
 // ol/ul hell
@@ -730,12 +761,30 @@ nav a:visited {
     }
 }
 
-.goty li:hover, .booklist li:hover {
+.goty-decade li {
+	@extend %horizontal-flex;
+
+	border: 5px solid $background_dark;
+
+    img {
+        height: 250px;
+    }
+}
+
+.goty-decade .goty-backfilled li:hover {
+    background-color: $background_lighter;
+}
+
+.goty li:hover, .booklist li:hover, .goty-decade li:hover {
     background-color: $background_dark;
 }
 
-.goty img, .booklist img {
+.goty img {
     padding-bottom: 1em;
+}
+
+.booklist img {
+    padding: 1em 0 1em 0;
 }
 
 .hentry .entry-content {
@@ -754,6 +803,33 @@ nav a:visited {
 .site-banner a:hover {
     background: transparent;
     color: $nav_blue_lighter;
+}
+
+.goty-decade h2, .goty-decade h5 {
+    text-align: center;
+}
+
+.goty-decade .hack {
+    @extend %vertical-flex;
+
+    justify-content: space-around;
+    padding: 0.5em 0;
+    margin: 2em 0;
+
+    h2 {
+        margin: 0 1em;
+    }
+}
+
+.goty-modern, .goty-backfilled {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+a.soundtrack {
+    border-top: 1px solid $nav-blue;
+    padding: 0.5em 0 0;
+    width: 80%;
 }
 
 .toybox {

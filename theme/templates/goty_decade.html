@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{page.title}}{% endblock title %}
+
+{% block head %}
+  {{ super() }}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alixnovosi" />
+  <meta name="twitter:title" content="{{page.title}}" />
+  <meta name="twitter:desription" content="Come read the list!" />
+  <meta name="twitter:image" content="{{ SITEURL }}/media/goty/trophy.jpg" />
+{% endblock head %}
+
+{% block body %}
+  <header>
+    {% block header %}
+      {{ lib.simple_nav() }}
+    {% endblock header %}
+  </header>
+
+  <main class="goty-decade">
+    {% block main %}
+      {{ page.content }}
+    {% endblock main %}
+  </main>
+
+  {{ lib.credit() }}
+{% endblock body %}

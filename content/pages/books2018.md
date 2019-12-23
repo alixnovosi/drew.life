@@ -2,6 +2,7 @@ Title: some 2018 books
 Identifier: books2018
 template: book_page
 year: 2018
+next: 2019
 
 <!-- I hate this syntax so much. -->
 # 2018

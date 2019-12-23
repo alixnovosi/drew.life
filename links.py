@@ -23,16 +23,20 @@ PAGES = [
     ("goty2016", "goty2016.html"),
     ("goty2017", "goty2017.html"),
     ("goty2018", "goty2018.html"),
+    ("goty2019", "goty2019.html"),
+    ("goty2010s", "goty2010s.html"),
 
     ("books", "books2018.html"),
+    ("books", "books2019.html"),
 ]
 
 # pages that go into their own little zones.
 # with possibly different nav
 SUBPAGES = [
     ("blog", "blog/index.html"),
-    ("goty", "goty2018.html"),
-    ("books", "books2018.html"),
+    ("goty", "goty2019.html"),
+    ("goty2010s", "goty2010s.html"),
+    ("books", "books2019.html"),
 ]
 
 # index subpages, just js toys for now.
