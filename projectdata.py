@@ -76,7 +76,7 @@ PROJECT_GENS = {
 
         "types": ["other", "toy", "highlights"],
 
-        "hash": "980acdfde66cd9e96ce0",
+        "hash": "0c52d3ac917cdf163731",
         "has_css": True,
         "has_js": True,
     },
@@ -105,7 +105,7 @@ PROJECT_GENS = {
 
         "types": ["other", "toy", "highlights"],
 
-        "hash": "bb68105fdf8e93ddf03d",
+        "hash": "0f6a41e5ae0d0425e3c4",
         "has_js": True,
     },
 
