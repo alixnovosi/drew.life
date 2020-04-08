@@ -1,6 +1,6 @@
 import copy
 
-import github_colors
+#import github_colors
 
 # data on projects, and external roots (because they're needed here).
 # also toy/category construction for toybox and dev pages.

@@ -1,9 +1,9 @@
-body.home, #app, .archive-article, .content, .credit, .game, .goty, .rest, .top-three, .game .board-row, .game .board-row-spacer, .game .game-info, .paginator, .code-stuff li, .booklist ul, .site-nav-goty ul, .article-body .post-info, .goty-decade li {
+.goty-decade li, .article-body .post-info, .booklist ul, .site-nav-goty ul, .code-stuff li, .paginator, .game .game-info, .game .board-row, .game .board-row-spacer, .content, .credit, .game, .goty, .rest, .top-three, .archive-article, #app, body.home {
   display: flex;
   flex-direction: row;
 }
 
-ol, ul, .honorable-mention, .media-list, .page, .top-ten, .goty li, .goty-decade ol, nav ul, .article-body .post-info > div, .goty-decade .hack {
+.goty-decade .hack, .article-body .post-info > div, nav ul, .goty-decade ol, .goty li, .honorable-mention, .media-list, .page, .top-ten, ol, ul {
   display: flex;
   flex-direction: column;
 }
