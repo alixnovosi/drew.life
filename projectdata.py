@@ -34,7 +34,7 @@ PROJECT_GENS = {
 
         "types": ["other", "highlights", "toy"],
 
-        "hash": "098c15d116d313c927a2",
+        "hash": "7847e61f23227a9bdd3d",
         "has_css": True,
         "has_js": True,
     },
