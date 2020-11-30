@@ -125,7 +125,7 @@ publish: sasscompile jscopy
 
 rsync_upload: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ \
-$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
+$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude --exclude=gallery
 
 .PHONY: html help clean regenerate serve serve-global devserver stopserver \
 	publish sasscompile jscopy rsync_upload
