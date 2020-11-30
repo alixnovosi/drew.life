@@ -8,7 +8,7 @@ template: gallery
   <h3>Profile pics</h3>
   <ul class="pfp-art">
     <li>
-      <img src="{static}/gallery/commart/aspeneyes_profile.png"
+      <img src="/gallery/commart/aspeneyes_profile.png"
            alt="Aspen Eyes profile"
            title="Profile pic commissioned from Aspen Eyes">
       <table>
