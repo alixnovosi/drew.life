@@ -46,6 +46,7 @@ PAGINATED_TEMPLATES = {
 BLOG_INDEX_SAVE_AS = "blog/index.html"
 
 STATIC_PATHS = [
+    "gallery",
     "media",
     "extra",  # favicon and robots.txt here.
     "dist",  # javascript for nonograms

@@ -39,13 +39,10 @@ SUBPAGES = [
     ("books", "books2019.html"),
 ]
 
-# index subpages, just js toys for now.
-INDEX_SUBPAGES = [
-    ("javascript toys", "toybox.html"),
-]
-
 TOPLEVEL_PAGES = [
     ("code stuff", "dev.html", "dev"),
     ("skills", "skills.html", "skills"),
     ("about me", "about.html", "about"),
+    ("toys", "toybox.html", "toybox"),
+    ("art", "ocgallery.html", "ocgallery"),
 ]

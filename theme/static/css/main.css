@@ -1,9 +1,9 @@
-.goty-decade li, .article-body .post-info, .booklist ul, .site-nav-goty ul, .code-stuff li, .paginator, .game .game-info, .game .board-row, .game .board-row-spacer, .content, .credit, .game, .goty, .rest, .top-three, .archive-article, #app, body.home {
+.goty-decade li, .article-body .post-info, .booklist ul, .site-nav-goty ul, .code-stuff li, .paginator, .game .game-info, .game .board-row, .game .board-row-spacer, .content, .credit, .game, .goty, .rest, .top-three, .pfp-art table tr, .fullbody-art table tr, .archive-article, #app, body.home {
   display: flex;
   flex-direction: row;
 }
 
-.goty-decade .hack, .article-body .post-info > div, nav ul, .goty-decade ol, .goty li, .honorable-mention, .media-list, .page, .top-ten, ol, ul {
+.goty-decade .hack, .article-body .post-info > div, nav ul, .goty-decade ol, .goty li, .pfp-art li, .fullbody-art li, .honorable-mention, .media-list, .page, .top-ten, ol, ul {
   display: flex;
   flex-direction: column;
 }
@@ -128,6 +128,57 @@ body.home {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 0.5em;
+}
+
+.pfp-art, .fullbody-art {
+  justify-content: space-between;
+  display: flex;
+  flex: 1 auto;
+  list-style-type: none;
+}
+
+.pfp-art li, .fullbody-art li {
+  border: 2px solid #000011;
+  border-radius: 5px;
+  padding: 0;
+  text-align: left;
+  width: 250px;
+}
+
+.pfp-art table, .fullbody-art table {
+  line-height: 2;
+  width: 250px;
+}
+
+.pfp-art table td a, .fullbody-art table td a {
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.pfp-art table tr, .fullbody-art table tr {
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.pfp-art table th, .fullbody-art table th {
+  border-bottom: 2px solid #000011;
+  font-weight: normal;
+}
+
+.pfp-art table th, .pfp-art table td, .fullbody-art table th, .fullbody-art table td {
+  display: inline-block;
+  flex: 1 auto;
+  height: 100%;
+  margin: 0;
+  padding: 3px;
+  width: 50%;
+}
+
+.pfp-art img, .fullbody-art img {
+  width: 250px;
 }
 
 .code-stuff li {
@@ -570,6 +621,16 @@ nav a.active.about {
   background-color: #7777aa;
 }
 
+nav a.active.toybox {
+  color: #333355;
+  background-color: #cc9966;
+}
+
+nav a.active.ocgallery {
+  color: #333355;
+  background-color: #886688;
+}
+
 nav a.default:hover {
   color: #333355;
   background-color: #ccccdd;
@@ -590,12 +651,27 @@ nav a.about:hover {
   background-color: #8888bb;
 }
 
+nav a.toybox:hover {
+  color: #333355;
+  background-color: #ddaa77;
+}
+
+nav a.ocgallery:hover {
+  color: #333355;
+  background-color: #997799;
+}
+
 nav a.blog:hover {
   color: #333355;
   background-color: #bb8888;
 }
 
-nav a.GOTY:hover {
+nav a.goty:hover {
+  color: #333355;
+  background-color: #88bb88;
+}
+
+nav a.goty2010s:hover {
   color: #333355;
   background-color: #88bb88;
 }
@@ -613,11 +689,6 @@ nav a.github:hover {
 nav a.itchio:hover {
   color: #333355;
   background-color: #88bb88;
-}
-
-nav a.twitter:hover {
-  color: #333355;
-  background-color: #8888bb;
 }
 
 nav a.twitch:hover {
@@ -824,6 +895,10 @@ a.soundtrack {
   width: 80%;
 }
 
+.toybox h2, .toybox h3, .toybox p, .toybox ul, .ocgallery h2, .ocgallery h3, .ocgallery p, .ocgallery ul {
+  text-align: center;
+}
+
 .toybox .linkbox {
   border: 1px solid #9999bb;
   border-radius: 5px;
@@ -832,10 +907,6 @@ a.soundtrack {
 
 .toybox .linkbox:hover {
   background-color: #9999bb;
-}
-
-.toybox h2, .toybox h3, .toybox p, .toybox ul {
-  text-align: center;
 }
 
 .toybox ul {

@@ -1,5 +1,4 @@
 Title: about drew
-Slug: about me
 Identifier: about
 
 He/Him

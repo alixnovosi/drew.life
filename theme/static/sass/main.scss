@@ -2,7 +2,7 @@
 // author:  andrew michaud                                                    //
 // file:    main.scss                                                         //
 // purpose: scss file for drew.life                                           //
-// updated: 2019-10-10                                                        //
+// updated: 2020-10-20                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 
@@ -48,6 +48,8 @@ $active_nav_colors: (
     dev: $red,
     skills: $green,
     about: $blue,
+    toybox: $orange,
+    ocgallery: $violet,
 );
 
 $hover_nav_colors: (
@@ -55,12 +57,16 @@ $hover_nav_colors: (
     dev: $red_highlight,
     skills: $green_highlight,
     about: $blue_highlight,
+    toybox: $orange_highlight,
+    ocgallery: $violet_highlight,
+
     blog: $red_highlight,
-    GOTY: $green_highlight,
+    goty: $green_highlight,
+    goty2010s: $green_highlight,
     books: $blue_highlight,
+
     github: $red_highlight,
     itchio: $green_highlight,
-    twitter: $blue_highlight,
     twitch: $orange_highlight,
     youtube: $violet_highlight,
 );
@@ -239,6 +245,59 @@ body.home {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 0.5em;
+}
+
+.pfp-art, .fullbody-art {
+    justify-content: space-between;
+    display: flex;
+    flex: 1 auto;
+    list-style-type: none;
+
+    li {
+        @extend %vertical-flex;
+        border: 2px solid $nav_blue_darker;
+        border-radius: 5px;
+        padding: 0;
+        text-align: left;
+        width: 250px;
+    }
+
+    table {
+        line-height: 2;
+        width: 250px;
+
+        td a {
+            display: inline-block;
+            height: 100%;
+            margin: 0;
+            width: 100%;
+        }
+
+        tr {
+            @extend %horizontal-flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+        }
+
+        th {
+            border-bottom: 2px solid $nav_blue_darker;
+            font-weight: normal;
+        }
+
+        th, td {
+            display: inline-block;
+            flex: 1 auto;
+            height: 100%;
+            margin: 0;
+            padding: 3px;
+            width: 50%;
+        }
+    }
+
+    img {
+        width: 250px;
+    }
 }
 
 .code-stuff {
@@ -832,6 +891,12 @@ a.soundtrack {
     width: 80%;
 }
 
+.toybox, .ocgallery {
+    h2, h3, p, ul {
+        text-align: center;
+    }
+}
+
 .toybox {
     .linkbox {
         border: 1px solid $background-darker;
@@ -842,10 +907,6 @@ a.soundtrack {
     .linkbox:hover {
         background-color: $background-darker;
 
-    }
-
-    h2, h3, p, ul {
-        text-align: center;
     }
 
     ul {
