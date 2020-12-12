@@ -1,24 +1,24 @@
 [submodule "nonogram_web"]
-	path = nonogram_web
+	path = dist/nonogram_web
 	url = https://github.com/alixnovosi/nonogram_web
 [submodule "pelican-plugins"]
 	path = pelican-plugins
 	url = https://github.com/getpelican/pelican-plugins.git
 [submodule "sudoku_web"]
-	path = sudoku_web
+	path = dist/sudoku_web
 	url = https://github.com/alixnovosi/sudoku_web
 [submodule "bounce"]
-	path = bounce
+	path = dist/bounce
 	url = https://github.com/alixnovosi/bounce
 [submodule "lorentz"]
-	path = lorenz
+	path = dist/lorenz
 	url = https://github.com/alixnovosi/lorenz
 [submodule "tree_web"]
-	path = tree_web
+	path = dist/tree_web
 	url = https://github.com/alixnovosi/tree_web
 [submodule "sortviz"]
-	path = sortviz
+	path = dist/sortviz
 	url = https://github.com/alixnovosi/sortviz
 [submodule "markovbox"]
-	path = markovbox
+	path = dist/markovbox
 	url = https://github.com/alixnovosi/markovbox

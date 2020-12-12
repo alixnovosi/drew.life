@@ -27,13 +27,13 @@ CSSDIR=$(BASEDIR)/theme/static/css
 SASSDIR=$(BASEDIR)/theme/static/sass
 
 # TODO can you do this more succinctly in make?
-NONOGRAMDIR=$(BASEDIR)/nonogram_web
-SUDOKUDIR=$(BASEDIR)/sudoku_web
-BOUNCEDIR=$(BASEDIR)/bounce
-LORENZDIR=$(BASEDIR)/lorenz
-TREEDIR=$(BASEDIR)/tree_web
-SORTVIZDIR=$(BASEDIR)/sortviz
-MARKOVBOXDIR=$(BASEDIR)/markovbox
+NONOGRAMDIR=$(BASEDIR)/dist/nonogram_web
+SUDOKUDIR=$(BASEDIR)/dist/sudoku_web
+BOUNCEDIR=$(BASEDIR)/dist/bounce
+LORENZDIR=$(BASEDIR)/dist/lorenz
+TREEDIR=$(BASEDIR)/dist/tree_web
+SORTVIZDIR=$(BASEDIR)/dist/sortviz
+MARKOVBOXDIR=$(BASEDIR)/dist/markovbox
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
