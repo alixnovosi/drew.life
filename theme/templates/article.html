@@ -38,24 +38,19 @@
     </header>
 
     <footer class="post-info">
-      <div class="times">
-        <time class="published" datetime="{{ article.date.isoformat() }}">
-          published @ {{ article.locale_date }}
-        </time>
-        {% if article.modified %}
-        <time class="modified" datetime="{{ article.modified.isoformat() }}">
-          modified @ {{ article.locale_modified }}
-        </time>
-        {% endif %}
-      </div>
 
       <div class="meta">
         {% if article.authors %}
         <address class="vcard author">
-          by {% for author in article.authors %}
-              <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-              <img src="/{{ author.image }}"></img>
-            {% endfor %}
+          {% for author in article.authors %}
+            <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">
+                  <img class="article-author"
+                    src="/{{ author.image }}"
+                    alt="{{ author }}"
+                    title="{{ author }}"
+                  >
+            </a>
+          {% endfor %}
         </address>
         {% endif %}
 
@@ -72,6 +67,17 @@
           <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
           {% endfor %}
         </div>
+        {% endif %}
+      </div>
+
+      <div class="times">
+        <time class="published" datetime="{{ article.date.isoformat() }}">
+          {{ article.locale_date }}
+        </time>
+        {% if article.modified %}
+        <time class="modified" datetime="{{ article.modified.isoformat() }}">
+          modified @ {{ article.locale_modified }}
+        </time>
         {% endif %}
       </div>
     </footer><!-- /.post-info -->

@@ -1,0 +1,187 @@
+//----------------------------------------------------------------------------//
+// author:  andrew michaud                                                    //
+// file:    goty.scss                                                         //
+// purpose: styles for goty list pages                                        //
+// updated: 2020-12-08                                                        //
+// license: isc                                                               //
+//----------------------------------------------------------------------------//
+@import "vars";
+
+.rest, .top-three {
+    @extend %horizontal-flex;
+}
+
+.top-ten {
+    @extend %vertical-flex;
+}
+
+.backlog-bracket ol, .honorable-mention ul {
+    align-items: center;
+}
+
+article .honorable-mention li {
+    min-width: 70%;
+    max-width: 70%;
+    padding: 0.5em;
+}
+
+aside .honorable-mention li {
+    max-width: 80%;
+    min-width: 10em;
+    width: 80%;
+}
+
+.goty article li {
+    margin: 0.25em;
+}
+
+.goty .rest li {
+    max-width: 27%;
+    min-width: 27%;
+}
+
+.goty .top-three li {
+    max-width: 33%;
+    min-width: 33%;
+}
+
+.goty-decade ol {
+    @extend %vertical-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.goty-decade li {
+    @extend %horizontal-flex;
+    list-style-type: none;
+    margin: 10px 0;
+    max-height: 250px;
+    overflow: hidden;
+    text-align: center;
+
+    img {
+        max-height: 250px;
+        width: 600px;
+    }
+}
+
+.backlog-bracket li {
+    justify-content: space-around;
+    height: 6em;
+    max-width: 80%;
+    min-width: 10em;
+    width: 80%;
+}
+
+.goty-decade li {
+	border: 5px solid $background_dark;
+
+    img {
+        height: 250px;
+        width: 100%;
+    }
+}
+
+.goty ol, .goty ul {
+    padding: 0 1em;
+    justify-content: space-around;
+}
+
+.goty ol {
+    list-style: inside decimal-leading-zero;
+}
+
+.goty ul {
+    margin: 0;
+    text-align: center;
+}
+
+// can't be ol/ul unconditionally because I'm still trying to
+// preserve goty2015/goty2016 in a "raw" format.
+.goty ul {
+    list-style-type: none;
+}
+
+.goty-decade h2, .goty-decade h5 {
+    text-align: center;
+}
+
+.goty-decade .hack {
+    @extend %vertical-flex;
+    justify-content: space-around;
+    padding: 0.5em 0;
+    margin: 2em 0;
+
+    h2 {
+        margin: 0 1em;
+    }
+}
+
+.goty-modern, .goty-backfilled {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+a.soundtrack {
+    border-top: 1px solid $nav-blue;
+    padding: 0.5em 0 0;
+    width: 80%;
+}
+
+.goty li {
+    @extend %vertical-flex;
+    align-items: center;
+    background-color: $social_hover_background;
+    border: 1px solid $background_darker;
+    color: $nav_blue;
+    flex: 1 auto;
+    justify-content: space-between;
+    height: auto;
+    margin: 0 0.25em 1em 0.25em;
+    padding: 0.75em 0;
+}
+
+.goty {
+    @extend %horizontal-flex;
+    text-align: center;
+    justify-content: space-evenly;
+
+    article {
+        padding: 0 1em 0 0.5em;
+    }
+
+    aside {
+        border-left: 2px solid $nav_blue;
+        padding: 0 0.5em;
+        width: 40%;
+    }
+
+    .honorable-mention {
+        @extend %vertical-flex;
+        align-items: stretch;
+        border-top: 2px solid $nav_blue;
+        justify-content: space-around;
+
+        li {
+            padding: 0.5em;
+        }
+    }
+
+    .rest {
+        flex-wrap: wrap;
+    }
+}
+
+.goty-decade .goty-backfilled li:hover {
+    background-color: $background_lighter;
+}
+
+.goty li:hover, .booklist li:hover, .goty-decade li:hover {
+    background-color: $background_dark;
+}
+
+.goty img {
+    padding-bottom: 1em;
+    width: 100%;
+}

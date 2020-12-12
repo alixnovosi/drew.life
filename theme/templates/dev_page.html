@@ -6,29 +6,25 @@
     <p>This is an incomplete selection of my open-source projects.</p>
 
     <h2>Highlights</h2>
-    <ul class="code-stuff">
-      {% for key, data in DEV_ITEMS["highlights"].items() %}
-      <li>
+    {% for key, data in DEV_ITEMS["highlights"].items() %}
+      <section class="code-stuff">
         <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
-        <p>{{ data.long_desc }}</p>
+        <summary>{{ data.long_desc }}</summary>
         <p class="language {{ data.lang_code }}">{{ data.language }}</p>
-      </li>
-      {% endfor %}
-    </ul>
+      </section>
+    {% endfor %}
 
     <h2>All</h2>
     {% for title_key, title_value in DEV_ITEMS.items() %}
-    {% if title_key != "highlights" %}
-    <h3>{{ DEV_TITLES[title_key] }}</h3>
-    <ul class="code-stuff">
-      {% for key, data in DEV_ITEMS[title_key].items() %}
-      <li>
-        <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
-        <p>{{ data.long_desc }}</p>
-        <p class="language {{ data.lang_code }}">{{ data.language }}</p>
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+      {% if title_key != "highlights" %}
+        <h3 class="code-inter-title">{{ DEV_TITLES[title_key] }}</h3>
+        {% for key, data in DEV_ITEMS[title_key].items() %}
+          <section class="code-stuff">
+            <a class="github-link" href="{{ data.git_url }}">{{ data.git_name }}</a>
+            <summary>{{ data.long_desc }}</summary>
+            <p class="language {{ data.lang_code }}">{{ data.language }}</p>
+          </section>
+        {% endfor %}
+      {% endif %}
     {% endfor %}
 {% endblock %}

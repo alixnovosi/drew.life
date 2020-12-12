@@ -7,21 +7,17 @@
   http://devicon.fr/ (defunct),
   and others.
   -->
-  <ul class="languages">
+  <section class="languages">
     {% for key, value in SKILL_INFO.items() %}
-    <li>
-      <h3>{{ key }}</h3>
-      <ul class="language-section">
-      {% for item in value %}
-        <li>
+      <section class="language-section">
+        <h3>{{ key }}</h3>
+        {% for item in value %}
           <img
             src="{{ static }}/media/dev/{{ item.filename }}.svg"
             alt="{{ item.title }}"
             title="{{ item.title }}">
-        </li>
-      {% endfor %}
-      </ul>
-    </li>
+        {% endfor %}
+      </section>
     {% endfor %}
-  </ul>
+  </section>
 {% endblock %}

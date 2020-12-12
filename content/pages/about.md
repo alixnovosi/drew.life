@@ -1,9 +1,23 @@
 Title: about drew
 Identifier: about
 
-He/Him
+<div class="about-text">
 
-I work professionally with computers,
-and also spend an irresponsible amount of time tinkering with them otherwise.
+    <a href="">
+        <img class="about-image"
+             src="{static}/gallery/commart/profile.jpg"
+             alt=""
+             title=""
+        >
+    </a>
 
-I really like cats.
+    <p>He/Him</p>
+
+    <p>
+        I work professionally with computers,
+        and also spend an irresponsible amount of time tinkering with them otherwise.
+    </p>
+
+    <p>I really like cats.</p>
+
+</div>

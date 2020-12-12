@@ -1,0 +1,66 @@
+//----------------------------------------------------------------------------//
+// author:  andrew michaud                                                    //
+// file:    ocgallery.scss                                                    //
+// purpose: specific styles for oc gallery section                            //
+// updated: 2020-12-09                                                        //
+// license: isc                                                               //
+//----------------------------------------------------------------------------//
+@import "vars";
+
+.gallery-section {
+    display: grid;
+    gap: 0.5em 1em;
+    grid-template-columns: repeat(auto-fill, minmax(320px, auto));
+    justify-content: space-around;
+}
+
+.art-info-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 50%));
+}
+
+.art-info-tile {
+    border-top: 2px solid $nav_blue_darker;
+    display: inline-block;
+    height: 100%;
+    line-height: 2;
+    padding: 0 0 0 10px;
+    text-align: left;
+
+    a {
+        display: inline-block;
+        margin: 0;
+        margin-left: -10px;
+        padding-left: 10px;
+        width: 100%
+    }
+}
+
+.art-tile {
+    border: 2px solid $nav_blue_darker;
+    border-radius: 5px;
+    display: grid;
+
+    img {
+        width: 100%;
+    }
+}
+
+.ocgallery {
+    h2, h3 {
+        text-align: center;
+    }
+
+    h3 {
+        padding-top: 0.5em;
+        padding-bottom: 1em;
+    }
+}
+
+.fullbody-art .art-tile {
+    width: 304px;
+}
+
+.pfp-art .art-tile {
+    width: 254px;
+}

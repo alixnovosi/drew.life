@@ -1,0 +1,100 @@
+//----------------------------------------------------------------------------//
+// author:  andrew michaud                                                    //
+// file:    code-stuff.scss                                                   //
+// purpose: styles for code stuff page and skills page                        //
+// updated: 2020-12-09                                                        //
+// license: isc                                                               //
+//----------------------------------------------------------------------------//
+@import "vars";
+
+// partial rip of
+// https://github.com/doda/github-language-colors/blob/master/colors.json,
+// because this seems like the right place to put it.
+$language_colors: (
+    TypeScript: #2b7489,
+    Shell: #89e051,
+    Bash: #89e051,
+    Go: #375eab,
+    Java: #b07219,
+    Scala: #DC322F,
+    Makefile: #427819,
+    Lua: #000080,
+    Vue: #2c3e50,
+    HTML: #e44b23,
+    HTML5: #e44b23,
+    Rust: #dea584,
+    CSS: #563d7c,
+    TeX: #3D6117,
+    JavaScript: #f1e05a,
+    VimL: #199f4b,
+    Python: #3572A5,
+    Haskell: #29b544,
+);
+
+.code-page {
+    text-align: center;
+}
+
+.code-stuff {
+    align-items: center;
+    border: 1px solid $nav_blue_darker;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 150px auto 175px;
+    grid-template-rows: 80px;
+    margin-bottom: 0.5em;
+
+    summary {
+        list-style-type: none;
+        padding: 0.5em;
+    }
+
+    .github-link, .language {
+        background-color: $background_darker;
+        color: $nav_blue;
+        height: 80px;
+        line-height: 80px;
+    }
+
+    .github-link:hover {
+        background-color: $menu_hover;
+    }
+}
+
+// language stuff.
+@each $item, $lang_color in $language_colors {
+    .code-stuff .#{$item} {
+        color: $nav_blue_darker;
+        background-color: $lang_color;
+    }
+}
+
+// special-case lua/Vue because the background is so dark.
+.code-stuff .Lua, .code-stuff .Vue {
+    color: $background;
+}
+
+.language-section {
+    display: grid;
+    gap: 1em 0.5em;
+    grid-template-columns: repeat(auto-fill, minmax(4.5em, auto));
+    grid-template-rows: repeat(auto-fill, minmax(4.5em, auto));
+
+    h3 {
+        grid-column: 1 / 3;
+        text-align: center;
+    }
+
+    img {
+        width: 4.5em;
+    }
+}
+
+.languages {
+    display: grid;
+    gap: 0 5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-around;
+}
+

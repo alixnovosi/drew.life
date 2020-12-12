@@ -5,14 +5,6 @@ sys.path.append(os.curdir)
 
 from projectdata import *
 
-# social links
-SOCIAL = [
-    ("github", GIT_ROOT),
-    ("itch.io", ITCH_ROOT),
-    ("twitch", "https://twitch.tv/alixnovosi"),
-    ("youtube", "https://youtube.com/alixnovosi"),
-]
-
 # static pages
 PAGES = [
     ("code stuff", "dev.html"),
@@ -30,6 +22,14 @@ PAGES = [
     ("books", "books2019.html"),
 ]
 
+# social links
+SOCIAL = [
+    ("github", GIT_ROOT),
+    ("itch.io", ITCH_ROOT),
+    ("twitch", "https://twitch.tv/alixnovosi"),
+    ("youtube", "https://youtube.com/alixnovosi"),
+]
+
 # pages that go into their own little zones.
 # with possibly different nav
 SUBPAGES = [
@@ -40,9 +40,9 @@ SUBPAGES = [
 ]
 
 TOPLEVEL_PAGES = [
-    ("code stuff", "dev.html", "dev"),
-    ("skills", "skills.html", "skills"),
     ("about me", "about.html", "about"),
     ("toys", "toybox.html", "toybox"),
     ("art", "ocgallery.html", "ocgallery"),
+    ("code stuff", "dev.html", "dev"),
+    ("skills", "skills.html", "skills"),
 ]

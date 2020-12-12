@@ -1,0 +1,79 @@
+//----------------------------------------------------------------------------//
+// author:  andrew michaud                                                    //
+// file:    vars.scss                                                         //
+// purpose: variables for other sass files                                    //
+// updated: 2020-12-08                                                        //
+// license: isc                                                               //
+//----------------------------------------------------------------------------//
+
+$article_background: #ffffff;
+$article_highlight: #666699;
+
+$background: #eeeeff;
+$background_lighter: #dbdbfb;
+$background_dark: #bbbbdd;
+$background_darker: #9999bb;
+
+$bg_img: url(/theme/images/palm-leaf.png) $background_darker;
+
+$nav_blue_lighter: #555577;
+$nav_blue: #333355;
+$nav_blue_darker: #000011;
+
+$menu_hover: #ccccdd;
+
+$red: #aa7777;
+$red_highlight: #bb8888;
+
+$orange: #cc9966;
+$orange_highlight: #ddaa77;
+
+$green: #77aa77;
+$green_highlight: #88bb88;
+
+$blue: #7777aa;
+$blue_highlight: #8888bb;
+
+$violet: #886688;
+$violet_highlight: #997799;
+
+$social_hover_background: #ddddee;
+
+$active_nav_colors: (
+    default: $background,
+    dev: $red,
+    skills: $green,
+    about: $blue,
+    toybox: $orange,
+    ocgallery: $violet,
+);
+
+$hover_nav_colors: (
+    default: $menu_hover,
+    dev: $red_highlight,
+    skills: $green_highlight,
+    about: $blue_highlight,
+    toybox: $orange_highlight,
+    ocgallery: $violet_highlight,
+
+    blog: $red_highlight,
+    goty: $green_highlight,
+    goty2010s: $green_highlight,
+    books: $blue_highlight,
+
+    github: $red_highlight,
+    itchio: $green_highlight,
+    twitch: $orange_highlight,
+    youtube: $violet_highlight,
+);
+
+//----------------------------- SCSS DEFINITIONS -----------------------------//
+%horizontal-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+%vertical-flex {
+    display: flex;
+    flex-direction: column;
+}
