@@ -185,3 +185,48 @@ a.soundtrack {
     padding-bottom: 1em;
     width: 100%;
 }
+
+.lol-2020 {
+    display: grid;
+    gap: 1.5em 3em;
+    grid-template-columns: repeat(4, auto);
+    height: 500px;
+    padding: 1em;
+    width: 100%;
+
+    .lol-2020-tile {
+        border: 2px solid $nav_blue_darker;
+        border-radius: 5px;
+        height: 400px;
+        padding: 10px;
+        text-align: center;
+
+        a {
+            display: inline-block;
+            height: 300px;
+            width: 100%;
+        }
+
+        &:nth-child(2) {
+            grid-column-start: 3;
+        }
+
+        &:nth-child(3) {
+            grid-column-start: 2;
+        }
+
+        &:nth-child(4) {
+            grid-column-start: 4;
+        }
+    }
+
+    h4 {
+        &:hover {
+        }
+    }
+
+    img {
+      height: 300px;
+  }
+
+}

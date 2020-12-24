@@ -3,6 +3,7 @@ Identifier: books2019
 template: book_page
 year: 2019
 previous: 2018
+next: 2020
 
 <!-- better syntax -->
 <h2>2019</h2>

@@ -16,10 +16,12 @@ PAGES = [
     ("goty2017", "goty2017.html"),
     ("goty2018", "goty2018.html"),
     ("goty2019", "goty2019.html"),
+    ("goty2020", "goty2020.html"),
     ("goty2010s", "goty2010s.html"),
 
     ("books", "books2018.html"),
     ("books", "books2019.html"),
+    ("books", "books2020.html"),
 ]
 
 # social links
@@ -34,9 +36,9 @@ SOCIAL = [
 # with possibly different nav
 SUBPAGES = [
     ("blog", "blog/index.html"),
-    ("goty", "goty2019.html"),
+    ("goty", "goty2020.html"),
     ("goty2010s", "goty2010s.html"),
-    ("books", "books2019.html"),
+    ("books", "books2020.html"),
 ]
 
 TOPLEVEL_PAGES = [
