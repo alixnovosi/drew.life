@@ -4,7 +4,7 @@
 ## purpose: pelican generated makefile,                                       ##
 ##          plus compiling sass -> css for drew.life,                         ##
 ##          and moving other js around                                        ##
-## updated: 2019-10-06                                                        ##
+## updated: 2020-12-24                                                        ##
 ## license: ISC                                                               ##
 ##----------------------------------------------------------------------------##
 PY?=python3
@@ -14,6 +14,8 @@ PELICANOPTS=
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
+AUTHOR_IMAGES=$(BASEDIR)/theme/static/images/author_images
+
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
@@ -78,6 +80,8 @@ jscopy:
 	cp $(MARKOVBOXDIR)/dist/* $(INPUTDIR)/dist/markovbox/
 
 html: sasscompile jscopy
+	cp -R $(INPUTDIR)/gallery/commart $(OUTPUTDIR)/gallery/
+	$(BASEDIR)/hash_author_images $(INPUTDIR)/gallery/author_images $(AUTHOR_IMAGES)
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:

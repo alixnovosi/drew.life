@@ -1,0 +1,27 @@
+#!/bin/env python3
+
+import hashlib
+import os
+import shutil
+import sys
+
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("hash_images provided too few arguments. need input + output dirs")
+        exit(1)
+
+    input_dir = sys.argv[1]
+    output_dir = sys.argv[2]
+
+    for file in os.listdir(input_dir):
+        items = os.path.splitext(file)
+        base = items[0]
+        ext = items[1]
+
+        hash_base = hashlib.sha256(base.encode("UTF-8")).hexdigest()
+
+        old_file = os.path.join(input_dir, file)
+        new_file = os.path.join(output_dir, f"{hash_base}{ext}")
+
+        shutil.copy(old_file, new_file)
+        print(f"copied {old_file} as {new_file}")

@@ -26,6 +26,7 @@ PAGES = [
 
 # social links
 SOCIAL = [
+    ("twitter", "https://twitter.com/alixnovosi"),
     ("github", GIT_ROOT),
     ("itch.io", ITCH_ROOT),
     ("twitch", "https://twitch.tv/alixnovosi"),

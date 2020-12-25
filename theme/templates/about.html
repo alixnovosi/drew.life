@@ -1,0 +1,15 @@
+{% extends "page.html" %}
+
+{% block realcontent %}
+  <div class="about-text">
+    {% for author, articles in authors|sort %}
+      <img
+        class="about-image"
+        src="{{ author.image }}"
+        title="{{ author.name }}"
+        alt="{{ author.name }}"
+      >
+    {% endfor %}
+    {{ page.content }}
+  </div>
+{% endblock %}

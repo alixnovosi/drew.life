@@ -1,23 +1,12 @@
 Title: about drew
 Identifier: about
+template: about
 
-<div class="about-text">
+<p>He/Him</p>
 
-    <a href="">
-        <img class="about-image"
-             src="{static}/gallery/commart/profile.jpg"
-             alt=""
-             title=""
-        >
-    </a>
+<p>
+    I work professionally with computers,
+    and also spend an irresponsible amount of time tinkering with them otherwise.
+</p>
 
-    <p>He/Him</p>
-
-    <p>
-        I work professionally with computers,
-        and also spend an irresponsible amount of time tinkering with them otherwise.
-    </p>
-
-    <p>I really like cats.</p>
-
-</div>
+<p>I really like cats.</p>
