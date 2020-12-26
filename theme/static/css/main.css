@@ -359,6 +359,7 @@ aside .honorable-mention li {
 }
 
 .goty-decade li {
+  border: 5px solid #bbbbdd;
   list-style-type: none;
   margin: 10px 0;
   max-height: 250px;
@@ -367,7 +368,7 @@ aside .honorable-mention li {
 }
 
 .goty-decade li img {
-  max-height: 250px;
+  height: 250px;
   width: 600px;
 }
 
@@ -377,15 +378,6 @@ aside .honorable-mention li {
   max-width: 80%;
   min-width: 10em;
   width: 80%;
-}
-
-.goty-decade li {
-  border: 5px solid #bbbbdd;
-}
-
-.goty-decade li img {
-  height: 250px;
-  width: 100%;
 }
 
 .goty ol, .goty ul {

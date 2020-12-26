@@ -2,7 +2,7 @@
 // author:  andrew michaud                                                    //
 // file:    goty.scss                                                         //
 // purpose: styles for goty list pages                                        //
-// updated: 2020-12-08                                                        //
+// updated: 2020-12-25                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 @import "vars";
@@ -54,6 +54,7 @@ aside .honorable-mention li {
 
 .goty-decade li {
     @extend %horizontal-flex;
+	border: 5px solid $background_dark;
     list-style-type: none;
     margin: 10px 0;
     max-height: 250px;
@@ -61,7 +62,7 @@ aside .honorable-mention li {
     text-align: center;
 
     img {
-        max-height: 250px;
+        height: 250px;
         width: 600px;
     }
 }
@@ -72,15 +73,6 @@ aside .honorable-mention li {
     max-width: 80%;
     min-width: 10em;
     width: 80%;
-}
-
-.goty-decade li {
-	border: 5px solid $background_dark;
-
-    img {
-        height: 250px;
-        width: 100%;
-    }
 }
 
 .goty ol, .goty ul {
