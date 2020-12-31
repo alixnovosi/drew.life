@@ -787,7 +787,7 @@ img {
 }
 
 nav a {
-  color: background;
+  color: #eeeeff;
   display: block;
   padding: 1em;
   text-decoration: none;
@@ -848,7 +848,7 @@ body.home {
   background: url(/theme/images/palm-leaf.png) #9999bb;
   border-top: 2px solid #9999bb;
   flex-wrap: wrap;
-  font-size: 12px;
+  font-size: 14px;
   justify-content: space-between;
   line-height: 2;
 }

@@ -50,7 +50,7 @@ img {
 }
 
 nav a {
-    color: background;
+    color: $background;
     display: block;
     padding: 1em;
     text-decoration: none;
@@ -122,7 +122,7 @@ body.home {
     background: $bg_img;
     border-top: 2px solid $background_darker;
     flex-wrap: wrap;
-    font-size: 12px;
+    font-size: 14px;
     justify-content: space-between;
     line-height: 2;
 
