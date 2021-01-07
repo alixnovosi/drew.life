@@ -52,5 +52,20 @@ template: gallery
         <section class="art-info-tile">tbd-TBD-tbd</section>
       </section>
     </section>
+
+    <section class="art-tile">
+      <img src="/gallery/commart/fullbody1.jpg"
+           alt="fullbody"
+           title="Fullbody">
+
+      <section class="art-info-container">
+        <section class="art-info-tile">Subject</section>
+        <section class="art-info-tile">redacted</section>
+        <section class="art-info-tile">Artist</section>
+        <section class="art-info-tile">redacted</section>
+        <section class="art-info-tile">Date</section>
+        <section class="art-info-tile">tbd-TBD-tbd</section>
+      </section>
+    </section>
   </section>
 </div>
