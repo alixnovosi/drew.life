@@ -7,9 +7,9 @@ from projectdata import *
 
 # static pages
 PAGES = [
-    ("code stuff", "dev.html"),
+    ("code", "dev.html"),
     ("skills", "skills.html"),
-    ("about me", "about.html"),
+    ("about", "about.html"),
 
     ("goty2015", "goty2015.html"),
     ("goty2016", "goty2016.html"),
@@ -38,14 +38,14 @@ SOCIAL = [
 SUBPAGES = [
     ("blog", "blog/index.html"),
     ("goty", "goty2020.html"),
-    ("goty2010s", "goty2010s.html"),
+    ("goty10s", "goty2010s.html"),
     ("books", "books2020.html"),
 ]
 
 TOPLEVEL_PAGES = [
-    ("about me", "about.html", "about"),
+    ("about", "about.html", "about"),
     ("toys", "toybox.html", "toybox"),
     ("art", "ocgallery.html", "ocgallery"),
-    ("code stuff", "dev.html", "dev"),
+    ("code", "dev.html", "dev"),
     ("skills", "skills.html", "skills"),
 ]

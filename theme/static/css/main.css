@@ -644,22 +644,55 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
 
 .gallery-section {
   display: grid;
-  gap: 0.5em 1em;
-  grid-template-columns: repeat(auto-fill, minmax(320px, auto));
+  gap: 1em 2em;
   justify-content: center;
 }
 
+.gallery-section h3 {
+  grid-column: 1 / -1;
+}
+
+.pfp-art.gallery-section {
+  grid-template-columns: repeat(auto-fill, 250px);
+}
+
+.fullbody-art.gallery-section {
+  grid-template-columns: repeat(auto-fill, 350px);
+}
+
+.art-tile {
+  display: grid;
+  gap: 0;
+  grid-template-columns: auto 10px;
+}
+
+.art-tile-art {
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  width: 100%;
+}
+
+.art-tile-art, .art-info-container {
+  border: 2px solid #000011;
+  grid-column: 1 / 2;
+  width: 100%;
+}
+
 .art-info-container {
+  border: 2px solid #000011;
+  border-bottom-left-radius: 5px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(auto, 50%));
+  grid-row: 2 / span 1;
 }
 
 .art-info-tile {
   border-top: 2px solid #000011;
-  display: inline-block;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 3);
   height: 100%;
   line-height: 2;
-  padding: 0 0 0 10px;
+  padding: 0 10px;
   text-align: left;
 }
 
@@ -671,31 +704,37 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
   width: 100%;
 }
 
-.art-tile {
+.art-tile-category {
   border: 2px solid #000011;
-  border-radius: 5px;
-  display: grid;
+  /* fuck */
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  height: 100%;
+  line-height: 2rem;
+  text-align: center;
+  width: 30px;
+  writing-mode: sideways-lr;
 }
 
-.art-tile img {
-  width: 100%;
+.category1 {
+  background-color: #C7C5C2;
 }
 
-.ocgallery h2, .ocgallery h3 {
+.category2 {
+  background-color: #1F79A1;
+}
+
+.ocgallery-container {
+  min-width: 800px;
+}
+
+.ocgallery-container h2, .ocgallery-container h3 {
   text-align: center;
 }
 
-.ocgallery h3 {
+.ocgallery-container h3 {
   padding-top: 0.5em;
   padding-bottom: 1em;
-}
-
-.fullbody-art .art-tile {
-  width: 304px;
-}
-
-.pfp-art .art-tile {
-  width: 254px;
 }
 
 .site-nav-goty ul, .content, .credit, body.home, #app, .archive-article, .article-body .post-info .times, .paginator, .rest, .top-three, .goty-decade li, .goty, .game, .game .board-row, .game .board-row-spacer {
@@ -797,6 +836,10 @@ p {
   color: #000011;
 }
 
+body.page {
+  background: url(/theme/images/palm-leaf.png) #9999bb;
+}
+
 body.home {
   clear: both;
   margin: 0 auto;
@@ -827,8 +870,8 @@ body.home {
 }
 
 .content aside {
-  max-width: 15%;
-  min-width: 15%;
+  background: url(/theme/images/palm-leaf.png) #9999bb;
+  width: 100px;
 }
 
 .content article, .content aside {
@@ -836,7 +879,11 @@ body.home {
 }
 
 .content article {
+  background-color: #eeeeff;
+  border: 2px solid #9999bb;
+  border-radius: 5px;
   flex: 5 auto;
+  margin-left: 0.5em;
 }
 
 .content .media-list {
@@ -846,7 +893,6 @@ body.home {
 
 .credit {
   background: url(/theme/images/palm-leaf.png) #9999bb;
-  border-top: 2px solid #9999bb;
   flex-wrap: wrap;
   font-size: 14px;
   justify-content: space-between;
@@ -862,8 +908,6 @@ body.home {
 }
 
 .site-banner {
-  background: url(/theme/images/palm-leaf.png) #9999bb;
-  border-bottom: 2px solid #9999bb;
   flex: 1 100%;
   max-height: 5em;
   min-height: 5em;
@@ -875,6 +919,7 @@ nav li {
   background-color: #333355;
   border: 1px solid #555577;
   flex: 1 auto;
+  font-size: 14px;
 }
 
 ol li, ul li, .game li {

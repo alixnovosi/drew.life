@@ -64,6 +64,10 @@ p {
     color: $nav_blue_darker;
 }
 
+body.page {
+    background: $bg_img;
+}
+
 // non-hell classes
 body.home {
     @extend %horizontal-flex;
@@ -101,8 +105,8 @@ body.home {
 }
 
 .content aside {
-    max-width: 15%;
-    min-width: 15%;
+    background: $bg_img;
+    width: 100px;
 }
 
 .content article, .content aside {
@@ -110,7 +114,11 @@ body.home {
 }
 
 .content article {
+    background-color: $background;
+    border: 2px solid $background_darker;
+    border-radius: 5px;
     flex: 5 auto;
+    margin-left: 0.5em;
 }
 
 .content .media-list {
@@ -120,7 +128,6 @@ body.home {
 
 .credit {
     background: $bg_img;
-    border-top: 2px solid $background_darker;
     flex-wrap: wrap;
     font-size: 14px;
     justify-content: space-between;
@@ -140,8 +147,6 @@ body.home {
 }
 
 .site-banner {
-    background: $bg_img;
-    border-bottom: 2px solid $background_darker;
     flex: 1 100%;
     max-height: 5em;
     min-height: 5em;
@@ -154,6 +159,7 @@ nav li {
     background-color: $nav_blue;
     border: 1px solid $nav_blue_lighter;
     flex: 1 auto;
+    font-size: 14px;
 }
 
 ol li, ul li, .game li {
