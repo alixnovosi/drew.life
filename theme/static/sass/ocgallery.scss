@@ -2,7 +2,7 @@
 // author:  andrew michaud                                                    //
 // file:    ocgallery.scss                                                    //
 // purpose: specific styles for oc gallery section                            //
-// updated: 2020-12-09                                                        //
+// updated: 2021-01-08                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 @import "vars";
@@ -52,6 +52,7 @@ $art_category_colors: (
 
 .art-tile {
     display: grid;
+    font-family: 'Jura', sans-serif;
     gap: 0;
     grid-template-columns: auto 10px;
 }
@@ -64,12 +65,12 @@ $art_category_colors: (
 
 .art-tile-art, .art-info-container {
     border: 2px solid $nav_blue_darker;
+    border-right: none;
     grid-column: 1 / 2;
 }
 
 .art-info-container {
     background-color: $background_lighter;
-    border: 2px solid $nav_blue_darker;
     border-bottom-left-radius: 5px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(auto, 50%));
@@ -79,7 +80,6 @@ $art_category_colors: (
 .art-info-tile {
     border-top: 2px solid $nav_blue_darker;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 3);
     height: 100%;
     line-height: 2;
     padding: 0 10px;
@@ -96,6 +96,9 @@ $art_category_colors: (
 
 .art-tile-category {
     border: 2px solid $nav_blue_darker;
+    border-top-right-radius: 15px;
+    font-size: 21px;
+    font-weight: bold;
     /* fuck */
     grid-column: 2 / span 1;
     grid-row: 1 / span 2;

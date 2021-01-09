@@ -175,7 +175,9 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
   display: grid;
   grid-template-columns: 150px auto 175px;
   grid-template-rows: 80px;
-  margin-bottom: 0.5em;
+  margin: 0 auto 0.5em auto;
+  max-width: 1000px;
+  min-width: 800px;
 }
 
 .code-stuff summary {
@@ -293,6 +295,7 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
   gap: 1em 0.5em;
   grid-template-columns: repeat(auto-fill, minmax(4.5em, auto));
   grid-template-rows: repeat(auto-fill, minmax(4.5em, auto));
+  width: 100px;
 }
 
 .language-section h3 {
@@ -310,6 +313,9 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-content: space-around;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-width: 800px;
 }
 
 .site-nav-goty ul, .content, .credit, body.home, #app, .game .board-row, .game .board-row-spacer, .game, .goty, .goty-decade li, .rest, .top-three, .archive-article, .article-body .post-info .times, .paginator {
@@ -685,6 +691,7 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
 
 .art-tile {
   display: grid;
+  font-family: 'Jura', sans-serif;
   gap: 0;
   grid-template-columns: auto 10px;
 }
@@ -697,12 +704,12 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
 
 .art-tile-art, .art-info-container {
   border: 2px solid #000011;
+  border-right: none;
   grid-column: 1 / 2;
 }
 
 .art-info-container {
   background-color: #dbdbfb;
-  border: 2px solid #000011;
   border-bottom-left-radius: 5px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(auto, 50%));
@@ -712,7 +719,6 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
 .art-info-tile {
   border-top: 2px solid #000011;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 3);
   height: 100%;
   line-height: 2;
   padding: 0 10px;
@@ -729,6 +735,9 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
 
 .art-tile-category {
   border: 2px solid #000011;
+  border-top-right-radius: 15px;
+  font-size: 21px;
+  font-weight: bold;
   /* fuck */
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
@@ -934,7 +943,17 @@ nav li {
   background-color: #333355;
   border: 1px solid #555577;
   flex: 1 auto;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+nav li:first-child {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+nav li:last-child {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 ol li, ul li, .game li {
@@ -986,102 +1005,102 @@ nav a:visited {
 }
 
 nav a.active.default {
-  color: #333355;
+  color: #eeeeff;
   background-color: #eeeeff;
 }
 
 nav a.active.dev {
-  color: #333355;
+  color: #eeeeff;
   background-color: #aa7777;
 }
 
 nav a.active.skills {
-  color: #333355;
+  color: #eeeeff;
   background-color: #77aa77;
 }
 
 nav a.active.about {
-  color: #333355;
+  color: #eeeeff;
   background-color: #7777aa;
 }
 
 nav a.active.toybox {
-  color: #333355;
+  color: #eeeeff;
   background-color: #cc9966;
 }
 
 nav a.active.ocgallery {
-  color: #333355;
+  color: #eeeeff;
   background-color: #886688;
 }
 
 nav a.default:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #ccccdd;
 }
 
 nav a.dev:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #bb8888;
 }
 
 nav a.skills:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #88bb88;
 }
 
 nav a.about:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #8888bb;
 }
 
 nav a.toybox:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #ddaa77;
 }
 
 nav a.ocgallery:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #997799;
 }
 
 nav a.blog:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #bb8888;
 }
 
 nav a.goty:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #88bb88;
 }
 
 nav a.goty2010s:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #88bb88;
 }
 
 nav a.books:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #8888bb;
 }
 
 nav a.github:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #bb8888;
 }
 
 nav a.itchio:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #88bb88;
 }
 
 nav a.twitch:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #ddaa77;
 }
 
 nav a.youtube:hover {
-  color: #333355;
+  color: #eeeeff;
   background-color: #997799;
 }
 

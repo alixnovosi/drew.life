@@ -2,7 +2,7 @@
 // author:  andrew michaud                                                    //
 // file:    main.scss                                                         //
 // purpose: scss file for drew.life - imports sub-pages                       //
-// updated: 2020-12-09                                                        //
+// updated: 2021-01-08                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 
@@ -159,7 +159,17 @@ nav li {
     background-color: $nav_blue;
     border: 1px solid $nav_blue_lighter;
     flex: 1 auto;
-    font-size: 14px;
+    font-size: 16px;
+
+    &:first-child {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    &:last-child {
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
 }
 
 ol li, ul li, .game li {
@@ -219,14 +229,14 @@ nav a:visited {
 
 @each $item, $bg_color in $active_nav_colors {
     nav a.active.#{$item} {
-        color: $nav_blue;
+        color: $background;
         background-color: $bg_color;
     }
 }
 
 @each $item, $bg_color in $hover_nav_colors {
     nav a.#{$item}:hover {
-        color: $nav_blue;
+        color: $background;
         background-color: $bg_color;
     }
 }
