@@ -101,9 +101,11 @@ aside .honorable-mention li {
 
 .goty-decade .hack {
     @extend %vertical-flex;
+    background-color: $background;
+    height: 100%;
     justify-content: space-around;
+    margin: 0;
     padding: 0.5em 0;
-    margin: 2em 0;
 
     h2 {
         margin: 0 1em;

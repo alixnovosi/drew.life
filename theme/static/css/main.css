@@ -403,9 +403,11 @@ aside .honorable-mention li {
 }
 
 .goty-decade .hack {
+  background-color: #eeeeff;
+  height: 100%;
   justify-content: space-around;
+  margin: 0;
   padding: 0.5em 0;
-  margin: 2em 0;
 }
 
 .goty-decade .hack h2 {
@@ -642,9 +644,20 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
   flex-direction: column;
 }
 
+.art-tile-category.demo {
+  background-color: #FFFFFF;
+}
+
+.art-tile-category.category1 {
+  background-color: #C7C5C2;
+}
+
+.art-tile-category.category2 {
+  background-color: #1F79A1;
+}
+
 .gallery-section {
   display: grid;
-  gap: 1em 2em;
   justify-content: center;
 }
 
@@ -652,12 +665,22 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
   grid-column: 1 / -1;
 }
 
+.pfp-art .art-tile, .pfp-art img {
+  width: 250px;
+}
+
 .pfp-art.gallery-section {
-  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 1em 5em;
+  grid-template-columns: repeat(auto-fill, 284px);
+}
+
+.fullbody-art .art-tile, .fullbody-art img {
+  width: 350px;
 }
 
 .fullbody-art.gallery-section {
-  grid-template-columns: repeat(auto-fill, 350px);
+  gap: 1em 3em;
+  grid-template-columns: repeat(auto-fill, 384px);
 }
 
 .art-tile {
@@ -669,16 +692,16 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
 .art-tile-art {
   border-bottom: none;
   border-top-left-radius: 5px;
-  width: 100%;
+  height: 100%;
 }
 
 .art-tile-art, .art-info-container {
   border: 2px solid #000011;
   grid-column: 1 / 2;
-  width: 100%;
 }
 
 .art-info-container {
+  background-color: #dbdbfb;
   border: 2px solid #000011;
   border-bottom-left-radius: 5px;
   display: grid;
@@ -709,19 +732,11 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
   /* fuck */
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
-  height: 100%;
+  height: 101%;
   line-height: 2rem;
   text-align: center;
   width: 30px;
   writing-mode: sideways-lr;
-}
-
-.category1 {
-  background-color: #C7C5C2;
-}
-
-.category2 {
-  background-color: #1F79A1;
 }
 
 .ocgallery-container {

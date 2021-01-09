@@ -7,23 +7,47 @@
 //----------------------------------------------------------------------------//
 @import "vars";
 
+$art_category_colors: (
+    demo: #FFFFFF,
+    category1: #C7C5C2,
+    category2: #1F79A1,
+);
+
+@each $item, $bg_color in $art_category_colors {
+    .art-tile-category.#{$item} {
+        background-color: $bg_color;
+    }
+}
+
 .gallery-section {
     display: grid;
-    gap: 1em 2em;
     justify-content: center;
 
     h3 {
         grid-column: 1 / -1;
-
     }
 }
 
-.pfp-art.gallery-section {
-    grid-template-columns: repeat(auto-fill, 250px);
+.pfp-art {
+    .art-tile, img {
+        width: 250px;
+    }
+
+    &.gallery-section {
+        gap: 1em 5em;
+        grid-template-columns: repeat(auto-fill, 284px);
+    }
 }
 
-.fullbody-art.gallery-section {
-    grid-template-columns: repeat(auto-fill, 350px);
+.fullbody-art {
+    .art-tile, img {
+        width: 350px;
+    }
+
+    &.gallery-section {
+        gap: 1em 3em;
+        grid-template-columns: repeat(auto-fill, 384px);
+    }
 }
 
 .art-tile {
@@ -35,16 +59,16 @@
 .art-tile-art {
     border-bottom: none;
     border-top-left-radius: 5px;
-    width: 100%;
+    height: 100%;
 }
 
 .art-tile-art, .art-info-container {
     border: 2px solid $nav_blue_darker;
     grid-column: 1 / 2;
-    width: 100%;
 }
 
 .art-info-container {
+    background-color: $background_lighter;
     border: 2px solid $nav_blue_darker;
     border-bottom-left-radius: 5px;
     display: grid;
@@ -75,19 +99,11 @@
     /* fuck */
     grid-column: 2 / span 1;
     grid-row: 1 / span 2;
-    height: 100%;
+    height: 101%;
     line-height: 2rem;
     text-align: center;
     width: 30px;
     writing-mode: sideways-lr;
-}
-
-.category1 {
-    background-color: #C7C5C2;
-}
-
-.category2 {
-    background-color: #1F79A1;
 }
 
 .ocgallery-container {

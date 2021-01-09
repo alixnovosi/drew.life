@@ -58,6 +58,12 @@ EXTRA_PATH_METADATA = {
     "extra/keybase.txt": {"path": "keybase.txt"},
 
     "extra/favicon.ico": {"path": "favicon.ico"},
+    "extra/android-chrome-192x192.png": {"path": "android-chrome-192x192.png"},
+    "extra/android-chrome-512x512.png": {"path": "android-chrome-512x512.png"},
+    "extra/apple-touch-icon.png": {"path": "apple-touch-icon.png"},
+    "extra/favicon-16x16.png": {"path": "favicon-16x16.png"},
+    "extra/favicon-32x32.png": {"path": "favicon-32x32.png"},
+    "extra/site.webmanifest": {"path": "site.webmanifest"},
 }
 
 TEMPLATE_PAGES = {

@@ -4,11 +4,6 @@
 
 {% block head %}
   {{ super() }}
-
-  {% import 'translations.html' as translations with context %}
-  {% if translations.entry_hreflang("home") %}
-    {{ translations.entry_hreflang("home") }}
-  {% endif %}
 {% endblock %}
 
 {% block content %}
