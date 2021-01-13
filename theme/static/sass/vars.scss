@@ -66,14 +66,3 @@ $hover_nav_colors: (
     twitch: $orange_highlight,
     youtube: $violet_highlight,
 );
-
-//----------------------------- SCSS DEFINITIONS -----------------------------//
-%horizontal-flex {
-    display: flex;
-    flex-direction: row;
-}
-
-%vertical-flex {
-    display: flex;
-    flex-direction: column;
-}

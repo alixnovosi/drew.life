@@ -26,15 +26,6 @@
     }
 }
 
-.article-author {
-    border-radius: 5px;
-    width: 100px;
-
-    &.small {
-        width: 60px;
-    }
-}
-
 .article-body ul {
     list-style-type: none;
     text-align: left;
@@ -93,11 +84,9 @@
     }
 }
 
-.author {
-    img {
-        float: right;
-        vertical-align: middle;
-    }
+.author img {
+    float: right;
+    vertical-align: middle;
 }
 
 .entry-content {

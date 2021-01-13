@@ -2,7 +2,7 @@
 // author:  andrew michaud                                                    //
 // file:    main.scss                                                         //
 // purpose: scss file for drew.life - imports sub-pages                       //
-// updated: 2021-01-11                                                        //
+// updated: 2021-01-13                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 
@@ -39,6 +39,10 @@ header {
 
 header.simple {
     margin: 0;
+
+    nav ul {
+        margin: 0;
+    }
 
     a {
         padding: 1em;
@@ -94,6 +98,10 @@ body.page {
     border: 2px solid $background_darker;
     border-radius: 5px;
     width: 100px;
+
+    &.small {
+        width: 60px;
+    }
 }
 
 .credit {
@@ -201,7 +209,6 @@ nav li {
     color: $background;
     background-color: $nav_blue;
     border: 1px solid $background_darker;
-    flex: 1 auto;
     font-size: 16px;
 }
 
@@ -256,14 +263,12 @@ nav a:visited {
 
 @each $item, $bg_color in $active_nav_colors {
     nav a.active.#{$item} {
-        color: $background;
         background-color: $bg_color;
     }
 }
 
 @each $item, $bg_color in $hover_nav_colors {
     nav a.#{$item}:hover {
-        color: $background;
         background-color: $bg_color;
     }
 }

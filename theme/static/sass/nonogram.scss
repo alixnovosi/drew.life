@@ -2,7 +2,7 @@
 // author:  andrew michaud                                                    //
 // file:    nonogram.scss                                                     //
 // purpose: nonogram-board specific styles                                    //
-// updated: 2020-12-08                                                        //
+// updated: 2021-01-13                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 @import "vars";
@@ -12,7 +12,8 @@
 $cell_size: 34px;
 
 .game {
-    @extend %horizontal-flex;
+    display: flex;
+    flex-direction: row;
 }
 
 .game ul {
@@ -84,7 +85,8 @@ $cell_size: 34px;
     }
 
     .board-row, .board-row-spacer {
-        @extend %horizontal-flex;
+        display: flex;
+        flex-direction: row;
     }
 
     .game-board {
@@ -92,11 +94,10 @@ $cell_size: 34px;
     }
 
     .game-info {
-        @extend %vertical-flex;
-
         color: $nav_blue;
         background-color: $background;
         border-radius: 10px;
+        display: flex;
         flex-direction: column;
         font-size: 18px;
         justify-content: center;
@@ -126,6 +127,7 @@ $cell_size: 34px;
     }
 
     .top-hints {
+        display: flex;
         flex-direction: row;
     }
 }
