@@ -2,33 +2,27 @@
 // author:  andrew michaud                                                    //
 // file:    blog.scss                                                         //
 // purpose: blog page specific styles                                         //
-// updated: 2020-12-09                                                        //
+// updated: 2021-01-12                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 @import "vars";
 
 .archive-article {
-    @extend %horizontal-flex;
     align-items: top;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr 1fr;
     border-color: $background_dark;
     border-top: 1px solid;
-    justify-content: space-evenly;
     padding: 1em 0;
+    place-items: center baseline;
 
     .dates {
-        max-width: 15%;
-        min-width: 15%;
+        display: block;
     }
 
-    div {
-        align-self: center;
-        min-width: 33%;
-        text-align: left;
-    }
+    .tags, .authors {
+        place-self: end;
 
-    .tags {
-        max-width: 20%;
-        min-width: 20%;
     }
 }
 
@@ -69,40 +63,38 @@
 }
 
 .article-body .post-info {
-    @extend %vertical-flex;
+    align-items: end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr 1fr;
     border-bottom: 2px solid $background_darker;
-    font-size: 10pt;
-    justify-content: space-between;
-    min-height: 5em;
+    font-size: 11pt;
     padding-bottom: 0.5em;
 
-    .meta {
-        align-self: end;
-        align-items: end;
-        justify-content: space-between;
-        max-width: 33%;
-        padding-bottom: 1em;
-        text-align: right;
+    .article-authors {
+        grid-column: 1 / -1;
+        grid-row: 1 / span 1;
+        justify-self: end;
     }
 
     .times {
-        @extend %horizontal-flex;
-        justify-content: space-between;
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
     }
 
-    > div {
-        @extend %vertical-flex;
+    time {
+        display: block;
+    }
+
+    .meta {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+        text-align: right;
     }
 }
 
 .author {
-    @extend %vertical-flex;
-    align-items: end;
-    justify-content: space-around;
-
     img {
-        border: 1px solid $background_darker;
-        border-radius: 5px;
         float: right;
         vertical-align: middle;
     }
@@ -135,15 +127,22 @@
 
 .hentry .post-info {
     border-bottom: 2px solid $background_darker;
-    padding-bottom: 0.75em;
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    place-items: center end;
+
+    time {
+        place-self: end start;
+    }
 }
 
 .paginator {
-    @extend %horizontal-flex;
     border-top: 3px solid $background_dark;
+    display: grid;
     font-size: 24px;
-    justify-content: space-between;
+    grid-template-columns: 2fr 1fr 2fr;
     padding: 0.5em;
+    place-items: baseline center;
 }
 
 .post-list {

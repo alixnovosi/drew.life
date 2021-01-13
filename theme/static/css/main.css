@@ -1,45 +1,81 @@
-.site-nav-goty ul, .content, .credit, body.home, #app, .game .board-row, .game .board-row-spacer, .game, .goty, .goty-decade li, .rest, .top-three, .paginator, .article-body .post-info .times, .archive-article {
+.game .board-row, .game .board-row-spacer, .game, .site-nav-goty ul, .goty {
   display: flex;
   flex-direction: row;
 }
 
-nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .goty .honorable-mention, .goty li, .goty-decade .hack, .goty-decade ol, .top-ten, .author, .article-body .post-info > div, .article-body .post-info {
+.game .game-info, .goty .honorable-mention, .goty-decade .hack {
   display: flex;
   flex-direction: column;
 }
 
-.site-nav-goty ul, .content, .credit, body.home, #app, .game .board-row, .game .board-row-spacer, .game, .goty, .goty-decade li, .rest, .top-three, .paginator, .article-body .post-info .times, .archive-article {
+.booklist {
+  display: grid;
+  gap: 1.5em 3em;
+  grid-template-columns: repeat(6, auto);
+  justify-self: center;
+  padding-bottom: 1em;
+}
+
+.booklist a {
+  background-color: #eeeeff;
+  border: 1px solid #000011;
+  border-radius: 5px;
+  width: 14em;
+  padding-bottom: 1em;
+  grid-column-end: span 2;
+}
+
+.booklist a:hover {
+  background-color: #9999bb;
+}
+
+.booklist a:nth-child(4) {
+  grid-column-start: 2;
+}
+
+.booklist h1 {
+  text-align: center;
+}
+
+.booklist img {
+  width: 100%;
+}
+
+.bookpage {
+  display: grid;
+  grid-column: 1 / -1;
+}
+
+.bookpage h2 {
+  text-align: center;
+}
+
+.game .board-row, .game .board-row-spacer, .game, .site-nav-goty ul, .goty {
   display: flex;
   flex-direction: row;
 }
 
-nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .goty .honorable-mention, .goty li, .goty-decade .hack, .goty-decade ol, .top-ten, .author, .article-body .post-info > div, .article-body .post-info {
+.game .game-info, .goty .honorable-mention, .goty-decade .hack {
   display: flex;
   flex-direction: column;
 }
 
 .archive-article {
   align-items: top;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr 1fr;
   border-color: #bbbbdd;
   border-top: 1px solid;
-  justify-content: space-evenly;
   padding: 1em 0;
+  place-items: center baseline;
 }
 
 .archive-article .dates {
-  max-width: 15%;
-  min-width: 15%;
+  display: block;
 }
 
-.archive-article div {
-  align-self: center;
-  min-width: 33%;
-  text-align: left;
-}
-
-.archive-article .tags {
-  max-width: 20%;
-  min-width: 20%;
+.archive-article .tags, .archive-article .authors {
+  place-self: end;
 }
 
 .article-author {
@@ -79,34 +115,37 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
 }
 
 .article-body .post-info {
+  align-items: end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr 1fr;
   border-bottom: 2px solid #9999bb;
-  font-size: 10pt;
-  justify-content: space-between;
-  min-height: 5em;
+  font-size: 11pt;
   padding-bottom: 0.5em;
 }
 
-.article-body .post-info .meta {
-  align-self: end;
-  align-items: end;
-  justify-content: space-between;
-  max-width: 33%;
-  padding-bottom: 1em;
-  text-align: right;
+.article-body .post-info .article-authors {
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+  justify-self: end;
 }
 
 .article-body .post-info .times {
-  justify-content: space-between;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
 }
 
-.author {
-  align-items: end;
-  justify-content: space-around;
+.article-body .post-info time {
+  display: block;
+}
+
+.article-body .post-info .meta {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  text-align: right;
 }
 
 .author img {
-  border: 1px solid #9999bb;
-  border-radius: 5px;
   float: right;
   vertical-align: middle;
 }
@@ -136,14 +175,22 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
 
 .hentry .post-info {
   border-bottom: 2px solid #9999bb;
-  padding-bottom: 0.75em;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  place-items: center end;
+}
+
+.hentry .post-info time {
+  place-self: end start;
 }
 
 .paginator {
   border-top: 3px solid #bbbbdd;
+  display: grid;
   font-size: 24px;
-  justify-content: space-between;
+  grid-template-columns: 2fr 1fr 2fr;
   padding: 0.5em;
+  place-items: baseline center;
 }
 
 .post-list {
@@ -154,12 +201,12 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
   border-top: 4px solid #bbbbdd;
 }
 
-.site-nav-goty ul, .content, .credit, body.home, #app, .game .board-row, .game .board-row-spacer, .game, .goty, .goty-decade li, .rest, .top-three, .archive-article, .article-body .post-info .times, .paginator {
+.game .board-row, .game .board-row-spacer, .game, .site-nav-goty ul, .goty {
   display: flex;
   flex-direction: row;
 }
 
-nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .goty .honorable-mention, .goty li, .goty-decade .hack, .goty-decade ol, .top-ten, .article-body .post-info, .article-body .post-info > div, .author {
+.game .game-info, .goty .honorable-mention, .goty-decade .hack {
   display: flex;
   flex-direction: column;
 }
@@ -187,7 +234,7 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
 
 .code-stuff .github-link, .code-stuff .language {
   background-color: #9999bb;
-  color: #333355;
+  color: #000011;
   height: 80px;
   line-height: 80px;
 }
@@ -197,97 +244,93 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
 }
 
 .code-stuff .TypeScript {
-  color: #000011;
+  color: #eeeeff;
   background-color: #2b7489;
 }
 
 .code-stuff .Shell {
-  color: #000011;
+  color: #eeeeff;
   background-color: #89e051;
 }
 
 .code-stuff .Bash {
-  color: #000011;
+  color: #eeeeff;
   background-color: #89e051;
 }
 
 .code-stuff .Go {
-  color: #000011;
+  color: #eeeeff;
   background-color: #375eab;
 }
 
 .code-stuff .Java {
-  color: #000011;
+  color: #eeeeff;
   background-color: #b07219;
 }
 
 .code-stuff .Scala {
-  color: #000011;
+  color: #eeeeff;
   background-color: #DC322F;
 }
 
 .code-stuff .Makefile {
-  color: #000011;
+  color: #eeeeff;
   background-color: #427819;
 }
 
 .code-stuff .Lua {
-  color: #000011;
+  color: #eeeeff;
   background-color: #000080;
 }
 
 .code-stuff .Vue {
-  color: #000011;
+  color: #eeeeff;
   background-color: #2c3e50;
 }
 
 .code-stuff .HTML {
-  color: #000011;
+  color: #eeeeff;
   background-color: #e44b23;
 }
 
 .code-stuff .HTML5 {
-  color: #000011;
+  color: #eeeeff;
   background-color: #e44b23;
 }
 
 .code-stuff .Rust {
-  color: #000011;
+  color: #eeeeff;
   background-color: #dea584;
 }
 
 .code-stuff .CSS {
-  color: #000011;
+  color: #eeeeff;
   background-color: #563d7c;
 }
 
 .code-stuff .TeX {
-  color: #000011;
+  color: #eeeeff;
   background-color: #3D6117;
 }
 
 .code-stuff .JavaScript {
-  color: #000011;
+  color: #eeeeff;
   background-color: #f1e05a;
 }
 
 .code-stuff .VimL {
-  color: #000011;
+  color: #eeeeff;
   background-color: #199f4b;
 }
 
 .code-stuff .Python {
-  color: #000011;
+  color: #eeeeff;
   background-color: #3572A5;
 }
 
 .code-stuff .Haskell {
-  color: #000011;
-  background-color: #29b544;
-}
-
-.code-stuff .Lua, .code-stuff .Vue {
   color: #eeeeff;
+  background-color: #29b544;
 }
 
 .language-section {
@@ -310,26 +353,44 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .got
 .languages {
   display: grid;
   gap: 0 5em;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-content: space-around;
+  grid-template-columns: repeat(4, 1fr);
   margin: 0 auto;
   max-width: 1000px;
   min-width: 800px;
 }
 
-.site-nav-goty ul, .content, .credit, body.home, #app, .game .board-row, .game .board-row-spacer, .game, .goty, .goty-decade li, .rest, .top-three, .archive-article, .article-body .post-info .times, .paginator {
+.game .board-row, .game .board-row-spacer, .game, .site-nav-goty ul, .goty {
   display: flex;
   flex-direction: row;
 }
 
-nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .goty .honorable-mention, .goty li, .goty-decade .hack, .goty-decade ol, .top-ten, .article-body .post-info, .article-body .post-info > div, .author {
+.game .game-info, .goty .honorable-mention, .goty-decade .hack {
   display: flex;
   flex-direction: column;
 }
 
+.rest, .top-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.top-three {
+  padding: 0;
+}
+
+.rest {
+  column-gap: 1em;
+  margin: 0 auto;
+  padding: 1em;
+  width: 80%;
+}
+
 .backlog-bracket ol, .honorable-mention ul {
   align-items: center;
+}
+
+main.goty, main.retro-goty, .site-nav-goty {
+  grid-column: 1 / -1;
 }
 
 article .honorable-mention li {
@@ -346,16 +407,6 @@ aside .honorable-mention li {
 
 .goty article li {
   margin: 0.25em;
-}
-
-.goty .rest li {
-  max-width: 27%;
-  min-width: 27%;
-}
-
-.goty .top-three li {
-  max-width: 33%;
-  min-width: 33%;
 }
 
 .goty-decade ol {
@@ -384,11 +435,6 @@ aside .honorable-mention li {
   max-width: 80%;
   min-width: 10em;
   width: 80%;
-}
-
-.goty ol, .goty ul {
-  padding: 0 1em;
-  justify-content: space-around;
 }
 
 .goty ol {
@@ -426,7 +472,7 @@ aside .honorable-mention li {
 }
 
 a.soundtrack {
-  border-top: 1px solid #333355;
+  border-top: 1px solid #444466;
   padding: 0.5em 0 0;
   width: 80%;
 }
@@ -435,12 +481,17 @@ a.soundtrack {
   align-items: center;
   background-color: #ddddee;
   border: 1px solid #9999bb;
-  color: #333355;
+  color: #444466;
   flex: 1 auto;
   justify-content: space-between;
   height: auto;
   margin: 0 0.25em 1em 0.25em;
   padding: 0.75em 0;
+}
+
+main.goty, main.retro-goty {
+  background-color: #eeeeff;
+  height: 100%;
 }
 
 .goty {
@@ -453,23 +504,19 @@ a.soundtrack {
 }
 
 .goty aside {
-  border-left: 2px solid #333355;
+  border-left: 2px solid #444466;
   padding: 0 0.5em;
   width: 40%;
 }
 
 .goty .honorable-mention {
   align-items: stretch;
-  border-top: 2px solid #333355;
+  border-top: 2px solid #444466;
   justify-content: space-around;
 }
 
 .goty .honorable-mention li {
   padding: 0.5em;
-}
-
-.goty .rest {
-  flex-wrap: wrap;
 }
 
 .goty-decade .goty-backfilled li:hover {
@@ -524,12 +571,16 @@ a.soundtrack {
   height: 300px;
 }
 
-.site-nav-goty ul, .content, .credit, body.home, #app, .game .board-row, .game .board-row-spacer, .game, .archive-article, .article-body .post-info .times, .paginator, .rest, .top-three, .goty-decade li, .goty {
+.site-nav-goty ul {
+  margin: 0;
+}
+
+.game .board-row, .game .board-row-spacer, .game, .goty, .site-nav-goty ul {
   display: flex;
   flex-direction: row;
 }
 
-nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .article-body .post-info, .article-body .post-info > div, .author, .top-ten, .goty-decade ol, .goty-decade .hack, .goty li, .goty .honorable-mention {
+.game .game-info, .goty-decade .hack, .goty .honorable-mention {
   display: flex;
   flex-direction: column;
 }
@@ -574,7 +625,7 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .art
 .game .filled-square, .game .empty-square, .game .blocked-square, .game .force-blocked-square {
   background-color: #eeeeff;
   border: none;
-  color: #333355;
+  color: #444466;
   float: left;
   font-weight: bold;
   height: 34px;
@@ -585,7 +636,7 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .art
 }
 
 .game .filled-square, .game .empty-square {
-  color: #333355;
+  color: #444466;
 }
 
 .game .blocked-square, .game .force-blocked-square {
@@ -605,7 +656,7 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .art
 }
 
 .game .game-info {
-  color: #333355;
+  color: #444466;
   background-color: #eeeeff;
   border-radius: 10px;
   flex-direction: column;
@@ -640,12 +691,12 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .game .game-info, .art
   flex-direction: row;
 }
 
-.site-nav-goty ul, .content, .credit, body.home, #app, .archive-article, .article-body .post-info .times, .paginator, .rest, .top-three, .goty-decade li, .goty, .game, .game .board-row, .game .board-row-spacer {
+.goty, .site-nav-goty ul, .game, .game .board-row, .game .board-row-spacer {
   display: flex;
   flex-direction: row;
 }
 
-nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-info, .article-body .post-info > div, .author, .top-ten, .goty-decade ol, .goty-decade .hack, .goty li, .goty .honorable-mention, .game .game-info {
+.goty-decade .hack, .goty .honorable-mention, .game .game-info {
   display: flex;
   flex-direction: column;
 }
@@ -654,52 +705,42 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
   background-color: #FFFFFF;
 }
 
-.art-tile-category.category1 {
+.art-tile-category.fursona {
   background-color: #C7C5C2;
 }
 
-.art-tile-category.category2 {
+.art-tile-category.destiny2 {
   background-color: #1F79A1;
 }
 
-.gallery-section {
-  display: grid;
-  justify-content: center;
-}
-
-.gallery-section h3 {
-  grid-column: 1 / -1;
-}
-
-.pfp-art .art-tile, .pfp-art img {
+.pfp-art.art-tile-art, .pfp-art img, .pfp-art a, .pfp-art .art-info-container {
   width: 250px;
+  height: auto;
 }
 
-.pfp-art.gallery-section {
-  gap: 1em 5em;
-  grid-template-columns: repeat(auto-fill, 284px);
+.pfp-art.art-tile {
+  grid-template-columns: 250px 30px;
+  grid-template-rows: auto auto 15px;
 }
 
-.fullbody-art .art-tile, .fullbody-art img {
+.fullbody-art.art-tile-art, .fullbody-art img, .fullbody-art a, .fullbody-art .art-info-container {
   width: 350px;
+  height: auto;
 }
 
-.fullbody-art.gallery-section {
-  gap: 1em 3em;
-  grid-template-columns: repeat(auto-fill, 384px);
+.fullbody-art.art-tile {
+  grid-template-columns: 350px 30px;
+  grid-template-rows: auto auto 15px;
 }
 
 .art-tile {
   display: grid;
   font-family: 'Jura', sans-serif;
   gap: 0;
-  grid-template-columns: auto 10px;
 }
 
-.art-tile-art {
-  border-bottom: none;
-  border-top-left-radius: 5px;
-  height: 100%;
+.art-tile a {
+  display: inline-grid;
 }
 
 .art-tile-art, .art-info-container {
@@ -708,21 +749,30 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
   grid-column: 1 / 2;
 }
 
+.art-tile-art {
+  border-bottom: none;
+  border-top-left-radius: 5px;
+}
+
 .art-info-container {
   background-color: #dbdbfb;
   border-bottom-left-radius: 5px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(auto, 50%));
+  grid-template-columns: 2fr 3fr;
   grid-row: 2 / span 1;
 }
 
 .art-info-tile {
   border-top: 2px solid #000011;
   display: grid;
-  height: 100%;
+  font-size: 14px;
   line-height: 2;
   padding: 0 10px;
   text-align: left;
+}
+
+.art-info-tile:nth-child(2n+1) {
+  border-right: 2px solid #000011;
 }
 
 .art-info-tile a {
@@ -735,38 +785,38 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
 
 .art-tile-category {
   border: 2px solid #000011;
-  border-top-right-radius: 15px;
+  border-top-right-radius: 10px;
   font-size: 21px;
   font-weight: bold;
-  /* fuck */
   grid-column: 2 / span 1;
-  grid-row: 1 / span 2;
-  height: 101%;
-  line-height: 2rem;
+  grid-row: 1 / span 3;
   text-align: center;
-  width: 30px;
   writing-mode: sideways-lr;
 }
 
-.ocgallery-container {
-  min-width: 800px;
+.gallery-section {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  gap: 2em 2em;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 380px));
 }
 
-.ocgallery-container h2, .ocgallery-container h3 {
+.gallery-section h3 {
+  grid-column: 1 / -1;
+}
+
+.ocgallery-container h2 {
+  padding: 1em;
   text-align: center;
 }
 
-.ocgallery-container h3 {
-  padding-top: 0.5em;
-  padding-bottom: 1em;
-}
-
-.site-nav-goty ul, .content, .credit, body.home, #app, .archive-article, .article-body .post-info .times, .paginator, .rest, .top-three, .goty-decade li, .goty, .game, .game .board-row, .game .board-row-spacer {
+.goty, .site-nav-goty ul, .game, .game .board-row, .game .board-row-spacer {
   display: flex;
   flex-direction: row;
 }
 
-nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-info, .article-body .post-info > div, .author, .top-ten, .goty-decade ol, .goty-decade .hack, .goty li, .goty .honorable-mention, .game .game-info {
+.goty-decade .hack, .goty .honorable-mention, .game .game-info {
   display: flex;
   flex-direction: column;
 }
@@ -775,9 +825,19 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
   justify-content: center;
 }
 
+.toy-header {
+  margin: 0;
+}
+
+.toy-header a {
+  padding: 1em;
+}
+
 .js-toy {
-  flex: 20 auto;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: auto 30px;
+  background-color: #eeeeff;
+  grid-column: 1 / -1;
 }
 
 .js-toy .game {
@@ -810,39 +870,55 @@ nav ul, .media-list, .page, .about-text, ol, ul, .js-toy, .article-body .post-in
 }
 
 .toy-credit {
-  background: url(/theme/images/palm-leaf.png) #9999bb;
+  background-color: #eeeeff;
   border-top: 2px solid #9999bb;
   font-size: 14px;
   line-height: 2;
   padding: 0 0.5em;
+  max-height: 30px;
 }
 
 a {
-  color: #333355;
+  color: #444466;
 }
 
-article {
-  padding-right: 0.5em;
+html {
+  background-color: #eeeeff;
+  font: sans-serif;
+  min-width: 810px;
 }
 
 body, html {
-  background-color: #eeeeff;
-  font: sans-serif;
   height: 100%;
-  min-width: 800px;
+  overflow: auto;
 }
 
-body, main {
-  flex: 10 auto;
+header {
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+  margin: 0 0.5em;
+}
+
+header.simple {
+  margin: 0;
+}
+
+header.simple a {
+  padding: 1em;
+}
+
+header.simple a:hover {
+  color: #444466;
+}
+
+main {
+  grid-column: 1 / span 3;
+  grid-row: 2 / span 1;
 }
 
 .toy-credit a, footer.credit a {
   display: inline-block;
   height: 100%;
-}
-
-header {
-  flex: 2 auto;
 }
 
 img {
@@ -852,8 +928,11 @@ img {
 nav a {
   color: #eeeeff;
   display: block;
-  padding: 1em;
   text-decoration: none;
+}
+
+.site-nav a, .site-nav-goty a {
+  padding: 1em;
 }
 
 p {
@@ -862,52 +941,54 @@ p {
 
 body.page {
   background: url(/theme/images/palm-leaf.png) #9999bb;
-}
-
-body.home {
-  clear: both;
+  display: grid;
+  gap: 0 0;
+  grid-template-columns: 4fr 3fr 3fr 1fr;
+  grid-template-rows: 3fr 40fr 1fr;
+  justify-items: stretch;
   margin: 0 auto;
-  max-width: 1200px;
-  min-width: 90%;
-  padding: 2.5em 1em 0;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
-.about-image {
+.article-author {
   border: 2px solid #9999bb;
   border-radius: 5px;
-  display: inline-block;
   width: 100px;
 }
 
-.about_profile {
-  border: 2px solid #000011;
-  border-radius: 10px;
-  width: 100px;
+.credit {
+  border-top: 2px solid #9999bb;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #eeeeff;
+  color: #444466;
+  display: grid;
+  font-size: 14px;
+  grid-column: 1 / -1;
+  grid-row: -1 / span 1;
+  grid-template-columns: 3fr 3fr 1fr;
+  justify-content: space-between;
+  line-height: 2;
+  padding: 0 1em;
 }
 
-.about-text {
-  align-items: start;
+.credit .source-code {
+  justify-self: end;
 }
 
-.booklist h1 {
-  text-align: center;
-}
-
-.content aside {
-  background: url(/theme/images/palm-leaf.png) #9999bb;
-  width: 100px;
-}
-
-.content article, .content aside {
-  padding: 1em;
+.site-nav {
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 1;
+  margin: 0.5em;
 }
 
 .content article {
   background-color: #eeeeff;
   border: 2px solid #9999bb;
   border-radius: 5px;
-  flex: 5 auto;
-  margin-left: 0.5em;
+  margin: 0.5em;
+  padding: 0.5em;
 }
 
 .content .media-list {
@@ -915,53 +996,87 @@ body.home {
   text-align: justify;
 }
 
-.credit {
-  background: url(/theme/images/palm-leaf.png) #9999bb;
-  flex-wrap: wrap;
-  font-size: 14px;
-  justify-content: space-between;
-  line-height: 2;
+.social-links {
+  justify-self: end;
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 1;
+  width: 300px;
 }
 
-.credit address {
-  padding: 0 1em;
+.social-links a {
+  box-sizing: border-box;
+  padding: 0.25em;
+  line-height: 59px;
+  height: 59px;
 }
 
-.page, body.home {
-  justify-content: space-between;
+.social-links > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  height: 59px;
+}
+
+.social-links > ul li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.social-links > ul li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.social-links img {
+  height: auto;
+  width: 25px;
 }
 
 .site-banner {
-  flex: 1 100%;
-  max-height: 5em;
-  min-height: 5em;
-  padding-left: 1em;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  margin-top: 0.25em;
+  place-items: center stretch;
+}
+
+.site-banner h1 {
+  grid-column: 1 / span 1;
+}
+
+.site-banner h1 a {
+  border: 1px solid #9999bb;
+  border-radius: 5px;
+  padding: 0.25em;
+}
+
+.site-banner a, .site-banner a:visited {
+  background-color: #444466;
+  color: #eeeeff;
+}
+
+.site-banner a:hover {
+  background-color: #9999bb;
 }
 
 nav li {
   color: #eeeeff;
-  background-color: #333355;
-  border: 1px solid #555577;
+  background-color: #444466;
+  border: 1px solid #9999bb;
   flex: 1 auto;
   font-size: 16px;
 }
 
-nav li:first-child {
+.site-nav li:first-child {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
 
-nav li:last-child {
+.site-nav li:last-child {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-ol li, ul li, .game li {
-  padding: 0;
-}
-
-.body li {
-  border-top: 1px solid #666699;
+.site-nav li img {
+  width: 30px;
 }
 
 nav li:visited {
@@ -972,20 +1087,11 @@ nav ul {
   list-style-type: none;
   padding: 0;
   text-align: center;
-  width: 100%;
-}
-
-header nav ul {
-  margin: 0;
 }
 
 .content ul {
   margin: 0;
   text-align: center;
-}
-
-.site-nav ul {
-  margin-bottom: 1em;
 }
 
 a:hover {
@@ -997,7 +1103,7 @@ a:visited {
 }
 
 nav a:hover {
-  color: #333355;
+  color: #444466;
 }
 
 nav a:visited {
@@ -1104,43 +1210,6 @@ nav a.youtube:hover {
   background-color: #997799;
 }
 
-.bookpage {
-  display: grid;
-}
-
-.bookpage h2 {
-  text-align: center;
-}
-
-.booklist {
-  display: grid;
-  gap: 1.5em 3em;
-  grid-template-columns: repeat(6, auto);
-  justify-self: center;
-  padding-bottom: 1em;
-}
-
-.booklist a {
-  border: 1px solid #000011;
-  border-radius: 5px;
-  width: 14em;
-  padding-bottom: 1em;
-  grid-column-end: span 2;
-}
-
-.booklist a:nth-child(4) {
-  grid-column-start: 2;
-}
-
-.booklist img {
-  width: 100%;
-}
-
 .media-list img {
   width: 500px;
-}
-
-.site-banner a:hover {
-  background: transparent;
-  color: #555577;
 }

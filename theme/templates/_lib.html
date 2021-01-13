@@ -14,14 +14,11 @@
 {% macro site_nav(page) %}
   <nav class="site-nav">
     <ul>
-      <li><a class="default" href="{{ SITEURL }}/">home</a></li>
-
       {% for slug, url, identifier in TOPLEVEL_PAGES %}
         <li>
           <a
             class="{% if identifier == page.identifier %}active {% endif %} {{ identifier }}"
-            href="{{ SITEURL }}/{{ url }}"
-          >
+            href="{{ SITEURL }}/{{ url }}">
             {{ slug }}
           </a>
         </li>
@@ -31,44 +28,49 @@
       {% for name, link in SUBPAGES %}
         <li>
           <a class="{{ name|replace(".", "") }}"
-             href="{{ SITEURL }}/{{ link }}">{{ name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-    <ul>
-      {% for name, link in SOCIAL %}
-        <li>
-          <a class="{{ name|replace(".", "") }}"
-             href="{{ link }}">{{ name }}</a>
+             href="{{ SITEURL }}/{{ link }}">{{ name }}
+          </a>
         </li>
       {% endfor %}
     </ul>
   </nav>
+{% endmacro %}
+
+{% macro simple_header() %}
+  <header class="simple">
+    {{ simple_nav() }}
+  </header>
 {% endmacro %}
 
 {% macro simple_nav() %}
   <nav>
     <ul>
       <li>
-        <a class="default" href="{{ SITEURL }}/">home</a>
+        <a href="{{ SITEURL }}/">home</a>
       </li>
     </ul>
   </nav>
+{% endmacro %}
+
+{% macro yearly_header(page, prefix) %}
+  <header class="simple">
+    {{ yearly_nav(page, prefix) }}
+  </header>
 {% endmacro %}
 
 {% macro yearly_nav(page, prefix) %}
   <nav class="site-nav-goty">
     <ul>
       <li>
-          <a class="default"{% if page.previous%} href="{{ SITEURL }}/{{prefix}}{{page.previous}}.html" {% endif %} >
-            {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
+        <a {% if page.previous%} href="{{ SITEURL }}/{{prefix}}{{page.previous}}.html" {% endif %} >
+          {% if page.previous %} {{page.previous}} {% else %} No More {% endif %}
         </a>
       </li>
       <li>
-        <a class="default" href="{{ SITEURL }}/">home</a>
+        <a href="{{ SITEURL }}/">home</a>
       </li>
       <li>
-          <a class="default" {% if page.next%} href="{{ SITEURL }}/{{prefix}}{{page.next}}.html" {% endif %} >
+          <a {% if page.next%} href="{{ SITEURL }}/{{prefix}}{{page.next}}.html" {% endif %} >
             {% if page.next %}
               {{page.next}}
             {%else %}
@@ -81,12 +83,12 @@
 
 {% endmacro %}
 
-{% macro goty_nav(page) %}
-    {{yearly_nav(page, "goty")}}
+{% macro goty_header(page) %}
+  {{yearly_header(page, "goty")}}
 {% endmacro %}
 
-{% macro book_nav(page) %}
-    {{yearly_nav(page, "books")}}
+{% macro book_header(page) %}
+  {{yearly_header(page, "books")}}
 {% endmacro %}
 
 {% macro credit() %}
@@ -103,7 +105,7 @@
       header/footer background from
       <a href="https://www.toptal.com/designers/subtlepatterns/">subtle patterns</a>
     </address>
-    <address>
+    <address class="source-code">
       <a href="https://github.com/alixnovosi/drew.life">source code</a>
     </address>
   </footer><!-- /.pelican -->

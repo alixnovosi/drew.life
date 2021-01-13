@@ -23,6 +23,19 @@
           <h1>
             <a href="{{ SITEURL }}/">{{ SITENAME }}</a>
           </h1>
+        <nav class="social-links">
+          <ul>
+            {% for name, value in SOCIAL.items() %}
+              <li>
+                <a class="{{ name|replace(".", "") }}"
+                   href="{{ value['link'] }}"
+                   title="{{ name }}">
+                  <img src="{{ value['icon_link'] }}" alt="{{ name }}" title="{{ name }}">
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
         {% endblock header %}
       </header>
 
@@ -32,17 +45,14 @@
             {% block content %}
             {% endblock content %}
           </article>
-
-          <aside>
-            {% if page is defined %}
-              {{ lib.site_nav(page) }}
-            {% else %}
-              {{ lib.site_nav("none") }}
-            {% endif %}
-          </aside>
-
         {% endblock main %}
       </main>
+
+      {% if page is defined %}
+        {{ lib.site_nav(page) }}
+      {% else %}
+        {{ lib.site_nav("none") }}
+      {% endif %}
 
       {{ lib.credit() }}
     {% endblock body %}

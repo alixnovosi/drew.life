@@ -1,0 +1,50 @@
+//----------------------------------------------------------------------------//
+// author:  andrew michaud                                                    //
+// file:    main.scss                                                         //
+// purpose: styles for books pages                                            //
+// updated: 2021-01-11                                                        //
+// license: isc                                                               //
+//----------------------------------------------------------------------------//
+@import "vars";
+
+.booklist {
+    display: grid;
+    gap: 1.5em 3em;
+    grid-template-columns: repeat(6, auto);
+    justify-self: center;
+    padding-bottom: 1em;
+
+    a {
+        background-color: $background;
+        border: 1px solid $nav_blue_darker;
+        border-radius: 5px;
+        width: 14em;
+        padding-bottom: 1em;
+        grid-column-end: span 2;
+    }
+
+    a:hover {
+        background-color: $background-darker;
+    }
+
+    a:nth-child(4) {
+        grid-column-start: 2;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.bookpage {
+    display: grid;
+    grid-column: 1 / -1;
+
+    h2 {
+        text-align: center;
+    }
+}

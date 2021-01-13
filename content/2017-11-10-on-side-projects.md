@@ -3,7 +3,7 @@ Category: Dev
 Tags: side-projects, puckfetcher, botskeleton, bots
 Author: drew
 Date: 2017-11-10 04:25:08
-Modified: 2018-12-03 21:50:14
+Modified: 2021-01-12 11:32:00
 
 I spent a lot of time on programming side projects in 2016.
 I'm finishing this post up in 2017 after writing the bulk of the text,
@@ -157,11 +157,11 @@ I hooked my GitHub repo up to
 (free for open source projects!),
 to run all of my tests whenever I pushed new code.
 I also set up
-[Coveralls](https://coveralls.io/github/andrewmichaud/puckfetcher?branch=master)
+[Coveralls](https://coveralls.io/github/alixnovosi/puckfetcher?branch=master)
 to test code coverage
 (also free for open source)
 and
-[Code Climate](https://codeclimate.com/github/andrewmichaud/puckfetcher)
+[Code Climate](https://codeclimate.com/github/alixnovosi/puckfetcher)
 to check for some kinds of code smells
 (again,
 free for open source).
@@ -203,7 +203,7 @@ I've wanted to make some Twitter bots for a while.
 What finally inspired me to do it was [NaBoMaMo](http://nabomamo.botally.net/),
 or National Bot Making Month.
 This was an NaNoGenMo/NaNoWriMo to make a bunch of Twitter bots during the month of November.
-I made [eight](https://dev.andrewmichaud.com).
+I made [eight](https://drew.life/dev).
 The process of crafting those bots was a lot of fun,
 and it led to different challenges than working on puckfetcher.
 

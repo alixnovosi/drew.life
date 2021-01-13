@@ -8,15 +8,27 @@
 @import "vars";
 
 .rest, .top-three {
-    @extend %horizontal-flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+};
+
+.top-three {
+    padding: 0;
 }
 
-.top-ten {
-    @extend %vertical-flex;
+.rest {
+    column-gap: 1em;
+    margin: 0 auto;
+    padding: 1em;
+    width: 80%;
 }
 
 .backlog-bracket ol, .honorable-mention ul {
     align-items: center;
+}
+
+main.goty, main.retro-goty, .site-nav-goty {
+    grid-column: 1 / -1;
 }
 
 article .honorable-mention li {
@@ -35,25 +47,13 @@ aside .honorable-mention li {
     margin: 0.25em;
 }
 
-.goty .rest li {
-    max-width: 27%;
-    min-width: 27%;
-}
-
-.goty .top-three li {
-    max-width: 33%;
-    min-width: 33%;
-}
-
 .goty-decade ol {
-    @extend %vertical-flex;
     align-items: center;
     justify-content: space-between;
     padding: 0;
 }
 
 .goty-decade li {
-    @extend %horizontal-flex;
 	border: 5px solid $background_dark;
     list-style-type: none;
     margin: 10px 0;
@@ -73,11 +73,6 @@ aside .honorable-mention li {
     max-width: 80%;
     min-width: 10em;
     width: 80%;
-}
-
-.goty ol, .goty ul {
-    padding: 0 1em;
-    justify-content: space-around;
 }
 
 .goty ol {
@@ -124,7 +119,6 @@ a.soundtrack {
 }
 
 .goty li {
-    @extend %vertical-flex;
     align-items: center;
     background-color: $social_hover_background;
     border: 1px solid $background_darker;
@@ -134,6 +128,11 @@ a.soundtrack {
     height: auto;
     margin: 0 0.25em 1em 0.25em;
     padding: 0.75em 0;
+}
+
+main.goty, main.retro-goty {
+    background-color: $background;
+    height: 100%;
 }
 
 .goty {
@@ -160,10 +159,6 @@ a.soundtrack {
         li {
             padding: 0.5em;
         }
-    }
-
-    .rest {
-        flex-wrap: wrap;
     }
 }
 
@@ -220,7 +215,14 @@ a.soundtrack {
     }
 
     img {
-      height: 300px;
+        height: 300px;
   }
 
+}
+
+.site-nav-goty {
+    ul {
+        @extend %horizontal-flex;
+        margin: 0
+    }
 }

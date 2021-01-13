@@ -20,6 +20,16 @@
               <a href="{{ tag.url }}">{{ tag.name }}</a>
             {% endfor %}
           </div>
+          <div class="authors">
+            {% for author in article.authors %}
+              <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">
+                <img class="article-author small"
+                     src="/{{ author.image }}"
+                     alt="{{ author }}"
+                     title="{{ author }}">
+              </a>
+            {% endfor %}
+          </div>
         <li>
       {% endfor %}
     </ul>

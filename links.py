@@ -25,13 +25,28 @@ PAGES = [
 ]
 
 # social links
-SOCIAL = [
-    ("twitter", "https://twitter.com/alixnovosi"),
-    ("github", GIT_ROOT),
-    ("itch.io", ITCH_ROOT),
-    ("twitch", "https://twitch.tv/alixnovosi"),
-    ("youtube", "https://youtube.com/alixnovosi"),
-]
+SOCIAL = {
+    "twitter": {
+        "link": "https://twitter.com/alixnovosi",
+        "icon_link": "/media/social/twitter.svg",
+    },
+    "github": {
+        "link": GIT_ROOT,
+        "icon_link": "/media/social/github.png",
+    },
+    "itch.io": {
+        "link": ITCH_ROOT,
+        "icon_link": "/media/social/itchio.svg",
+    },
+    "twitch": {
+        "link": "https://twitch.tv/alixnovosi",
+        "icon_link": "/media/social/twitch.svg",
+    },
+    "youtube": {
+        "link": "https://youtube.com/alixnovosi",
+        "icon_link": "/media/social/youtube.png",
+    },
+}
 
 # pages that go into their own little zones.
 # with possibly different nav

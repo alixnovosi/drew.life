@@ -1,11 +1,7 @@
 {% extends "simple_modern_page.html" %}
 
 {% block body %}
-  <header>
-    {% block header %}
-      {{ lib.simple_nav() }}
-    {% endblock header %}
-  </header>
+  {{ lib.simple_header() }}
 
   <main>
     {{ page.content }}

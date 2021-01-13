@@ -12,11 +12,7 @@
 {% endblock head %}
 
 {% block body %}
-  <header>
-    {% block header %}
-      {{ lib.simple_nav() }}
-    {% endblock header %}
-  </header>
+  {{ lib.simple_header() }}
 
   <main class="goty-decade">
     {% block main %}

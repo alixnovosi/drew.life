@@ -9,7 +9,43 @@
 {% endblock %}
 
 {% block content %}
-  {{ page.content }}
+  <div class="ocgallery-container">
+
+    <h2>Commissioned Art</h2>
+
+    <section class="gallery-section">
+      {% for item in ART_DATA %}
+        <section class="{{ item['type'] }} art-tile">
+          <a href="{{ item['link'] }}">
+            <img class="art-tile-art"
+                 src="{{ item['link'] }}"
+                 alt="{{ item['alt'] }}"
+                 title="{{ item['title'] }}"
+            >
+          </a>
+
+          <section class="art-info-container">
+
+            <section class="art-info-tile">Subject</section>
+            <section class="art-info-tile">{{ item['subject'] }}</section>
+
+            <section class="art-info-tile">Artist</section>
+            <section class="art-info-tile">
+              <a href="{{ item['artist']['link'] }}">{{ item['artist']['name'] }}</a>
+            </section>
+
+            <section class="art-info-tile">Date</section>
+            <section class="art-info-tile">{{ item['date'] }}</section>
+          </section>
+
+          <section class="art-tile-category {{ item['category'] }}">
+            {{ item['category-label'] }}
+          </section>
+        </section>
+      {% endfor %}
+
+    </section>
+  </div>
 {% endblock content %}
 
 {% block aside %}

@@ -3,3 +3,4 @@ output/
 __pycache__/
 content/gallery
 content/author_images
+theme/static/images/author_images/**

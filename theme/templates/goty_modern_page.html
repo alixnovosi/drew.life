@@ -12,11 +12,7 @@
 {% endblock head %}
 
 {% block body %}
-  <header>
-    {% block header %}
-      {{ lib.goty_nav(page) }}
-    {% endblock header %}
-  </header>
+  {{ lib.goty_header(page) }}
 
   <main class="goty">
     {% block main %}

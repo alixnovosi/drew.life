@@ -1,5 +1,12 @@
 <!-- goty_legacy_page -->
 {% extends "simple_raw_page.html" %}
-{% block header %}
-  {{ lib.goty_nav(page) }}
-{% endblock header %}
+
+{% block body %}
+    {{ lib.goty_header(page) }}
+
+    <main class="retro-goty">
+      {{ page.content }}
+    </main>
+
+  {{ lib.credit() }}
+{% endblock body %}

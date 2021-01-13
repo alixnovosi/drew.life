@@ -5,8 +5,9 @@ Skill = namedtuple("Skill", "filename title")
 SKILL_INFO = {
     "definitely": [
         Skill("python", "Python"),
-        Skill("java", "Java"),
         Skill("terminal", "unix Shell"),
+        Skill("debian", "Debian"),
+        Skill("git", "Git"),
         Skill("javascript", "JavaScript"),
         Skill("typescript", "TypeScript"),
         Skill("css3", "CSS 3"),
@@ -15,13 +16,15 @@ SKILL_INFO = {
     ],
 
     "probably": [
+        Skill("docker", "Docker"),
+        Skill("java", "Java"),
         Skill("psql", "PostGreSQL"),
         Skill("LaTeX", "LaTeX"),
         Skill("go", "Golang"),
-        Skill("rust", "Rust"),
     ],
 
     "maybe": [
+        Skill("rust", "Rust"),
         Skill("apple", "Objective-C"),
         Skill("perl", "Perl"),
         Skill("prolog", "Prolog"),
@@ -31,5 +34,9 @@ SKILL_INFO = {
         Skill("c++", "C++"),
         Skill("scala", "Scala"),
         Skill("haskell", "Haskell"),
+    ],
+
+    "no": [
+        Skill("php", "PHP"),
     ],
 }

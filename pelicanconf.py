@@ -4,6 +4,8 @@
 import os
 import sys
 sys.path.append(os.curdir)
+
+from artdata import *
 from projectdata import *
 from links import *
 from sitedata import *

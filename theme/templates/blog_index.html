@@ -22,20 +22,17 @@
           </header>
 
           <footer class="post-info">
-            <address class="vcard author">
-              {% for author in article.authors %}
-                <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">
-                  <img class="article-author small"
-                    src="/{{ author.image }}"
-                    alt="{{ author }}"
-                    title="{{ author }}"
-                  >
-                </a>
-              {% endfor %}
-            </address>
             <time class="published" datetime="{{ article.date.isoformat() }}">
               {{ article.locale_date }}
             </time>
+            {% for author in article.authors %}
+              <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">
+                <img class="article-author small"
+                     src="/{{ author.image }}"
+                     alt="{{ author }}"
+                     title="{{ author }}">
+              </a>
+            {% endfor %}
           </footer><!-- /.post-info -->
 
           <div class="entry-content">

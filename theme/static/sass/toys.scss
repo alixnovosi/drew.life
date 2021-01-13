@@ -2,21 +2,29 @@
 // author:  andrew michaud                                                    //
 // file:    toys.scss                                                         //
 // purpose: javascript toys styles                                            //
-// updated: 2020-12-09                                                        //
+// updated: 2021-01-11                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 @import "vars";
 
 // javascript toys generally use this as root to modify the page.
 #app {
-    @extend %horizontal-flex;
     justify-content: center;
 }
 
+.toy-header {
+    margin: 0;
+
+    a {
+      padding: 1em;
+    }
+}
+
 .js-toy {
-    @extend %vertical-flex;
-    flex: 20 auto;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: auto 30px;
+    background-color: $background;
+    grid-column: 1 / -1;
 
     .game {
         margin: 1em;
@@ -51,9 +59,10 @@
 }
 
 .toy-credit {
-    background: $bg_img;
+    background-color: $background;
     border-top: 2px solid $background_darker;
     font-size: 14px;
     line-height: 2;
     padding: 0 0.5em;
+    max-height: 30px;
 }

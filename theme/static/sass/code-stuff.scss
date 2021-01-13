@@ -53,7 +53,7 @@ $language_colors: (
 
     .github-link, .language {
         background-color: $background_darker;
-        color: $nav_blue;
+        color: $nav_blue_darker;
         height: 80px;
         line-height: 80px;
     }
@@ -66,14 +66,9 @@ $language_colors: (
 // language stuff.
 @each $item, $lang_color in $language_colors {
     .code-stuff .#{$item} {
-        color: $nav_blue_darker;
+        color: $background;
         background-color: $lang_color;
     }
-}
-
-// special-case lua/Vue because the background is so dark.
-.code-stuff .Lua, .code-stuff .Vue {
-    color: $background;
 }
 
 .language-section {
@@ -96,11 +91,8 @@ $language_colors: (
 .languages {
     display: grid;
     gap: 0 5em;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    justify-content: space-around;
+    grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
     max-width: 1000px;
     min-width: 800px;
 }
-

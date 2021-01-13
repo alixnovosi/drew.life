@@ -4,7 +4,7 @@
 ## purpose: pelican generated makefile,                                       ##
 ##          plus compiling sass -> css for drew.life,                         ##
 ##          and moving other js around                                        ##
-## updated: 2020-12-24                                                        ##
+## updated: 2021-01-09                                                        ##
 ## license: ISC                                                               ##
 ##----------------------------------------------------------------------------##
 PY?=python3
@@ -56,7 +56,6 @@ help:
 	@echo '   make regenerate                     regenerate files upon modification '
 	@echo '   make publish                        generate using production settings '
 	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
-	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
 	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
 	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
 	@echo '                                                                          '
@@ -106,21 +105,12 @@ else
 	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 endif
 
-serve-global:
-ifdef SERVER
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) \
-		-p $(PORT) -b $(SERVER)
-else
-	$(PELICAN) -l $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) \
-		-p $(PORT) -b 0.0.0.0
-endif
-
 devserver:
 ifdef PORT
 	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) \
-		-p $(PORT)
+		-p $(PORT) -b 0.0.0.0
 else
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b 0.0.0.0
 endif
 
 publish: sasscompile jscopy
@@ -131,5 +121,5 @@ rsync_upload: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ \
 $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
 
-.PHONY: html help clean regenerate serve serve-global devserver stopserver \
+.PHONY: html help clean regenerate serve devserver stopserver \
 	publish sasscompile jscopy rsync_upload

@@ -2,12 +2,11 @@
 // author:  andrew michaud                                                    //
 // file:    main.scss                                                         //
 // purpose: scss file for drew.life - imports sub-pages                       //
-// updated: 2021-01-08                                                        //
+// updated: 2021-01-11                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 
-@import "vars";
-
+@import "books";
 @import "blog";
 @import "code-stuff";
 @import "goty";
@@ -21,28 +20,43 @@ a {
     color: $nav_blue;
 }
 
-article {
-    padding-right: 0.5em;
+html {
+    background-color: $background;
+    font: sans-serif;
+    min-width: 810px;
 }
 
 body, html {
-    background-color: $background;
-    font: sans-serif;
     height: 100%;
-    min-width: 800px;
+    overflow: auto;
 }
 
-body, main {
-    flex: 10 auto;
+header {
+    grid-column: 1 / -1;
+    grid-row: 1 / span 1;
+    margin: 0 0.5em;
+}
+
+header.simple {
+    margin: 0;
+
+    a {
+        padding: 1em;
+    }
+
+    a:hover {
+        color: $nav_blue;
+    }
+}
+
+main {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
 }
 
 .toy-credit a, footer.credit a {
     display: inline-block;
     height: 100%;
-}
-
-header {
-    flex: 2 auto;
 }
 
 img {
@@ -52,12 +66,11 @@ img {
 nav a {
     color: $background;
     display: block;
-    padding: 1em;
     text-decoration: none;
 }
 
-ol, ul {
-    @extend %vertical-flex;
+.site-nav a, .site-nav-goty a {
+    padding: 1em;
 }
 
 p {
@@ -66,59 +79,55 @@ p {
 
 body.page {
     background: $bg_img;
+    display: grid;
+    gap: 0 0;
+    grid-template-columns: 4fr 3fr 3fr 1fr;
+    grid-template-rows: 3fr 40fr 1fr;
+    justify-items: stretch;
+    margin: 0 auto;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 // non-hell classes
-body.home {
-    @extend %horizontal-flex;
-    clear: both;
-    margin: 0 auto;
-    max-width: 1200px;
-    min-width: 90%;
-    padding: 2.5em 1em 0;
-}
-
-.about-image {
+.article-author {
     border: 2px solid $background_darker;
     border-radius: 5px;
-    display: inline-block;
     width: 100px;
 }
 
-.about_profile {
-    border: 2px solid $nav_blue_darker;
-    border-radius: 10px;
-    width: 100px;
+.credit {
+    border-top: 2px solid $background_darker;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: $background;
+    color: $nav_blue;
+    display: grid;
+    font-size: 14px;
+    grid-column: 1 / -1;
+    grid-row: -1 / span 1;
+    grid-template-columns: 3fr 3fr 1fr;
+    justify-content: space-between;
+    line-height: 2;
+    padding: 0 1em;
+
+    .source-code {
+        justify-self: end;
+    }
 }
 
-.about-text {
-    @extend %vertical-flex;
-    align-items: start;
-}
-
-.booklist h1 {
-    text-align: center;
-}
-
-.content, .credit {
-    @extend %horizontal-flex;
-}
-
-.content aside {
-    background: $bg_img;
-    width: 100px;
-}
-
-.content article, .content aside {
-    padding: 1em;
+.site-nav {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+    margin: 0.5em;
 }
 
 .content article {
     background-color: $background;
     border: 2px solid $background_darker;
     border-radius: 5px;
-    flex: 5 auto;
-    margin-left: 0.5em;
+    margin: 0.5em;
+    padding: 0.5em;
 }
 
 .content .media-list {
@@ -126,41 +135,77 @@ body.home {
     text-align: justify;
 }
 
-.credit {
-    background: $bg_img;
-    flex-wrap: wrap;
-    font-size: 14px;
-    justify-content: space-between;
-    line-height: 2;
+.social-links {
+    justify-self: end;
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+    width: 300px;
 
-    address {
-        padding: 0 1em;
+    & a {
+        box-sizing: border-box;
+        padding: 0.25em;
+        line-height: 59px;
+        height: 59px;
+    }
+
+    &>ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        height: 59px;
+
+        li:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        li:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    img {
+        height: auto;
+        width: 25px;
     }
 }
 
-.media-list, .page {
-    @extend %vertical-flex;
-}
-
-.page, body.home {
-    justify-content: space-between;
-}
-
 .site-banner {
-    flex: 1 100%;
-    max-height: 5em;
-    min-height: 5em;
-    padding-left: 1em;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    margin-top: 0.25em;
+    place-items: center stretch;
+
+    h1 {
+        grid-column: 1 / span 1;
+    }
+
+    h1 a {
+        border: 1px solid $background_darker;
+        border-radius: 5px;
+        padding: 0.25em;
+    }
+
+    a, a:visited {
+        background-color: $nav-blue;
+        color: $background;
+    }
+
+    a:hover {
+        background-color: $background_darker;
+    }
 }
 
 // li hell
 nav li {
     color: $background;
     background-color: $nav_blue;
-    border: 1px solid $nav_blue_lighter;
+    border: 1px solid $background_darker;
     flex: 1 auto;
     font-size: 16px;
+}
 
+.site-nav li {
     &:first-child {
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
@@ -170,14 +215,10 @@ nav li {
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
     }
-}
 
-ol li, ul li, .game li {
-    padding: 0;
-}
-
-.body li {
-    border-top: 1px solid $article_highlight;
+    img {
+        width: 30px;
+    }
 }
 
 nav li:visited {
@@ -186,28 +227,14 @@ nav li:visited {
 
 // ol/ul hell
 nav ul {
-    @extend %vertical-flex;
     list-style-type: none;
     padding: 0;
     text-align: center;
-    width: 100%;
-}
-
-header nav ul {
-    margin: 0;
-}
-
-.site-nav-goty ul {
-    @extend %horizontal-flex;
 }
 
 .content ul {
     margin: 0;
     text-align: center;
-}
-
-.site-nav ul {
-    margin-bottom: 1em;
 }
 
 // pseudo-styles
@@ -241,43 +268,6 @@ nav a:visited {
     }
 }
 
-.bookpage {
-    display: grid;
-
-    h2 {
-        text-align: center;
-    }
-}
-
-.booklist {
-    display: grid;
-    gap: 1.5em 3em;
-    grid-template-columns: repeat(6, auto);
-    justify-self: center;
-    padding-bottom: 1em;
-
-    a {
-        border: 1px solid $nav_blue_darker;
-        border-radius: 5px;
-        width: 14em;
-        padding-bottom: 1em;
-        grid-column-end: span 2;
-    }
-
-    a:nth-child(4) {
-        grid-column-start: 2;
-    }
-
-    img {
-        width: 100%;
-    }
-}
-
 .media-list img {
     width: 500px;
-}
-
-.site-banner a:hover {
-    background: transparent;
-    color: $nav_blue_lighter;
 }

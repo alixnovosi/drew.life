@@ -2,11 +2,7 @@
 <!-- book_page -->
 
 {% block body %}
-  <header>
-    {% block header %}
-      {{ lib.book_nav(page) }}
-    {% endblock header %}
-  </header>
+  {{ lib.book_header(page) }}
 
   <main class="bookpage">
     {% block main %}

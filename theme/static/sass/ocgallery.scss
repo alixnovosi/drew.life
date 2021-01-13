@@ -2,15 +2,21 @@
 // author:  andrew michaud                                                    //
 // file:    ocgallery.scss                                                    //
 // purpose: specific styles for oc gallery section                            //
-// updated: 2021-01-08                                                        //
+// updated: 2021-01-11                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 @import "vars";
 
+$category_width: 30px;
+$widths: (
+    pfp-art: 250px,
+    fullbody-art: 350px,
+);
+
 $art_category_colors: (
     demo: #FFFFFF,
-    category1: #C7C5C2,
-    category2: #1F79A1,
+    fursona: #C7C5C2,
+    destiny2: #1F79A1,
 );
 
 @each $item, $bg_color in $art_category_colors {
@@ -19,34 +25,15 @@ $art_category_colors: (
     }
 }
 
-.gallery-section {
-    display: grid;
-    justify-content: center;
-
-    h3 {
-        grid-column: 1 / -1;
-    }
-}
-
-.pfp-art {
-    .art-tile, img {
-        width: 250px;
+@each $type, $width in $widths {
+    .#{$type}.art-tile-art, .#{$type} img, .#{$type} a, .#{$type} .art-info-container {
+        width: $width;
+        height: auto;
     }
 
-    &.gallery-section {
-        gap: 1em 5em;
-        grid-template-columns: repeat(auto-fill, 284px);
-    }
-}
-
-.fullbody-art {
-    .art-tile, img {
-        width: 350px;
-    }
-
-    &.gallery-section {
-        gap: 1em 3em;
-        grid-template-columns: repeat(auto-fill, 384px);
+    .#{$type}.art-tile {
+        grid-template-columns: $width $category_width;
+        grid-template-rows: auto auto $category_width/2;
     }
 }
 
@@ -54,13 +41,10 @@ $art_category_colors: (
     display: grid;
     font-family: 'Jura', sans-serif;
     gap: 0;
-    grid-template-columns: auto 10px;
-}
 
-.art-tile-art {
-    border-bottom: none;
-    border-top-left-radius: 5px;
-    height: 100%;
+    a {
+        display: inline-grid;
+    }
 }
 
 .art-tile-art, .art-info-container {
@@ -69,21 +53,30 @@ $art_category_colors: (
     grid-column: 1 / 2;
 }
 
+.art-tile-art {
+    border-bottom: none;
+    border-top-left-radius: 5px;
+}
+
 .art-info-container {
     background-color: $background_lighter;
     border-bottom-left-radius: 5px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(auto, 50%));
+    grid-template-columns: 2fr 3fr;
     grid-row: 2 / span 1;
 }
 
 .art-info-tile {
     border-top: 2px solid $nav_blue_darker;
     display: grid;
-    height: 100%;
+    font-size: 14px;
     line-height: 2;
     padding: 0 10px;
     text-align: left;
+
+    &:nth-child(2n+1) {
+        border-right: 2px solid $nav_blue_darker;
+    }
 
     a {
         display: inline-block;
@@ -96,28 +89,28 @@ $art_category_colors: (
 
 .art-tile-category {
     border: 2px solid $nav_blue_darker;
-    border-top-right-radius: 15px;
+    border-top-right-radius: 10px;
     font-size: 21px;
     font-weight: bold;
-    /* fuck */
     grid-column: 2 / span 1;
-    grid-row: 1 / span 2;
-    height: 101%;
-    line-height: 2rem;
+    grid-row: 1 / span 3;
     text-align: center;
-    width: 30px;
     writing-mode: sideways-lr;
 }
 
-.ocgallery-container {
-    min-width: 800px;
-
-    h2, h3 {
-        text-align: center;
-    }
+.gallery-section {
+    align-items: center;
+    display: grid;
+    justify-content: center;
+    gap: 2em 2em;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 380px));
 
     h3 {
-        padding-top: 0.5em;
-        padding-bottom: 1em;
+        grid-column: 1 / -1;
     }
+}
+
+.ocgallery-container h2 {
+    padding: 1em;
+    text-align: center;
 }
