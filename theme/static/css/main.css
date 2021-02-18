@@ -294,9 +294,9 @@
 .language-section {
   display: grid;
   gap: 1em 0.5em;
-  grid-template-columns: repeat(auto-fill, minmax(4.5em, auto));
-  grid-template-rows: repeat(auto-fill, minmax(4.5em, auto));
-  width: 100px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(80px, auto));
+  max-width: 200px;
 }
 
 .language-section h3 {
@@ -305,16 +305,17 @@
 }
 
 .language-section img {
-  width: 4.5em;
+  width: 80px;
 }
 
 .languages {
   display: grid;
   gap: 0 5em;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
   max-width: 1000px;
   min-width: 800px;
+  padding: 0 1em;
 }
 
 .rest, .top-three {
@@ -664,7 +665,7 @@ main.goty, main.retro-goty {
   background-color: #C7C5C2;
 }
 
-.art-tile-category.redacted2 {
+.art-tile-category.destiny2 {
   background-color: #1F79A1;
 }
 
@@ -675,7 +676,6 @@ main.goty, main.retro-goty {
 
 .pfp-art.art-tile {
   grid-template-columns: 250px 30px;
-  grid-template-rows: auto auto 15px;
 }
 
 .fullbody-art.art-tile-art, .fullbody-art img, .fullbody-art a, .fullbody-art .art-info-container {
@@ -685,13 +685,13 @@ main.goty, main.retro-goty {
 
 .fullbody-art.art-tile {
   grid-template-columns: 350px 30px;
-  grid-template-rows: auto auto 15px;
 }
 
 .art-tile {
   display: grid;
   font-family: 'Jura', sans-serif;
   gap: 0;
+  grid-template-rows: auto auto 15px;
 }
 
 .art-tile a {
@@ -720,7 +720,7 @@ main.goty, main.retro-goty {
 .art-info-tile {
   border-top: 2px solid #000011;
   display: grid;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   padding: 0 10px;
   text-align: left;
@@ -821,7 +821,7 @@ main.goty, main.retro-goty {
 .toy-credit {
   background-color: #eeeeff;
   border-top: 2px solid #9999bb;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   padding: 0 0.5em;
   max-height: 30px;
@@ -834,6 +834,7 @@ a {
 html {
   background-color: #eeeeff;
   font: sans-serif;
+  font-size: 16px;
   min-width: 810px;
 }
 
@@ -921,7 +922,7 @@ body.page {
   background-color: #eeeeff;
   color: #444466;
   display: grid;
-  font-size: 14px;
+  font-size: 16px;
   grid-column: 1 / -1;
   grid-row: -1 / span 1;
   grid-template-columns: 3fr 3fr 1fr;

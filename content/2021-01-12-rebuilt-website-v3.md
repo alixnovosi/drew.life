@@ -23,8 +23,10 @@ It's also an excuse to stuff my fursona everywhere on the site,
 and to prepare to just use that as my general representation online,
 which is something I've been building towards for weeks while redoing the site.
 
-Anyways,
-enjoy your stay on the website as always.
+also with this big push I'm publicly a furry now instead of privately one,
+so that's neat.
+
+enjoy the site bye
 
 - drew/alix
 

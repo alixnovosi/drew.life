@@ -2,7 +2,7 @@
 // author:  andrew michaud                                                    //
 // file:    ocgallery.scss                                                    //
 // purpose: specific styles for oc gallery section                            //
-// updated: 2021-01-11                                                        //
+// updated: 2021-01-27                                                        //
 // license: isc                                                               //
 //----------------------------------------------------------------------------//
 @import "vars";
@@ -16,7 +16,7 @@ $widths: (
 $art_category_colors: (
     demo: #FFFFFF,
     fursona: #C7C5C2,
-    redacted2: #1F79A1,
+    destiny2: #1F79A1,
 );
 
 @each $item, $bg_color in $art_category_colors {
@@ -33,7 +33,6 @@ $art_category_colors: (
 
     .#{$type}.art-tile {
         grid-template-columns: $width $category_width;
-        grid-template-rows: auto auto $category_width/2;
     }
 }
 
@@ -41,6 +40,7 @@ $art_category_colors: (
     display: grid;
     font-family: 'Jura', sans-serif;
     gap: 0;
+    grid-template-rows: auto auto $category_width/2;
 
     a {
         display: inline-grid;
@@ -69,7 +69,7 @@ $art_category_colors: (
 .art-info-tile {
     border-top: 2px solid $nav_blue_darker;
     display: grid;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 2;
     padding: 0 10px;
     text-align: left;

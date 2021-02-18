@@ -23,6 +23,7 @@ a {
 html {
     background-color: $background;
     font: sans-serif;
+    font-size: 16px;
     min-width: 810px;
 }
 
@@ -111,7 +112,7 @@ body.page {
     background-color: $background;
     color: $nav_blue;
     display: grid;
-    font-size: 14px;
+    font-size: 16px;
     grid-column: 1 / -1;
     grid-row: -1 / span 1;
     grid-template-columns: 3fr 3fr 1fr;

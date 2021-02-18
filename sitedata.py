@@ -35,8 +35,4 @@ SKILL_INFO = {
         Skill("scala", "Scala"),
         Skill("haskell", "Haskell"),
     ],
-
-    "no": [
-        Skill("php", "PHP"),
-    ],
 }
