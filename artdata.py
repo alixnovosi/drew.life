@@ -75,7 +75,7 @@ ART_DATA = [
         "link": "/gallery/commart/self-made self-ref 1.0 June 2021.png",
         "alt": "Alix Novosi Reference Sheet",
         "title": "Alix Novosi Reference Sheet",
-        "subject": "Alix Novosi",
+        "subject": "Alix (fursona)",
         "artist": {
             "link": "https://twitter.com/alixnovosi",
             "name": "Alix Novosi",
